@@ -365,7 +365,7 @@ export default function Contact() {
                   onMouseEnter={() => setHoverEmail(true)}
                   onMouseLeave={() => setHoverEmail(false)}
                 >
-                  hello@vibrantvillagevibe.com.au
+                  hello@estushealth.com
                 </a>
               </div>
             </div>
@@ -376,7 +376,7 @@ export default function Contact() {
               <div style={S.sideIcon}>📍</div>
               <div>
                 <div style={S.sideLabel}>Location</div>
-                <div style={S.sideValue}>Telehealth available nationwide</div>
+                <div style={S.sideValue}> Perth Metro & Telehealth available nationwide</div>
               </div>
             </div>
 
