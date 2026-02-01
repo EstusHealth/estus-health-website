@@ -5,7 +5,7 @@ const team = [
   {
     name: "Liam",
     role: "Founder & Occupational Therapist",
-    status: "Limited availability — assessments only",
+    status: "Not accepting referrals",
     bio: "Late-diagnosed autistic clinician with a PDA profile. Liam founded Estus Health to create the kind of support he wished existed — therapy that works with neurodivergent brains, not against them. His focus areas include PDA, gaming-informed therapy, executive function, and supporting adults through the unmasking process.",
     background: "Degrees in Occupational Therapy, Finance, Computer Science, and Machine Learning.",
     specialties: ["PDA Profiles", "Gaming-Informed Therapy", "Executive Function", "Unmasking Support"],
@@ -22,7 +22,7 @@ const team = [
     name: "Nam",
     role: "Occupational Therapist",
     status: "Accepting referrals",
-    bio: "Nam specialises in working with autistic teens and adults, with particular expertise in anime and gaming-informed approaches. She understands that interests aren't just hobbies — they're windows into how someone thinks, what they value, and where they feel most themselves.",
+    bio: "Nam specialises in working with autistic youth and adults, with particular expertise in anime and gaming-informed approaches. He understands that interests aren't just hobbies — they're windows into how someone thinks, what they value, and where they feel most themselves.",
     background: "Passionate about anime, gaming, and neuroaffirming practice.",
     specialties: ["Anime-Informed Therapy", "Gaming", "Teens & Young Adults"],
   },
