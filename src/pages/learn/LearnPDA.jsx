@@ -263,7 +263,7 @@ export default function LearnPDA() {
                 <Card className="p-4 border-primary/20">
                   <h3 className="font-display text-lg mb-2">Lived Experience</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
-                    Several team members have PDA profiles themselves. We understand from the 
+                    Our team have lived expereince with Autism and PDA. We understand from the 
                     inside — not just from textbooks.
                   </p>
                 </Card>
