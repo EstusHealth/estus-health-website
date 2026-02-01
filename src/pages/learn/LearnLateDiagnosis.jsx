@@ -68,8 +68,7 @@ export default function LearnLateDiagnosis() {
                 Why Autism Gets Missed
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-6">
-                Autism wasn't always understood the way it is now. For decades, diagnostic 
-                criteria were based primarily on studies of white boys with high support needs. 
+                Autism wasn't always understood the way it is now.  
                 If you didn't fit that narrow picture, you were unlikely to be identified.
               </p>
               
@@ -81,7 +80,7 @@ export default function LearnLateDiagnosis() {
                   <div>
                     <h3 className="font-display text-lg mb-1">Outdated Diagnostic Criteria</h3>
                     <p className="text-foreground/70 text-sm leading-relaxed">
-                      The "classic" autism presentation was defined by researchers observing boys. 
+                      The "classic" autism presentation was defined by researchers observing males. 
                       Girls, women, and anyone who presented differently were systematically missed.
                     </p>
                   </div>
@@ -123,7 +122,7 @@ export default function LearnLateDiagnosis() {
                     <h3 className="font-display text-lg mb-1">Misdiagnosis</h3>
                     <p className="text-foreground/70 text-sm leading-relaxed">
                       Before autism was considered, many people received other diagnoses: anxiety, 
-                      depression, bipolar disorder, borderline personality disorder, ADHD alone. 
+                      depression, disordered eating, bipolar disorder, borderline personality disorder, ADHD alone. 
                       These conditions can co-occur with autism, but often the autism was the 
                       underlying piece that explained why other treatments only partially helped.
                     </p>
