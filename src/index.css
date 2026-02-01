@@ -5,47 +5,40 @@
 @tailwind utilities;
 
 :root {
-  /* --- LIGHT THEME TOKENS --- */
+  /* --- CHARCOAL THEME TOKENS --- */
   
-  /* Background: Warm White/Cream */
-  --background: 40 20% 99%;
-  /* Foreground: Dark Charcoal */
-  --foreground: 0 0% 10%;
+  /* Background: Deep Charcoal (Slate-ish Grey) */
+  --background: 220 15% 16%;
+  /* Foreground: Soft Off-White */
+  --foreground: 40 10% 94%;
   
-  /* Card: Pure White */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 10%;
+  /* Card: Lighter Charcoal / Graphite */
+  --card: 220 15% 22%;
+  --card-foreground: 40 10% 94%;
   
-  /* Primary: Burnt Orange (Unchanged) */
+  /* Primary: Burnt Orange (Maintained) */
   --primary: 24 90% 48%;
   --primary-foreground: 0 0% 100%;
   
-  /* Secondary: Light Beige/Grey */
-  --secondary: 40 10% 94%;
-  --secondary-foreground: 0 0% 10%;
+  /* Secondary: Dark Slate */
+  --secondary: 220 15% 26%;
+  --secondary-foreground: 40 10% 94%;
   
-  /* Muted: Soft Grey */
-  --muted: 40 10% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* Muted: Muted Grey */
+  --muted: 220 10% 20%;
+  --muted-foreground: 220 10% 70%;
   
   /* Accent: Same as Primary */
   --accent: 24 90% 48%;
   --accent-foreground: 0 0% 100%;
   
-  /* Border: Light Grey */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
+  /* Border: Medium Grey */
+  --border: 220 15% 28%;
+  --input: 220 15% 28%;
   --ring: 24 90% 48%;
   
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 100%;
-  
-  /* Named aliases updated for light theme */
-  --burnt-orange: 24 90% 48%;
-  --charcoal: 0 0% 10%;
-  --charcoal-light: 0 0% 20%; 
-  --cream: 40 20% 99%;
-  --gray-dark: 0 0% 90%; /* Logic swapped: this is now a light border color */
   
   /* Radius */
   --radius: 0.25rem;
@@ -55,8 +48,8 @@
   --font-serif: 'Libre Baskerville', serif;
   --font-body: 'Inter', sans-serif;
   
-  /* Shadows - Made softer for light theme */
-  --shadow-heavy: 0 25px 50px -12px rgba(0,0,0,0.15);
+  /* Shadows */
+  --shadow-heavy: 0 25px 50px -12px rgba(0,0,0,0.5);
   --shadow-glow: 0 0 60px hsl(24 90% 48% / .15);
 }
 
@@ -66,8 +59,8 @@
 
 body {
   font-family: var(--font-body);
-  /* Light Gradient Background */
-  background: linear-gradient(180deg, hsl(40 20% 99%) 0%, hsl(40 20% 95%) 100%);
+  /* Charcoal Gradient */
+  background: linear-gradient(180deg, hsl(220 15% 16%) 0%, hsl(220 15% 14%) 100%);
   color: hsl(var(--foreground));
   min-height: 100vh;
 }
@@ -103,20 +96,18 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  /* Darker grain for light background visibility */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity: 0.04; 
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
   pointer-events: none;
   z-index: 1;
-  mix-blend-mode: multiply;
 }
 
-/* Vignette overlay - significantly reduced for light mode */
+/* Vignette overlay */
 .vignette-overlay::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, hsl(0 0% 0% / .05) 100%);
+  background: radial-gradient(ellipse at center, transparent 0%, hsl(0 0% 0% / .3) 100%);
   pointer-events: none;
 }
 
@@ -147,6 +138,6 @@ html {
 
 /* Selection */
 ::selection {
-  background: hsl(var(--primary) / 0.2);
+  background: hsl(var(--primary) / 0.3);
   color: hsl(var(--foreground));
 }
