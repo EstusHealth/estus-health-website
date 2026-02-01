@@ -1,4 +1,4 @@
-// Referrers.jsx
+// ForReferrers.jsx
 //
 // Full page component for the referrers/referring page.
 // Save as: app/referrers/page.jsx  (or wherever your referrers route lives)
