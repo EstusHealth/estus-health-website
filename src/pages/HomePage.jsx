@@ -183,7 +183,7 @@ export default function HomePage() {
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <Users className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-display text-xl mb-3">Autistic Adults & Teens</h3>
+            <h3 className="font-display text-xl mb-3">Autistic Adults & Youth</h3>
             <p className="text-foreground/70 text-sm leading-relaxed">
               Late-diagnosed or lifelong — we support executive function, unmasking, 
               sensory regulation, and building a life that works for your brain.
@@ -309,7 +309,7 @@ export default function HomePage() {
             <CardContent>
               <h3 className="font-display text-xl mb-3">Executive Function & Complex Health</h3>
               <p className="text-foreground/70 text-sm leading-relaxed mb-4">
-                Managing POTS, hEDS, MCAS, or ME/CFS alongside neurodivergence? 
+                Managing POTS, hEDS, MCAS, Chronic Pain or ME/CFS alongside neurodivergence? 
                 Here's why executive function takes the hit.
               </p>
               <Link 
