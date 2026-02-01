@@ -12,30 +12,32 @@ import { useState } from "react";
 // ─── TEAM DATA ───────────────────────────────────────────────────────────────
 // Edit this array to add/remove/update team members.
 // Set "accepting" to false to show the "Not currently accepting referrals" label.
-const TEAM = [
+const team = [
   {
     name: "Liam",
-    role: "Occupational Therapist",
-    accepting: false, // ← this triggers the status label
-    bio: "Liam brings extensive experience in functional capacity assessment and NDIS access applications. He works with youth and adults across a range of complex needs.",
-    services: ["NDIS Access Request Support", "Functional Capacity Assessment", "Occupational Therapy"],
+    role: "Founder & Occupational Therapist",
+    status: "false",
+    bio: "Late-diagnosed autistic clinician with a PDA profile. Liam founded Estus Health to create the kind of support he wished existed — therapy that works with neurodivergent brains, not against them. His focus areas include PDA, gaming-informed therapy, executive function, and supporting adults through the unmasking process.",
+    background: "Degrees in Occupational Therapy, Finance, Computer Science, and Machine Learning.",
+    specialties: ["PDA Profiles", "Gaming-Informed Therapy", "Executive Function", "Unmasking Support"],
   },
   {
-    name: "Sarah",
+    name: "Nik",
     role: "Occupational Therapist",
-    accepting: true,
-    bio: "Sarah specialises in occupational therapy for youth and adults, with a focus on daily living skills, community participation, and goal-based rehabilitation.",
-    services: ["Occupational Therapy", "Functional Capacity Assessment"],
+    status: "Accepting referrals",
+    bio: "Nik brings deep expertise in gaming-informed therapy and understands how to meet clients in the spaces they already feel comfortable. His approach prioritises building genuine connection before any therapeutic 'work' happens — because trust comes first.",
+    background: "Background in gaming culture and neurodivergent-affirming practice.",
+    specialties: ["Gaming-Informed Therapy", "Adolescents & Young Adults", "Executive Function"],
   },
   {
-    name: "Emma",
-    role: "Practice Manager",
-    accepting: true,
-    bio: "Emma manages the day-to-day operations of the practice and is your first point of contact for referrals, scheduling, and general enquiries.",
-    services: ["General enquiries", "Referrals", "Scheduling"],
+    name: "Nam",
+    role: "Occupational Therapist",
+    status: "Accepting referrals",
+    bio: "Nam specialises in working with autistic teens and adults, with particular expertise in anime and gaming-informed approaches. She understands that interests aren't just hobbies — they're windows into how someone thinks, what they value, and where they feel most themselves.",
+    background: "Passionate about anime, gaming, and neuroaffirming practice.",
+    specialties: ["Anime-Informed Therapy", "Gaming", "Teens & Young Adults"],
   },
 ];
-
 // ─── STYLES ──────────────────────────────────────────────────────────────────
 const S = {
   page: {
