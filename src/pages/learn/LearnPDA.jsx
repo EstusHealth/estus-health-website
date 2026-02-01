@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
-  Brain, 
-  AlertTriangle,
-  Heart,
   CheckCircle,
   XCircle,
   BookOpen
@@ -61,7 +58,6 @@ export default function LearnPDA() {
         <div className="max-w-3xl mx-auto">
           <article className="prose prose-invert max-w-none">
             
-            {/* What is PDA */}
             <section className="mb-16">
               <h2 className="text-2xl md:text-3xl font-display mb-6">
                 What is PDA?
@@ -85,7 +81,6 @@ export default function LearnPDA() {
               </p>
             </section>
 
-            {/* How PDA Shows Up */}
             <section className="mb-16">
               <h2 className="text-2xl md:text-3xl font-display mb-6">
                 How PDA Shows Up
@@ -109,10 +104,6 @@ export default function LearnPDA() {
                   <span className="text-primary font-bold">→</span>
                   <span className="text-foreground/80"><strong className="text-foreground">Role play and fantasy</strong> — using imaginative play to process demands or create control.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Surface sociability</strong> — unlike "classic" autism presentations, PDA children often appear socially engaged but struggle with the hidden rules of interaction.</span>
-                </li>
               </ul>
 
               <h3 className="font-display text-xl mb-4 text-primary">In Adults</h3>
@@ -123,11 +114,7 @@ export default function LearnPDA() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Employment difficulties</strong> — struggling with workplace demands, hierarchies, and schedules even when the work itself is enjoyable.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Relationship strain</strong> — partners, family, and friends not understanding why "simple" requests feel so hard.</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Employment difficulties</strong> — struggling with workplace demands even when the work itself is enjoyable.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
@@ -138,18 +125,8 @@ export default function LearnPDA() {
                   <span className="text-foreground/80"><strong className="text-foreground">Difficulty with self-care</strong> — eating, showering, medical appointments become demands too.</span>
                 </li>
               </ul>
-
-              <h3 className="font-display text-xl mb-4 text-primary">The Role of Perceived vs Actual Demands</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                It's important to understand that PDA responds to perceived demands, not just 
-                explicit ones. An internal expectation ("I should really..."), a suggestion 
-                framed as helpful, even praise (which can feel like pressure to repeat the 
-                performance) — all of these can trigger demand avoidance. The nervous system 
-                doesn't distinguish between "you must" and "you could."
-              </p>
             </section>
 
-            {/* PDA vs Other Presentations */}
             <section className="mb-16">
               <h2 className="text-2xl md:text-3xl font-display mb-6">
                 PDA vs Other Presentations
@@ -162,33 +139,23 @@ export default function LearnPDA() {
                       <th className="text-left py-3 pr-4 font-display text-foreground">Feature</th>
                       <th className="text-left py-3 px-4 font-display text-foreground">PDA</th>
                       <th className="text-left py-3 px-4 font-display text-foreground">ODD</th>
-                      <th className="text-left py-3 pl-4 font-display text-foreground">"Classic" Autism</th>
                     </tr>
                   </thead>
                   <tbody className="text-foreground/70">
                     <tr className="border-b border-border/50">
                       <td className="py-3 pr-4 font-medium text-foreground">Root cause</td>
-                      <td className="py-3 px-4">Anxiety / nervous system threat response</td>
-                      <td className="py-3 px-4">Often trauma, attachment, or conduct issues</td>
-                      <td className="py-3 pl-4">Neurological differences in processing</td>
+                      <td className="py-3 px-4">Anxiety / threat response</td>
+                      <td className="py-3 px-4">Often trauma or conduct issues</td>
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="py-3 pr-4 font-medium text-foreground">Response to demands</td>
                       <td className="py-3 px-4">Avoidance driven by overwhelm</td>
-                      <td className="py-3 px-4">Active defiance / oppositional behaviour</td>
-                      <td className="py-3 pl-4">May struggle but often responds to structure</td>
-                    </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="py-3 pr-4 font-medium text-foreground">Social presentation</td>
-                      <td className="py-3 px-4">Often appears socially engaged (surface level)</td>
-                      <td className="py-3 px-4">Varies</td>
-                      <td className="py-3 pl-4">May have more obvious social differences</td>
+                      <td className="py-3 px-4">Active defiance</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-4 font-medium text-foreground">What helps</td>
-                      <td className="py-3 px-4">Reducing demands, increasing autonomy</td>
-                      <td className="py-3 px-4">Boundaries, consistency, addressing root causes</td>
-                      <td className="py-3 pl-4">Often benefits from structure and routine</td>
+                      <td className="py-3 px-4">Reducing demands, autonomy</td>
+                      <td className="py-3 px-4">Boundaries, consistency</td>
                     </tr>
                   </tbody>
                 </table>
@@ -197,15 +164,11 @@ export default function LearnPDA() {
               <Card className="p-4 border-l-2 border-primary bg-primary/5">
                 <p className="text-foreground/80 text-sm">
                   <strong className="text-foreground">Why this matters:</strong> PDA is frequently 
-                  misdiagnosed as ODD (Oppositional Defiant Disorder), leading to interventions that 
-                  make things worse. Behaviour-focused approaches that rely on consequences, rewards, 
-                  and compliance often backfire dramatically with PDA — because the avoidance isn't 
-                  a choice. It's a nervous system response.
+                  misdiagnosed as ODD, leading to interventions that make things worse.
                 </p>
               </Card>
             </section>
 
-            {/* What Helps */}
             <section className="mb-16">
               <h2 className="text-2xl md:text-3xl font-display mb-6">
                 What Helps
@@ -215,8 +178,7 @@ export default function LearnPDA() {
                 <div>
                   <h3 className="font-display text-xl mb-3 text-primary">Low-Demand Approaches</h3>
                   <p className="text-foreground/80 leading-relaxed mb-3">
-                    This doesn't mean "no expectations" — it means reducing unnecessary demands and 
-                    being strategic about essential ones. Questions to ask:
+                    This doesn't mean "no expectations" — it means reducing unnecessary demands:
                   </p>
                   <ul className="space-y-2 text-foreground/70 text-sm">
                     <li className="flex items-start gap-3">
@@ -229,28 +191,17 @@ export default function LearnPDA() {
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Who says this is a requirement? (Is it actually, or is it a social expectation?)</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>What's the cost of not doing this vs the cost of forcing it?</span>
+                      <span>What's the cost of not doing this vs forcing it?</span>
                     </li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h3 className="font-display text-xl mb-3 text-primary">Autonomy and Collaboration Over Compliance</h3>
-                  <p className="text-foreground/80 leading-relaxed mb-3">
-                    PDA responds well to feeling in control. This might look like:
-                  </p>
+                  <h3 className="font-display text-xl mb-3 text-primary">Autonomy Over Compliance</h3>
                   <ul className="space-y-2 text-foreground/70 text-sm">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                       <span>Offering genuine choices (not "do this or else")</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Negotiating rather than directing</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
@@ -264,10 +215,7 @@ export default function LearnPDA() {
                 </div>
                 
                 <div>
-                  <h3 className="font-display text-xl mb-3 text-primary">Why Traditional Behaviour Strategies Backfire</h3>
-                  <p className="text-foreground/80 leading-relaxed mb-3">
-                    Approaches that work for other presentations often make PDA worse:
-                  </p>
+                  <h3 className="font-display text-xl mb-3 text-primary">What Backfires</h3>
                   <ul className="space-y-2 text-foreground/70 text-sm">
                     <li className="flex items-start gap-3">
                       <XCircle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
@@ -285,95 +233,41 @@ export default function LearnPDA() {
                       <XCircle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
                       <span><strong className="text-foreground">Praise</strong> — can feel like pressure to repeat performance</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <XCircle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Rigid routines</strong> — become demands themselves</span>
-                    </li>
                   </ul>
-                </div>
-
-                <div>
-                  <h3 className="font-display text-xl mb-3 text-primary">The Importance of Nervous System Regulation</h3>
-                  <p className="text-foreground/80 leading-relaxed">
-                    At its core, PDA is about a nervous system that's easily triggered into 
-                    fight/flight/freeze by demands. Helping someone with PDA means helping their 
-                    nervous system feel safe. This might include sensory accommodations, reducing 
-                    environmental stressors, building in recovery time, and prioritising co-regulation 
-                    (calm presence) over correction.
-                  </p>
                 </div>
               </div>
             </section>
 
-            {/* How We Work With PDA */}
             <section className="mb-16">
               <h2 className="text-2xl md:text-3xl font-display mb-6">
                 How We Work With PDA at Estus Health
               </h2>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                Our entire approach is built around what actually helps PDA — not what the 
-                textbooks say should work. This means:
-              </p>
               
               <div className="grid gap-4">
                 <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">"We don't force change. We walk alongside."</h3>
+                  <h3 className="font-display text-lg mb-2">Low-Demand Therapy</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
-                    Our philosophy isn't about compliance or pushing through. It's about reducing 
-                    pressure until the next step feels possible — however long that takes.
+                    Our philosophy isn't about compliance. It's about reducing pressure until 
+                    the next step feels possible — however long that takes.
                   </p>
                 </Card>
                 
                 <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">Gaming-Informed Therapy as a Low-Demand Entry Point</h3>
+                  <h3 className="font-display text-lg mb-2">Gaming-Informed Approaches</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
-                    Traditional therapy is full of demands — sit here, talk about this, do this 
-                    exercise. Gaming-informed therapy meets people in a space that already feels 
-                    safe, where engagement happens naturally rather than being demanded.
+                    Traditional therapy is full of demands. Gaming-informed therapy meets people 
+                    in a space that already feels safe.
                   </p>
                 </Card>
                 
                 <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">Resistance Breaker Support</h3>
+                  <h3 className="font-display text-lg mb-2">Lived Experience</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
-                    Our trained support workers specialise in that moment where knowing and doing 
-                    don't connect. Through body doubling, co-regulation, and gentle presence, they 
-                    help bridge the gap — without adding pressure.
-                  </p>
-                </Card>
-                
-                <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">Lived Experience on the Team</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
-                    Several of our team members have PDA profiles themselves, or parent children 
-                    with PDA. We understand this from the inside — not just from textbooks.
+                    Several team members have PDA profiles themselves. We understand from the 
+                    inside — not just from textbooks.
                   </p>
                 </Card>
               </div>
-            </section>
-
-            {/* Further Learning */}
-            <section className="mb-16">
-              <h2 className="text-2xl md:text-3xl font-display mb-6">
-                Further Learning
-              </h2>
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                For more information about PDA, we recommend:
-              </p>
-              <ul className="space-y-2 text-foreground/70">
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                  <span><strong className="text-foreground">PDA Society</strong> (pdasociety.org.uk) — the leading resource for PDA information and support</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                  <span><strong className="text-foreground">At Peace Parents</strong> — resources for low-demand parenting</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                  <span><strong className="text-foreground">"The Family Experience of PDA"</strong> by Eliza Fricker — an accessible, illustrated guide</span>
-                </li>
-              </ul>
             </section>
 
           </article>
@@ -388,7 +282,7 @@ export default function LearnPDA() {
           </h2>
           <p className="text-foreground/70 mb-8">
             We understand why traditional approaches haven't worked. Our team specialises 
-            in support that actually helps — for PDA children, teens, and adults.
+            in support that actually helps.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button to="/contact" size="lg">
@@ -402,7 +296,7 @@ export default function LearnPDA() {
         </div>
       </Section>
 
-      {/* Related Content */}
+      {/* Related */}
       <Section>
         <h2 className="text-xl font-display mb-6">Related Reading</h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -410,183 +304,7 @@ export default function LearnPDA() {
             <CardContent>
               <h3 className="font-display text-lg mb-2">Late Autism Diagnosis</h3>
               <p className="text-foreground/70 text-sm mb-4">
-                Why autism gets missed and what late diagnosis means for understanding yourself.
-              </p>
-              <Link 
-                to="/learn/late-autism-diagnosis" 
-                className="inline-flex items-center text-primary text-sm font-medium"
-              >
-                Read guide <ArrowRight className="ml-1 w-4 h-4" />
-              </Link>
-            </CardContent>
-          </Card>
-          <Card hover>
-            <CardContent>
-              <h3 className="font-display text-lg mb-2">Executive Function & Complex Health</h3>
-              <p className="text-foreground/70 text-sm mb-4">
-                Managing POTS, hEDS, MCAS, or ME/CFS alongside neurodivergence.
-              </p>
-              <Link 
-                to="/learn/executive-function-complex-health" 
-                className="inline-flex items-center text-primary text-sm font-medium"
-              >
-                Read guide <ArrowRight className="ml-1 w-4 h-4" />
-              </Link>
-            </CardContent>
-          </Card>
-        </div>
-      </Section>
-    </>
-  );
-}>
-                  <h3 className="font-display text-xl mb-3 text-primary">Why Traditional Behaviour Strategies Backfire</h3>
-                  <p className="text-foreground/80 leading-relaxed mb-3">
-                    Approaches that work for other children or other autism presentations often 
-                    make PDA worse:
-                  </p>
-                  <ul className="space-y-2 text-foreground/70 text-sm">
-                    <li className="flex items-start gap-3">
-                      <XCircle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Reward charts</strong> — create a demand to earn the reward</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <XCircle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Consequences</strong> — increase anxiety and threat response</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <XCircle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Firm boundaries without flexibility</strong> — trigger fight/flight</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <XCircle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Praise for compliance</strong> — can feel like pressure to repeat</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <XCircle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Rigid routines</strong> — become demands in themselves</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="font-display text-xl mb-3 text-primary">Nervous System Regulation</h3>
-                  <p className="text-foreground/80 leading-relaxed">
-                    Because PDA is fundamentally an anxiety-driven response, supporting nervous 
-                    system regulation is key. This might include sensory supports, co-regulation 
-                    (being calm alongside someone rather than trying to make them calm), reducing 
-                    environmental stressors, and building in genuine rest — not as a reward, but 
-                    as a baseline need.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* How We Work With PDA */}
-            <section className="mb-16">
-              <h2 className="text-2xl md:text-3xl font-display mb-6">
-                How We Work With PDA at Estus Health
-              </h2>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                Our entire approach is built around understanding PDA — not as an afterthought, 
-                but as a core consideration. Many of our team have lived experience of PDA, and 
-                all of our interventions are designed to work with the nervous system, not against it.
-              </p>
-              
-              <div className="grid gap-4">
-                <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">Our Philosophy</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
-                    "We don't force change. We walk alongside until the next step feels possible." 
-                    This isn't just a tagline — it's how we structure every session.
-                  </p>
-                </Card>
-                
-                <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">Gaming-Informed Therapy</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
-                    Gaming offers a low-demand entry point where the person has control. We meet 
-                    people in the spaces where they already feel safe — and work from there.
-                  </p>
-                </Card>
-                
-                <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">Resistance Breaker Support</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
-                    Our Resistance Breakers specialise in that moment of paralysis — gently 
-                    helping bridge the gap between wanting to do something and being able to 
-                    start. No pressure. No judgement. Just presence.
-                  </p>
-                </Card>
-                
-                <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">Flexible, Adaptive Sessions</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
-                    If today isn't a therapy day, it isn't a therapy day. We adapt to capacity 
-                    rather than forcing a structure that increases demand.
-                  </p>
-                </Card>
-              </div>
-            </section>
-
-            {/* Further Learning */}
-            <section className="mb-8">
-              <h2 className="text-2xl md:text-3xl font-display mb-6">
-                Further Learning
-              </h2>
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                We recommend these resources for deeper understanding:
-              </p>
-              <ul className="space-y-2 text-foreground/70 text-sm">
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">PDA Society</strong> — pdasociety.org.uk — research, resources, and community</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">"Understanding Pathological Demand Avoidance Syndrome in Children"</strong> by Phil Christie et al.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">"The Family Experience of PDA"</strong> by Eliza Fricker</span>
-                </li>
-              </ul>
-            </section>
-
-          </article>
-        </div>
-      </Section>
-
-      {/* CTA */}
-      <Section className="bg-card border-t border-border">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-display mb-4">
-            Looking for PDA-Informed Support?
-          </h2>
-          <p className="text-foreground/70 mb-8">
-            We specialise in working with PDA profiles — for children, teens, and adults. 
-            Our approach is built from the ground up to work with demand avoidance, not against it.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button to="/contact" size="lg">
-              Make a Referral
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button to="/services/gaming-informed-therapy" variant="outline" size="lg">
-              Gaming-Informed Therapy
-            </Button>
-          </div>
-        </div>
-      </Section>
-
-      {/* Related Content */}
-      <Section>
-        <h2 className="text-xl font-display mb-6">Related Reading</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card hover>
-            <CardContent>
-              <h3 className="font-display text-lg mb-2">Late Autism Diagnosis</h3>
-              <p className="text-foreground/70 text-sm mb-4">
-                Why autism gets missed and what it means to be diagnosed as an adult.
+                Why autism gets missed and what late diagnosis means.
               </p>
               <Link 
                 to="/learn/late-autism-diagnosis" 
