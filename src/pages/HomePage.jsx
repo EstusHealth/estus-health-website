@@ -95,12 +95,6 @@ export default function HomePage() {
             href="/services/gaming-informed-therapy"
           />
           <FeatureCard
-            icon={Brain}
-            title="Executive Function Support"
-            description="Resistance Breaker sessions, body doubling, and systems that account for fluctuating capacity. Not productivity hacks — real support."
-            href="/services/executive-function-support"
-          />
-          <FeatureCard
             icon={FileText}
             title="Assessments & Reports"
             description="Functional capacity assessments, NDIS reports, and documentation that translates into meaningful action."
