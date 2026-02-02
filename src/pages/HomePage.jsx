@@ -12,7 +12,6 @@ import {
 import { 
   Section, 
   Card, 
-  CardContent, 
   Button, 
   FeatureCard,
   ProcessStep,
@@ -81,6 +80,7 @@ export default function HomePage() {
           </p>
         </div>
         
+        {/* FIXED: Changed from grid-cols-4 to grid-cols-3 */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <FeatureCard
             icon={Heart}
@@ -276,7 +276,8 @@ export default function HomePage() {
         
         <div className="grid md:grid-cols-3 gap-6">
           <Card hover>
-            <CardContent>
+            {/* Using div wrapper for CardContent to avoid breaking if CardContent isn't exported directly in some versions */}
+            <div className="p-6">
               <h3 className="font-display text-xl mb-3">Understanding PDA</h3>
               <p className="text-foreground/70 text-sm leading-relaxed mb-4">
                 Pathological Demand Avoidance explained: what it is, how it shows up, 
@@ -288,10 +289,10 @@ export default function HomePage() {
               >
                 Read guide <ArrowRight className="ml-1 w-4 h-4" />
               </Link>
-            </CardContent>
+            </div>
           </Card>
           <Card hover>
-            <CardContent>
+            <div className="p-6">
               <h3 className="font-display text-xl mb-3">Late Autism Diagnosis</h3>
               <p className="text-foreground/70 text-sm leading-relaxed mb-4">
                 Why autism gets missed, what late diagnosis feels like, and how to 
@@ -303,10 +304,10 @@ export default function HomePage() {
               >
                 Read guide <ArrowRight className="ml-1 w-4 h-4" />
               </Link>
-            </CardContent>
+            </div>
           </Card>
           <Card hover>
-            <CardContent>
+            <div className="p-6">
               <h3 className="font-display text-xl mb-3">Executive Function & Complex Health</h3>
               <p className="text-foreground/70 text-sm leading-relaxed mb-4">
                 Managing POTS, hEDS, MCAS, Chronic Pain or ME/CFS alongside neurodivergence? 
@@ -318,7 +319,7 @@ export default function HomePage() {
               >
                 Read guide <ArrowRight className="ml-1 w-4 h-4" />
               </Link>
-            </CardContent>
+            </div>
           </Card>
         </div>
       </Section>
