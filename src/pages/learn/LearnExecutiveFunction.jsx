@@ -384,14 +384,6 @@ export default function LearnExecutiveFunction() {
                   </p>
                 </Card>
                 
-                <Card className="p-4 border-primary/20">
-                  <h3 className="font-display text-lg mb-2">Resistance Breaker Sessions</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">
-                    Our trained support workers specialise in that moment between knowing what to 
-                    do and actually doing it. Through body doubling, gentle accountability, and 
-                    co-regulation, they help bridge the gap — without pressure or shame.
-                  </p>
-                </Card>
                 
                 <Card className="p-4 border-primary/20">
                   <h3 className="font-display text-lg mb-2">Coordination With Your Other Providers</h3>
