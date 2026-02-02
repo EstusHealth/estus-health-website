@@ -7,21 +7,21 @@
 :root {
   /* --- CHARCOAL THEME TOKENS --- */
   
-  /* Background: Deep Charcoal (Slate-ish Grey) */
+  /* Background: Deep Charcoal (Slate-ish Grey) - Was 0 0% 8% */
   --background: 220 15% 16%;
-  /* Foreground: Soft Off-White */
+  /* Foreground: Soft Off-White - Maintained */
   --foreground: 40 10% 94%;
   
-  /* Card: Lighter Charcoal / Graphite */
-  --card: 220 15% 22%;
+  /* Card: Lighter Charcoal / Graphite - Was 0 0% 10% */
+  --card: 220 15% 20%;
   --card-foreground: 40 10% 94%;
   
   /* Primary: Burnt Orange (Maintained) */
   --primary: 24 90% 48%;
   --primary-foreground: 0 0% 100%;
   
-  /* Secondary: Dark Slate */
-  --secondary: 220 15% 26%;
+  /* Secondary: Dark Slate - Was 0 0% 15% */
+  --secondary: 220 15% 24%;
   --secondary-foreground: 40 10% 94%;
   
   /* Muted: Muted Grey */
@@ -32,13 +32,16 @@
   --accent: 24 90% 48%;
   --accent-foreground: 0 0% 100%;
   
-  /* Border: Medium Grey */
-  --border: 220 15% 28%;
-  --input: 220 15% 28%;
+  /* Border: Medium Grey - Was 0 0% 20% */
+  --border: 220 15% 26%;
+  --input: 220 15% 26%;
   --ring: 24 90% 48%;
   
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 100%;
+  
+  /* Named aliases */
+  --burnt-orange: 24 90% 48%;
   
   /* Radius */
   --radius: 0.25rem;
@@ -59,8 +62,8 @@
 
 body {
   font-family: var(--font-body);
-  /* Charcoal Gradient */
-  background: linear-gradient(180deg, hsl(220 15% 16%) 0%, hsl(220 15% 14%) 100%);
+  /* Charcoal Gradient Background */
+  background: linear-gradient(180deg, hsl(220 15% 16%) 0%, hsl(220 15% 13%) 100%);
   color: hsl(var(--foreground));
   min-height: 100vh;
 }
