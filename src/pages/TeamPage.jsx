@@ -55,7 +55,7 @@ export default function TeamPage() {
             
             <div className="relative aspect-[16/9] md:aspect-[21/9] lg:aspect-[3/1] bg-card">
               <img 
-                src="/team-photo.jpg" 
+                src="/team-photo.jpeg" 
                 alt="The Estus Health Team" 
                 className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
               />
@@ -68,7 +68,7 @@ export default function TeamPage() {
                   The Estus Health Team
                 </h3>
                 <p className="text-white/80 font-serif italic text-sm md:text-base drop-shadow-md">
-                  Liam, Nik & Nam
+                  Liam, Nam & Nik
                 </p>
               </div>
             </div>
