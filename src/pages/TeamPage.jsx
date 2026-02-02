@@ -34,7 +34,7 @@ export default function TeamPage() {
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mb-12">
             <p className="text-primary font-display text-sm uppercase tracking-widest mb-4">
               Our Team
             </p>
@@ -46,6 +46,32 @@ export default function TeamPage() {
               neurodivergent ourselves — we understand this work from the inside, not just 
               from textbooks.
             </p>
+          </div>
+
+          {/* Team Photo Section */}
+          <div className="relative w-full rounded-xl overflow-hidden border border-border shadow-heavy group">
+            {/* Glow effect behind */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+            
+            <div className="relative aspect-[16/9] md:aspect-[21/9] lg:aspect-[3/1] bg-card">
+              <img 
+                src="/team-photo.jpg" 
+                alt="The Estus Health Team" 
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+              
+              {/* Caption */}
+              <div className="absolute bottom-0 left-0 p-6 md:p-8">
+                <h3 className="text-white font-display text-2xl md:text-3xl mb-1 drop-shadow-md">
+                  The Estus Health Team
+                </h3>
+                <p className="text-white/80 font-serif italic text-sm md:text-base drop-shadow-md">
+                  Liam, Nik & Nam
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -59,7 +85,7 @@ export default function TeamPage() {
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
                   {/* Photo placeholder */}
                   <div className="flex-shrink-0">
-                    <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-lg bg-secondary flex items-center justify-center">
+                    <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-lg bg-secondary flex items-center justify-center border border-border">
                       <span className="text-4xl font-display text-primary">{member.name[0]}</span>
                     </div>
                   </div>
