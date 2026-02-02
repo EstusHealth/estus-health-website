@@ -1,19 +1,12 @@
-// Contact.jsx
-//
-// Full page component for the contact/get-in-touch page.
-// Save as: app/contact/page.jsx  (or wherever your contact route lives)
-//
-// Links to /forms — adjust the href if your forms page is at a different route.
-
 import { useState } from "react";
 
-// ─── STYLES ──────────────────────────────────────────────────────────────────
+// ─── STYLES (CHARCOAL THEME) ────────────────────────────────────────────────
 const S = {
   page: {
     minHeight: "100vh",
-    background: "hsl(0 0% 8%)",
-    backgroundImage: "linear-gradient(180deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%)",
-    color: "hsl(40 10% 92%)",
+    background: "hsl(220 15% 16%)", // Charcoal
+    backgroundImage: "linear-gradient(180deg, hsl(220 15% 16%) 0%, hsl(220 15% 14%) 100%)",
+    color: "hsl(40 10% 94%)",
     fontFamily: "'Inter', sans-serif",
     position: "relative",
     overflow: "hidden",
@@ -64,7 +57,7 @@ const S = {
     fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
     lineHeight: 1.1,
     fontWeight: 600,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "1rem",
   },
   accentGradient: {
@@ -78,20 +71,17 @@ const S = {
     fontStyle: "italic",
     fontSize: "1rem",
     lineHeight: 1.7,
-    color: "hsl(40 10% 92% / 0.7)",
+    color: "hsl(40 10% 94% / 0.7)",
     maxWidth: "520px",
     marginBottom: "0.75rem",
   },
-  // Response time — sits right below the hero subheading. Prominent.
   heroResponseTime: {
     fontSize: "0.78rem",
-    color: "hsl(0 0% 55%)",
+    color: "hsl(220 10% 60%)",
     letterSpacing: "0.01em",
   },
 
-  // ── Two-column layout ────────────────────────────────────────────────────
-  // On desktop: form card left, info sidebar right.
-  // On mobile (via the media query in <style>): stacks to single column.
+  // ── Layout ───────────────────────────────────────────────────────────────
   layout: {
     display: "grid",
     gridTemplateColumns: "1fr 320px",
@@ -102,10 +92,10 @@ const S = {
 
   // ── Form card (left) ─────────────────────────────────────────────────────
   card: {
-    background: "hsl(0 0% 10%)",
-    border: "1px solid hsl(0 0% 20%)",
+    background: "hsl(220 15% 22%)", // Lighter Charcoal
+    border: "1px solid hsl(220 15% 28%)",
     borderRadius: "4px",
-    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.4)",
+    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.3)",
     padding: "2.25rem",
   },
   cardTitle: {
@@ -114,12 +104,12 @@ const S = {
     letterSpacing: "0.02em",
     fontSize: "1.35rem",
     fontWeight: 600,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "0.5rem",
   },
   cardBody: {
     fontSize: "0.87rem",
-    color: "hsl(40 10% 92% / 0.6)",
+    color: "hsl(40 10% 94% / 0.6)",
     lineHeight: 1.6,
     marginBottom: "1.75rem",
   },
@@ -143,17 +133,17 @@ const S = {
   },
   ctaNote: {
     fontSize: "0.75rem",
-    color: "hsl(0 0% 55%)",
+    color: "hsl(220 10% 60%)",
     textAlign: "center",
     marginTop: "0.55rem",
   },
 
   // ── Sidebar (right) ──────────────────────────────────────────────────────
   sidebar: {
-    background: "hsl(0 0% 10%)",
-    border: "1px solid hsl(0 0% 20%)",
+    background: "hsl(220 15% 22%)",
+    border: "1px solid hsl(220 15% 28%)",
     borderRadius: "4px",
-    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.4)",
+    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.3)",
     padding: "1.75rem",
   },
   sideTitle: {
@@ -162,10 +152,10 @@ const S = {
     letterSpacing: "0.08em",
     fontSize: "0.78rem",
     fontWeight: 500,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "1rem",
     paddingBottom: "0.7rem",
-    borderBottom: "1px solid hsl(0 0% 20%)",
+    borderBottom: "1px solid hsl(220 15% 28%)",
   },
   sideRow: {
     display: "flex",
@@ -178,25 +168,26 @@ const S = {
     height: "34px",
     minWidth: "34px",
     borderRadius: "4px",
-    background: "hsl(0 0% 14%)",
-    border: "1px solid hsl(0 0% 20%)",
+    background: "hsl(220 15% 26%)",
+    border: "1px solid hsl(220 15% 30%)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontSize: "0.82rem",
+    color: "hsl(40 10% 94%)",
   },
   sideLabel: {
     fontFamily: "'Oswald', sans-serif",
     textTransform: "uppercase",
     letterSpacing: "0.06em",
     fontSize: "0.62rem",
-    color: "hsl(0 0% 55%)",
+    color: "hsl(220 10% 60%)",
     fontWeight: 500,
     marginBottom: "0.15rem",
   },
   sideValue: {
     fontSize: "0.83rem",
-    color: "hsl(40 10% 92% / 0.8)",
+    color: "hsl(40 10% 94% / 0.8)",
     lineHeight: 1.4,
   },
   sideLink: {
@@ -207,7 +198,7 @@ const S = {
   },
   sideDivider: {
     border: "none",
-    borderTop: "1px solid hsl(0 0% 20%)",
+    borderTop: "1px solid hsl(220 15% 28%)",
     margin: "0.9rem 0",
   },
 
@@ -231,11 +222,11 @@ const S = {
     letterSpacing: "0.02em",
     fontSize: "1.25rem",
     fontWeight: 500,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "1.25rem",
   },
   faqItem: {
-    borderBottom: "1px solid hsl(0 0% 20%)",
+    borderBottom: "1px solid hsl(220 15% 28%)",
     paddingBottom: "1rem",
     marginBottom: "1rem",
   },
@@ -245,48 +236,47 @@ const S = {
     alignItems: "center",
     fontSize: "0.9rem",
     fontWeight: 500,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     cursor: "pointer",
     userSelect: "none",
   },
   faqToggle: {
     fontSize: "0.65rem",
-    color: "hsl(0 0% 55%)",
+    color: "hsl(220 10% 60%)",
     transition: "transform 200ms cubic-bezier(.4,0,.2,1)",
   },
   faqA: {
     fontSize: "0.83rem",
-    color: "hsl(0 0% 60%)",
+    color: "hsl(220 10% 70%)",
     lineHeight: 1.6,
     marginTop: "0.5rem",
   },
 };
-
-// ─── FAQ DATA ────────────────────────────────────────────────────────────────
-const FAQS = [
-  {
-    q: "Do I need a GP referral?",
-    a: "No. Self-referrals are welcome for all of our services. You can refer yourself or a family member directly using the self-referral form — no GP letter needed.",
-  },
-  {
-    q: "How quickly will someone get back to me?",
-    a: "We aim to respond to all enquiries within 24 hours. If you submit outside of business hours, you'll hear from us on the next business day.",
-  },
-  {
-    q: "What funding types do you accept?",
-    a: "We accept private, self-managed NDIS, and plan-managed NDIS clients across all of our services.",
-  },
-  {
-    q: "What if I'm not sure which service I need?",
-    a: "That's completely fine — just get in touch and we'll help you work out the right fit. The contact form is the quickest way to start that conversation.",
-  },
-];
 
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
 export default function Contact() {
   const [hoverBtn, setHoverBtn] = useState(false);
   const [hoverEmail, setHoverEmail] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
+
+  const FAQS = [
+    {
+      q: "Do I need a GP referral?",
+      a: "No. Self-referrals are welcome for all of our services. You can refer yourself or a family member directly using the self-referral form — no GP letter needed.",
+    },
+    {
+      q: "How quickly will someone get back to me?",
+      a: "We aim to respond to all enquiries within 24 hours. If you submit outside of business hours, you'll hear from us on the next business day.",
+    },
+    {
+      q: "What funding types do you accept?",
+      a: "We accept private, self-managed NDIS, and plan-managed NDIS clients across all of our services.",
+    },
+    {
+      q: "What if I'm not sure which service I need?",
+      a: "That's completely fine — just get in touch and we'll help you work out the right fit. The contact form is the quickest way to start that conversation.",
+    },
+  ];
 
   return (
     <div style={S.page}>
@@ -303,7 +293,7 @@ export default function Contact() {
       <div style={S.wrap}>
 
         {/* ════════════════════════════════════════════════════════════════════
-            HERO — response time is right here, visible immediately.
+            HERO
         ════════════════════════════════════════════════════════════════════ */}
         <div style={S.hero}>
           <div style={S.heroLabel}>
@@ -320,11 +310,11 @@ export default function Contact() {
         </div>
 
         {/* ════════════════════════════════════════════════════════════════════
-            MAIN LAYOUT — form card + sidebar
+            MAIN LAYOUT
         ════════════════════════════════════════════════════════════════════ */}
         <div className="contact-layout" style={S.layout}>
 
-          {/* Left: card pointing to the forms page */}
+          {/* Left: card */}
           <div style={S.card}>
             <h2 style={S.cardTitle}>Send us a message</h2>
             <p style={S.cardBody}>
@@ -347,7 +337,7 @@ export default function Contact() {
             <div style={S.ctaNote}>Response time within 24 hours</div>
           </div>
 
-          {/* Right: other ways to reach us */}
+          {/* Right: sidebar */}
           <div style={S.sidebar}>
             <div style={S.sideTitle}>Other ways to reach us</div>
 
@@ -356,7 +346,7 @@ export default function Contact() {
               <div>
                 <div style={S.sideLabel}>Email</div>
                 <a
-                  href="mailto:hello@vibrantvillagevibe.com.au"
+                  href="mailto:hello@estushealth.com"
                   style={{
                     ...S.sideValue,
                     ...S.sideLink,
