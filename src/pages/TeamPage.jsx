@@ -24,7 +24,7 @@ const team = [
     status: "Accepting referrals",
     bio: "Nam specialises in working with autistic youth and adults, with particular expertise in anime and gaming-informed approaches. He understands that interests aren't just hobbies — they're windows into how someone thinks, what they value, and where they feel most themselves.",
     background: "Passionate about anime, gaming, and neuroaffirming practice.",
-    specialties: ["Anime-Informed Therapy", "Gaming", "Teens & Young Adults"],
+    specialties: ["Anime-Informed Therapy", "Gaming", "Kids, Teens & Young Adults"],
   },
 ];
 
