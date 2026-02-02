@@ -1,20 +1,12 @@
-// ForReferrers.jsx
-//
-// Full page component for the referrers/referring page.
-// Save as: app/referrers/page.jsx  (or wherever your referrers route lives)
-//
-// Links to /forms — that's where VVV_Forms.jsx lives. Adjust the href
-// if your forms page is at a different route.
-
 import { useState } from "react";
 
-// ─── STYLES ──────────────────────────────────────────────────────────────────
+// ─── STYLES (CHARCOAL THEME) ────────────────────────────────────────────────
 const S = {
   page: {
     minHeight: "100vh",
-    background: "hsl(0 0% 8%)",
-    backgroundImage: "linear-gradient(180deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%)",
-    color: "hsl(40 10% 92%)",
+    background: "hsl(220 15% 16%)", // Charcoal
+    backgroundImage: "linear-gradient(180deg, hsl(220 15% 16%) 0%, hsl(220 15% 14%) 100%)",
+    color: "hsl(40 10% 94%)",
     fontFamily: "'Inter', sans-serif",
     position: "relative",
     overflow: "hidden",
@@ -65,7 +57,7 @@ const S = {
     fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
     lineHeight: 1.1,
     fontWeight: 600,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "1rem",
   },
   accentGradient: {
@@ -79,13 +71,13 @@ const S = {
     fontStyle: "italic",
     fontSize: "1rem",
     lineHeight: 1.7,
-    color: "hsl(40 10% 92% / 0.7)",
+    color: "hsl(40 10% 94% / 0.7)",
     maxWidth: "580px",
   },
 
-  // ── Self-referral callout (the most important block on the page) ─────────
+  // ── Self-referral callout ───────────────────────────────────────────────
   callout: {
-    background: "hsl(0 0% 10%)",
+    background: "hsl(220 15% 22%)", // Lighter Charcoal
     border: "1px solid hsl(24 90% 48% / 0.3)",
     borderRadius: "4px",
     boxShadow: "0 0 40px hsl(24 90% 48% / 0.07)",
@@ -117,13 +109,13 @@ const S = {
     fontFamily: "'Inter', sans-serif",
     fontSize: "1.1rem",
     fontWeight: 600,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "0.45rem",
     lineHeight: 1.4,
   },
   calloutBody: {
     fontSize: "0.88rem",
-    color: "hsl(40 10% 92% / 0.65)",
+    color: "hsl(40 10% 94% / 0.65)",
     lineHeight: 1.6,
     marginBottom: "1rem",
   },
@@ -158,16 +150,16 @@ const S = {
     letterSpacing: "0.02em",
     fontSize: "1.25rem",
     fontWeight: 500,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "1.25rem",
   },
 
   // ── Card ─────────────────────────────────────────────────────────────────
   card: {
-    background: "hsl(0 0% 10%)",
-    border: "1px solid hsl(0 0% 20%)",
+    background: "hsl(220 15% 22%)",
+    border: "1px solid hsl(220 15% 28%)",
     borderRadius: "4px",
-    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.4)",
+    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.3)",
     padding: "1.75rem 2rem",
   },
 
@@ -183,8 +175,8 @@ const S = {
     height: "28px",
     minWidth: "28px",
     borderRadius: "50%",
-    background: "hsl(0 0% 15%)",
-    border: "1px solid hsl(0 0% 22%)",
+    background: "hsl(220 15% 26%)",
+    border: "1px solid hsl(220 15% 30%)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -196,12 +188,12 @@ const S = {
   stepTitle: {
     fontSize: "0.9rem",
     fontWeight: 600,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "0.2rem",
   },
   stepBody: {
     fontSize: "0.82rem",
-    color: "hsl(0 0% 60%)",
+    color: "hsl(220 10% 70%)",
     lineHeight: 1.55,
   },
 
@@ -222,14 +214,14 @@ const S = {
   },
   includeText: {
     fontSize: "0.84rem",
-    color: "hsl(40 10% 92% / 0.7)",
+    color: "hsl(40 10% 94% / 0.7)",
     lineHeight: 1.55,
   },
 
   // ── Funding badge ────────────────────────────────────────────────────────
   fundingBadge: {
-    background: "hsl(0 0% 12%)",
-    border: "1px solid hsl(0 0% 20%)",
+    background: "hsl(220 15% 26%)",
+    border: "1px solid hsl(220 15% 30%)",
     borderRadius: "4px",
     padding: "0.9rem 1.1rem",
     marginTop: "1.25rem",
@@ -239,7 +231,7 @@ const S = {
     textTransform: "uppercase",
     letterSpacing: "0.12em",
     fontSize: "0.58rem",
-    color: "hsl(0 0% 55%)",
+    color: "hsl(220 10% 60%)",
     fontWeight: 500,
     marginBottom: "0.3rem",
   },
@@ -247,14 +239,14 @@ const S = {
     fontFamily: "'Libre Baskerville', serif",
     fontStyle: "italic",
     fontSize: "0.87rem",
-    color: "hsl(40 10% 92% / 0.8)",
+    color: "hsl(40 10% 94% / 0.8)",
     lineHeight: 1.5,
   },
 
   // ── CTA block at bottom ──────────────────────────────────────────────────
   cta: {
-    background: "hsl(0 0% 10%)",
-    border: "1px solid hsl(0 0% 20%)",
+    background: "hsl(220 15% 22%)",
+    border: "1px solid hsl(220 15% 28%)",
     borderRadius: "4px",
     padding: "2.75rem 2rem",
     textAlign: "center",
@@ -266,12 +258,12 @@ const S = {
     letterSpacing: "0.02em",
     fontSize: "1.5rem",
     fontWeight: 600,
-    color: "hsl(40 10% 92%)",
+    color: "hsl(40 10% 94%)",
     marginBottom: "0.6rem",
   },
   ctaBody: {
     fontSize: "0.88rem",
-    color: "hsl(0 0% 60%)",
+    color: "hsl(220 10% 70%)",
     marginBottom: "1.5rem",
     lineHeight: 1.55,
   },
@@ -296,7 +288,7 @@ const S = {
   },
   ctaNote: {
     fontSize: "0.75rem",
-    color: "hsl(0 0% 55%)",
+    color: "hsl(220 10% 60%)",
     marginTop: "0.6rem",
   },
 };
@@ -334,9 +326,7 @@ export default function Referrers() {
         </div>
 
         {/* ════════════════════════════════════════════════════════════════════
-            SELF-REFERRAL CALLOUT — sits at the top, before anything else.
-            This is the key scope requirement: self-referrals must be prominent,
-            not buried.
+            SELF-REFERRAL CALLOUT
         ════════════════════════════════════════════════════════════════════ */}
         <div style={S.callout}>
           <div style={S.calloutBar} />
@@ -411,29 +401,29 @@ export default function Referrers() {
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(40 10% 92%)" }}>Client's name and contact details</strong> — or yours, if you're referring yourself.
+                <strong style={{ color: "hsl(40 10% 94%)" }}>Client's name and contact details</strong> — or yours, if you're referring yourself.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(40 10% 92%)" }}>What service you're enquiring about</strong> — NDIS Access Request Support, Functional Capacity Assessment, or Occupational Therapy.
+                <strong style={{ color: "hsl(40 10% 94%)" }}>What service you're enquiring about</strong> — NDIS Access Request Support, Functional Capacity Assessment, or Occupational Therapy.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(40 10% 92%)" }}>Funding type</strong> — Private, self-managed NDIS, or plan-managed NDIS.
+                <strong style={{ color: "hsl(40 10% 94%)" }}>Funding type</strong> — Private, self-managed NDIS, or plan-managed NDIS.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(40 10% 92%)" }}>A brief description of the client's needs</strong> — even a few sentences helps us prepare.
+                <strong style={{ color: "hsl(40 10% 94%)" }}>A brief description of the client's needs</strong> — even a few sentences helps us prepare.
               </div>
             </div>
 
-            {/* Funding wording — exact approved string */}
+            {/* Funding wording */}
             <div style={S.fundingBadge}>
               <div style={S.fundingLabel}>Funding</div>
               <div style={S.fundingText}>
