@@ -5,6 +5,7 @@ import AboutApproach from './pages/AboutApproach';
 import TeamPage from './pages/TeamPage';
 import OccupationalTherapy from './pages/services/OccupationalTherapy';
 import GamingInformedTherapy from './pages/services/GamingInformedTherapy';
+import MinecraftProgram from './pages/services/MinecraftProgram'; // New Import
 import AssessmentsReports from './pages/services/AssessmentsReports';
 import ForReferrers from './pages/ForReferrers';
 import ContactPage from './pages/ContactPage';
@@ -25,6 +26,7 @@ function App() {
           <Route path="services">
             <Route path="occupational-therapy" element={<OccupationalTherapy />} />
             <Route path="gaming-informed-therapy" element={<GamingInformedTherapy />} />
+            <Route path="minecraft-program" element={<MinecraftProgram />} /> {/* New Route */}
             <Route path="assessments-reports" element={<AssessmentsReports />} />
           </Route>
           <Route path="for-referrers" element={<ForReferrers />} />
