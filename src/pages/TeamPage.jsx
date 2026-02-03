@@ -8,7 +8,7 @@ const team = [
     status: "Accepting referrals",
     bio: "Nik brings deep expertise in gaming-informed therapy and understands how to meet clients in the spaces they already feel comfortable. His approach prioritises building genuine connection before any therapeutic 'work' happens — because trust comes first.",
     background: "Background in gaming culture and neurodivergent-affirming practice.",
-    specialties: ["Gaming-Informed Therapy", "Adolescents & Young Adults", "Executive Function"],
+    specialties: ["Gaming-Informed Therapy", "Adolescents & Young Adults", "Executive Function", "Assessment"],
   },
   {
     name: "Nam",
@@ -16,7 +16,7 @@ const team = [
     status: "Accepting referrals",
     bio: "Nam specialises in working with autistic youth and adults, with particular expertise in anime and gaming-informed approaches. He understands that interests aren't just hobbies — they're windows into how someone thinks, what they value, and where they feel most themselves.",
     background: "Passionate about anime, gaming, and neuroaffirming practice.",
-    specialties: ["Anime-Informed Therapy", "Gaming", "Kids, Teens & Young Adults"],
+    specialties: ["Anime-Informed Therapy", "Gaming Informed Therapy", "Youth & Young Adults"],
   },
    {
     name: "Liam",
