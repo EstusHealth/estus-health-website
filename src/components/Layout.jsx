@@ -8,8 +8,7 @@ const navigation = [
     children: [
       { name: 'Occupational Therapy', href: '/services/occupational-therapy' },
       { name: 'Gaming-Informed Therapy', href: '/services/gaming-informed-therapy' },
-      { name: 'Minecraft Program', href: '/services/minecraft-program' }, // Added here
-      { name: 'Executive Function Support', href: '/services/executive-function-support' },
+      { name: 'Minecraft Program', href: '/services/minecraft-program' },
       { name: 'Assessments & Reports', href: '/services/assessments-reports' },
     ],
   },
@@ -218,7 +217,6 @@ function Footer() {
               <li><Link to="/services/occupational-therapy" className="text-foreground/60 hover:text-primary text-sm transition-colors">Occupational Therapy</Link></li>
               <li><Link to="/services/gaming-informed-therapy" className="text-foreground/60 hover:text-primary text-sm transition-colors">Gaming-Informed Therapy</Link></li>
               <li><Link to="/services/minecraft-program" className="text-foreground/60 hover:text-primary text-sm transition-colors">Minecraft Program</Link></li>
-              <li><Link to="/services/executive-function-support" className="text-foreground/60 hover:text-primary text-sm transition-colors">Executive Function Support</Link></li>
               <li><Link to="/services/assessments-reports" className="text-foreground/60 hover:text-primary text-sm transition-colors">Assessments & Reports</Link></li>
             </ul>
           </div>
