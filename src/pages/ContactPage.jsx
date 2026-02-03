@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Section, Card, CardContent, Button, CTABanner } from '../components/ui';
+import { Section, Card, Button } from '../components/ui';
 import { Mail, MapPin, Clock, ChevronDown, ArrowRight } from 'lucide-react';
 
 export default function ContactPage() {
@@ -60,7 +60,12 @@ export default function ContactPage() {
                 form gives us everything we need to get started quickly.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="/forms" size="lg">
+                <Button 
+                  href="https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="lg"
+                >
                   Open Contact Form <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
