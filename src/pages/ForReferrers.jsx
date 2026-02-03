@@ -426,4 +426,44 @@ export default function Referrers() {
             </div>
 
             {/* Funding wording */}
-            <div style={S.
+            <div style={S.fundingBadge}>
+              <div style={S.fundingLabel}>Funding</div>
+              <div style={S.fundingText}>
+                Accepting private, self-managed, and plan-managed NDIS clients.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ════════════════════════════════════════════════════════════════════
+            CTA
+        ════════════════════════════════════════════════════════════════════ */}
+        <div style={S.cta}>
+          <h2 style={S.ctaTitle}>Ready to get started?</h2>
+          <p style={S.ctaBody}>
+            Whether you're referring yourself or a client, the self-referral form is the quickest way in.
+          </p>
+          <a
+            href="https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              ...S.ctaBtn,
+              background: hoverCtaBtn ? "hsl(24 90% 58%)" : "hsl(24 90% 48%)",
+              boxShadow: hoverCtaBtn
+                ? "0 0 40px hsl(24 90% 48% / 0.5)"
+                : "0 0 20px hsl(24 90% 48% / 0.2)",
+            }}
+            onMouseEnter={() => setHoverCtaBtn(true)}
+            onMouseLeave={() => setHoverCtaBtn(false)}
+          >
+            Open the self-referral form →
+          </a>
+          <div style={S.ctaNote}>Response time within 24 hours</div>
+        </div>
+
+        <div style={{ height: "5rem" }} />
+      </div>
+    </div>
+  );
+}
