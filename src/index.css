@@ -3,36 +3,36 @@
 @tailwind utilities;
 
 :root {
-  /* --- WARM EARTHEN THEME TOKENS --- */
+  /* --- WARM EARTHEN LIGHT THEME --- */
   
-  /* Background: Deep Warm Grey (Earthen/Coffee) */
-  --background: 30 6% 12%;
-  /* Foreground: Warm Cream/Off-White */
-  --foreground: 35 20% 92%;
+  /* Background: Warm Cream / Paper White */
+  --background: 40 20% 98%;
+  /* Foreground: Dark Earthen Grey (Soft Black) */
+  --foreground: 30 5% 15%;
   
-  /* Card: Slightly Lighter Warm Grey */
-  --card: 30 6% 17%;
-  --card-foreground: 35 20% 92%;
+  /* Card: Pure White (for contrast against cream bg) */
+  --card: 0 0% 100%;
+  --card-foreground: 30 5% 15%;
   
   /* Primary: Burnt Orange (Maintained) */
   --primary: 24 90% 48%;
   --primary-foreground: 0 0% 100%;
   
-  /* Secondary: Warm Taupe */
-  --secondary: 30 6% 20%;
-  --secondary-foreground: 35 20% 92%;
+  /* Secondary: Light Warm Beige */
+  --secondary: 40 15% 94%;
+  --secondary-foreground: 30 5% 15%;
   
-  /* Muted: Muted Earth */
-  --muted: 30 6% 18%;
-  --muted-foreground: 30 5% 65%;
+  /* Muted: Soft Taupe */
+  --muted: 40 10% 90%;
+  --muted-foreground: 30 5% 45%;
   
   /* Accent: Same as Primary */
   --accent: 24 90% 48%;
   --accent-foreground: 0 0% 100%;
   
-  /* Border: Subtle Warm Grey */
-  --border: 30 6% 22%;
-  --input: 30 6% 22%;
+  /* Border: Warm Grey */
+  --border: 40 10% 88%;
+  --input: 40 10% 88%;
   --ring: 24 90% 48%;
   
   --destructive: 0 84.2% 60.2%;
@@ -49,9 +49,9 @@
   --font-serif: 'Libre Baskerville', serif;
   --font-body: 'Inter', sans-serif;
   
-  /* Shadows - Softer & Warmer */
-  --shadow-heavy: 0 25px 50px -12px rgba(10, 5, 0, 0.5);
-  --shadow-glow: 0 0 60px hsl(24 90% 48% / .12);
+  /* Shadows - Softer for light mode */
+  --shadow-heavy: 0 25px 50px -12px rgba(30, 20, 10, 0.15);
+  --shadow-glow: 0 0 60px hsl(24 90% 48% / .15);
 }
 
 * {
@@ -60,8 +60,8 @@
 
 body {
   font-family: var(--font-body);
-  /* Warm Earthen Gradient Background */
-  background: linear-gradient(180deg, hsl(30 6% 12%) 0%, hsl(30 6% 10%) 100%);
+  /* Warm Light Gradient */
+  background: linear-gradient(180deg, hsl(40 20% 98%) 0%, hsl(40 20% 95%) 100%);
   color: hsl(var(--foreground));
   min-height: 100vh;
 }
@@ -97,18 +97,20 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.035;
+  /* Darker grain for light background visibility */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.04; 
   pointer-events: none;
   z-index: 1;
+  mix-blend-mode: multiply;
 }
 
-/* Vignette overlay - Warmer tone */
+/* Vignette overlay - Reduced for light mode */
 .vignette-overlay::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, hsl(30 10% 5% / .4) 100%);
+  background: radial-gradient(ellipse at center, transparent 0%, hsl(30 10% 10% / .05) 100%);
   pointer-events: none;
 }
 
@@ -139,6 +141,6 @@ html {
 
 /* Selection */
 ::selection {
-  background: hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary) / 0.2);
   color: hsl(var(--foreground));
 }
