@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-// ─── STYLES (CHARCOAL THEME) ────────────────────────────────────────────────
+// ─── STYLES (WARM EARTHEN LIGHT THEME) ───────────────────────────────────────
 const S = {
   page: {
     minHeight: "100vh",
-    background: "hsl(220 15% 16%)", // Charcoal
-    backgroundImage: "linear-gradient(180deg, hsl(220 15% 16%) 0%, hsl(220 15% 14%) 100%)",
-    color: "hsl(40 10% 94%)",
+    background: "hsl(40 20% 98%)", // Warm Cream
+    backgroundImage: "linear-gradient(180deg, hsl(40 20% 98%) 0%, hsl(40 20% 95%) 100%)",
+    color: "hsl(30 5% 15%)", // Dark Earthen Grey
     fontFamily: "'Inter', sans-serif",
     position: "relative",
     overflow: "hidden",
@@ -16,7 +16,8 @@ const S = {
     inset: 0,
     pointerEvents: "none",
     zIndex: 0,
-    opacity: 0.03,
+    opacity: 0.04,
+    mixBlendMode: "multiply",
     backgroundImage:
       "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
     backgroundSize: "256px 256px",
@@ -57,7 +58,7 @@ const S = {
     fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
     lineHeight: 1.1,
     fontWeight: 600,
-    color: "hsl(40 10% 94%)",
+    color: "hsl(30 5% 15%)",
     marginBottom: "1rem",
   },
   accentGradient: {
@@ -71,16 +72,16 @@ const S = {
     fontStyle: "italic",
     fontSize: "1rem",
     lineHeight: 1.7,
-    color: "hsl(40 10% 94% / 0.7)",
+    color: "hsl(30 5% 45%)", // Softer grey for body text
     maxWidth: "580px",
   },
 
   // ── Self-referral callout ───────────────────────────────────────────────
   callout: {
-    background: "hsl(220 15% 22%)", // Lighter Charcoal
+    background: "hsl(0 0% 100%)", // Pure White
     border: "1px solid hsl(24 90% 48% / 0.3)",
     borderRadius: "4px",
-    boxShadow: "0 0 40px hsl(24 90% 48% / 0.07)",
+    boxShadow: "0 0 40px hsl(24 90% 48% / 0.1)", // Softer orange glow
     padding: "2rem 2.25rem",
     display: "flex",
     gap: "1.5rem",
@@ -109,13 +110,13 @@ const S = {
     fontFamily: "'Inter', sans-serif",
     fontSize: "1.1rem",
     fontWeight: 600,
-    color: "hsl(40 10% 94%)",
+    color: "hsl(30 5% 15%)",
     marginBottom: "0.45rem",
     lineHeight: 1.4,
   },
   calloutBody: {
     fontSize: "0.88rem",
-    color: "hsl(40 10% 94% / 0.65)",
+    color: "hsl(30 5% 45%)",
     lineHeight: 1.6,
     marginBottom: "1rem",
   },
@@ -150,16 +151,16 @@ const S = {
     letterSpacing: "0.02em",
     fontSize: "1.25rem",
     fontWeight: 500,
-    color: "hsl(40 10% 94%)",
+    color: "hsl(30 5% 15%)",
     marginBottom: "1.25rem",
   },
 
   // ── Card ─────────────────────────────────────────────────────────────────
   card: {
-    background: "hsl(220 15% 22%)",
-    border: "1px solid hsl(220 15% 28%)",
+    background: "hsl(0 0% 100%)", // White
+    border: "1px solid hsl(40 10% 88%)",
     borderRadius: "4px",
-    boxShadow: "0 4px 6px -1px rgba(0,0,0,0.3)",
+    boxShadow: "0 4px 12px -2px rgba(30, 20, 10, 0.08)",
     padding: "1.75rem 2rem",
   },
 
@@ -175,8 +176,8 @@ const S = {
     height: "28px",
     minWidth: "28px",
     borderRadius: "50%",
-    background: "hsl(220 15% 26%)",
-    border: "1px solid hsl(220 15% 30%)",
+    background: "hsl(40 15% 94%)",
+    border: "1px solid hsl(40 10% 88%)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -188,12 +189,12 @@ const S = {
   stepTitle: {
     fontSize: "0.9rem",
     fontWeight: 600,
-    color: "hsl(40 10% 94%)",
+    color: "hsl(30 5% 15%)",
     marginBottom: "0.2rem",
   },
   stepBody: {
     fontSize: "0.82rem",
-    color: "hsl(220 10% 70%)",
+    color: "hsl(30 5% 45%)",
     lineHeight: 1.55,
   },
 
@@ -214,14 +215,14 @@ const S = {
   },
   includeText: {
     fontSize: "0.84rem",
-    color: "hsl(40 10% 94% / 0.7)",
+    color: "hsl(30 5% 45%)",
     lineHeight: 1.55,
   },
 
   // ── Funding badge ────────────────────────────────────────────────────────
   fundingBadge: {
-    background: "hsl(220 15% 26%)",
-    border: "1px solid hsl(220 15% 30%)",
+    background: "hsl(40 15% 94%)",
+    border: "1px solid hsl(40 10% 88%)",
     borderRadius: "4px",
     padding: "0.9rem 1.1rem",
     marginTop: "1.25rem",
@@ -231,7 +232,7 @@ const S = {
     textTransform: "uppercase",
     letterSpacing: "0.12em",
     fontSize: "0.58rem",
-    color: "hsl(220 10% 60%)",
+    color: "hsl(30 5% 60%)",
     fontWeight: 500,
     marginBottom: "0.3rem",
   },
@@ -239,18 +240,19 @@ const S = {
     fontFamily: "'Libre Baskerville', serif",
     fontStyle: "italic",
     fontSize: "0.87rem",
-    color: "hsl(40 10% 94% / 0.8)",
+    color: "hsl(30 5% 30%)",
     lineHeight: 1.5,
   },
 
   // ── CTA block at bottom ──────────────────────────────────────────────────
   cta: {
-    background: "hsl(220 15% 22%)",
-    border: "1px solid hsl(220 15% 28%)",
+    background: "hsl(0 0% 100%)",
+    border: "1px solid hsl(40 10% 88%)",
     borderRadius: "4px",
     padding: "2.75rem 2rem",
     textAlign: "center",
     marginTop: "3.5rem",
+    boxShadow: "0 4px 12px -2px rgba(30, 20, 10, 0.08)",
   },
   ctaTitle: {
     fontFamily: "'Oswald', sans-serif",
@@ -258,12 +260,12 @@ const S = {
     letterSpacing: "0.02em",
     fontSize: "1.5rem",
     fontWeight: 600,
-    color: "hsl(40 10% 94%)",
+    color: "hsl(30 5% 15%)",
     marginBottom: "0.6rem",
   },
   ctaBody: {
     fontSize: "0.88rem",
-    color: "hsl(220 10% 70%)",
+    color: "hsl(30 5% 45%)",
     marginBottom: "1.5rem",
     lineHeight: 1.55,
   },
@@ -284,11 +286,11 @@ const S = {
     cursor: "pointer",
     textDecoration: "none",
     transition: "all 300ms cubic-bezier(.4,0,.2,1)",
-    boxShadow: "0 0 20px hsl(24 90% 48% / 0.2)",
+    boxShadow: "0 4px 14px hsl(24 90% 48% / 0.3)",
   },
   ctaNote: {
     fontSize: "0.75rem",
-    color: "hsl(220 10% 60%)",
+    color: "hsl(30 5% 60%)",
     marginTop: "0.6rem",
   },
 };
@@ -301,7 +303,6 @@ export default function Referrers() {
   return (
     <div style={S.page}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&family=Libre+Baskerville:ital@0;1&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
       `}</style>
 
@@ -403,25 +404,25 @@ export default function Referrers() {
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(40 10% 94%)" }}>Client's name and contact details</strong> — or yours, if you're referring yourself.
+                <strong style={{ color: "hsl(30 5% 15%)" }}>Client's name and contact details</strong> — or yours, if you're referring yourself.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(40 10% 94%)" }}>What service you're enquiring about</strong> — NDIS Access Request Support, Functional Capacity Assessment, or Occupational Therapy.
+                <strong style={{ color: "hsl(30 5% 15%)" }}>What service you're enquiring about</strong> — NDIS Access Request Support, Functional Capacity Assessment, or Occupational Therapy.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(40 10% 94%)" }}>Funding type</strong> — Private, self-managed NDIS, or plan-managed NDIS.
+                <strong style={{ color: "hsl(30 5% 15%)" }}>Funding type</strong> — Private, self-managed NDIS, or plan-managed NDIS.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(40 10% 94%)" }}>A brief description of the client's needs</strong> — even a few sentences helps us prepare.
+                <strong style={{ color: "hsl(30 5% 15%)" }}>A brief description of the client's needs</strong> — even a few sentences helps us prepare.
               </div>
             </div>
 
