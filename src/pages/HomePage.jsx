@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { 
   Gamepad2, 
   Brain, 
@@ -22,6 +23,44 @@ import {
 export default function HomePage() {
   return (
     <>
+      {/* SEO & Structured Data */}
+      <Helmet>
+        <title>Estus Health | Neuroaffirming Occupational Therapy Perth</title>
+        <meta name="description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "MedicalBusiness",
+              "name": "Estus Health",
+              "image": "https://estushealth.com/team-photo.jpeg",
+              "description": "Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Perth",
+                "addressRegion": "WA",
+                "addressCountry": "AU"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "-31.95",
+                "longitude": "115.86"
+              },
+              "url": "https://estushealth.com",
+              "priceRange": "$$",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "17:00"
+                }
+              ]
+            }
+          `}
+        </script>
+      </Helmet>
+
       {/* Hero */}
       <section className="relative py-24 lg:py-32 xl:py-40 grain-overlay overflow-hidden">
         <div className="container relative z-10">
@@ -80,7 +119,6 @@ export default function HomePage() {
           </p>
         </div>
         
-        {/* FIXED: Changed from grid-cols-4 to grid-cols-3 */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <FeatureCard
             icon={Heart}
@@ -276,7 +314,6 @@ export default function HomePage() {
         
         <div className="grid md:grid-cols-3 gap-6">
           <Card hover>
-            {/* Using div wrapper for CardContent to avoid breaking if CardContent isn't exported directly in some versions */}
             <div className="p-6">
               <h3 className="font-display text-xl mb-3">Understanding PDA</h3>
               <p className="text-foreground/70 text-sm leading-relaxed mb-4">
