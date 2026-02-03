@@ -44,9 +44,8 @@ export default function GamingInformedTherapy() {
           <Card className="p-4 border-l-2 border-primary bg-primary/5 mt-6">
             <p className="text-foreground/80 text-sm">
               <strong className="text-foreground">Note on evidence:</strong> Gaming-informed therapy 
-              is an emerging area of practice. While research is building, we draw on established 
-              principles of play therapy, occupational therapy, and neurodivergent-affirming practice. 
-              We're transparent about what we know and what we're still learning.
+              is an emerging area of practice. We draw on established 
+              principles of play therapy, occupational therapy, and neurodivergent-affirming practice.
             </p>
           </Card>
         </div>
@@ -59,7 +58,7 @@ export default function GamingInformedTherapy() {
           <div className="space-y-3">
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-              <span className="text-foreground/80">Autistic teens and adults who already love gaming</span>
+              <span className="text-foreground/80">Autistic youth and adults who already love gaming</span>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
