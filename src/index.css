@@ -3,43 +3,43 @@
 @tailwind utilities;
 
 :root {
-  /* --- NAVY BLUE LIGHT THEME --- */
+  /* --- ENHANCED AUTUMN THEME (Parchment & Terracotta) --- */
   
-  /* Background: Cool White / Alice Blue tint */
-  --background: 210 40% 98%;
-  /* Foreground: Deep Navy / Charcoal */
-  --foreground: 222 47% 15%;
+  /* Background: Deep Parchment / Antique White */
+  --background: 35 30% 96%;
+  /* Foreground: Deep Espresso (Warm Brown-Black) */
+  --foreground: 30 15% 20%;
   
-  /* Card: Pure White */
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 15%;
+  /* Card: Slightly Lighter Cream (for depth) */
+  --card: 35 30% 98%;
+  --card-foreground: 30 15% 20%;
   
-  /* Primary: Deep Navy Blue */
-  --primary: 222 47% 31%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary: Rich Terracotta / Rust */
+  --primary: 20 75% 45%;
+  --primary-foreground: 35 30% 98%;
   
-  /* Secondary: Light Blue-Grey */
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 15%;
+  /* Secondary: Warm Sand */
+  --secondary: 35 25% 88%;
+  --secondary-foreground: 30 15% 20%;
   
-  /* Muted: Soft Cool Grey */
-  --muted: 210 20% 90%;
-  --muted-foreground: 215 16% 47%;
+  /* Muted: Earthy Taupe */
+  --muted: 35 15% 85%;
+  --muted-foreground: 30 10% 45%;
   
-  /* Accent: Brighter Royal Blue (for gradients) */
-  --accent: 221 83% 53%;
-  --accent-foreground: 0 0% 100%;
+  /* Accent: Golden Maize (for gradients) */
+  --accent: 35 85% 55%;
+  --accent-foreground: 30 15% 20%;
   
-  /* Border: Pale Blue-Grey */
-  --border: 215 20% 90%;
-  --input: 215 20% 90%;
-  --ring: 222 47% 31%;
+  /* Border: Warm Tan */
+  --border: 35 20% 85%;
+  --input: 35 20% 85%;
+  --ring: 20 75% 45%;
   
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 100%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 40 30% 98%;
   
   /* Named aliases */
-  --navy-blue: 222 47% 31%;
+  --terracotta: 20 75% 45%;
   
   /* Radius */
   --radius: 0.25rem;
@@ -49,9 +49,9 @@
   --font-serif: 'Libre Baskerville', serif;
   --font-body: 'Inter', sans-serif;
   
-  /* Shadows - Cool toned */
-  --shadow-heavy: 0 25px 50px -12px rgba(20, 30, 50, 0.15);
-  --shadow-glow: 0 0 60px hsl(222 47% 31% / .15);
+  /* Shadows - Warm and diffuse */
+  --shadow-heavy: 0 25px 50px -12px rgba(40, 30, 20, 0.15);
+  --shadow-glow: 0 0 60px hsl(20 75% 45% / .15);
 }
 
 * {
@@ -60,8 +60,8 @@
 
 body {
   font-family: var(--font-body);
-  /* Cool Light Gradient */
-  background: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(210 40% 95%) 100%);
+  /* Rich Parchment Gradient */
+  background: linear-gradient(180deg, hsl(35 30% 97%) 0%, hsl(35 30% 94%) 100%);
   color: hsl(var(--foreground));
   min-height: 100vh;
 }
@@ -80,9 +80,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal;
 }
 
-/* Accent text gradient - Navy to Royal Blue */
+/* Accent text gradient - Terracotta to Moss/Gold */
 .text-gradient-accent {
-  background: linear-gradient(135deg, hsl(222 47% 31%), hsl(221 83% 53%));
+  /* A gradient capturing the shift from Red leaves to Gold/Green leaves */
+  background: linear-gradient(135deg, hsl(20 75% 45%), hsl(45 70% 45%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -97,29 +98,30 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity: 0.04; 
+  /* Darker grain for paper texture effect */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.06; 
   pointer-events: none;
   z-index: 1;
   mix-blend-mode: multiply;
 }
 
-/* Vignette overlay */
+/* Vignette overlay - Warm sepia tone */
 .vignette-overlay::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, hsl(222 47% 15% / .05) 100%);
+  background: radial-gradient(ellipse at center, transparent 0%, hsl(30 20% 15% / .08) 100%);
   pointer-events: none;
 }
 
 /* Glow pulse animation */
 @keyframes glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 30px hsl(222 47% 31% / 0.15);
+    box-shadow: 0 0 30px hsl(20 75% 45% / 0.15);
   }
   50% {
-    box-shadow: 0 0 60px hsl(222 47% 31% / 0.4);
+    box-shadow: 0 0 60px hsl(20 75% 45% / 0.4);
   }
 }
 
