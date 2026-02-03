@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,10 +5,12 @@
 :root {
   /* --- CHARCOAL THEME TOKENS --- */
   
-  /* Background: Deep Charcoal (Slate-ish Grey) - Was 0 0% 8% */
+  /* Background: Deep Charcoal (Slate-ish Grey) */
   --background: 220 15% 16%;
-  /* Foreground: Soft Off-White - Maintained */
+  /* Foreground: Soft Off-White */
   --foreground: 40 10% 94%;
+  
+  /* ... rest of your CSS remains exactly the same ... */
   
   /* Card: Lighter Charcoal / Graphite - Was 0 0% 10% */
   --card: 220 15% 20%;
