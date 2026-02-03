@@ -274,10 +274,6 @@ function Footer() {
           <p className="text-sm text-foreground/40">
             © {new Date().getFullYear()} Estus Health. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-foreground/40">
-            <span>NDIS Registered Provider</span>
-            <span>ABN: XX XXX XXX XXX</span>
-          </div>
         </div>
       </div>
     </footer>
