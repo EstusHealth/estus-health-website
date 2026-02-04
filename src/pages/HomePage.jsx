@@ -92,10 +92,6 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-noctua-brown/60">
               <span className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-noctua-russet" />
-                NDIS Registered
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-noctua-russet" />
                 Private & Self-Managed
               </span>
               <span className="flex items-center gap-2">
