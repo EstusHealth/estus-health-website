@@ -8,10 +8,10 @@ export default {
     extend: {
       colors: {
         noctua: {
-          beige: '#D1C7B7',     // DARKER: For the main page background
-          bone: '#EAE2D6',      // LIGHTER: For the cards (Understanding PDA, etc.)
-          brown: '#594239',     // Text color
-          russet: '#7D4B3E',    // Button color
+          beige: '#D1C7B7',     // Darker Background (Wall)
+          bone: '#EAE2D6',      // Lighter Card (Paper)
+          brown: '#594239',     // Text
+          russet: '#7D4B3E',    // Button Accent
         },
       },
       backgroundImage: {
