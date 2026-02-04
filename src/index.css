@@ -3,145 +3,29 @@
 @tailwind utilities;
 
 :root {
-  /* --- ENHANCED AUTUMN THEME (Parchment & Terracotta) --- */
-  
-  /* Background: Deep Parchment / Antique White */
-  --background: 35 30% 96%;
-  /* Foreground: Deep Espresso (Warm Brown-Black) */
-  --foreground: 30 15% 20%;
-  
-  /* Card: Slightly Lighter Cream (for depth) */
-  --card: 35 30% 98%;
-  --card-foreground: 30 15% 20%;
-  
-  /* Primary: Rich Terracotta / Rust */
-  --primary: 20 75% 45%;
-  --primary-foreground: 35 30% 98%;
-  
-  /* Secondary: Warm Sand */
-  --secondary: 35 25% 88%;
-  --secondary-foreground: 30 15% 20%;
-  
-  /* Muted: Earthy Taupe */
-  --muted: 35 15% 85%;
-  --muted-foreground: 30 10% 45%;
-  
-  /* Accent: Golden Maize (for gradients) */
-  --accent: 35 85% 55%;
-  --accent-foreground: 30 15% 20%;
-  
-  /* Border: Warm Tan */
-  --border: 35 20% 85%;
-  --input: 35 20% 85%;
-  --ring: 20 75% 45%;
-  
-  --destructive: 0 70% 50%;
-  --destructive-foreground: 40 30% 98%;
-  
-  /* Named aliases */
-  --terracotta: 20 75% 45%;
-  
-  /* Radius */
-  --radius: 0.25rem;
-  
-  /* Font families */
-  --font-display: 'Oswald', sans-serif;
-  --font-serif: 'Libre Baskerville', serif;
-  --font-body: 'Inter', sans-serif;
-  
-  /* Shadows - Warm and diffuse */
-  --shadow-heavy: 0 25px 50px -12px rgba(40, 30, 20, 0.15);
-  --shadow-glow: 0 0 60px hsl(20 75% 45% / .15);
-}
-
-* {
-  border-color: hsl(var(--border));
+  /* Global Variables for easy tweaking */
+  --noctua-bg: #D1C7B7;
+  --noctua-text: #594239;
 }
 
 body {
-  font-family: var(--font-body);
-  /* Rich Parchment Gradient */
-  background: linear-gradient(180deg, hsl(35 30% 97%) 0%, hsl(35 30% 94%) 100%);
-  color: hsl(var(--foreground));
-  min-height: 100vh;
+  background-color: var(--noctua-bg);
+  color: var(--noctua-text);
+  
+  /* THE NOCTUA TEXTURE: Adds a subtle grain to remove "digital flatness" */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  
+  /* Smooths out the fonts for that high-end print look */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Heading styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+/* Base Button Style - Looks like a Noctua fan connector */
+.btn-noctua {
+  @apply bg-noctua-russet text-white font-medium py-2 px-6 rounded shadow-md transition-all duration-300 ease-out hover:bg-noctua-brown hover:shadow-lg hover:-translate-y-0.5;
 }
 
-/* Serif accent text */
-.font-serif {
-  font-family: var(--font-serif);
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-/* Accent text gradient - Terracotta to Moss/Gold */
-.text-gradient-accent {
-  /* A gradient capturing the shift from Red leaves to Gold/Green leaves */
-  background: linear-gradient(135deg, hsl(20 75% 45%), hsl(45 70% 45%));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Film grain overlay */
-.grain-overlay {
-  position: relative;
-}
-
-.grain-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  /* Darker grain for paper texture effect */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity: 0.06; 
-  pointer-events: none;
-  z-index: 1;
-  mix-blend-mode: multiply;
-}
-
-/* Vignette overlay - Warm sepia tone */
-.vignette-overlay::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, hsl(30 20% 15% / .08) 100%);
-  pointer-events: none;
-}
-
-/* Glow pulse animation */
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 30px hsl(20 75% 45% / 0.15);
-  }
-  50% {
-    box-shadow: 0 0 60px hsl(20 75% 45% / 0.4);
-  }
-}
-
-.animate-glow-pulse {
-  animation: glow-pulse 3s ease-in-out infinite;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Focus styles */
-:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
-}
-
-/* Selection */
-::selection {
-  background: hsl(var(--primary) / 0.2);
-  color: hsl(var(--foreground));
+/* Card Style - Looks like a heatsink packaging box */
+.card-noctua {
+  @apply bg-noctua-bone/80 backdrop-blur-sm border border-noctua-brown/10 rounded-lg shadow-sm p-6;
 }
