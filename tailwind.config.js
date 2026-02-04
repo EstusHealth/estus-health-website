@@ -5,13 +5,21 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    // 1. THIS FIXES THE ALIGNMENT & PADDING
+    container: {
+      center: true,       // Automatically centers the container (margin-left: auto, margin-right: auto)
+      padding: "2rem",    // Adds 2rem gap on left and right so text never touches the edge
+      screens: {
+        "2xl": "1400px",  // Limits the max width on giant screens so lines don't get too long
+      },
+    },
     extend: {
+      // 2. YOUR COLOR THEME (From the previous step)
       colors: {
-        // --- THE NEW THEME ---
         border: "#C2B5A8",       // Dark Sand (High contrast borders)
         input: "#C2B5A8",
         ring: "#E85D04",
-        background: "#EFEDE6",   // Warm Oatmeal (Darker than white, makes cards pop)
+        background: "#EFEDE6",   // Warm Oatmeal (Darker than white)
         foreground: "#1A1A1A",   // Soft Black (High contrast text)
         
         primary: {
@@ -19,7 +27,7 @@ export default {
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#EBE9E4",    // Light Grey/Beige for subtle backgrounds
+          DEFAULT: "#EBE9E4",    // Light Grey/Beige
           foreground: "#1A1A1A",
         },
         destructive: {
@@ -39,18 +47,15 @@ export default {
           foreground: "#1A1A1A",
         },
 
-        // --- BACKWARDS COMPATIBILITY ---
-        // This maps your existing code (noctua-bone, noctua-russet) 
-        // to the new theme colors automatically.
+        // Legacy mappings
         noctua: {
-          beige: '#EFEDE6',     // Was Wall -> Now New Background
-          bone: '#FFFFFF',      // Was Paper -> Now Pure White Card
-          brown: '#1A1A1A',     // Was Brown Text -> Now Soft Black
-          russet: '#E85D04',    // Was Brown/Red -> Now Estus Orange
+          beige: '#EFEDE6',
+          bone: '#FFFFFF',
+          brown: '#1A1A1A',
+          russet: '#E85D04',
         },
       },
       backgroundImage: {
-        // Removed the radial gradient to ensure a clean, flat, high-contrast look
         'noctua-gradient': 'none',
       }
     },
