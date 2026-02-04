@@ -3,29 +3,30 @@
 @tailwind utilities;
 
 :root {
-  /* Global Variables for easy tweaking */
   --noctua-bg: #D1C7B7;
+  --noctua-card-bg: #EAE2D6;
   --noctua-text: #594239;
 }
 
 body {
+  /* This applies the DARKER beige to the whole page */
   background-color: var(--noctua-bg);
   color: var(--noctua-text);
   
-  /* THE NOCTUA TEXTURE: Adds a subtle grain to remove "digital flatness" */
+  /* Texture to hide the flatness */
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
   
-  /* Smooths out the fonts for that high-end print look */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base Button Style - Looks like a Noctua fan connector */
-.btn-noctua {
-  @apply bg-noctua-russet text-white font-medium py-2 px-6 rounded shadow-md transition-all duration-300 ease-out hover:bg-noctua-brown hover:shadow-lg hover:-translate-y-0.5;
-}
+@layer components {
+  /* APPLY THIS CLASS TO YOUR CARDS TO FIX THE "SAME COLOR" BUG */
+  .noctua-card {
+    @apply bg-noctua-bone border border-noctua-brown/10 rounded-lg p-6 shadow-sm;
+  }
 
-/* Card Style - Looks like a heatsink packaging box */
-.card-noctua {
-  @apply bg-noctua-bone/80 backdrop-blur-sm border border-noctua-brown/10 rounded-lg shadow-sm p-6;
+  /* Button styling */
+  .btn-primary {
+    @apply bg-noctua-russet text-white px-4 py-2 rounded hover:bg-noctua-brown transition-colors;
+  }
 }
