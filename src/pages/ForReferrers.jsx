@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-// ─── STYLES (ENHANCED AUTUMN THEME) ──────────────────────────────────────────
+// ─── STYLES (UPDATED HIGH CONTRAST THEME) ────────────────────────────────────
 const S = {
   page: {
     minHeight: "100vh",
-    background: "hsl(35 30% 96%)", // Warm Parchment
-    backgroundImage: "linear-gradient(180deg, hsl(35 30% 97%) 0%, hsl(35 30% 94%) 100%)",
-    color: "hsl(30 15% 20%)", // Deep Espresso
+    background: "#EFEDE6", // New Warm Background
+    color: "#1A1A1A",      // New Soft Black Text
     fontFamily: "'Inter', sans-serif",
     position: "relative",
     overflow: "hidden",
@@ -16,7 +15,7 @@ const S = {
     inset: 0,
     pointerEvents: "none",
     zIndex: 0,
-    opacity: 0.06,
+    opacity: 0.04,
     mixBlendMode: "multiply",
     backgroundImage:
       "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
@@ -39,7 +38,7 @@ const S = {
     textTransform: "uppercase",
     letterSpacing: "0.12em",
     fontSize: "0.7rem",
-    color: "hsl(20 75% 45%)", // Terracotta
+    color: "#E85D04", // Brand Orange
     fontWeight: 500,
     marginBottom: "1rem",
     display: "flex",
@@ -49,7 +48,7 @@ const S = {
   heroLabelLine: {
     width: "24px",
     height: "1px",
-    background: "hsl(20 75% 45%)",
+    background: "#E85D04",
   },
   heroTitle: {
     fontFamily: "'Oswald', sans-serif",
@@ -58,11 +57,11 @@ const S = {
     fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
     lineHeight: 1.1,
     fontWeight: 600,
-    color: "hsl(30 15% 20%)",
+    color: "#1A1A1A",
     marginBottom: "1rem",
   },
   accentGradient: {
-    background: "linear-gradient(135deg, hsl(20 75% 45%), hsl(45 70% 45%))",
+    background: "linear-gradient(135deg, #E85D04, #C24D00)", // Orange Gradient
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
@@ -72,16 +71,16 @@ const S = {
     fontStyle: "italic",
     fontSize: "1rem",
     lineHeight: 1.7,
-    color: "hsl(30 10% 45%)",
+    color: "#4A4A4A", // Dark Grey
     maxWidth: "580px",
   },
 
   // ── Self-referral callout ───────────────────────────────────────────────
   callout: {
-    background: "hsl(35 30% 98%)", // Lighter Cream
-    border: "1px solid hsl(20 75% 45% / 0.25)",
-    borderRadius: "4px",
-    boxShadow: "0 0 40px hsl(20 75% 45% / 0.08)",
+    background: "#FFFFFF", // Pure White
+    border: "1px solid #C2B5A8", // Dark Sand Border
+    borderRadius: "8px",
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
     padding: "2rem 2.25rem",
     display: "flex",
     gap: "1.5rem",
@@ -89,8 +88,8 @@ const S = {
     marginBottom: "3.5rem",
   },
   calloutBar: {
-    width: "3px",
-    background: "hsl(20 75% 45%)",
+    width: "4px",
+    background: "#E85D04",
     borderRadius: "2px",
     flexShrink: 0,
   },
@@ -102,7 +101,7 @@ const S = {
     textTransform: "uppercase",
     letterSpacing: "0.12em",
     fontSize: "0.65rem",
-    color: "hsl(20 75% 45%)",
+    color: "#E85D04",
     fontWeight: 500,
     marginBottom: "0.5rem",
   },
@@ -110,13 +109,13 @@ const S = {
     fontFamily: "'Inter', sans-serif",
     fontSize: "1.1rem",
     fontWeight: 600,
-    color: "hsl(30 15% 20%)",
+    color: "#1A1A1A",
     marginBottom: "0.45rem",
     lineHeight: 1.4,
   },
   calloutBody: {
     fontSize: "0.88rem",
-    color: "hsl(30 10% 45%)",
+    color: "#4A4A4A",
     lineHeight: 1.6,
     marginBottom: "1rem",
   },
@@ -124,7 +123,7 @@ const S = {
     display: "inline-flex",
     alignItems: "center",
     gap: "0.35rem",
-    color: "hsl(20 75% 45%)",
+    color: "#E85D04",
     fontFamily: "'Oswald', sans-serif",
     textTransform: "uppercase",
     letterSpacing: "0.1em",
@@ -141,7 +140,7 @@ const S = {
     textTransform: "uppercase",
     letterSpacing: "0.14em",
     fontSize: "0.65rem",
-    color: "hsl(20 75% 45%)",
+    color: "#E85D04",
     fontWeight: 500,
     marginBottom: "0.4rem",
   },
@@ -151,16 +150,16 @@ const S = {
     letterSpacing: "0.02em",
     fontSize: "1.25rem",
     fontWeight: 500,
-    color: "hsl(30 15% 20%)",
+    color: "#1A1A1A",
     marginBottom: "1.25rem",
   },
 
   // ── Card ─────────────────────────────────────────────────────────────────
   card: {
-    background: "hsl(35 30% 98%)",
-    border: "1px solid hsl(35 20% 85%)",
-    borderRadius: "4px",
-    boxShadow: "0 4px 12px -2px rgba(40, 30, 20, 0.06)",
+    background: "#FFFFFF",
+    border: "1px solid #C2B5A8",
+    borderRadius: "8px",
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
     padding: "1.75rem 2rem",
   },
 
@@ -176,25 +175,25 @@ const S = {
     height: "28px",
     minWidth: "28px",
     borderRadius: "50%",
-    background: "hsl(35 25% 88%)",
-    border: "1px solid hsl(35 20% 85%)",
+    background: "#EBE9E4",
+    border: "1px solid #C2B5A8",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontFamily: "'Oswald', sans-serif",
     fontSize: "0.72rem",
     fontWeight: 500,
-    color: "hsl(20 75% 45%)",
+    color: "#E85D04",
   },
   stepTitle: {
     fontSize: "0.9rem",
     fontWeight: 600,
-    color: "hsl(30 15% 20%)",
+    color: "#1A1A1A",
     marginBottom: "0.2rem",
   },
   stepBody: {
     fontSize: "0.82rem",
-    color: "hsl(30 10% 45%)",
+    color: "#4A4A4A",
     lineHeight: 1.55,
   },
 
@@ -210,20 +209,20 @@ const S = {
     height: "6px",
     minWidth: "6px",
     borderRadius: "50%",
-    background: "hsl(20 75% 45%)",
+    background: "#E85D04",
     marginTop: "6px",
   },
   includeText: {
     fontSize: "0.84rem",
-    color: "hsl(30 10% 45%)",
+    color: "#4A4A4A",
     lineHeight: 1.55,
   },
 
   // ── Funding badge ────────────────────────────────────────────────────────
   fundingBadge: {
-    background: "hsl(35 25% 88%)",
-    border: "1px solid hsl(35 20% 85%)",
-    borderRadius: "4px",
+    background: "#EBE9E4",
+    border: "1px solid #C2B5A8",
+    borderRadius: "6px",
     padding: "0.9rem 1.1rem",
     marginTop: "1.25rem",
   },
@@ -232,7 +231,7 @@ const S = {
     textTransform: "uppercase",
     letterSpacing: "0.12em",
     fontSize: "0.58rem",
-    color: "hsl(30 10% 55%)",
+    color: "#5C5C5C",
     fontWeight: 500,
     marginBottom: "0.3rem",
   },
@@ -240,19 +239,19 @@ const S = {
     fontFamily: "'Libre Baskerville', serif",
     fontStyle: "italic",
     fontSize: "0.87rem",
-    color: "hsl(30 15% 30%)",
+    color: "#1A1A1A",
     lineHeight: 1.5,
   },
 
   // ── CTA block at bottom ──────────────────────────────────────────────────
   cta: {
-    background: "hsl(35 30% 98%)",
-    border: "1px solid hsl(35 20% 85%)",
-    borderRadius: "4px",
+    background: "#FFFFFF",
+    border: "1px solid #C2B5A8",
+    borderRadius: "8px",
     padding: "2.75rem 2rem",
     textAlign: "center",
     marginTop: "3.5rem",
-    boxShadow: "0 4px 12px -2px rgba(40, 30, 20, 0.06)",
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
   },
   ctaTitle: {
     fontFamily: "'Oswald', sans-serif",
@@ -260,12 +259,12 @@ const S = {
     letterSpacing: "0.02em",
     fontSize: "1.5rem",
     fontWeight: 600,
-    color: "hsl(30 15% 20%)",
+    color: "#1A1A1A",
     marginBottom: "0.6rem",
   },
   ctaBody: {
     fontSize: "0.88rem",
-    color: "hsl(30 10% 45%)",
+    color: "#4A4A4A",
     marginBottom: "1.5rem",
     lineHeight: 1.55,
   },
@@ -273,8 +272,8 @@ const S = {
     display: "inline-flex",
     alignItems: "center",
     gap: "0.45rem",
-    background: "hsl(20 75% 45%)",
-    color: "hsl(35 30% 98%)",
+    background: "#E85D04",
+    color: "#FFFFFF",
     fontFamily: "'Oswald', sans-serif",
     textTransform: "uppercase",
     letterSpacing: "0.1em",
@@ -286,11 +285,11 @@ const S = {
     cursor: "pointer",
     textDecoration: "none",
     transition: "all 300ms cubic-bezier(.4,0,.2,1)",
-    boxShadow: "0 4px 14px hsl(20 75% 45% / 0.25)",
+    boxShadow: "0 4px 14px rgba(232, 93, 4, 0.25)",
   },
   ctaNote: {
     fontSize: "0.75rem",
-    color: "hsl(30 10% 55%)",
+    color: "#5C5C5C",
     marginTop: "0.6rem",
   },
 };
@@ -343,7 +342,7 @@ export default function Referrers() {
               rel="noopener noreferrer"
               style={{
                 ...S.calloutLink,
-                color: hoverCalloutLink ? "hsl(20 75% 45%)" : "hsl(20 75% 45%)",
+                color: hoverCalloutLink ? "#C24D00" : "#E85D04",
               }}
               onMouseEnter={() => setHoverCalloutLink(true)}
               onMouseLeave={() => setHoverCalloutLink(false)}
@@ -404,25 +403,25 @@ export default function Referrers() {
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(30 15% 20%)" }}>Client's name and contact details</strong> — or yours, if you're referring yourself.
+                <strong style={{ color: "#1A1A1A" }}>Client's name and contact details</strong> — or yours, if you're referring yourself.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(30 15% 20%)" }}>What service you're enquiring about</strong> — NDIS Access Request Support, Functional Capacity Assessment, or Occupational Therapy.
+                <strong style={{ color: "#1A1A1A" }}>What service you're enquiring about</strong> — NDIS Access Request Support, Functional Capacity Assessment, or Occupational Therapy.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(30 15% 20%)" }}>Funding type</strong> — Private, self-managed NDIS, or plan-managed NDIS.
+                <strong style={{ color: "#1A1A1A" }}>Funding type</strong> — Private, self-managed NDIS, or plan-managed NDIS.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(30 15% 20%)" }}>A brief description of the client's needs</strong> — even a few sentences helps us prepare.
+                <strong style={{ color: "#1A1A1A" }}>A brief description of the client's needs</strong> — even a few sentences helps us prepare.
               </div>
             </div>
 
@@ -450,10 +449,10 @@ export default function Referrers() {
             rel="noopener noreferrer"
             style={{
               ...S.ctaBtn,
-              background: hoverCtaBtn ? "hsl(20 75% 45%)" : "hsl(20 75% 45%)",
+              background: hoverCtaBtn ? "#C24D00" : "#E85D04",
               boxShadow: hoverCtaBtn
-                ? "0 0 40px hsl(20 75% 45% / 0.5)"
-                : "0 0 20px hsl(20 75% 45% / 0.2)",
+                ? "0 0 40px rgba(232, 93, 4, 0.5)"
+                : "0 0 20px rgba(232, 93, 4, 0.2)",
             }}
             onMouseEnter={() => setHoverCtaBtn(true)}
             onMouseLeave={() => setHoverCtaBtn(false)}
