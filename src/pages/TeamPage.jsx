@@ -21,7 +21,7 @@ const team = [
    {
     name: "Liam",
     role: "Founder & Occupational Therapist",
-    status: "false",
+    status: "Not Accepting Referrals",
     bio: "Late-diagnosed autistic clinician with a PDA profile. Liam founded Estus Health to create the kind of support he wished existed — therapy that works with neurodivergent brains, not against them. His focus areas include PDA, gaming-informed therapy, executive function, and supporting adults through the unmasking process.",
     background: "Degrees in Occupational Therapy, Finance, Computer Science, and Machine Learning.",
     specialties: ["PDA Profiles", "Gaming-Informed Therapy", "Executive Function", "Unmasking Support"],
