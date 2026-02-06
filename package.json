@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build && node prerender.mjs",
     "preview": "vite preview",
-    "postinstall": "npx playwright install --with-deps chromium"
+    "postinstall": "npx playwright install chromium"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
