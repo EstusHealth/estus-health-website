@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node prerender.mjs",
-    "preview": "vite preview",
-    "postinstall": "npx playwright install chromium"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
