@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build && node prerender.mjs",
-    "preview": "vite preview"
+"scripts": {
+  "dev": "vite",
+  "build": "vite build && node prerender.mjs",
+  "preview": "vite preview",
+  "postinstall": "npx playwright install --with-deps chromium"
+},
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
