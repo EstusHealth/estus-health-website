@@ -6,11 +6,12 @@
 
 @layer base {
   :root {
-    /* Performance Lab Palette */
+    /* Performance Lab Palette (Modified for Readability) */
     --background: 35 30% 92%; /* Noctua Cream */
     --foreground: 20 25% 15%; /* Noctua Black */
 
-    --card: 35 25% 88%;       /* Noctua Tan */
+    /* UPDATED: Card background set to White for better readability */
+    --card: 0 0% 100%;        /* Pure White */
     --card-foreground: 20 25% 15%;
 
     --popover: 35 25% 88%;
@@ -92,8 +93,7 @@
     font-family: var(--font-display);
   }
 
-  /* Grain Texture - Updated to use the new theme's implementation if desired, 
-     or kept compatible with existing structure */
+  /* Grain Texture */
   .grain-overlay {
     position: relative;
   }
