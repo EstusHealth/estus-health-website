@@ -1,63 +1,78 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    // 1. THIS FIXES THE ALIGNMENT & PADDING
     container: {
-      center: true,       // Automatically centers the container (margin-left: auto, margin-right: auto)
-      padding: "2rem",    // Adds 2rem gap on left and right so text never touches the edge
+      center: true,
+      padding: "2rem",
       screens: {
-        "2xl": "1400px",  // Limits the max width on giant screens so lines don't get too long
+        "2xl": "1400px",
       },
     },
     extend: {
-      // 2. YOUR COLOR THEME (From the previous step)
       colors: {
-        border: "#C2B5A8",       // Dark Sand (High contrast borders)
-        input: "#C2B5A8",
-        ring: "#E85D04",
-        background: "#EFEDE6",   // Warm Oatmeal (Darker than white)
-        foreground: "#1A1A1A",   // Soft Black (High contrast text)
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         
+        // Main Brand Colors
         primary: {
-          DEFAULT: "#E85D04",    // Estus Orange
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#EBE9E4",    // Light Grey/Beige
-          foreground: "#1A1A1A",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
-          DEFAULT: "#EF4444",
-          foreground: "#FAFAFA",
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#D1CEC7",
-          foreground: "#5C5C5C",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#FFFFFF",
-          foreground: "#1A1A1A",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "#FFFFFF",    // Pure White
-          foreground: "#1A1A1A",
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
 
-        // Legacy mappings
+        // Legacy Mappings
+        // These map your old specific color names to the new system
         noctua: {
-          beige: '#EFEDE6',
-          bone: '#FFFFFF',
-          brown: '#1A1A1A',
-          russet: '#E85D04',
+          beige: 'hsl(var(--background))',       // Was Oatmeal, now Cream/Bg
+          bone: 'hsl(var(--card))',             // Was White, now Tan/Card
+          brown: 'hsl(var(--foreground))',      // Was Soft Black, now Brown/Black
+          russet: 'hsl(var(--primary))',        // Was Orange, now Brown/Primary
+          
+          // New specific shades if you need them manually
+          'brown-dark': 'hsl(var(--noctua-brown-dark))',
+          'cream-light': 'hsl(var(--noctua-cream-light))',
         },
       },
-      backgroundImage: {
-        'noctua-gradient': 'none',
-      }
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        display: ['Oswald', 'sans-serif'],
+        serif: ['Libre Baskerville', 'serif'],
+        body: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],
