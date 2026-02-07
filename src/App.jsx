@@ -12,10 +12,15 @@ import ContactPage from './pages/ContactPage';
 import LearnPDA from './pages/learn/LearnPDA';
 import LearnLateDiagnosis from './pages/learn/LearnLateDiagnosis';
 import LearnExecutiveFunction from './pages/learn/LearnExecutiveFunction';
+// 1. Import the new component
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      {/* 2. Add it here, inside Router but outside Routes */}
+      <ScrollToTop />
+      
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
