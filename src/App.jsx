@@ -7,6 +7,7 @@ import OccupationalTherapy from './pages/services/OccupationalTherapy';
 import GamingInformedTherapy from './pages/services/GamingInformedTherapy';
 import MinecraftProgram from './pages/services/MinecraftProgram';
 import AssessmentsReports from './pages/services/AssessmentsReports';
+import SleepProgram from './pages/services/SleepProgram';
 import ForReferrers from './pages/ForReferrers';
 import ContactPage from './pages/ContactPage';
 import LearnPDA from './pages/learn/LearnPDA';
@@ -33,6 +34,7 @@ function App() {
             <Route path="gaming-informed-therapy" element={<GamingInformedTherapy />} />
             <Route path="minecraft-program" element={<MinecraftProgram />} />
             <Route path="assessments-reports" element={<AssessmentsReports />} />
+            <Route path="sleep-program" element={<SleepProgram />} />
           </Route>
           <Route path="for-referrers" element={<ForReferrers />} />
           <Route path="contact" element={<ContactPage />} />
