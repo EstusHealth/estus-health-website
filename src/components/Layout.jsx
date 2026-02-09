@@ -10,6 +10,7 @@ const navigation = [
       { name: 'Gaming-Informed Therapy', href: '/services/gaming-informed-therapy' },
       { name: 'Minecraft Program', href: '/services/minecraft-program' },
       { name: 'Assessments & Reports', href: '/services/assessments-reports' },
+      { name: 'Sleep Program', href: '/services/sleep-program' },
     ],
   },
   {
