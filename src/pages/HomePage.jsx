@@ -300,6 +300,86 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Featured Program: Sleep */}
+      <Section>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
+              Featured Program
+            </p>
+            <h2 className="text-2xl md:text-4xl font-display mb-6 text-noctua-brown">
+              Sleep Performance
+              <br />
+              <span className="text-noctua-russet">Program</span>
+            </h2>
+            <p className="text-noctua-brown/70 leading-relaxed mb-4">
+              Sleep is the single highest-leverage intervention for nearly every performance 
+              domain. Concentration, emotional regulation, energy, recovery: all downstream 
+              of sleep quality.
+            </p>
+            <p className="text-noctua-brown/70 leading-relaxed mb-8">
+              Our 4-session OT intervention assesses your sleep, builds structure around it, 
+              and gives you protocols that fit your actual life. Designed for neurodivergent 
+              adults who know sleep matters but haven't found an approach that sticks.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button to="/services/sleep-program" size="lg" className="bg-noctua-russet hover:bg-noctua-brown text-white border-none shadow-md">
+                Learn More
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+              <Button to="/contact" variant="outline" size="lg" className="border-noctua-russet text-noctua-russet hover:bg-noctua-russet/10">
+                Book a Session
+              </Button>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <Card className="p-5 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
+                  <Brain className="w-5 h-5 text-noctua-russet" />
+                </div>
+                <div>
+                  <h3 className="font-display text-base mb-1 text-noctua-brown">Chronotype Assessment</h3>
+                  <p className="text-noctua-brown/70 text-sm">
+                    We identify your biological rhythm and build your schedule around it, 
+                    not the other way around.
+                  </p>
+                </div>
+              </div>
+            </Card>
+            <Card className="p-5 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-noctua-russet" />
+                </div>
+                <div>
+                  <h3 className="font-display text-base mb-1 text-noctua-brown">Personalised Protocols</h3>
+                  <p className="text-noctua-brown/70 text-sm">
+                    Evening routines, environment design, and circadian alignment strategies 
+                    built for your neurology and lifestyle.
+                  </p>
+                </div>
+              </div>
+            </Card>
+            <Card className="p-5 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-noctua-russet" />
+                </div>
+                <div>
+                  <h3 className="font-display text-base mb-1 text-noctua-brown">Systems, Not Tips</h3>
+                  <p className="text-noctua-brown/70 text-sm">
+                    4 sessions. Assessment, architecture, routine building, and integration. 
+                    Designed to survive contact with real life.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </Section>
+
       {/* Learn Section */}
       <Section>
         <div className="text-center max-w-2xl mx-auto mb-12">
