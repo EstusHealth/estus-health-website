@@ -74,7 +74,7 @@ export default function HomePage() {
               <span className="text-noctua-russet">for being who they are</span>
             </h1>
             <p className="font-serif text-xl md:text-2xl text-noctua-brown/80 italic mb-6">
-              Where being yourself isn't the problem — it's the starting point.
+              Where being yourself isn't the problem. It's the starting point.
             </p>
             <p className="text-lg text-noctua-brown/70 max-w-2xl mb-8 leading-relaxed">
               We don't fix people. We fix the environment. Evidence-informed occupational therapy 
@@ -119,14 +119,14 @@ export default function HomePage() {
           <FeatureCard
             icon={Heart}
             title="Occupational Therapy"
-            description="Functional assessment, goal setting, and intervention that respects your autonomy and works with your nervous system — not against it."
+            description="Functional assessment, goal setting, and intervention that respects your autonomy and works with your nervous system, not against it."
             href="/services/occupational-therapy"
             className="bg-noctua-bone border-noctua-brown/10 shadow-sm"
           />
           <FeatureCard
             icon={Gamepad2}
             title="Gaming-Informed Therapy"
-            description="Therapy through a channel that actually works. We meet people in the games they love — from Minecraft to VR."
+            description="Therapy through a channel that actually works. We meet people in the games they love, from Minecraft to VR."
             href="/services/gaming-informed-therapy"
             className="bg-noctua-bone border-noctua-brown/10 shadow-sm"
           />
@@ -158,7 +158,7 @@ export default function HomePage() {
             </p>
             <p className="text-noctua-brown/70 leading-relaxed mb-8">
               Our team brings both clinical expertise and lived experience. We understand 
-              what it means to navigate a world not built for your brain — because many of 
+              what it means to navigate a world not built for your brain, because many of
               us have done it ourselves.
             </p>
             <Button to="/about/approach" variant="outline" className="border-noctua-brown/20 hover:bg-noctua-bone">
@@ -189,7 +189,7 @@ export default function HomePage() {
                 <div>
                   <h3 className="font-display text-lg mb-2 text-noctua-brown">Pressure-Reducing Support</h3>
                   <p className="text-noctua-brown/70 text-sm">
-                    Sessions feel like a deep exhale — not a performance review.
+                    Sessions feel like a deep exhale, not a performance review.
                   </p>
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function HomePage() {
             </div>
             <h3 className="font-display text-xl mb-3 text-noctua-brown">Autistic Adults & Youth</h3>
             <p className="text-noctua-brown/70 text-sm leading-relaxed">
-              Late-diagnosed or lifelong — we support executive function, unmasking, 
+              Whether late-diagnosed or lifelong, we support executive function, unmasking,
               sensory regulation, and building a life that works for your brain.
             </p>
           </div>
@@ -234,7 +234,7 @@ export default function HomePage() {
             </div>
             <h3 className="font-display text-xl mb-3 text-noctua-brown">PDA Profiles</h3>
             <p className="text-noctua-brown/70 text-sm leading-relaxed">
-              Traditional therapy often backfires with PDA. We understand why — and 
+              Traditional therapy often backfires with PDA. We understand why, and
               we've built our entire approach around what actually helps.
             </p>
           </div>
@@ -274,7 +274,7 @@ export default function HomePage() {
             <ProcessStep
               number="1"
               title="Enquire or Refer"
-              description="Send through a referral or enquiry with the key details. Online form, email, or via your support coordinator — whatever works for you."
+              description="Send through a referral or enquiry with the key details. Online form, email, or via your support coordinator. Whatever works for you."
             />
             <ProcessStep
               number="2"
@@ -284,7 +284,7 @@ export default function HomePage() {
             <ProcessStep
               number="3"
               title="Implementation & Review"
-              description="Therapy sessions, real-world strategies, and progress checkpoints. We adapt as you need — capacity fluctuates, and that's okay."
+              description="Therapy sessions, real-world strategies, and progress checkpoints. We adapt as you need. Capacity fluctuates, and that's okay."
             />
           </div>
         </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
       <Section className="bg-noctua-bone/30">
         <div className="max-w-3xl mx-auto">
           <PullQuote
-            quote="Estus Health is here for people who've masked, pushed, or performed just to access care — and for the therapists trying to stay whole while supporting them."
+            quote="Estus Health is here for people who've masked, pushed, or performed just to access care, and for the therapists trying to stay whole while supporting them."
             className="text-center border-l-0 border-t-2 border-b-2 border-noctua-russet/30 py-8 text-noctua-brown italic"
           />
         </div>
@@ -389,7 +389,7 @@ export default function HomePage() {
           <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">Learn More</h2>
           <p className="text-noctua-brown/70">
             Understanding your neurotype is the first step. These guides are written 
-            for people navigating these experiences — not about them.
+            for people navigating these experiences, not about them.
           </p>
         </div>
         
@@ -446,7 +446,7 @@ export default function HomePage() {
       {/* CTA */}
       <CTABanner
         title="Ready to Get Started?"
-        description="Whether you're self-referring, a parent, or a support coordinator — we're here to help."
+        description="Whether you're self-referring, a parent, or a support coordinator, we're here to help."
         primaryCTA={{ label: "Make a Referral", href: "/contact", className: "bg-noctua-russet hover:bg-noctua-brown" }}
         secondaryCTA={{ label: "For Support Coordinators", href: "/for-referrers", className: "text-noctua-russet border-noctua-russet" }}
         className="bg-noctua-bone/50"

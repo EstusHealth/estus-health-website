@@ -1,4 +1,4 @@
-# Estus Health — Crawler Directives
+# Estus Health: Crawler Directives
 # https://www.estushealth.com
 
 User-agent: *

@@ -6,7 +6,7 @@ const team = [
     name: "Nik",
     role: "Occupational Therapist",
     status: "Accepting referrals",
-    bio: "Nik brings deep expertise in gaming-informed therapy and understands how to meet clients in the spaces they already feel comfortable. His approach prioritises building genuine connection before any therapeutic 'work' happens — because trust comes first.",
+    bio: "Nik brings deep expertise in gaming-informed therapy and understands how to meet clients in the spaces they already feel comfortable. His approach prioritises building genuine connection before any therapeutic 'work' happens, because trust comes first.",
     background: "Background in gaming culture and neurodivergent-affirming practice.",
     specialties: ["Gaming-Informed Therapy", "Adolescents & Young Adults", "Executive Function", "Assessment"],
   },
@@ -14,7 +14,7 @@ const team = [
     name: "Nam",
     role: "Occupational Therapist",
     status: "Accepting referrals",
-    bio: "Nam specialises in working with autistic youth and adults, with particular expertise in anime and gaming-informed approaches. He understands that interests aren't just hobbies — they're windows into how someone thinks, what they value, and where they feel most themselves.",
+    bio: "Nam specialises in working with autistic youth and adults, with particular expertise in anime and gaming-informed approaches. He understands that interests aren't just hobbies. They're windows into how someone thinks, what they value, and where they feel most themselves.",
     background: "Passionate about anime, gaming, and neuroaffirming practice.",
     specialties: ["Anime-Informed Therapy", "Gaming Informed Therapy", "Youth & Young Adults"],
   },
@@ -22,7 +22,7 @@ const team = [
     name: "Liam",
     role: "Founder & Occupational Therapist",
     status: "Not Accepting Referrals",
-    bio: "Late-diagnosed autistic clinician with a PDA profile. Liam founded Estus Health to create the kind of support he wished existed — therapy that works with neurodivergent brains, not against them. His focus areas include PDA, gaming-informed therapy, executive function, and supporting adults through the unmasking process.",
+    bio: "Late-diagnosed autistic clinician with a PDA profile. Liam founded Estus Health to create the kind of support he wished existed: therapy that works with neurodivergent brains, not against them. His focus areas include PDA, gaming-informed therapy, executive function, and supporting adults through the unmasking process.",
     background: "Degrees in Occupational Therapy, Finance, Computer Science, and Machine Learning.",
     specialties: ["PDA Profiles", "Gaming-Informed Therapy", "Executive Function", "Unmasking Support"],
   },
@@ -43,7 +43,7 @@ export default function TeamPage() {
             </h1>
             <p className="text-foreground/70 leading-relaxed">
               Our team combines clinical expertise with lived experience. Several of us are 
-              neurodivergent ourselves — we understand this work from the inside, not just 
+              neurodivergent ourselves. We understand this work from the inside, not just 
               from textbooks.
             </p>
           </div>
@@ -134,7 +134,7 @@ export default function TeamPage() {
             Interested in Joining the Team?
           </h2>
           <p className="text-foreground/70 mb-6">
-            We're always interested in hearing from clinicians who share our values — 
+            We're always interested in hearing from clinicians who share our values,
             particularly those with lived experience of neurodivergence.
           </p>
           <Button href="mailto:hello@estushealth.com" variant="outline">
@@ -151,7 +151,7 @@ export default function TeamPage() {
             Ready to Work With Us?
           </h2>
           <p className="text-foreground/70 mb-8">
-            Whether you're self-referring, a parent, or a support coordinator — we're 
+            Whether you're self-referring, a parent, or a support coordinator, we're
             here to help find the right fit.
           </p>
           <Button to="/contact" size="lg">

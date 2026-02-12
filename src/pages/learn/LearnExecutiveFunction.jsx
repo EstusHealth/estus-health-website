@@ -46,7 +46,7 @@ export default function LearnExecutiveFunction() {
                 The Short Version
               </h2>
               <p className="text-foreground/90 leading-relaxed">
-                Executive function — your brain's ability to plan, start, and finish tasks — doesn't 
+                Executive function (your brain's ability to plan, start, and finish tasks) doesn't
                 exist in isolation. When you're managing conditions like POTS, hEDS, MCAS, or ME/CFS 
                 alongside neurodivergence, everything competes for the same limited energy. The solution 
                 isn't "try harder." It's building systems that account for your actual capacity.
@@ -67,35 +67,35 @@ export default function LearnExecutiveFunction() {
                 What is Executive Function?
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                Executive function is your brain's control centre — the set of cognitive processes 
-                that help you plan, prioritise, start tasks, stay focused, and manage your time and 
+                Executive function is your brain's control centre, the set of cognitive processes
+                that help you plan, prioritise, start tasks, stay focused, and manage your time and
                 emotions. It includes:
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/80"><strong className="text-foreground">Working memory</strong> — holding information while you use it</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Working memory:</strong> holding information while you use it</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/80"><strong className="text-foreground">Task initiation</strong> — actually starting things</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Task initiation:</strong> actually starting things</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/80"><strong className="text-foreground">Planning and prioritising</strong> — figuring out what to do and in what order</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Planning and prioritising:</strong> figuring out what to do and in what order</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/80"><strong className="text-foreground">Cognitive flexibility</strong> — switching between tasks or adapting when plans change</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Cognitive flexibility:</strong> switching between tasks or adapting when plans change</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/80"><strong className="text-foreground">Emotional regulation</strong> — managing feelings so they don't derail you</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Emotional regulation:</strong> managing feelings so they don't derail you</span>
                 </li>
               </ul>
               <p className="text-foreground/80 leading-relaxed">
                 For autistic and ADHD brains, executive function is often already harder. The 
-                prefrontal cortex — where much of this processing happens — works differently. 
+                prefrontal cortex, where much of this processing happens, works differently. 
                 This isn't a character flaw. It's neurology.
               </p>
             </section>
@@ -114,7 +114,7 @@ export default function LearnExecutiveFunction() {
               <div className="grid gap-4 mb-6">
                 <Card className="p-4">
                   <h3 className="font-display text-lg mb-2 flex items-center gap-2">
-                    <span className="text-primary">hEDS</span> — Hypermobile Ehlers-Danlos Syndrome
+                    <span className="text-primary">hEDS:</span> Hypermobile Ehlers-Danlos Syndrome
                   </h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
                     A connective tissue disorder causing joint hypermobility, chronic pain, and fatigue. 
@@ -125,19 +125,19 @@ export default function LearnExecutiveFunction() {
                 
                 <Card className="p-4">
                   <h3 className="font-display text-lg mb-2 flex items-center gap-2">
-                    <span className="text-primary">POTS</span> — Postural Orthostatic Tachycardia Syndrome
+                    <span className="text-primary">POTS:</span> Postural Orthostatic Tachycardia Syndrome
                   </h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
                     A form of dysautonomia where your heart rate increases abnormally when you stand. 
                     This causes dizziness, brain fog, fatigue, and difficulty concentrating. POTS and 
-                    autism share links through the autonomic nervous system — the same system involved 
+                    autism share links through the autonomic nervous system, the same system involved 
                     in sensory processing differences.
                   </p>
                 </Card>
                 
                 <Card className="p-4">
                   <h3 className="font-display text-lg mb-2 flex items-center gap-2">
-                    <span className="text-primary">MCAS</span> — Mast Cell Activation Syndrome
+                    <span className="text-primary">MCAS:</span> Mast Cell Activation Syndrome
                   </h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
                     A condition where mast cells release too many chemical mediators, causing 
@@ -149,19 +149,19 @@ export default function LearnExecutiveFunction() {
                 
                 <Card className="p-4">
                   <h3 className="font-display text-lg mb-2 flex items-center gap-2">
-                    <span className="text-primary">ME/CFS</span> — Myalgic Encephalomyelitis / Chronic Fatigue Syndrome
+                    <span className="text-primary">ME/CFS:</span> Myalgic Encephalomyelitis / Chronic Fatigue Syndrome
                   </h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
                     A complex, chronic illness characterised by profound fatigue, post-exertional 
-                    malaise (PEM), and cognitive dysfunction. ME/CFS doesn't just make you tired — 
-                    it fundamentally limits how much cognitive and physical energy you have available.
+                    malaise (PEM), and cognitive dysfunction. ME/CFS doesn't just make you tired.
+                    It fundamentally limits how much cognitive and physical energy you have available.
                   </p>
                 </Card>
               </div>
 
               <p className="text-foreground/80 leading-relaxed">
                 The common thread? These conditions all affect the resources your brain needs to 
-                function — whether through dysautonomia, inflammation, energy production, or 
+                function, whether through dysautonomia, inflammation, energy production, or 
                 connective tissue differences. When you add neurodivergence to the mix, you're 
                 working with a system that was already running on different parameters.
               </p>
@@ -181,8 +181,8 @@ export default function LearnExecutiveFunction() {
                   <div>
                     <h3 className="font-display text-lg mb-2">Knowing what to do but not being able to start</h3>
                     <p className="text-foreground/70 text-sm leading-relaxed">
-                      The task is clear. The steps are clear. Your body won't move. This isn't laziness — 
-                      it's a disconnect between intention and initiation that's compounded by physical 
+                      The task is clear. The steps are clear. Your body won't move. This isn't laziness.
+                      It's a disconnect between intention and initiation that's compounded by physical 
                       symptoms. When your heart rate spikes just from standing, starting anything feels 
                       like climbing a mountain.
                     </p>
@@ -211,7 +211,7 @@ export default function LearnExecutiveFunction() {
                     <h3 className="font-display text-lg mb-2">The "good day" trap</h3>
                     <p className="text-foreground/70 text-sm leading-relaxed">
                       You feel better, so you do more. Then you crash. Then you rest. Then you feel 
-                      better, so you do more. This boom-bust cycle is exhausting and demoralising — 
+                      better, so you do more. This boom-bust cycle is exhausting and demoralising,
                       especially when people around you see your "good days" and assume that's your 
                       real capacity.
                     </p>
@@ -227,7 +227,7 @@ export default function LearnExecutiveFunction() {
                     <p className="text-foreground/70 text-sm leading-relaxed">
                       Managing multiple conditions means managing multiple specialists, medications, 
                       appointments, and endless forms. This coordination load uses up executive 
-                      function that you don't have spare — often before you've even started on the 
+                      function that you don't have spare, often before you've even started on the 
                       things you actually want to do.
                     </p>
                   </div>
@@ -255,7 +255,7 @@ export default function LearnExecutiveFunction() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Time management doesn't address the real problem.</strong> The issue isn't usually managing time — it's managing energy, symptoms, and the gap between intention and action.</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Time management doesn't address the real problem.</strong> The issue isn't usually managing time. It's managing energy, symptoms, and the gap between intention and action.</span>
                 </li>
               </ul>
               <p className="text-foreground/80 leading-relaxed">
@@ -274,7 +274,7 @@ export default function LearnExecutiveFunction() {
                 <div>
                   <h3 className="font-display text-xl mb-3 text-primary">Energy Accounting (Not Time Management)</h3>
                   <p className="text-foreground/80 leading-relaxed mb-3">
-                    Instead of planning by time, plan by energy. What do you have available today — 
+                    Instead of planning by time, plan by energy. What do you have available today,
                     not in an ideal world, but right now? This might mean categorising tasks by 
                     energy cost (low, medium, high) rather than by time required.
                   </p>
@@ -282,7 +282,7 @@ export default function LearnExecutiveFunction() {
                     Some people find spoon theory helpful. Others prefer thinking in terms of 
                     "energy budget" or "capacity units." The framework matters less than the 
                     principle: your energy is finite and fluctuating, and acknowledging that 
-                    isn't giving up — it's being strategic.
+                    isn't giving up. It's being strategic.
                   </p>
                 </div>
                 
@@ -295,19 +295,19 @@ export default function LearnExecutiveFunction() {
                   <ul className="space-y-2 text-foreground/70 text-sm">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Body doubling</strong> — having another person present (even virtually) while you work</span>
+                      <span><strong className="text-foreground">Body doubling:</strong> having another person present (even virtually) while you work</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Visual cues</strong> — putting things where you'll see them, not where they "belong"</span>
+                      <span><strong className="text-foreground">Visual cues:</strong> putting things where you'll see them, not where they "belong"</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Automation</strong> — recurring orders, automatic payments, scheduled reminders</span>
+                      <span><strong className="text-foreground">Automation:</strong> recurring orders, automatic payments, scheduled reminders</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span><strong className="text-foreground">Resistance Breaker support</strong> — someone to help bridge the gap between knowing and doing</span>
+                      <span><strong className="text-foreground">Resistance Breaker support:</strong> someone to help bridge the gap between knowing and doing</span>
                     </li>
                   </ul>
                 </div>
@@ -316,12 +316,12 @@ export default function LearnExecutiveFunction() {
                   <h3 className="font-display text-xl mb-3 text-primary">Pacing Strategies That Respect PEM</h3>
                   <p className="text-foreground/80 leading-relaxed mb-3">
                     Post-exertional malaise (PEM) means that overdoing it today creates a crash 
-                    tomorrow — or in two days, or three. This delayed consequence makes it hard to 
+                    tomorrow, or in two days, or three. This delayed consequence makes it hard to 
                     learn pacing intuitively.
                   </p>
                   <p className="text-foreground/70 text-sm leading-relaxed">
                     Effective pacing often means stopping before you feel you need to. It means 
-                    building in rest as a scheduled, non-negotiable part of your day — not as a 
+                    building in rest as a scheduled, non-negotiable part of your day, not as a 
                     reward for productivity. This is counterintuitive for most people, and 
                     especially hard when you've spent your life pushing through.
                   </p>
@@ -330,7 +330,7 @@ export default function LearnExecutiveFunction() {
                 <div>
                   <h3 className="font-display text-xl mb-3 text-primary">Reducing Decisions, Not Adding Tools</h3>
                   <p className="text-foreground/80 leading-relaxed mb-3">
-                    Every decision costs energy. The goal isn't to optimise decision-making — it's 
+                    Every decision costs energy. The goal isn't to optimise decision-making. It's
                     to make fewer decisions:
                   </p>
                   <ul className="space-y-2 text-foreground/70 text-sm">
@@ -361,7 +361,7 @@ export default function LearnExecutiveFunction() {
                 How We Support Executive Function at Estus Health
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-6">
-                Our approach starts with understanding your whole picture — not just the neurodivergence, 
+                Our approach starts with understanding your whole picture, not just the neurodivergence, 
                 but the conditions that travel with it. We don't treat executive function in isolation.
               </p>
               
@@ -369,7 +369,7 @@ export default function LearnExecutiveFunction() {
                 <Card className="p-4 border-primary/20">
                   <h3 className="font-display text-lg mb-2">Functional Capacity Assessment</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
-                    We assess what you can actually do — on good days, bad days, and everything in 
+                    We assess what you can actually do, on good days, bad days, and everything in 
                     between. This isn't about diagnosis. It's about understanding your real capacity 
                     so we can build systems that work.
                   </p>
@@ -379,7 +379,7 @@ export default function LearnExecutiveFunction() {
                   <h3 className="font-display text-lg mb-2">Systems Built Around Fluctuating Capacity</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
                     We help you design routines, environments, and supports that flex with your 
-                    energy. Not rigid systems that break when you have a flare — adaptable ones 
+                    energy. Not rigid systems that break when you have a flare, but adaptable ones 
                     that have "bad day" modes built in.
                   </p>
                 </Card>
@@ -390,7 +390,7 @@ export default function LearnExecutiveFunction() {
                   <p className="text-foreground/70 text-sm leading-relaxed">
                     Managing multiple conditions often means managing multiple practitioners. We 
                     communicate clearly with your other providers so everyone's working from the 
-                    same page — and you're not stuck being the messenger.
+                    same page, and you're not stuck being the messenger.
                   </p>
                 </Card>
               </div>

@@ -170,7 +170,7 @@ export function PullQuote({ quote, attribution, className = '' }) {
       </p>
       {attribution && (
         <footer className="text-sm text-foreground/60">
-          — {attribution}
+{attribution}
         </footer>
       )}
     </blockquote>

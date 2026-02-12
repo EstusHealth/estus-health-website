@@ -59,7 +59,7 @@ export default function AboutApproach() {
             <h3 className="font-display text-xl mb-3">Neuroaffirming, Not Normalising</h3>
             <p className="text-foreground/70 text-sm leading-relaxed">
               We don't try to make autistic people act less autistic. Stimming, special interests, 
-              and different communication styles aren't problems to fix — they're valid ways of 
+              and different communication styles aren't problems to fix. They're valid ways of
               being in the world.
             </p>
           </Card>
@@ -71,7 +71,7 @@ export default function AboutApproach() {
             <h3 className="font-display text-xl mb-3">Low-Demand by Design</h3>
             <p className="text-foreground/70 text-sm leading-relaxed">
               Our sessions are designed to reduce pressure, not add to it. We understand that 
-              traditional therapy structures can feel like demands — and for PDA profiles 
+              traditional therapy structures can feel like demands, and for PDA profiles
               especially, demands trigger the nervous system.
             </p>
           </Card>
@@ -105,7 +105,7 @@ export default function AboutApproach() {
             <h3 className="font-display text-xl mb-3">Lived Experience Matters</h3>
             <p className="text-foreground/70 text-sm leading-relaxed">
               Several members of our team are neurodivergent ourselves. We understand this 
-              work from the inside — the struggles, the strengths, and what actually helps.
+              work from the inside: the struggles, the strengths, and what actually helps.
             </p>
           </Card>
           
@@ -116,7 +116,7 @@ export default function AboutApproach() {
             <h3 className="font-display text-xl mb-3">Practical, Not Just Theoretical</h3>
             <p className="text-foreground/70 text-sm leading-relaxed">
               We're occupational therapists. Our job is to help people do the things they 
-              need and want to do in their actual lives — not just talk about it.
+              need and want to do in their actual lives, not just talk about it.
             </p>
           </Card>
         </div>
@@ -132,19 +132,19 @@ export default function AboutApproach() {
           <ul className="space-y-4 text-foreground/70">
             <li className="flex items-start gap-3">
               <span className="text-primary font-bold mt-1">✕</span>
-              <span><strong className="text-foreground">ABA or compliance-based approaches</strong> — we don't use methods designed to extinguish autistic behaviours or prioritise obedience.</span>
+              <span><strong className="text-foreground">ABA or compliance-based approaches</strong>: we don't use methods designed to extinguish autistic behaviours or prioritise obedience.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-primary font-bold mt-1">✕</span>
-              <span><strong className="text-foreground">Masking as a goal</strong> — we don't teach people to hide who they are. If someone chooses to mask in certain contexts for safety, we support that choice — but it's never our therapeutic goal.</span>
+              <span><strong className="text-foreground">Masking as a goal</strong>: we don't teach people to hide who they are. If someone chooses to mask in certain contexts for safety, we support that choice, but it's never our therapeutic goal.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-primary font-bold mt-1">✕</span>
-              <span><strong className="text-foreground">Pathologising difference</strong> — being autistic isn't a disorder to be cured. The challenges come from living in a world not designed for neurodivergent brains.</span>
+              <span><strong className="text-foreground">Pathologising difference</strong>: being autistic isn't a disorder to be cured. The challenges come from living in a world not designed for neurodivergent brains.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-primary font-bold mt-1">✕</span>
-              <span><strong className="text-foreground">Pushing through at any cost</strong> — we don't believe in "no pain, no gain" approaches. Sustainable progress respects capacity limits.</span>
+              <span><strong className="text-foreground">Pushing through at any cost</strong>: we don't believe in "no pain, no gain" approaches. Sustainable progress respects capacity limits.</span>
             </li>
           </ul>
         </div>
@@ -157,7 +157,7 @@ export default function AboutApproach() {
             This Resonates With You?
           </h2>
           <p className="text-foreground/70 mb-8">
-            If you've been looking for therapy that actually gets it — we're here.
+            If you've been looking for therapy that actually gets it, we're here.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button to="/contact" size="lg">

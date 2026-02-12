@@ -323,7 +323,7 @@ export default function Referrers() {
             Referring <span style={S.accentGradient}>a client</span>
           </h1>
           <p style={S.heroBody}>
-            Everything you need to know — whether you're a GP, support coordinator, or referring yourself.
+            Everything you need to know, whether you're a GP, support coordinator, or referring yourself.
           </p>
         </div>
 
@@ -336,7 +336,7 @@ export default function Referrers() {
             <div style={S.calloutTag}>Good news</div>
             <div style={S.calloutTitle}>Self-referrals are welcome.</div>
             <p style={S.calloutBody}>
-              You don't need a GP or another professional to get started. If you'd like to refer yourself or a family member, use the self-referral form — no referral letter required.
+              You don't need a GP or another professional to get started. If you'd like to refer yourself or a family member, use the self-referral form. No referral letter required.
             </p>
             <a
               href="https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1"
@@ -368,7 +368,7 @@ export default function Referrers() {
               <div>
                 <div style={S.stepTitle}>Submit a referral</div>
                 <div style={S.stepBody}>
-                  Use the self-referral form if you're referring yourself or a family member. If you're a GP, support coordinator, or another professional, you can use the same form on behalf of your client — just fill in the "About the client" section with their details.
+                  Use the self-referral form if you're referring yourself or a family member. If you're a GP, support coordinator, or another professional, you can use the same form on behalf of your client. Just fill in the "About the client" section with their details.
                 </div>
               </div>
             </div>
@@ -406,25 +406,25 @@ export default function Referrers() {
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(var(--foreground))" }}>Client's name and contact details</strong> — or yours, if you're referring yourself.
+                <strong style={{ color: "hsl(var(--foreground))" }}>Client's name and contact details</strong> (or yours, if you're referring yourself).
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(var(--foreground))" }}>What service you're enquiring about</strong> — NDIS Access Request Support, Functional Capacity Assessment, or Occupational Therapy.
+                <strong style={{ color: "hsl(var(--foreground))" }}>What service you're enquiring about</strong>: NDIS Access Request Support, Functional Capacity Assessment, or Occupational Therapy.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(var(--foreground))" }}>Funding type</strong> — Private, self-managed NDIS, or plan-managed NDIS.
+                <strong style={{ color: "hsl(var(--foreground))" }}>Funding type</strong>: private, self-managed NDIS, or plan-managed NDIS.
               </div>
             </div>
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(var(--foreground))" }}>A brief description of the client's needs</strong> — even a few sentences helps us prepare.
+                <strong style={{ color: "hsl(var(--foreground))" }}>A brief description of the client's needs</strong>. Even a few sentences helps us prepare.
               </div>
             </div>
 
