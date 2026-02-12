@@ -26,6 +26,7 @@ const navigation = [
       { name: 'Understanding PDA', href: '/learn/understanding-pda' },
       { name: 'Late Autism Diagnosis', href: '/learn/late-autism-diagnosis' },
       { name: 'Executive Function & Complex Health', href: '/learn/executive-function-complex-health' },
+      { name: 'Chronotype Quiz', href: '/learn/chronotype-quiz' },
     ],
   },
   { name: 'For Referrers', href: '/for-referrers' },
@@ -259,6 +260,7 @@ function Footer() {
               <li><Link to="/learn/understanding-pda" className="text-foreground/60 hover:text-primary text-sm transition-colors">Understanding PDA</Link></li>
               <li><Link to="/learn/late-autism-diagnosis" className="text-foreground/60 hover:text-primary text-sm transition-colors">Late Autism Diagnosis</Link></li>
               <li><Link to="/learn/executive-function-complex-health" className="text-foreground/60 hover:text-primary text-sm transition-colors">Executive Function & Complex Health</Link></li>
+              <li><Link to="/learn/chronotype-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Chronotype Quiz</Link></li>
             </ul>
             <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-8">For Clinicians</h4>
             <ul className="space-y-2">

@@ -15,6 +15,7 @@ import ContactPage from './pages/ContactPage';
 import LearnPDA from './pages/learn/LearnPDA';
 import LearnLateDiagnosis from './pages/learn/LearnLateDiagnosis';
 import LearnExecutiveFunction from './pages/learn/LearnExecutiveFunction';
+import ChronotypeQuiz from './pages/ChronotypeQuiz';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             <Route path="understanding-pda" element={<LearnPDA />} />
             <Route path="late-autism-diagnosis" element={<LearnLateDiagnosis />} />
             <Route path="executive-function-complex-health" element={<LearnExecutiveFunction />} />
+            <Route path="chronotype-quiz" element={<ChronotypeQuiz />} />
           </Route>
         </Route>
       </Routes>
