@@ -29,6 +29,12 @@ const navigation = [
     ],
   },
   { name: 'For Referrers', href: '/for-referrers' },
+  {
+    name: 'For Clinicians',
+    children: [
+      { name: 'Performance Lab', href: '/for-clinicians/performance-lab' },
+    ],
+  },
 ];
 
 function NavDropdown({ item, mobile = false }) {
@@ -253,6 +259,10 @@ function Footer() {
               <li><Link to="/learn/understanding-pda" className="text-foreground/60 hover:text-primary text-sm transition-colors">Understanding PDA</Link></li>
               <li><Link to="/learn/late-autism-diagnosis" className="text-foreground/60 hover:text-primary text-sm transition-colors">Late Autism Diagnosis</Link></li>
               <li><Link to="/learn/executive-function-complex-health" className="text-foreground/60 hover:text-primary text-sm transition-colors">Executive Function & Complex Health</Link></li>
+            </ul>
+            <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-8">For Clinicians</h4>
+            <ul className="space-y-2">
+              <li><Link to="/for-clinicians/performance-lab" className="text-foreground/60 hover:text-primary text-sm transition-colors">Performance Lab</Link></li>
             </ul>
           </div>
 

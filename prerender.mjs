@@ -29,6 +29,7 @@ const ROUTES = [
   '/learn/executive-function-complex-health',
   '/contact',
   '/for-referrers',
+  '/for-clinicians/performance-lab',
 ];
 
 // ── Per-page SEO meta (title + description) ───────────────────────────
@@ -84,6 +85,10 @@ const PAGE_META = {
   '/for-referrers': {
     title: 'For Referrers & Support Coordinators | Estus Health',
     description: 'Referral information for GPs, support coordinators, and allied health professionals. Clear communication, practical recommendations, fast turnaround.',
+  },
+  '/for-clinicians/performance-lab': {
+    title: 'Performance Lab | Protocols for Allied Health Clinicians | Estus Health',
+    description: 'Podcast, newsletter, and community of practice for allied health clinicians. Protocols for health, performance, burnout, and longevity. Built by Estus Health.',
   },
 };
 

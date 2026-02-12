@@ -9,6 +9,7 @@ import MinecraftProgram from './pages/services/MinecraftProgram';
 import AssessmentsReports from './pages/services/AssessmentsReports';
 import SleepProgram from './pages/services/SleepProgram';
 import ForReferrers from './pages/ForReferrers';
+import PerformanceLab from './pages/PerformanceLab';
 import ContactPage from './pages/ContactPage';
 import LearnPDA from './pages/learn/LearnPDA';
 import LearnLateDiagnosis from './pages/learn/LearnLateDiagnosis';
@@ -35,6 +36,9 @@ function App() {
             <Route path="sleep-program" element={<SleepProgram />} />
           </Route>
           <Route path="for-referrers" element={<ForReferrers />} />
+          <Route path="for-clinicians">
+            <Route path="performance-lab" element={<PerformanceLab />} />
+          </Route>
           <Route path="contact" element={<ContactPage />} />
           <Route path="learn">
             <Route path="understanding-pda" element={<LearnPDA />} />

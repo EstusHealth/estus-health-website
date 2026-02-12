@@ -124,3 +124,10 @@
     @apply bg-card border border-border rounded-lg p-6 shadow-sm transition-transform hover:-translate-y-1;
   }
 }
+
+/* Performance Lab bounce animation */
+@keyframes plBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
