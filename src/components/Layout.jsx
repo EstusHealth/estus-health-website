@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Moon } from 'lucide-react';
 
 const navigation = [
   {
@@ -27,6 +27,8 @@ const navigation = [
       { name: 'Late Autism Diagnosis', href: '/learn/late-autism-diagnosis' },
       { name: 'Executive Function & Complex Health', href: '/learn/executive-function-complex-health' },
       { name: 'Chronotype Quiz', href: '/learn/chronotype-quiz' },
+      { name: 'Energy & Executive Function Quiz', href: '/learn/energy-quiz' },
+      { name: 'PDA Profile Quiz', href: '/learn/pda-quiz' },
     ],
   },
   { name: 'For Referrers', href: '/for-referrers' },
@@ -261,6 +263,8 @@ function Footer() {
               <li><Link to="/learn/late-autism-diagnosis" className="text-foreground/60 hover:text-primary text-sm transition-colors">Late Autism Diagnosis</Link></li>
               <li><Link to="/learn/executive-function-complex-health" className="text-foreground/60 hover:text-primary text-sm transition-colors">Executive Function & Complex Health</Link></li>
               <li><Link to="/learn/chronotype-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Chronotype Quiz</Link></li>
+              <li><Link to="/learn/energy-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Energy & Executive Function Quiz</Link></li>
+              <li><Link to="/learn/pda-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">PDA Profile Quiz</Link></li>
             </ul>
             <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-8">For Clinicians</h4>
             <ul className="space-y-2">
@@ -293,14 +297,40 @@ function Footer() {
   );
 }
 
+function BottomNav() {
+  const location = useLocation();
+  const isActive = location.pathname === '/services/sleep-program';
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-border shadow-[0_-2px_10px_rgba(0,0,0,0.08)]">
+      <div className="container">
+        <div className="flex items-center justify-center h-14">
+          <Link
+            to="/services/sleep-program"
+            className={`flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-display uppercase tracking-wide transition-colors ${
+              isActive
+                ? 'text-primary bg-secondary/50'
+                : 'text-foreground/70 hover:text-primary hover:bg-secondary/30'
+            }`}
+          >
+            <Moon className="w-4 h-4" />
+            Sleep Program
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 pt-16 lg:pt-20">
+      <main className="flex-1 pt-16 lg:pt-20 pb-14">
         <Outlet />
       </main>
       <Footer />
+      <BottomNav />
     </div>
   );
 }
