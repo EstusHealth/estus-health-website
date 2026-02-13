@@ -20,6 +20,7 @@ import EnergyQuiz from './pages/EnergyQuiz';
 import PDAQuiz from './pages/PDAQuiz';
 import BurnoutQuiz from './pages/BurnoutQuiz';
 import GamingQuiz from './pages/GamingQuiz';
+import RPGCharacterQuiz from './pages/RPGCharacterQuiz';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <Route path="pda-quiz" element={<PDAQuiz />} />
             <Route path="burnout-quiz" element={<BurnoutQuiz />} />
             <Route path="gaming-quiz" element={<GamingQuiz />} />
+            <Route path="rpg-character-quiz" element={<RPGCharacterQuiz />} />
           </Route>
         </Route>
       </Routes>

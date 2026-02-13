@@ -30,6 +30,7 @@ const ROUTES = [
   '/contact',
   '/for-referrers',
   '/for-clinicians/performance-lab',
+  '/learn/rpg-character-quiz',
 ];
 
 // ── Per-page SEO meta (title + description) ───────────────────────────
