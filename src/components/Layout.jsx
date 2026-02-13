@@ -29,6 +29,8 @@ const navigation = [
       { name: 'Chronotype Quiz', href: '/learn/chronotype-quiz' },
       { name: 'Energy & Executive Function Quiz', href: '/learn/energy-quiz' },
       { name: 'PDA Profile Quiz', href: '/learn/pda-quiz' },
+      { name: 'Autistic Burnout Quiz', href: '/learn/burnout-quiz' },
+      { name: 'Gaming & Wellbeing Quiz', href: '/learn/gaming-quiz' },
     ],
   },
   { name: 'For Referrers', href: '/for-referrers' },
@@ -265,6 +267,8 @@ function Footer() {
               <li><Link to="/learn/chronotype-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Chronotype Quiz</Link></li>
               <li><Link to="/learn/energy-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Energy & Executive Function Quiz</Link></li>
               <li><Link to="/learn/pda-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">PDA Profile Quiz</Link></li>
+              <li><Link to="/learn/burnout-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Autistic Burnout Quiz</Link></li>
+              <li><Link to="/learn/gaming-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Gaming & Wellbeing Quiz</Link></li>
             </ul>
             <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-8">For Clinicians</h4>
             <ul className="space-y-2">

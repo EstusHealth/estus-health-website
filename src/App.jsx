@@ -18,6 +18,8 @@ import LearnExecutiveFunction from './pages/learn/LearnExecutiveFunction';
 import ChronotypeQuiz from './pages/ChronotypeQuiz';
 import EnergyQuiz from './pages/EnergyQuiz';
 import PDAQuiz from './pages/PDAQuiz';
+import BurnoutQuiz from './pages/BurnoutQuiz';
+import GamingQuiz from './pages/GamingQuiz';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -51,6 +53,8 @@ function App() {
             <Route path="chronotype-quiz" element={<ChronotypeQuiz />} />
             <Route path="energy-quiz" element={<EnergyQuiz />} />
             <Route path="pda-quiz" element={<PDAQuiz />} />
+            <Route path="burnout-quiz" element={<BurnoutQuiz />} />
+            <Route path="gaming-quiz" element={<GamingQuiz />} />
           </Route>
         </Route>
       </Routes>
