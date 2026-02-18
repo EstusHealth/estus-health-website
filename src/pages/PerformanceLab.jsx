@@ -103,20 +103,20 @@ function Hero() {
         </p>
         <h1 style={{ ...f(0.4), fontFamily: "'Oswald', sans-serif", fontWeight: 700, textTransform: 'uppercase', lineHeight: 0.9, marginBottom: 32, color: C.black }}>
           <span style={{ fontSize: 'clamp(48px, 10vw, 96px)' }}>
-            Things aren't working.
+            Protocols built for the life
           </span>
           <br />
-          <span style={{ fontSize: 'clamp(36px, 7vw, 68px)', color: C.brown }}>Good.</span>
+          <span style={{ fontSize: 'clamp(48px, 10vw, 96px)' }}>
+            you actually have.
+          </span>
+          <br />
+          <span style={{ fontSize: 'clamp(28px, 5vw, 52px)', color: C.brown }}>
+            Not the one the content assumes.
+          </span>
         </h1>
         <div style={{ ...f(0.8), marginBottom: 48 }}>
-          <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(18px, 3vw, 24px)', textTransform: 'uppercase', letterSpacing: '0.02em', color: C.black, marginBottom: 14 }}>
-            <span style={{ color: C.brown, fontWeight: 600 }}>Detach.</span>{' '}
-            <span style={{ color: C.brown }}>Re</span>assess.{' '}
-            <span style={{ color: C.brown }}>Re</span>calibrate.{' '}
-            <span style={{ color: C.brown }}>Re</span>-engage.
-          </p>
-          <p style={{ fontSize: 16, color: C.black + '99', maxWidth: 560, margin: '0 auto', lineHeight: 1.65 }}>
-            A podcast, newsletter &amp; community for allied health clinicians who spend all day optimising others. And none on themselves.
+          <p style={{ fontSize: 16, color: C.black + '99', maxWidth: 600, margin: '0 auto', lineHeight: 1.7 }}>
+            A podcast, newsletter and community for allied health clinicians who know the research, understand the frameworks, and are still figuring out how to make them work inside a genuinely complex life.
           </p>
         </div>
         <div style={{ ...f(1.2), display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -149,14 +149,14 @@ function Letter() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
             <p style={{ ...h, fontSize: 'clamp(26px, 4vw, 36px)' }}>I see you.</p>
-            <p style={b}>Grinding through another week. Another caseload. Another CPD webinar telling you what to optimise next.</p>
-            <p style={b}>You've read the research. Tried the frameworks. Sat through the in-services. Built the routines that are supposed to keep you sharp, healthy, and sustainable.</p>
-            <p style={b}>And yet. <span style={{ color: C.brown, fontWeight: 600 }}>Something's still off.</span></p>
-            <p style={b}>That's because the answers aren't in another CPD.</p>
-            <p style={{ ...b, color: C.brown, fontWeight: 600 }}>They're in the conversations clinicians aren't having.</p>
-            <p style={b}>The ones about {a('burnout', true)} that doesn't look like burnout. About {a('caseload guilt')} disguised as dedication. About the gap between the clinician you present as and how you actually feel at 4pm on a Thursday.</p>
+            <p style={b}>Not the version of you that reads the research and builds the routines. The other one. The one navigating a caseload, a business, a family, a body that doesn't recover the way it used to -- and trying to figure out which lever to pull when you only have time for one.</p>
+            <p style={b}>You've done the CPD. You understand the frameworks. <span style={{ color: C.brown, fontWeight: 600 }}>You're not missing information.</span></p>
+            <p style={b}>What you're missing is protocols that were actually designed for your circumstances.</p>
+            <p style={b}>Because most optimisation content is built for someone with {a('slack in their system', true)}. Time to experiment. Energy to track variables. Room to fail and iterate. That's not the life most clinicians are living. And applying generic high-performance protocols to a genuinely complex life doesn't produce better outcomes.</p>
+            <p style={{ ...b, color: C.brown, fontWeight: 600 }}>It produces guilt when it doesn't stick.</p>
             <p style={{ ...h, fontSize: 'clamp(28px, 5vw, 40px)', paddingTop: 32 }}>That's what the <span style={{ color: C.brown }}>Lab</span> is for.</p>
-            <p style={b}>Not motivation. Not pitches. Just {a('protocols', true)}. Tested approaches to health, performance, longevity, and how allied health clinicians actually live when no one's watching.</p>
+            <p style={b}>Not motivation. Not another framework to add to the pile. Just {a('protocols', true)} -- tested approaches to health, performance, and sustainable practice -- designed for the specific constraints of the life you're actually in. New parent running a business. Solo practitioner carrying a full caseload. Clinician managing their own health while managing everyone else's.</p>
+            <p style={{ ...b, color: C.brown, fontWeight: 600 }}>Small hinges. The right ones. Applied where they actually move something.</p>
             <p style={{ ...b, color: C.black + '80' }}>A podcast. A community of practice. Monthly group sessions. A newsletter built around {a('3 protocols')}, {a('2 ideas')}, and {a('1 prompt')} that matters.</p>
             <p style={{ ...h, fontSize: 'clamp(28px, 5vw, 40px)', color: C.brown, paddingTop: 32 }}>Welcome to Performance Lab.</p>
           </div>
