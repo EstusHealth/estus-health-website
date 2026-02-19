@@ -12,6 +12,7 @@ import SleepProgram from './pages/services/SleepProgram';
 import ForReferrers from './pages/ForReferrers';
 import PerformanceLab from './pages/PerformanceLab';
 import ContactPage from './pages/ContactPage';
+import ResourcesPage from './pages/learn/ResourcesPage';
 import LearnPDA from './pages/learn/LearnPDA';
 import LearnLateDiagnosis from './pages/learn/LearnLateDiagnosis';
 import LearnExecutiveFunction from './pages/learn/LearnExecutiveFunction';
@@ -48,6 +49,7 @@ function App() {
           </Route>
           <Route path="contact" element={<ContactPage />} />
           <Route path="learn">
+            <Route index element={<ResourcesPage />} />
             <Route path="understanding-pda" element={<LearnPDA />} />
             <Route path="late-autism-diagnosis" element={<LearnLateDiagnosis />} />
             <Route path="executive-function-complex-health" element={<LearnExecutiveFunction />} />

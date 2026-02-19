@@ -23,6 +23,7 @@ const navigation = [
   {
     name: 'Learn',
     children: [
+      { name: '→ All Resources', href: '/learn' },
       { name: 'Understanding PDA', href: '/learn/understanding-pda' },
       { name: 'Late Autism Diagnosis', href: '/learn/late-autism-diagnosis' },
       { name: 'Executive Function & Complex Health', href: '/learn/executive-function-complex-health' },
@@ -262,6 +263,7 @@ function Footer() {
           <div>
             <h4 className="font-display text-sm uppercase tracking-wide mb-4">Learn</h4>
             <ul className="space-y-2">
+              <li><Link to="/learn" className="text-foreground/60 hover:text-primary text-sm transition-colors font-medium">All Resources</Link></li>
               <li><Link to="/learn/understanding-pda" className="text-foreground/60 hover:text-primary text-sm transition-colors">Understanding PDA</Link></li>
               <li><Link to="/learn/late-autism-diagnosis" className="text-foreground/60 hover:text-primary text-sm transition-colors">Late Autism Diagnosis</Link></li>
               <li><Link to="/learn/executive-function-complex-health" className="text-foreground/60 hover:text-primary text-sm transition-colors">Executive Function & Complex Health</Link></li>

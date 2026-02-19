@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { 
-  Gamepad2, 
-  Brain, 
-  FileText, 
-  Users, 
-  Heart, 
+import {
+  Gamepad2,
+  Brain,
+  FileText,
+  Users,
+  Heart,
   Sparkles,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Moon,
+  Zap,
+  Flame,
 } from 'lucide-react';
 import { 
   Section, 
@@ -251,6 +254,96 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Quiz Spotlight */}
+      <Section>
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
+            Free Interactive Quizzes
+          </p>
+          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">
+            Start with self-understanding
+          </h2>
+          <p className="text-noctua-brown/70">
+            Our quizzes aren't just fun — they give you a real map of how your brain works,
+            with personalised insights you can actually use.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
+          {/* PDA Quiz */}
+          <div className="relative bg-noctua-bone border border-noctua-brown/10 rounded-lg shadow-sm p-6 flex flex-col hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 rounded-lg bg-noctua-russet/10 flex items-center justify-center mb-4">
+              <Brain className="w-6 h-6 text-noctua-russet" />
+            </div>
+            <span className="inline-block bg-noctua-russet/10 text-noctua-russet text-xs font-medium font-display uppercase tracking-wide px-2 py-0.5 rounded-full mb-3 w-fit">
+              PDA &amp; Autism
+            </span>
+            <h3 className="font-display text-xl mb-2 text-noctua-brown">PDA Profile Quiz</h3>
+            <p className="text-noctua-brown/70 text-sm leading-relaxed flex-1 mb-5">
+              Discover your PDA archetype — Negotiator, Avoider, Masker, or Adapter —
+              with personalised strategies for navigating demands.
+            </p>
+            <Link
+              to="/learn/pda-quiz"
+              className="inline-flex items-center gap-1 text-noctua-russet text-sm font-medium font-display uppercase tracking-wide hover:gap-2 transition-all"
+            >
+              Take the quiz <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Chronotype Quiz */}
+          <div className="relative bg-noctua-bone border border-noctua-brown/10 rounded-lg shadow-sm p-6 flex flex-col hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 rounded-lg bg-noctua-russet/10 flex items-center justify-center mb-4">
+              <Moon className="w-6 h-6 text-noctua-russet" />
+            </div>
+            <span className="inline-block bg-noctua-russet/10 text-noctua-russet text-xs font-medium font-display uppercase tracking-wide px-2 py-0.5 rounded-full mb-3 w-fit">
+              Sleep
+            </span>
+            <h3 className="font-display text-xl mb-2 text-noctua-brown">Chronotype Quiz</h3>
+            <p className="text-noctua-brown/70 text-sm leading-relaxed flex-1 mb-5">
+              Are you a Lion, Bear, Wolf, or Dolphin? Find out your biological sleep type
+              and how to stop fighting your own rhythm.
+            </p>
+            <Link
+              to="/learn/chronotype-quiz"
+              className="inline-flex items-center gap-1 text-noctua-russet text-sm font-medium font-display uppercase tracking-wide hover:gap-2 transition-all"
+            >
+              Take the quiz <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Burnout Quiz */}
+          <div className="relative bg-noctua-bone border border-noctua-brown/10 rounded-lg shadow-sm p-6 flex flex-col hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 rounded-lg bg-noctua-russet/10 flex items-center justify-center mb-4">
+              <Flame className="w-6 h-6 text-noctua-russet" />
+            </div>
+            <span className="inline-block bg-noctua-russet/10 text-noctua-russet text-xs font-medium font-display uppercase tracking-wide px-2 py-0.5 rounded-full mb-3 w-fit">
+              Burnout
+            </span>
+            <h3 className="font-display text-xl mb-2 text-noctua-brown">Autistic Burnout Quiz</h3>
+            <p className="text-noctua-brown/70 text-sm leading-relaxed flex-1 mb-5">
+              Assess where you are on the burnout spectrum and get a clearer picture
+              of what your nervous system actually needs right now.
+            </p>
+            <Link
+              to="/learn/burnout-quiz"
+              className="inline-flex items-center gap-1 text-noctua-russet text-sm font-medium font-display uppercase tracking-wide hover:gap-2 transition-all"
+            >
+              Take the quiz <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="text-center">
+          <Link
+            to="/learn"
+            className="inline-flex items-center gap-2 text-noctua-russet font-display text-sm uppercase tracking-wide font-semibold hover:gap-3 transition-all"
+          >
+            See all 6 quizzes &amp; guides <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </Section>
+
       {/* Process */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
@@ -381,29 +474,28 @@ export default function HomePage() {
       </Section>
 
       {/* Learn Section */}
-      <Section>
+      <Section className="bg-noctua-bone/30">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-            Resources
+            Guides & Articles
           </p>
-          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">Learn More</h2>
+          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">Go deeper</h2>
           <p className="text-noctua-brown/70">
-            Understanding your neurotype is the first step. These guides are written 
-            for people navigating these experiences, not about them.
+            These guides are written for people navigating these experiences, not about them.
+            No jargon, no clinical distance.
           </p>
         </div>
-        
-        {/* ADDED 'bg-noctua-bone' TO CARDS */}
-        <div className="grid md:grid-cols-3 gap-6">
+
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
           <Card hover className="bg-noctua-bone border-noctua-brown/10 shadow-sm group">
             <div className="p-6">
               <h3 className="font-display text-xl mb-3 text-noctua-brown">Understanding PDA</h3>
               <p className="text-noctua-brown/70 text-sm leading-relaxed mb-4">
-                Pathological Demand Avoidance explained: what it is, how it shows up, 
+                Pathological Demand Avoidance explained: what it is, how it shows up,
                 and why traditional approaches often backfire.
               </p>
-              <Link 
-                to="/learn/understanding-pda" 
+              <Link
+                to="/learn/understanding-pda"
                 className="inline-flex items-center text-noctua-russet text-sm font-medium hover:gap-2 transition-all"
               >
                 Read guide <ArrowRight className="ml-1 w-4 h-4" />
@@ -414,11 +506,11 @@ export default function HomePage() {
             <div className="p-6">
               <h3 className="font-display text-xl mb-3 text-noctua-brown">Late Autism Diagnosis</h3>
               <p className="text-noctua-brown/70 text-sm leading-relaxed mb-4">
-                Why autism gets missed, what late diagnosis feels like, and how to 
+                Why autism gets missed, what late diagnosis feels like, and how to
                 move forward with self-understanding.
               </p>
-              <Link 
-                to="/learn/late-autism-diagnosis" 
+              <Link
+                to="/learn/late-autism-diagnosis"
                 className="inline-flex items-center text-noctua-russet text-sm font-medium hover:gap-2 transition-all"
               >
                 Read guide <ArrowRight className="ml-1 w-4 h-4" />
@@ -429,17 +521,26 @@ export default function HomePage() {
             <div className="p-6">
               <h3 className="font-display text-xl mb-3 text-noctua-brown">Executive Function & Complex Health</h3>
               <p className="text-noctua-brown/70 text-sm leading-relaxed mb-4">
-                Managing POTS, hEDS, MCAS, Chronic Pain or ME/CFS alongside neurodivergence? 
+                Managing POTS, hEDS, MCAS, Chronic Pain or ME/CFS alongside neurodivergence?
                 Here's why executive function takes the hit.
               </p>
-              <Link 
-                to="/learn/executive-function-complex-health" 
+              <Link
+                to="/learn/executive-function-complex-health"
                 className="inline-flex items-center text-noctua-russet text-sm font-medium hover:gap-2 transition-all"
               >
                 Read guide <ArrowRight className="ml-1 w-4 h-4" />
               </Link>
             </div>
           </Card>
+        </div>
+
+        <div className="text-center">
+          <Link
+            to="/learn"
+            className="inline-flex items-center gap-2 text-noctua-russet font-display text-sm uppercase tracking-wide font-semibold hover:gap-3 transition-all"
+          >
+            Browse all resources <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </Section>
 
