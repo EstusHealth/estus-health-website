@@ -30,6 +30,20 @@ export default function HomePage() {
       <Helmet>
         <title>Estus Health | Neuroaffirming Occupational Therapy Perth</title>
         <meta name="description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
+        {/* Open Graph */}
+        <meta property="og:type"        content="website" />
+        <meta property="og:url"         content="https://estushealth.com/" />
+        <meta property="og:title"       content="Estus Health | Neuroaffirming Occupational Therapy Perth" />
+        <meta property="og:description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
+        <meta property="og:image"       content="https://estushealth.com/og-image.png" />
+        <meta property="og:image:width"  content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt"   content="Estus Health — Neuro-Affirming &amp; Gaming-Informed OT" />
+        {/* Twitter / X */}
+        <meta name="twitter:card"        content="summary_large_image" />
+        <meta name="twitter:title"       content="Estus Health | Neuroaffirming Occupational Therapy Perth" />
+        <meta name="twitter:description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
+        <meta name="twitter:image"       content="https://estushealth.com/og-image.png" />
         <script type="application/ld+json">
           {`
             {
