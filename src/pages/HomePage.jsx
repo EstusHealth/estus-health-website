@@ -91,6 +91,10 @@ export default function HomePage() {
               <Button to="/about/approach" variant="outline" size="lg" className="border-noctua-russet text-noctua-russet hover:bg-noctua-russet/10">
                 Our Approach
               </Button>
+              <Button to="/learn" variant="ghost" size="lg" className="text-noctua-brown/70 hover:text-noctua-brown hover:bg-noctua-russet/5">
+                <Brain className="mr-2 w-4 h-4" />
+                Free Quizzes
+              </Button>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-noctua-brown/60">
               <span className="flex items-center gap-2">
