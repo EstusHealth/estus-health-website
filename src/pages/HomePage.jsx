@@ -91,7 +91,7 @@ export default function HomePage() {
               <Button to="/about/approach" variant="outline" size="lg" className="border-noctua-russet text-noctua-russet hover:bg-noctua-russet/10">
                 Our Approach
               </Button>
-              <Button to="/learn" variant="ghost" size="lg" className="text-noctua-brown/70 hover:text-noctua-brown hover:bg-noctua-russet/5">
+              <Button to="/learn" variant="ghost" size="lg" className="btn-quiz-glow border border-noctua-russet text-noctua-brown/70 hover:text-noctua-brown hover:bg-noctua-russet/5">
                 <Brain className="mr-2 w-4 h-4" />
                 Free Quizzes
               </Button>

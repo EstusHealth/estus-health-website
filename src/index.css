@@ -131,3 +131,17 @@
   40% { transform: translateY(-8px); }
   60% { transform: translateY(-4px); }
 }
+
+/* Quiz button glow pulse */
+@keyframes quizGlow {
+  0%, 100% {
+    box-shadow: 0 0 6px 2px hsla(25, 35%, 35%, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 18px 6px hsla(25, 35%, 35%, 0.5);
+  }
+}
+
+.btn-quiz-glow {
+  animation: quizGlow 2.5s ease-in-out infinite;
+}
