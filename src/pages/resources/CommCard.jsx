@@ -105,28 +105,6 @@ export default function CommCard() {
         </div>
       </section>
 
-      {/* App Preview */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-card border border-border rounded-2xl shadow-lg overflow-hidden">
-            <div
-              className="w-full flex items-center justify-center bg-secondary/30 text-foreground/40 text-sm"
-              style={{ aspectRatio: '16 / 9' }}
-            >
-              <div className="text-center px-6">
-                <p className="font-display uppercase tracking-wide mb-2">App screenshot placeholder</p>
-                <p className="text-xs text-foreground/30">
-                  Add commcard-preview.png to public/images/
-                </p>
-              </div>
-            </div>
-          </div>
-          <p className="text-center text-foreground/60 text-sm mt-4">
-            CommCard runs in your browser. No download needed.
-          </p>
-        </div>
-      </Section>
-
       {/* Key Features */}
       <Section id="features" className="bg-card/50">
         <div className="text-center max-w-2xl mx-auto mb-12">
