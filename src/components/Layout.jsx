@@ -35,6 +35,7 @@ const navigation = [
       { name: 'RPG Character Build Quiz', href: '/learn/rpg-character-quiz' },
     ],
   },
+  { name: 'Resources', href: '/resources/commcard' },
   { name: 'For Referrers', href: '/for-referrers' },
   {
     name: 'For Clinicians',
@@ -280,9 +281,14 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Resources */}
           <div>
-            <h4 className="font-display text-sm uppercase tracking-wide mb-4">Contact</h4>
+            <h4 className="font-display text-sm uppercase tracking-wide mb-4">Resources</h4>
+            <ul className="space-y-2">
+              <li><Link to="/resources/commcard" className="text-foreground/60 hover:text-primary text-sm transition-colors">CommCard</Link></li>
+            </ul>
+
+            <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-8">Contact</h4>
             <ul className="space-y-2 text-sm text-foreground/60">
               <li>Perth, Western Australia</li>
               <li>Telehealth Australia-wide</li>

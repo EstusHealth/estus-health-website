@@ -22,6 +22,7 @@ import PDAQuiz from './pages/PDAQuiz';
 import BurnoutQuiz from './pages/BurnoutQuiz';
 import GamingQuiz from './pages/GamingQuiz';
 import RPGCharacterQuiz from './pages/RPGCharacterQuiz';
+import CommCard from './pages/resources/CommCard';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -48,6 +49,9 @@ function App() {
             <Route path="performance-lab" element={<PerformanceLab />} />
           </Route>
           <Route path="contact" element={<ContactPage />} />
+          <Route path="resources">
+            <Route path="commcard" element={<CommCard />} />
+          </Route>
           <Route path="learn">
             <Route index element={<ResourcesPage />} />
             <Route path="understanding-pda" element={<LearnPDA />} />
