@@ -11,8 +11,9 @@ import {
   Sword,
   Users,
   ClipboardList,
+  MessageSquare,
 } from 'lucide-react';
-import { Section, Card, Badge, CTABanner } from '../../components/ui';
+import { Section, Card, Badge, Button, CTABanner } from '../../components/ui';
 
 const quizzes = [
   {
@@ -246,6 +247,68 @@ export default function ResourcesPage() {
             );
           })}
         </div>
+      </Section>
+
+      {/* Divider */}
+      <div className="container">
+        <hr className="border-noctua-brown/10" />
+      </div>
+
+      {/* CommCard Tool */}
+      <Section>
+        <div className="mb-12">
+          <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-3 font-semibold">
+            Free Tool
+          </p>
+          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">
+            CommCard
+          </h2>
+          <p className="text-noctua-brown/70 max-w-xl">
+            A free communication tool for moments when speaking is hard.
+          </p>
+        </div>
+
+        <Card
+          hover
+          className="bg-noctua-bone border-noctua-brown/10 shadow-sm max-w-2xl"
+        >
+          <div className="p-6 flex flex-col">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-12 h-12 rounded-lg bg-noctua-russet/10 flex items-center justify-center flex-shrink-0">
+                <MessageSquare className="w-6 h-6 text-noctua-russet" />
+              </div>
+              <Badge variant="primary" className="text-xs ml-3 mt-1">
+                Communication
+              </Badge>
+            </div>
+            <h3 className="font-display text-xl mb-3 text-noctua-brown">
+              Words When You Have None
+            </h3>
+            <p className="text-noctua-brown/70 text-sm leading-relaxed mb-5">
+              Ready-made phrases and custom cards you can show on screen or speak aloud.
+              Designed for neurodivergent adults who experience situational or intermittent
+              speech difficulties. No signup, no data collected, works on any device.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://commcard.estushealth.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-noctua-russet text-sm font-medium font-display uppercase tracking-wide hover:gap-2 transition-all group"
+              >
+                Open CommCard
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
+              <Link
+                to="/resources/commcard"
+                className="inline-flex items-center gap-1 text-noctua-brown/60 text-sm font-medium font-display uppercase tracking-wide hover:text-noctua-brown hover:gap-2 transition-all group"
+              >
+                Learn more
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+          </div>
+        </Card>
       </Section>
 
       {/* CTA */}

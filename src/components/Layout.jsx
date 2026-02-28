@@ -33,9 +33,9 @@ const navigation = [
       { name: 'Autistic Burnout Quiz', href: '/learn/burnout-quiz' },
       { name: 'Gaming & Wellbeing Quiz', href: '/learn/gaming-quiz' },
       { name: 'RPG Character Build Quiz', href: '/learn/rpg-character-quiz' },
+      { name: 'CommCard', href: '/resources/commcard' },
     ],
   },
-  { name: 'Resources', href: '/resources/commcard' },
   { name: 'For Referrers', href: '/for-referrers' },
   {
     name: 'For Clinicians',
