@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import ShareSection from './ShareSection';
 
 /*
@@ -50,8 +49,6 @@ export default function QuizResults({
   isSharedView,
   onTakeQuiz,
 }) {
-  const [emailValue, setEmailValue] = useState('');
-
   // Score breakdown: sort by highest score, calculate percentages
   const maxPossible = totalQuestions * 3;
   const breakdown = Object.entries(scores)
@@ -525,123 +522,6 @@ export default function QuizResults({
           </div>
         </div>
       </section>
-
-      {/* ─── EMAIL CAPTURE CTA ─────────────────────────────────────── */}
-      {archetype.emailCTA && (
-        <section style={{ background: C.bg, padding: '0 1.5rem 3rem' }}>
-          <div
-            style={{
-              maxWidth: '640px',
-              margin: '0 auto',
-              background: C.secondary,
-              border: `1px solid ${C.border}`,
-              borderRadius: '12px',
-              padding: 'clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2.5rem)',
-            }}
-          >
-            <p
-              style={{
-                fontFamily: "'Oswald', sans-serif",
-                textTransform: 'uppercase',
-                letterSpacing: '0.15em',
-                fontSize: '0.75rem',
-                color: C.primary,
-                marginBottom: '0.5rem',
-              }}
-            >
-              WANT TO GO DEEPER?
-            </p>
-            <h3
-              style={{
-                fontFamily: "'Oswald', sans-serif",
-                textTransform: 'uppercase',
-                fontSize: '1.5rem',
-                color: C.fg,
-                marginBottom: '0.5rem',
-                letterSpacing: '0.02em',
-                lineHeight: 1.3,
-              }}
-            >
-              {archetype.emailCTA.headline}
-            </h3>
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '0.9rem',
-                color: C.muted,
-                marginBottom: '1.25rem',
-              }}
-            >
-              {archetype.emailCTA.description}
-            </p>
-            {/* REPLACE WITH EMAIL ENDPOINT */}
-            <form
-              action="#"
-              onSubmit={(e) => e.preventDefault()}
-              style={{
-                display: 'flex',
-                gap: '0.75rem',
-                flexWrap: 'wrap',
-              }}
-            >
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={emailValue}
-                onChange={(e) => setEmailValue(e.target.value)}
-                style={{
-                  flex: '1 1 200px',
-                  background: C.card,
-                  border: `1px solid ${C.border}`,
-                  borderRadius: '0.5rem',
-                  padding: '0.75rem 1rem',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '0.9rem',
-                  color: C.fg,
-                  outline: 'none',
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.borderColor = C.primary;
-                  e.currentTarget.style.boxShadow = `0 0 0 2px hsla(25, 35%, 35%, 0.15)`;
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.borderColor = C.border;
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              />
-              <button
-                type="submit"
-                style={{
-                  background: C.primary,
-                  color: C.primaryFg,
-                  border: 'none',
-                  borderRadius: '0.5rem',
-                  padding: '0.75rem 1.5rem',
-                  fontFamily: "'Oswald', sans-serif",
-                  textTransform: 'uppercase',
-                  fontSize: '0.85rem',
-                  letterSpacing: '0.05em',
-                  cursor: 'pointer',
-                  transition: 'background 0.2s',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                SEND IT
-              </button>
-            </form>
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '0.75rem',
-                color: C.muted,
-                marginTop: '0.75rem',
-              }}
-            >
-              No spam. Unsubscribe anytime.
-            </p>
-          </div>
-        </section>
-      )}
 
       {/* ─── SHARE SECTION ─────────────────────────────────────────── */}
       <section style={{ background: C.card, borderTop: `1px solid ${C.border}` }}>
