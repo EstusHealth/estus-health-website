@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
-  ArrowRight,
   ArrowLeft,
   Sun,
   Moon,
@@ -12,9 +11,16 @@ import {
   Coffee,
   Brain,
   Zap,
-  CheckCircle,
+  Target,
+  Eye,
+  Shield,
+  Compass,
+  Lightbulb,
+  Activity,
+  Heart,
 } from 'lucide-react';
-import { Section, Card, CardContent, Button } from '../components/ui';
+import { Section } from '../components/ui';
+import QuizResults from '../components/QuizResults';
 
 // ─── Quiz questions ──────────────────────────────────────────────────────────
 
@@ -25,8 +31,8 @@ const questions = [
     icon: Sunrise,
     options: [
       { label: "Before 6:00 am", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 1 } },
-      { label: "6:00 – 7:30 am", scores: { lion: 2, bear: 3, wolf: 0, dolphin: 1 } },
-      { label: "7:30 – 9:00 am", scores: { lion: 0, bear: 2, wolf: 2, dolphin: 2 } },
+      { label: "6:00 \u2013 7:30 am", scores: { lion: 2, bear: 3, wolf: 0, dolphin: 1 } },
+      { label: "7:30 \u2013 9:00 am", scores: { lion: 0, bear: 2, wolf: 2, dolphin: 2 } },
       { label: "After 9:00 am", scores: { lion: 0, bear: 0, wolf: 3, dolphin: 1 } },
     ],
   },
@@ -35,9 +41,9 @@ const questions = [
     question: "When do you feel most mentally sharp and focused?",
     icon: Brain,
     options: [
-      { label: "Early morning (6–9 am)", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 0 } },
-      { label: "Mid-morning (9 am – 12 pm)", scores: { lion: 2, bear: 3, wolf: 0, dolphin: 1 } },
-      { label: "Afternoon (12–4 pm)", scores: { lion: 0, bear: 2, wolf: 1, dolphin: 2 } },
+      { label: "Early morning (6\u20139 am)", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 0 } },
+      { label: "Mid-morning (9 am \u2013 12 pm)", scores: { lion: 2, bear: 3, wolf: 0, dolphin: 1 } },
+      { label: "Afternoon (12\u20134 pm)", scores: { lion: 0, bear: 2, wolf: 1, dolphin: 2 } },
       { label: "Evening or late at night", scores: { lion: 0, bear: 0, wolf: 3, dolphin: 2 } },
     ],
   },
@@ -49,7 +55,7 @@ const questions = [
       { label: "Alert and ready to go", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 0 } },
       { label: "A bit groggy, but functional after a few minutes", scores: { lion: 1, bear: 3, wolf: 0, dolphin: 1 } },
       { label: "Foggy and slow, need significant warm-up time", scores: { lion: 0, bear: 1, wolf: 3, dolphin: 1 } },
-      { label: "Depends on the day — sometimes fine, sometimes terrible", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
+      { label: "Depends on the day. Sometimes fine, sometimes terrible", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
     ],
   },
   {
@@ -58,8 +64,8 @@ const questions = [
     icon: Moon,
     options: [
       { label: "Before 9:30 pm", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 0 } },
-      { label: "9:30 – 11:00 pm", scores: { lion: 1, bear: 3, wolf: 0, dolphin: 1 } },
-      { label: "11:00 pm – 12:30 am", scores: { lion: 0, bear: 1, wolf: 3, dolphin: 1 } },
+      { label: "9:30 \u2013 11:00 pm", scores: { lion: 1, bear: 3, wolf: 0, dolphin: 1 } },
+      { label: "11:00 pm \u2013 12:30 am", scores: { lion: 0, bear: 1, wolf: 3, dolphin: 1 } },
       { label: "After 12:30 am", scores: { lion: 0, bear: 0, wolf: 3, dolphin: 2 } },
     ],
   },
@@ -71,7 +77,7 @@ const questions = [
       { label: "High in the morning, fading by evening", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 0 } },
       { label: "Steady through the day with a slight afternoon dip", scores: { lion: 1, bear: 3, wolf: 0, dolphin: 0 } },
       { label: "Low in the morning, building through the day, peaking at night", scores: { lion: 0, bear: 0, wolf: 3, dolphin: 1 } },
-      { label: "Unpredictable — it varies a lot day to day", scores: { lion: 0, bear: 1, wolf: 1, dolphin: 3 } },
+      { label: "Unpredictable. It varies a lot day to day", scores: { lion: 0, bear: 1, wolf: 1, dolphin: 3 } },
     ],
   },
   {
@@ -79,10 +85,10 @@ const questions = [
     question: "How easily do you fall asleep at night?",
     icon: Moon,
     options: [
-      { label: "Very easily — I'm usually out within minutes", scores: { lion: 3, bear: 2, wolf: 0, dolphin: 0 } },
-      { label: "Usually within 15–20 minutes", scores: { lion: 1, bear: 3, wolf: 1, dolphin: 0 } },
-      { label: "It takes a while — my mind tends to be active", scores: { lion: 0, bear: 0, wolf: 3, dolphin: 1 } },
-      { label: "It's a struggle — I often lie awake or have restless sleep", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
+      { label: "Very easily. I'm usually out within minutes", scores: { lion: 3, bear: 2, wolf: 0, dolphin: 0 } },
+      { label: "Usually within 15\u201320 minutes", scores: { lion: 1, bear: 3, wolf: 1, dolphin: 0 } },
+      { label: "It takes a while. My mind tends to be active", scores: { lion: 0, bear: 0, wolf: 3, dolphin: 1 } },
+      { label: "It's a struggle. I often lie awake or have restless sleep", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
     ],
   },
   {
@@ -90,10 +96,10 @@ const questions = [
     question: "How do you feel about early morning commitments (e.g., 7 am meeting)?",
     icon: Clock,
     options: [
-      { label: "No problem — I'm already up and productive", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 1 } },
+      { label: "No problem. I'm already up and productive", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 1 } },
       { label: "Manageable with an alarm, but not ideal", scores: { lion: 1, bear: 3, wolf: 0, dolphin: 1 } },
-      { label: "Painful — it takes a lot of effort to function", scores: { lion: 0, bear: 1, wolf: 3, dolphin: 1 } },
-      { label: "Depends on how I slept — sometimes okay, sometimes impossible", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
+      { label: "Painful. It takes a lot of effort to function", scores: { lion: 0, bear: 1, wolf: 3, dolphin: 1 } },
+      { label: "Depends on how I slept. Sometimes okay, sometimes impossible", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
     ],
   },
   {
@@ -104,7 +110,7 @@ const questions = [
       { label: "First thing in the morning", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 0 } },
       { label: "Late morning or lunchtime", scores: { lion: 1, bear: 3, wolf: 0, dolphin: 1 } },
       { label: "Afternoon or evening", scores: { lion: 0, bear: 1, wolf: 3, dolphin: 1 } },
-      { label: "Whenever I have the energy — no consistent preference", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
+      { label: "Whenever I have the energy. No consistent preference", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
     ],
   },
   {
@@ -112,10 +118,10 @@ const questions = [
     question: "How would you describe your sleep quality overall?",
     icon: Moon,
     options: [
-      { label: "Deep and restorative — I rarely wake during the night", scores: { lion: 3, bear: 2, wolf: 0, dolphin: 0 } },
-      { label: "Generally good — the occasional rough night", scores: { lion: 1, bear: 3, wolf: 1, dolphin: 0 } },
+      { label: "Deep and restorative. I rarely wake during the night", scores: { lion: 3, bear: 2, wolf: 0, dolphin: 0 } },
+      { label: "Generally good. The occasional rough night", scores: { lion: 1, bear: 3, wolf: 1, dolphin: 0 } },
       { label: "Decent once I get to sleep, but getting there is the hard part", scores: { lion: 0, bear: 0, wolf: 3, dolphin: 1 } },
-      { label: "Light and easily disrupted — I often feel unrested", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
+      { label: "Light and easily disrupted. I often feel unrested", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
     ],
   },
   {
@@ -125,7 +131,7 @@ const questions = [
     options: [
       { label: "I prefer structure and find disruption frustrating", scores: { lion: 3, bear: 1, wolf: 0, dolphin: 1 } },
       { label: "I can adapt fairly easily", scores: { lion: 1, bear: 3, wolf: 1, dolphin: 0 } },
-      { label: "I'm naturally flexible — I don't love rigid schedules", scores: { lion: 0, bear: 1, wolf: 3, dolphin: 0 } },
+      { label: "I'm naturally flexible. I don't love rigid schedules", scores: { lion: 0, bear: 1, wolf: 3, dolphin: 0 } },
       { label: "I find routine hard to maintain but know I need it", scores: { lion: 0, bear: 0, wolf: 1, dolphin: 3 } },
     ],
   },
@@ -153,113 +159,160 @@ const questions = [
   },
 ];
 
-// ─── Chronotype result data ──────────────────────────────────────────────────
+// ─── Chronotype result data (expanded for new results page) ─────────────────
 
 const chronotypes = {
   lion: {
-    name: "Lion",
-    icon: Sunrise,
+    key: "lion",
+    name: "The Lion",
+    emoji: "\u{1F981}",
     tagline: "The Early Riser",
-    colour: "text-amber-700",
-    colourBg: "bg-amber-700/10",
-    colourBorder: "border-amber-700/30",
-    summary:
-      "Lions wake early and hit peak performance before most people have finished breakfast. Your biological rhythm front-loads energy, focus, and drive into the first half of the day.",
+    hook: "Your best hours happen while the rest of the world is still asleep, and that's a genuine competitive advantage.",
+    description: [
+      "Lions wake early and hit peak performance before most people have finished breakfast. Your biological rhythm front-loads energy, focus, and drive into the first half of the day. This isn't discipline or willpower. It's your circadian system operating exactly as it was designed to.",
+      "You likely find mornings effortless and productive. Your executive function peaks early, your motivation is highest before midday, and you naturally gravitate toward structure and routine. This consistency makes you reliable, focused, and effective during conventional hours. People who work with you know they can count on your morning output.",
+      "The trade-off is real though. Your energy drops significantly in the afternoon and evening, which means social events, late meetings, and evening commitments often feel harder than they should. You're not being antisocial. Your biology is genuinely winding down. Understanding this helps you plan your days around your actual rhythm rather than fighting it."
+    ],
     strengths: [
-      "High morning productivity and mental clarity",
-      "Natural discipline with routines and structure",
-      "Consistent sleep-wake cycles with early bedtimes",
-      "Strong executive function during peak hours",
+      { icon: Sunrise, label: "Peak Morning Performance", description: "Your cognitive sharpness in early hours exceeds what most people achieve all day" },
+      { icon: Target, label: "Natural Discipline", description: "Consistent sleep-wake cycles give you reliable daily structure without effort" },
+      { icon: Brain, label: "Strong Early Executive Function", description: "Planning, decision-making, and focus come naturally in your first few hours" },
     ],
-    challenges: [
-      "Energy drops significantly in the afternoon and evening",
-      "Social events and late commitments can clash with your rhythm",
-      "May push through fatigue signals in the evening",
-      "Early wake times can become rigidly entrenched even when rest is needed",
+    tips: [
+      { headline: "Front-Load Your Most Important Work", body: "Your brain is at its sharpest between 6 and 11 am. Schedule deep work, creative tasks, and important decisions for this window. Don't waste your peak hours on email." },
+      { headline: "Protect Your Evening Wind-Down", body: "Avoid stimulating activities after 8 pm. Your circadian system is genuinely winding down, and fighting it creates a false 'second wind' that costs you sleep quality." },
+      { headline: "Plan Social Events Strategically", body: "If evening socialising drains you, host morning or afternoon gatherings instead. Brunch is your natural social window. Let the wolves handle the dinner parties." },
+      { headline: "Use Light Exposure Deliberately", body: "Get bright light immediately upon waking to reinforce your rhythm. In the evening, dim lights aggressively. Your system responds strongly to light cues." },
     ],
-    sleepTip:
-      "Your circadian system is wired to wind down early. Protect your evening transition time — avoid stimulating activities after 8 pm and lean into the natural drop. Fighting it creates the illusion of a 'second wind' that costs you sleep quality.",
+    insight: "Your circadian system is wired to wind down early. Protect your evening transition time. Avoid stimulating activities after 8 pm and lean into the natural drop. Fighting it creates the illusion of a 'second wind' that costs you sleep quality.",
+    shareCaption: "Just found out I'm a Lion Chronotype. My early-morning energy isn't random, it's biological. Take the free quiz to find your chronotype: #Chronotype #SleepScience #EstusHealth",
+    emailCTA: {
+      headline: "The Lion's guide to building your optimal daily schedule",
+      description: "A practical framework for structuring your day around your biological peak hours.",
+    },
+    nextResource: {
+      title: "Ready to work with your rhythm?",
+      description: "Our Sleep Performance Program builds a personalised system around your biology. Four sessions. Real protocols. Built for your actual life.",
+      cta: "Start a referral",
+    },
   },
   bear: {
-    name: "Bear",
-    icon: Sun,
+    key: "bear",
+    name: "The Bear",
+    emoji: "\u{1F43B}",
     tagline: "The Steady Performer",
-    colour: "text-primary",
-    colourBg: "bg-primary/10",
-    colourBorder: "border-primary/30",
-    summary:
-      "Bears follow a solar-aligned rhythm that tracks closely with the rise and fall of daylight. This is the most common chronotype. Your energy is steady, your sleep is generally reliable, and you perform well during conventional hours.",
+    hook: "Your energy tracks the sun, which makes you naturally aligned with how most of the world works.",
+    description: [
+      "Bears follow a solar-aligned rhythm that tracks closely with the rise and fall of daylight. This is the most common chronotype. Your energy is steady, your sleep is generally reliable, and you perform well during conventional hours. That consistency is a genuine strength, even if it feels unremarkable compared to more extreme types.",
+      "Your mid-morning to early afternoon window is your cognitive peak. This is when your focus, decision-making, and creative thinking are strongest. You probably handle the standard workday reasonably well, adapt to most schedules without major difficulty, and maintain good enough sleep without dramatic interventions.",
+      "The risk for Bears isn't dramatic sleep failure. It's gradual erosion. Because your baseline is 'okay,' you might underestimate the impact of small compromises: late screens, inconsistent bedtimes, weekend sleep-ins. These accumulate into chronic under-performance that never triggers an alarm but steadily reduces your potential."
+    ],
     strengths: [
-      "Steady, predictable energy throughout the day",
-      "Flexible enough to adapt to most schedules",
-      "Generally good sleep quality and duration",
-      "Peak cognitive performance mid-morning to early afternoon",
+      { icon: Sun, label: "Steady Daily Energy", description: "Predictable energy patterns let you plan your day with confidence" },
+      { icon: Compass, label: "Schedule Flexibility", description: "You can adapt to most timetables without serious circadian conflict" },
+      { icon: Shield, label: "Reliable Sleep Architecture", description: "Your sleep quality stays consistent when you protect basic habits" },
     ],
-    challenges: [
-      "Afternoon energy dip can impact focus and productivity",
-      "May underestimate the impact of poor sleep because baseline is 'okay'",
-      "Risk of drifting into irregular patterns without structure",
-      "Can mask sleep debt because daytime function stays passable",
+    tips: [
+      { headline: "Guard Against Gradual Erosion", body: "Small compromises like late screens, irregular bedtimes, and weekend lie-ins accumulate into chronic under-performance. Consistency is your highest-leverage tool." },
+      { headline: "Protect Your Mid-Morning Peak", body: "Schedule your most demanding cognitive work between 10 am and 1 pm. This is when your Bear brain does its best thinking. Routine admin can wait until after lunch." },
+      { headline: "Watch the Afternoon Dip", body: "The post-lunch energy drop is real for Bears. Plan lighter tasks for 2 to 4 pm, and consider a brief walk or change of environment to manage it." },
+      { headline: "Keep Weekends Consistent", body: "The temptation to sleep in on weekends shifts your circadian clock. Try to keep wake times within 30 minutes of your weekday schedule for better Monday performance." },
     ],
-    sleepTip:
-      "Your greatest risk isn't dramatic sleep failure — it's gradual erosion. Small compromises (late screens, inconsistent bedtimes, weekend sleep-ins) accumulate into chronic under-performance. Consistency is your highest-leverage tool.",
+    insight: "Your greatest risk isn't dramatic sleep failure. It's gradual erosion. Small compromises (late screens, inconsistent bedtimes, weekend sleep-ins) accumulate into chronic under-performance. Consistency is your highest-leverage tool.",
+    shareCaption: "Just found out I'm a Bear Chronotype. Turns out my energy patterns aren't random, they're solar-aligned. Take the free quiz: #Chronotype #SleepScience #EstusHealth",
+    emailCTA: {
+      headline: "The Bear's guide to building your optimal weekly schedule",
+      description: "How to leverage your steady rhythm for peak performance without dramatic lifestyle changes.",
+    },
+    nextResource: {
+      title: "Ready to work with your rhythm?",
+      description: "Our Sleep Performance Program builds a personalised system around your biology. Four sessions. Real protocols. Built for your actual life.",
+      cta: "Start a referral",
+    },
   },
   wolf: {
-    name: "Wolf",
-    icon: Sunset,
+    key: "wolf",
+    name: "The Wolf",
+    emoji: "\u{1F43A}",
     tagline: "The Night Thinker",
-    colour: "text-indigo-700",
-    colourBg: "bg-indigo-700/10",
-    colourBorder: "border-indigo-700/30",
-    summary:
-      "Wolves come alive when the rest of the world slows down. Your circadian rhythm is shifted later — you peak cognitively in the afternoon and evening, and mornings are genuinely difficult, not just inconvenient.",
+    hook: "Your brain does its best work when the world goes quiet, and that's not a flaw in your wiring.",
+    description: [
+      "Wolves come alive when the rest of the world slows down. Your circadian rhythm is shifted later. You peak cognitively in the afternoon and evening, and mornings are genuinely difficult, not just inconvenient. This is biological, not a discipline problem.",
+      "Your best creative and analytical work happens when most people are winding down. You're naturally suited to deep focus in the evening hours, comfortable with flexible schedules, and often bring strong lateral thinking and problem-solving ability. The quiet of late hours gives your brain the low-distraction environment it actually needs to perform.",
+      "The challenge is that the modern world is built for early risers. Morning obligations create ongoing circadian conflict, and social norms often punish your natural rhythm. You've probably been told you're lazy, unmotivated, or 'not a morning person' as if that's a choice. It's not. Your biology runs on a different clock, and the solution isn't to force yourself into an early schedule. It's to build structure around your actual biology."
+    ],
     strengths: [
-      "High creativity and focus in the evening",
-      "Naturally suited to deep work when distractions fade",
-      "Comfortable with flexible and non-traditional schedules",
-      "Often strong lateral thinking and problem-solving ability",
+      { icon: Sunset, label: "Evening Cognitive Peak", description: "Your focus and creativity surge when the world quiets down" },
+      { icon: Brain, label: "Strong Lateral Thinking", description: "You approach problems from angles that earlier risers often miss" },
+      { icon: Activity, label: "Deep Work Capacity", description: "You can sustain concentrated effort for long evening sessions" },
     ],
-    challenges: [
-      "Morning obligations create ongoing circadian conflict",
-      "Sleep onset is naturally late, making early nights difficult",
-      "Social and work norms often punish your natural rhythm",
-      "Higher risk of sleep deprivation in a 9-to-5 world",
+    tips: [
+      { headline: "Stop Fighting Your Clock", body: "The solution isn't forcing an early schedule. It's building structure around your actual biology. Give yourself permission to work with your rhythm, not against it." },
+      { headline: "Use Strategic Light Exposure", body: "Bright light in the morning helps gently shift your window earlier without fighting your wiring. A light therapy lamp for 20 minutes after waking makes a measurable difference." },
+      { headline: "Manage Caffeine Timing", body: "Your natural late-night alertness means caffeine after 2 pm can push your already-late sleep onset even further. Front-load your caffeine and taper by early afternoon." },
+      { headline: "Build a Gradual Wind-Down", body: "Your brain doesn't have a natural 'off switch' in the evening. Build a deliberate wind-down protocol: dim lights, reduce stimulation, and create a transition ritual that signals sleep time." },
     ],
-    sleepTip:
-      "The solution isn't forcing yourself into an early schedule. It's building structure around your actual biology. Strategic light exposure in the morning, careful caffeine timing, and a gradual wind-down protocol can shift your window without fighting your wiring.",
+    insight: "The solution isn't forcing yourself into an early schedule. It's building structure around your actual biology. Strategic light exposure in the morning, careful caffeine timing, and a gradual wind-down protocol can shift your window without fighting your wiring.",
+    shareCaption: "Just found out I'm a Wolf Chronotype. My late-night energy isn't laziness, it's biology. Take the free quiz: #Chronotype #SleepScience #EstusHealth",
+    emailCTA: {
+      headline: "The Wolf's guide to thriving in an early-bird world",
+      description: "Practical strategies for building a schedule that respects your natural rhythm while meeting real-world demands.",
+    },
+    nextResource: {
+      title: "Ready to work with your rhythm?",
+      description: "Our Sleep Performance Program builds a personalised system around your biology. Four sessions. Real protocols. Built for your actual life.",
+      cta: "Start a referral",
+    },
   },
   dolphin: {
-    name: "Dolphin",
-    icon: Moon,
+    key: "dolphin",
+    name: "The Dolphin",
+    emoji: "\u{1F42C}",
     tagline: "The Light Sleeper",
-    colour: "text-teal-700",
-    colourBg: "bg-teal-700/10",
-    colourBorder: "border-teal-700/30",
-    summary:
-      "Dolphins are light sleepers with irregular rhythms. Your sleep is easily disrupted, your energy fluctuates, and you may feel like you've never quite figured out a pattern that works. This is especially common in neurodivergent profiles.",
+    hook: "Your sleep system needs more scaffolding than most, and understanding that changes everything.",
+    description: [
+      "Dolphins are light sleepers with irregular rhythms. Your sleep is easily disrupted, your energy fluctuates, and you may feel like you've never quite figured out a pattern that works. This is especially common in neurodivergent profiles where sensory sensitivity, anxiety, and nervous system regulation all affect sleep architecture.",
+      "Your brain stays more alert than most people's, even during rest. This means you're highly attuned to environmental changes, detail-oriented with strong analytical thinking, and often processing information at a level that others don't reach. The downside is that this alertness doesn't switch off easily, making sleep onset difficult and sleep quality fragile.",
+      "Dolphins often feel like they've failed at sleep because generic advice doesn't work for them. '10 pm bedtime, no screens, warm bath' sounds simple but ignores the neurological reality of a system that stays vigilant. Your sleep needs genuine, structured scaffolding, not willpower. When you get the right environmental and behavioural supports in place, the improvement can be dramatic."
+    ],
     strengths: [
-      "High alertness and environmental awareness",
-      "Detail-oriented with strong analytical thinking",
-      "Can function across varied schedules when supported",
-      "Often highly attuned to sensory input and subtle changes",
+      { icon: Eye, label: "High Environmental Awareness", description: "Your alertness picks up on details and changes that others miss completely" },
+      { icon: Lightbulb, label: "Analytical Depth", description: "Your brain processes information with unusual precision and thoroughness" },
+      { icon: Heart, label: "Sensory Attunement", description: "You read environments and atmospheres with remarkable accuracy" },
     ],
-    challenges: [
-      "Difficulty falling and staying asleep consistently",
-      "Energy levels are unpredictable day to day",
-      "Sensory sensitivity can disrupt sleep (light, sound, temperature)",
-      "Higher vulnerability to sleep debt and its cognitive effects",
+    tips: [
+      { headline: "Build Environmental Scaffolding", body: "Blackout curtains, white noise, and temperature regulation aren't optional for Dolphins. They're foundational. Your sensory system needs a controlled environment to allow sleep onset." },
+      { headline: "Create a Strict Wind-Down Protocol", body: "Start your wind-down 90 minutes before intended sleep time. Dim lights, reduce stimulation progressively, and build a consistent ritual that your nervous system learns to associate with sleep." },
+      { headline: "Address the Worry Loop", body: "If your mind races at bedtime, try a 'worry dump' journal 2 hours before bed. Write down everything unresolved, then close the notebook. This externalises the processing your brain wants to do in bed." },
+      { headline: "Accept Variable Energy", body: "Your energy will fluctuate more than other types. Instead of fighting this, plan your week with built-in flexibility. Schedule important tasks during your most reliable windows, not rigid slots." },
     ],
-    sleepTip:
-      "Your sleep system needs more scaffolding than most. Environment control (blackout, white noise, temperature regulation), strict wind-down protocols, and sensory management aren't optional — they're foundational. A structured approach makes the biggest difference for dolphins.",
+    insight: "Your sleep system needs more scaffolding than most. Environment control (blackout, white noise, temperature regulation), strict wind-down protocols, and sensory management aren't optional. They're foundational. A structured approach makes the biggest difference for Dolphins.",
+    shareCaption: "Just found out I'm a Dolphin Chronotype. My light sleep isn't a flaw, it's a wiring pattern that needs different support. Take the free quiz: #Chronotype #SleepScience #EstusHealth",
+    emailCTA: {
+      headline: "The Dolphin's guide to building a sleep system that actually works",
+      description: "Structured protocols for sensory-sensitive sleepers who need more than generic advice.",
+    },
+    nextResource: {
+      title: "Ready to work with your rhythm?",
+      description: "Our Sleep Performance Program builds a personalised system around your biology. Four sessions. Real protocols. Built for your actual life.",
+      cta: "Start a referral",
+    },
   },
 };
 
+const CHRONOTYPE_MAP = Object.fromEntries(
+  Object.entries(chronotypes).map(([k, v]) => [k, { name: v.name, emoji: v.emoji }])
+);
+
+const REFERRAL_URL = "https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1";
+const QUIZ_NAME = "Chronotype Quiz";
+const QUIZ_SLUG = "chronotype-quiz";
+
 // ─── Scoring logic ───────────────────────────────────────────────────────────
 
-function calculateResult(answers) {
+function calcResult(ans) {
   const totals = { lion: 0, bear: 0, wolf: 0, dolphin: 0 };
-
-  answers.forEach((answerIndex, questionIndex) => {
+  ans.forEach((answerIndex, questionIndex) => {
     if (answerIndex !== null && questions[questionIndex]) {
       const scores = questions[questionIndex].options[answerIndex].scores;
       Object.keys(scores).forEach((type) => {
@@ -267,19 +320,14 @@ function calculateResult(answers) {
       });
     }
   });
-
   const sorted = Object.entries(totals).sort((a, b) => b[1] - a[1]);
-  return {
-    primary: sorted[0][0],
-    scores: totals,
-    total: sorted[0][1],
-  };
+  return { primary: sorted[0][0], scores: totals };
 }
 
 // ─── Component: Progress bar ─────────────────────────────────────────────────
 
 function ProgressBar({ current, total }) {
-  const pct = ((current) / total) * 100;
+  const pct = (current / total) * 100;
   return (
     <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
       <div
@@ -319,10 +367,9 @@ function QuizIntro({ onStart }) {
           </p>
           <button
             onClick={onStart}
-            className="inline-flex items-center justify-center font-display uppercase tracking-wide transition-all duration-200 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-glow-strong h-12 px-8 text-sm"
+            className="inline-flex items-center justify-center font-display uppercase tracking-wide transition-all duration-200 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 text-sm focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
           >
             Start the Quiz
-            <ArrowRight className="ml-2 w-4 h-4" />
           </button>
 
           <div className="mt-12 grid sm:grid-cols-3 gap-6 text-left max-w-2xl mx-auto">
@@ -347,7 +394,7 @@ function QuizIntro({ onStart }) {
 
 // ─── Component: Question screen ──────────────────────────────────────────────
 
-function QuizQuestion({ question, questionIndex, totalQuestions, selectedAnswer, onAnswer, onNext, onBack }) {
+function QuizQuestion({ question, questionIndex, totalQuestions, selectedAnswer, onAnswer, onBack }) {
   const Icon = question.icon;
 
   return (
@@ -382,7 +429,7 @@ function QuizQuestion({ question, questionIndex, totalQuestions, selectedAnswer,
             <button
               key={idx}
               onClick={() => onAnswer(idx)}
-              className={`w-full text-left p-4 rounded-lg border transition-all duration-200 ${
+              className={`w-full text-left p-4 rounded-lg border transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 ${
                 selectedAnswer === idx
                   ? 'border-primary bg-primary/5 shadow-md'
                   : 'border-border bg-card hover:border-primary/30 hover:shadow-sm'
@@ -408,11 +455,11 @@ function QuizQuestion({ question, questionIndex, totalQuestions, selectedAnswer,
           ))}
         </div>
 
-        {/* Navigation */}
-        <div className="flex justify-between items-center">
+        {/* Navigation - Back only, auto-advance handles forward */}
+        <div className="flex justify-start items-center">
           <button
             onClick={onBack}
-            className={`inline-flex items-center gap-2 text-sm font-display uppercase tracking-wide transition-colors ${
+            className={`inline-flex items-center gap-2 text-sm font-display uppercase tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 ${
               questionIndex === 0
                 ? 'text-foreground/30 cursor-not-allowed'
                 : 'text-foreground/60 hover:text-foreground'
@@ -422,219 +469,38 @@ function QuizQuestion({ question, questionIndex, totalQuestions, selectedAnswer,
             <ArrowLeft className="w-4 h-4" />
             Back
           </button>
-          <button
-            onClick={onNext}
-            disabled={selectedAnswer === null}
-            className={`inline-flex items-center justify-center font-display uppercase tracking-wide transition-all duration-200 rounded-lg h-10 px-5 text-sm ${
-              selectedAnswer === null
-                ? 'bg-secondary text-foreground/40 cursor-not-allowed'
-                : 'bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-glow-strong'
-            }`}
-          >
-            {questionIndex === totalQuestions - 1 ? 'See Results' : 'Next'}
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </button>
         </div>
       </div>
     </Section>
   );
 }
 
-// ─── Component: Results screen ───────────────────────────────────────────────
-
-function QuizResults({ result, onRestart }) {
-  const type = chronotypes[result.primary];
-  const Icon = type.icon;
-
-  // Calculate percentage breakdown
-  const maxPossible = questions.length * 3;
-  const breakdown = Object.entries(result.scores)
-    .sort((a, b) => b[1] - a[1])
-    .map(([key, score]) => ({
-      key,
-      name: chronotypes[key].name,
-      score,
-      pct: Math.round((score / maxPossible) * 100),
-      icon: chronotypes[key].icon,
-    }));
-
-  return (
-    <>
-      {/* Hero result */}
-      <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
-        <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-primary font-display text-sm uppercase tracking-widest mb-4">
-              Your Chronotype
-            </p>
-            <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl ${type.colourBg} mb-6`}>
-              <Icon className={`w-10 h-10 ${type.colour}`} />
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-display font-bold leading-tight mb-4">
-              You're a{' '}
-              <span className="text-gradient-accent">{type.name}</span>
-            </h1>
-            <p className="font-serif text-xl text-foreground/80 italic mb-6">
-              {type.tagline}
-            </p>
-            <p className="text-foreground/70 leading-relaxed max-w-2xl mx-auto">
-              {type.summary}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Score breakdown */}
-      <Section className="bg-card/50 py-12">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-xl font-display mb-6">Your Score Breakdown</h2>
-          <div className="space-y-4">
-            {breakdown.map(({ key, name, pct, icon: BreakdownIcon }) => (
-              <div key={key} className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <BreakdownIcon className="w-4 h-4 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-sm font-display uppercase tracking-wide">{name}</span>
-                    <span className="text-sm text-foreground/60">{pct}%</span>
-                  </div>
-                  <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all duration-700 ease-out ${
-                        key === result.primary ? 'bg-primary' : 'bg-primary/40'
-                      }`}
-                      style={{ width: `${pct}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Strengths & challenges */}
-      <Section>
-        <div className="max-w-3xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-xl font-display mb-4">Strengths</h2>
-              <div className="space-y-3">
-                {type.strengths.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground/80 text-sm leading-relaxed">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h2 className="text-xl font-display mb-4">Common Challenges</h2>
-              <div className="space-y-3">
-                {type.challenges.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full border-2 border-primary/40 mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground/80 text-sm leading-relaxed">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Sleep tip */}
-      <Section className="bg-card/50">
-        <div className="max-w-3xl mx-auto">
-          <Card className={`${type.colourBorder}`}>
-            <CardContent className="p-6 lg:p-8">
-              <h2 className="font-display text-lg mb-4 flex items-center gap-2">
-                <Moon className="w-5 h-5 text-primary" />
-                Sleep Tip for {type.name}s
-              </h2>
-              <p className="text-foreground/80 leading-relaxed font-serif italic">
-                {type.sleepTip}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </Section>
-
-      {/* Disclaimer */}
-      <Section>
-        <div className="max-w-3xl mx-auto">
-          <Card className="border-border">
-            <CardContent>
-              <p className="text-foreground/60 text-sm leading-relaxed">
-                <strong className="text-foreground/80">A note on this quiz:</strong> This is an
-                educational tool based on chronotype research. It gives you a useful starting point
-                for understanding your biological rhythm, but it's not a clinical assessment. Factors
-                like neurodivergence, medication, shift work, and health conditions all influence sleep
-                patterns in ways a short quiz can't capture. For a comprehensive, personalised sleep
-                assessment, that's what our Sleep Performance Program is for.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </Section>
-
-      {/* CTA — link to referral form */}
-      <Section className="bg-card border-y border-border">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-display mb-4">
-            Ready to Work With Your Rhythm?
-          </h2>
-          <p className="text-foreground/70 mb-8">
-            Knowing your chronotype is the first step. Our Sleep Performance Program builds
-            a personalised system around your biology — not generic advice. Four sessions.
-            Real protocols. Built for your actual life.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button
-              href="https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1"
-              target="_blank"
-              rel="noopener noreferrer"
-              size="lg"
-            >
-              Start a Referral
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button to="/services/sleep-program" variant="outline" size="lg">
-              Learn About the Program
-            </Button>
-          </div>
-        </div>
-      </Section>
-
-      {/* Retake / related */}
-      <Section>
-        <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <button
-            onClick={onRestart}
-            className="text-sm text-foreground/60 font-display uppercase tracking-wide hover:text-primary transition-colors"
-          >
-            Retake Quiz
-          </button>
-          <Link
-            to="/services/sleep-program"
-            className="inline-flex items-center text-primary text-sm font-medium"
-          >
-            Explore the Sleep Performance Program <ArrowRight className="ml-1 w-4 h-4" />
-          </Link>
-        </div>
-      </Section>
-    </>
-  );
-}
-
 // ─── Main quiz component ─────────────────────────────────────────────────────
 
 export default function ChronotypeQuiz() {
-  const [phase, setPhase] = useState('intro'); // intro | quiz | results
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [phase, setPhase] = useState('intro');
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
   const [result, setResult] = useState(null);
+  const [scores, setScores] = useState({ lion: 0, bear: 0, wolf: 0, dolphin: 0 });
+  const [autoAdvancePending, setAutoAdvancePending] = useState(false);
+  const [isSharedView, setIsSharedView] = useState(false);
+
+  // Deep-link: detect ?result= param on mount
+  useEffect(() => {
+    const resultParam = searchParams.get("result");
+    if (resultParam && chronotypes[resultParam]) {
+      setResult(resultParam);
+      setIsSharedView(true);
+      const placeholderScores = {};
+      Object.keys(chronotypes).forEach((k) => {
+        placeholderScores[k] = k === resultParam ? 27 : Math.floor(Math.random() * 15) + 5;
+      });
+      setScores(placeholderScores);
+      setPhase('results');
+    }
+  }, []);
 
   function handleStart() {
     setPhase('quiz');
@@ -642,24 +508,34 @@ export default function ChronotypeQuiz() {
   }
 
   function handleAnswer(optionIndex) {
+    const wasUnanswered = answers[currentQuestion] === null;
     const newAnswers = [...answers];
     newAnswers[currentQuestion] = optionIndex;
     setAnswers(newAnswers);
-  }
 
-  function handleNext() {
-    if (answers[currentQuestion] === null) return;
-
-    if (currentQuestion === questions.length - 1) {
-      const res = calculateResult(answers);
-      setResult(res);
-      setPhase('results');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      setCurrentQuestion(currentQuestion + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (wasUnanswered) {
+      setAutoAdvancePending(true);
     }
   }
+
+  // Auto-advance after 250ms
+  useEffect(() => {
+    if (!autoAdvancePending) return;
+    const timer = setTimeout(() => {
+      setAutoAdvancePending(false);
+      if (currentQuestion === questions.length - 1) {
+        const res = calcResult(answers);
+        setResult(res.primary);
+        setScores(res.scores);
+        setPhase('results');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setCurrentQuestion((q) => q + 1);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [autoAdvancePending]);
 
   function handleBack() {
     if (currentQuestion > 0) {
@@ -673,8 +549,23 @@ export default function ChronotypeQuiz() {
     setCurrentQuestion(0);
     setAnswers(Array(questions.length).fill(null));
     setResult(null);
+    setScores({ lion: 0, bear: 0, wolf: 0, dolphin: 0 });
+    setIsSharedView(false);
+    setSearchParams({});
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  function handleTakeQuiz() {
+    setIsSharedView(false);
+    setSearchParams({});
+    setPhase('intro');
+    setResult(null);
+    setScores({ lion: 0, bear: 0, wolf: 0, dolphin: 0 });
+    setAnswers(Array(questions.length).fill(null));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  const archetype = result ? chronotypes[result] : null;
 
   return (
     <>
@@ -682,7 +573,7 @@ export default function ChronotypeQuiz() {
         <title>Chronotype Quiz | Estus Health</title>
         <meta
           name="description"
-          content="Discover your sleep chronotype — Lion, Bear, Wolf, or Dolphin. A free, evidence-informed quiz from Estus Health to help you understand your biological sleep rhythm."
+          content="Discover your sleep chronotype. A free, evidence-informed quiz from Estus Health to help you understand your biological sleep rhythm."
         />
       </Helmet>
 
@@ -695,13 +586,24 @@ export default function ChronotypeQuiz() {
           totalQuestions={questions.length}
           selectedAnswer={answers[currentQuestion]}
           onAnswer={handleAnswer}
-          onNext={handleNext}
           onBack={handleBack}
         />
       )}
 
-      {phase === 'results' && result && (
-        <QuizResults result={result} onRestart={handleRestart} />
+      {phase === 'results' && archetype && (
+        <QuizResults
+          quizName={QUIZ_NAME}
+          quizSlug={QUIZ_SLUG}
+          archetype={archetype}
+          secondaryArchetype={null}
+          scores={scores}
+          archetypeMap={CHRONOTYPE_MAP}
+          totalQuestions={questions.length}
+          referralURL={REFERRAL_URL}
+          onRestart={handleRestart}
+          isSharedView={isSharedView}
+          onTakeQuiz={handleTakeQuiz}
+        />
       )}
     </>
   );

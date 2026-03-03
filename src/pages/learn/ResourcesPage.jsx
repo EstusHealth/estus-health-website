@@ -22,7 +22,7 @@ const quizzes = [
     href: '/learn/pda-quiz',
     badge: 'Autism',
     description:
-      'Discover your PDA archetype — Negotiator, Avoider, Masker, or Adapter — and get personalised strategies for navigating demands.',
+      'Discover your PDA archetype and get personalised strategies for navigating demands.',
     cta: 'Take the quiz',
   },
   {
@@ -40,7 +40,7 @@ const quizzes = [
     href: '/learn/energy-quiz',
     badge: 'Executive Function',
     description:
-      'Map your energy patterns and executive function profile to understand when and why tasks feel impossible — and what actually helps.',
+      'Map your energy patterns and executive function profile to understand when and why tasks feel impossible, and what actually helps.',
     cta: 'Take the quiz',
   },
   {
@@ -57,6 +57,7 @@ const quizzes = [
     title: 'Gaming & Wellbeing Quiz',
     href: '/learn/gaming-quiz',
     badge: 'Gaming',
+    isGaming: true,
     description:
       'Explore the relationship between your gaming habits and your mental health, focus, and emotional regulation.',
     cta: 'Take the quiz',
@@ -66,6 +67,7 @@ const quizzes = [
     title: 'RPG Character Build Quiz',
     href: '/learn/rpg-character-quiz',
     badge: 'Gaming',
+    isGaming: true,
     description:
       'Build your neurodivergent character sheet. Find out your stat distribution, class archetype, and innate abilities.',
     cta: 'Take the quiz',
@@ -129,7 +131,7 @@ export default function ResourcesPage() {
               Understanding your neurotype is the first step toward support that actually sticks.
             </p>
             <p className="text-lg text-noctua-brown/70 max-w-2xl leading-relaxed">
-              Explore our free quizzes and guides — written for people navigating these
+              Explore our free quizzes and guides,written for people navigating these
               experiences, not about them. No jargon, no clinical distance.
             </p>
           </div>
@@ -147,7 +149,7 @@ export default function ResourcesPage() {
             Quizzes
           </h2>
           <p className="text-noctua-brown/70 max-w-xl">
-            Quick, personalised assessments that give you something useful — not just a score,
+            Quick, personalised assessments that give you something useful,not just a score,
             but a map.
           </p>
         </div>
@@ -155,20 +157,60 @@ export default function ResourcesPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {quizzes.map((quiz) => {
             const Icon = quiz.icon;
+            const isGaming = quiz.isGaming;
             return (
               <Card
                 key={quiz.href}
                 hover
-                className="bg-noctua-bone border-noctua-brown/10 shadow-sm flex flex-col"
+                className={`shadow-sm flex flex-col ${
+                  isGaming
+                    ? 'border-noctua-brown/20'
+                    : 'bg-noctua-bone border-noctua-brown/10'
+                }`}
+                style={
+                  isGaming
+                    ? { background: 'linear-gradient(135deg, hsl(35, 25%, 86%) 0%, hsl(30, 20%, 82%) 100%)' }
+                    : undefined
+                }
               >
                 <div className="p-6 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-noctua-russet/10 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-noctua-russet" />
+                    <div
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                        isGaming ? '' : 'bg-noctua-russet/10'
+                      }`}
+                      style={
+                        isGaming
+                          ? { background: 'hsl(25, 35%, 35%)' }
+                          : undefined
+                      }
+                    >
+                      <Icon
+                        className={`w-6 h-6 ${isGaming ? '' : 'text-noctua-russet'}`}
+                        style={
+                          isGaming
+                            ? { color: 'hsl(35, 30%, 92%)' }
+                            : undefined
+                        }
+                      />
                     </div>
-                    <Badge variant="primary" className="text-xs ml-3 mt-1">
-                      {quiz.badge}
-                    </Badge>
+                    {isGaming ? (
+                      <span
+                        className="text-xs ml-3 mt-1 font-display uppercase tracking-wide px-2 py-0.5 rounded"
+                        style={{
+                          background: 'hsl(25, 35%, 35%)',
+                          color: 'hsl(35, 30%, 92%)',
+                          fontSize: '0.65rem',
+                          letterSpacing: '0.08em',
+                        }}
+                      >
+                        {quiz.badge}
+                      </span>
+                    ) : (
+                      <Badge variant="primary" className="text-xs ml-3 mt-1">
+                        {quiz.badge}
+                      </Badge>
+                    )}
                   </div>
                   <h3 className="font-display text-xl mb-3 text-noctua-brown">{quiz.title}</h3>
                   <p className="text-noctua-brown/70 text-sm leading-relaxed flex-1 mb-5">

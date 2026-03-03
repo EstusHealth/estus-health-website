@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { ToastProvider } from './components/Toast';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import AboutApproach from './pages/AboutApproach';
@@ -27,9 +28,9 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <>
+    <ToastProvider>
       <ScrollToTop />
-      
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -67,7 +68,7 @@ function App() {
         </Route>
       </Routes>
       <Analytics />
-    </>
+    </ToastProvider>
   );
 }
 
