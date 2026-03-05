@@ -6,34 +6,34 @@ const capacityAreas = [
     category: 'Therapy',
     items: [
       {
-        title: 'Adult Therapy',
-        description: 'Neurodivergent adults — late diagnosis, burnout, executive function, sensory needs',
+        title: 'Adults',
+        description: 'Neuroaffirming OT for autistic adults, late diagnosis, burnout recovery, executive function and sensory regulation.',
         status: 'accepting',
         statusLabel: 'Accepting New Clients',
-        cta: { label: 'View Services', to: '/services/occupational-therapy' },
+        cta: { label: 'Our Services', to: '/services/occupational-therapy' },
       },
       {
-        title: 'Youth Therapy',
-        description: 'Teens & young people — PDA, school refusal, gaming-informed approaches, identity',
+        title: 'Youth & Teens',
+        description: 'PDA-informed and gaming-informed therapy that meets young people where they are — not where we think they should be.',
         status: 'accepting',
         statusLabel: 'Accepting New Clients',
-        cta: { label: 'View Services', to: '/services/gaming-informed-therapy' },
+        cta: { label: 'Our Services', to: '/services/gaming-informed-therapy' },
       },
     ],
   },
   {
-    category: 'NDIS Reports & Assessments',
+    category: 'NDIS Assessments & Reports',
     items: [
       {
         title: 'NDIS Access Requests',
-        description: 'First time applying for the NDIS? We write the functional evidence to support your access request.',
+        description: 'Applying for the NDIS for the first time? We write clear functional evidence that captures the full picture of your capacity.',
         status: 'accepting',
         statusLabel: 'Immediate Capacity',
         cta: { label: 'Learn More', to: '/services/assessments-reports' },
       },
       {
-        title: 'NDIS Functional Assessments',
-        description: 'Already an NDIS participant? Functional capacity assessments for plan reviews, SIL, housing & more.',
+        title: 'Functional Capacity Assessments',
+        description: 'Already an NDIS participant? Comprehensive assessments for plan reviews that reflect your real capacity — good days, bad days, and in between.',
         status: 'accepting',
         statusLabel: 'Immediate Capacity',
         cta: { label: 'Learn More', to: '/services/assessments-reports' },
@@ -94,8 +94,7 @@ export default function CapacityTracker() {
             Where We Have Capacity
           </h2>
           <p className="text-white/60 max-w-xl mx-auto">
-            We keep this updated so you know exactly where we can help right now.
-            Referrers &mdash; skip the waitlist guesswork.
+            No waitlist guesswork. Here's where we can help right now.
           </p>
         </div>
 
