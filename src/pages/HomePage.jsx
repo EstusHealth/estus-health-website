@@ -13,15 +13,16 @@ import {
   Zap,
   Flame,
 } from 'lucide-react';
-import { 
-  Section, 
-  Card, 
-  Button, 
+import {
+  Section,
+  Card,
+  Button,
   FeatureCard,
   ProcessStep,
   PullQuote,
   CTABanner
 } from '../components/ui';
+import CapacityTracker from '../components/CapacityTracker';
 
 export default function HomePage() {
   return (
@@ -125,6 +126,9 @@ export default function HomePage() {
         {/* Decorative gradient */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-noctua-bone/50 to-transparent pointer-events-none" />
       </section>
+
+      {/* Capacity Tracker */}
+      <CapacityTracker />
 
       {/* Services - ADDED BG COLOR HERE */}
       <Section className="bg-noctua-bone/30">
