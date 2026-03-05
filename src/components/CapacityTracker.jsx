@@ -14,7 +14,7 @@ const capacityAreas = [
       },
       {
         title: 'Youth & Teens',
-        description: 'PDA-informed and gaming-informed therapy that meets young people where they are — not where we think they should be.',
+        description: 'PDA-informed and gaming-informed therapy that meets young people where they are, not where we think they should be.',
         status: 'accepting',
         statusLabel: 'Accepting New Clients',
         cta: { label: 'Our Services', to: '/services/gaming-informed-therapy' },
@@ -33,7 +33,7 @@ const capacityAreas = [
       },
       {
         title: 'Functional Capacity Assessments',
-        description: 'Already an NDIS participant? Comprehensive assessments for plan reviews that reflect your real capacity — good days, bad days, and in between.',
+        description: 'Already an NDIS participant? Comprehensive assessments for plan reviews that reflect your real capacity. Good days, bad days, and in between.',
         status: 'accepting',
         statusLabel: 'Immediate Capacity',
         cta: { label: 'Learn More', to: '/services/assessments-reports' },
