@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { ToastProvider } from './components/Toast';
 import Layout from './components/Layout';
@@ -66,6 +66,7 @@ function App() {
             <Route path="rpg-character-quiz" element={<RPGCharacterQuiz />} />
           </Route>
         </Route>
+        <Route path="/home" element={<Navigate to="/" replace />} />
       </Routes>
       <Analytics />
     </ToastProvider>
