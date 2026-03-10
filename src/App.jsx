@@ -23,6 +23,8 @@ import PDAQuiz from './pages/PDAQuiz';
 import BurnoutQuiz from './pages/BurnoutQuiz';
 import GamingQuiz from './pages/GamingQuiz';
 import RPGCharacterQuiz from './pages/RPGCharacterQuiz';
+import EDSQuiz from './pages/EDSQuiz';
+import LearnEDSHSD from './pages/learn/LearnEDSHSD';
 import CommCard from './pages/resources/CommCard';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -64,6 +66,8 @@ function App() {
             <Route path="burnout-quiz" element={<BurnoutQuiz />} />
             <Route path="gaming-quiz" element={<GamingQuiz />} />
             <Route path="rpg-character-quiz" element={<RPGCharacterQuiz />} />
+            <Route path="eds-hsd" element={<LearnEDSHSD />} />
+            <Route path="eds-hsd-quiz" element={<EDSQuiz />} />
           </Route>
         </Route>
         <Route path="/home" element={<Navigate to="/" replace />} />

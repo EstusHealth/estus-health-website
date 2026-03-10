@@ -31,6 +31,8 @@ const ROUTES = [
   '/for-referrers',
   '/for-clinicians/performance-lab',
   '/learn/rpg-character-quiz',
+  '/learn/eds-hsd',
+  '/learn/eds-hsd-quiz',
 ];
 
 // ── Per-page SEO meta (title + description) ───────────────────────────
@@ -90,6 +92,14 @@ const PAGE_META = {
   '/for-clinicians/performance-lab': {
     title: 'Performance Lab | Protocols for Allied Health Clinicians | Estus Health',
     description: 'Podcast, newsletter, and community of practice for allied health clinicians. Protocols for health, performance, burnout, and longevity. Built by Estus Health.',
+  },
+  '/learn/eds-hsd': {
+    title: 'EDS & Hypermobility Spectrum Disorder | Neurodivergence Overlap | Estus Health',
+    description: 'Ehlers-Danlos Syndromes and HSD explained for neurodivergent people. How hypermobility intersects with autism, ADHD, executive function, and daily life. OT support in Perth.',
+  },
+  '/learn/eds-hsd-quiz': {
+    title: 'EDS/HSD Management Style Quiz | Estus Health',
+    description: 'Discover your EDS/HSD management style. Are you a Strategist, Surfer, Fortress, or Alchemist? Practical tips for neurodivergent people managing hypermobility.',
   },
 };
 

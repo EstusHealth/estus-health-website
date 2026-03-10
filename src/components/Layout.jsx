@@ -27,12 +27,14 @@ const navigation = [
       { name: 'Understanding PDA', href: '/learn/understanding-pda' },
       { name: 'Late Autism Diagnosis', href: '/learn/late-autism-diagnosis' },
       { name: 'Executive Function & Complex Health', href: '/learn/executive-function-complex-health' },
+      { name: 'EDS & Hypermobility', href: '/learn/eds-hsd' },
       { name: 'Chronotype Quiz', href: '/learn/chronotype-quiz' },
       { name: 'Energy & Executive Function Quiz', href: '/learn/energy-quiz' },
       { name: 'PDA Profile Quiz', href: '/learn/pda-quiz' },
       { name: 'Autistic Burnout Quiz', href: '/learn/burnout-quiz' },
       { name: 'Gaming & Wellbeing Quiz', href: '/learn/gaming-quiz' },
       { name: 'RPG Character Build Quiz', href: '/learn/rpg-character-quiz' },
+      { name: 'EDS/HSD Management Quiz', href: '/learn/eds-hsd-quiz' },
       { name: 'CommCard', href: '/resources/commcard' },
     ],
   },
@@ -268,12 +270,14 @@ function Footer() {
               <li><Link to="/learn/understanding-pda" className="text-foreground/60 hover:text-primary text-sm transition-colors">Understanding PDA</Link></li>
               <li><Link to="/learn/late-autism-diagnosis" className="text-foreground/60 hover:text-primary text-sm transition-colors">Late Autism Diagnosis</Link></li>
               <li><Link to="/learn/executive-function-complex-health" className="text-foreground/60 hover:text-primary text-sm transition-colors">Executive Function & Complex Health</Link></li>
+              <li><Link to="/learn/eds-hsd" className="text-foreground/60 hover:text-primary text-sm transition-colors">EDS & Hypermobility</Link></li>
               <li><Link to="/learn/chronotype-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Chronotype Quiz</Link></li>
               <li><Link to="/learn/energy-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Energy & Executive Function Quiz</Link></li>
               <li><Link to="/learn/pda-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">PDA Profile Quiz</Link></li>
               <li><Link to="/learn/burnout-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Autistic Burnout Quiz</Link></li>
               <li><Link to="/learn/gaming-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Gaming & Wellbeing Quiz</Link></li>
               <li><Link to="/learn/rpg-character-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">RPG Character Build Quiz</Link></li>
+              <li><Link to="/learn/eds-hsd-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">EDS/HSD Management Quiz</Link></li>
             </ul>
             <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-8">For Clinicians</h4>
             <ul className="space-y-2">

@@ -12,6 +12,7 @@ import {
   Users,
   ClipboardList,
   MessageSquare,
+  Activity,
 } from 'lucide-react';
 import { Section, Card, Badge, Button, CTABanner } from '../../components/ui';
 
@@ -72,6 +73,15 @@ const quizzes = [
       'Build your neurodivergent character sheet. Find out your stat distribution, class archetype, and innate abilities.',
     cta: 'Take the quiz',
   },
+  {
+    icon: Activity,
+    title: 'EDS/HSD Management Style Quiz',
+    href: '/learn/eds-hsd-quiz',
+    badge: 'EDS / HSD',
+    description:
+      'Discover how you naturally manage hypermobility, fatigue, and pain. Four archetypes, practical tips, and strategies that actually fit a neurodivergent brain.',
+    cta: 'Take the quiz',
+  },
 ];
 
 const guides = [
@@ -101,6 +111,15 @@ const guides = [
     description:
       'Managing POTS, hEDS, MCAS, ME/CFS, or chronic pain alongside neurodivergence? Here\'s why executive function takes the hit.',
     readTime: '10 min read',
+  },
+  {
+    icon: Activity,
+    title: 'EDS & Hypermobility',
+    href: '/learn/eds-hsd',
+    badge: 'EDS / HSD',
+    description:
+      'Ehlers-Danlos Syndromes and Hypermobility Spectrum Disorder: what they are, how they overlap with neurodivergence, and what OT support actually looks like.',
+    readTime: '9 min read',
   },
 ];
 
