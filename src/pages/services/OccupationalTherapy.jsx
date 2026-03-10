@@ -20,7 +20,7 @@ export default function OccupationalTherapy() {
             <p className="text-foreground/70 leading-relaxed">
               Occupational therapy is about helping people do the things they need and want to do 
               in their daily lives. For neurodivergent people, that means therapy that works with 
-              your brain — not against it.
+              your brain, not against it.
             </p>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function OccupationalTherapy() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display mb-6">What is Occupational Therapy?</h2>
           <p className="text-foreground/80 leading-relaxed mb-4">
-            Occupational therapy (OT) focuses on function — your ability to do the activities 
+            Occupational therapy (OT) focuses on function: your ability to do the activities 
             that matter to you, from self-care and household tasks to work, study, and leisure. 
             "Occupation" in this context means anything that occupies your time and has meaning 
             to you.
@@ -39,7 +39,7 @@ export default function OccupationalTherapy() {
           <p className="text-foreground/80 leading-relaxed mb-4">
             For autistic people and those with other neurodivergent profiles, OT can address 
             challenges with sensory processing, executive function, daily routines, emotional 
-            regulation, and participation in life activities — all while respecting who you are.
+            regulation, and participation in life activities, all while respecting who you are.
           </p>
         </div>
       </Section>
@@ -81,8 +81,8 @@ export default function OccupationalTherapy() {
             <Card className="p-5">
               <h3 className="font-display text-lg mb-2">Daily Living Skills</h3>
               <p className="text-foreground/70 text-sm">
-                Morning routines, meal preparation, household management, personal care — 
-                building systems that work for your brain.
+                Morning routines, meal preparation, household management, and personal care.
+                Building systems that work for your brain.
               </p>
             </Card>
             <Card className="p-5">
@@ -116,8 +116,8 @@ export default function OccupationalTherapy() {
             <Card className="p-5">
               <h3 className="font-display text-lg mb-2">Life Transitions</h3>
               <p className="text-foreground/70 text-sm">
-                Moving out, starting work, navigating diagnosis, or any major change — 
-                support through transitions.
+                Moving out, starting work, navigating diagnosis, or any major change.
+                Support through transitions.
               </p>
             </Card>
           </div>
@@ -135,7 +135,7 @@ export default function OccupationalTherapy() {
                 <span className="font-display text-primary">$193.99/hr</span>
               </div>
               <p className="text-foreground/70 text-sm">
-                This rate applies to NDIS participants (Capacity Building — Improved Daily Living), self-managed, and private pay clients.
+                This rate applies to NDIS participants (Capacity Building: Improved Daily Living), self-managed, and private pay clients.
               </p>
               <p className="text-foreground/70 text-sm">
                 Sessions are typically 1 hour. We offer both in-person sessions (Perth metro) 

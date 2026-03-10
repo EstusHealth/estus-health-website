@@ -26,7 +26,7 @@ export default function LearnLateDiagnosis() {
               Late Autism Diagnosis
             </h1>
             <p className="font-serif text-xl text-foreground/80 italic mb-6">
-              What it means to be diagnosed as an adult — and what comes next
+              What it means to be diagnosed as an adult, and what comes next
             </p>
             <p className="text-foreground/70 leading-relaxed">
               Many autistic people aren't diagnosed until adulthood. Getting diagnosed later 
@@ -47,7 +47,7 @@ export default function LearnLateDiagnosis() {
                 The Short Version
               </h2>
               <p className="text-foreground/90 leading-relaxed">
-                Late autism diagnosis is increasingly common — especially for women, people of 
+                Late autism diagnosis is increasingly common, especially for women, people of
                 colour, and anyone who learned to mask their traits. Getting diagnosed as an adult 
                 isn't "less valid." For many, it's the missing piece that finally makes a lifetime 
                 of experiences make sense.
@@ -93,7 +93,7 @@ export default function LearnLateDiagnosis() {
                   <div>
                     <h3 className="font-display text-lg mb-1">Masking and Camouflaging</h3>
                     <p className="text-foreground/70 text-sm leading-relaxed">
-                      Many autistic people — especially those socialised as girls — learned early 
+                      Many autistic people, especially those socialised as girls, learned early 
                       to hide their differences. Copying peers, suppressing stims, forcing eye 
                       contact. The mask worked well enough to pass as neurotypical, but at enormous 
                       personal cost.
@@ -109,7 +109,7 @@ export default function LearnLateDiagnosis() {
                     <h3 className="font-display text-lg mb-1">High Academic Achievement</h3>
                     <p className="text-foreground/70 text-sm leading-relaxed">
                       "But you did well in school" is something many late-diagnosed autistics hear. 
-                      Intelligence doesn't prevent autism — it can actually help mask it.
+                      Intelligence doesn't prevent autism. It can actually help mask it.
                     </p>
                   </div>
                 </div>
@@ -139,27 +139,27 @@ export default function LearnLateDiagnosis() {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Social exhaustion after "normal" interactions</strong> — needing hours or days to recover from social events.</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Social exhaustion after "normal" interactions</strong>: needing hours or days to recover from social events.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Sensory sensitivities dismissed as "fussiness"</strong> — can't wear certain fabrics, overwhelmed by busy environments.</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Sensory sensitivities dismissed as "fussiness"</strong>: can't wear certain fabrics, overwhelmed by busy environments.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Intense interests labelled as "obsessions"</strong> — deep dives into topics that bring joy and focus.</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Intense interests labelled as "obsessions"</strong>: deep dives into topics that bring joy and focus.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Difficulty with unwritten social rules</strong> — feeling like everyone else got a manual you never received.</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Difficulty with unwritten social rules</strong>: feeling like everyone else got a manual you never received.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Burnout cycles mistaken for depression</strong> — pushing through until you can't, crashing, repeating.</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Burnout cycles mistaken for depression</strong>: pushing through until you can't, crashing, repeating.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">→</span>
-                  <span className="text-foreground/80"><strong className="text-foreground">Feeling "different" without knowing why</strong> — a persistent sense of observing humanity from the outside.</span>
+                  <span className="text-foreground/80"><strong className="text-foreground">Feeling "different" without knowing why</strong>: a persistent sense of observing humanity from the outside.</span>
                 </li>
               </ul>
             </section>
@@ -177,7 +177,7 @@ export default function LearnLateDiagnosis() {
                     Relief
                   </h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
-                    "There's a reason. It's not a character flaw. I'm not broken — my brain just 
+                    "There's a reason. It's not a character flaw. I'm not broken. My brain just
                     works differently." For many, finally having an explanation brings profound relief.
                   </p>
                 </Card>
@@ -200,7 +200,7 @@ export default function LearnLateDiagnosis() {
                   </h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
                     Looking back at your entire life through a new lens. Childhood struggles, 
-                    relationship patterns, career choices — everything gets reframed.
+                    relationship patterns, career choices. Everything gets reframed.
                   </p>
                 </Card>
                 
@@ -235,7 +235,7 @@ export default function LearnLateDiagnosis() {
                 <div>
                   <h3 className="font-display text-xl mb-3 text-primary">Finding Community</h3>
                   <p className="text-foreground/80 leading-relaxed">
-                    Connecting with other autistic people — especially other late-diagnosed adults — 
+                    Connecting with other autistic people, especially other late-diagnosed adults,
                     can be transformative. For the first time, you might find people who truly understand.
                   </p>
                 </div>
@@ -253,7 +253,7 @@ export default function LearnLateDiagnosis() {
                   <h3 className="font-display text-xl mb-3 text-primary">Sensory Accommodations</h3>
                   <p className="text-foreground/80 leading-relaxed">
                     Now that you understand your sensory differences, you can address them directly. 
-                    Noise-cancelling headphones, specific textures, control over lighting — these 
+                    Noise-cancelling headphones, specific textures, control over lighting: these
                     aren't luxuries, they're access needs.
                   </p>
                 </div>
@@ -279,8 +279,8 @@ export default function LearnLateDiagnosis() {
                 <Card className="p-4 border-primary/20">
                   <h3 className="font-display text-lg mb-2">Assessment Tailored to Adult Presentations</h3>
                   <p className="text-foreground/70 text-sm leading-relaxed">
-                    We understand that autism in adults — especially those who've spent years 
-                    masking — doesn't look like the textbook descriptions.
+                    We understand that autism in adults, especially those who've spent years
+                    masking, doesn't look like the textbook descriptions.
                   </p>
                 </Card>
                 
@@ -313,7 +313,7 @@ export default function LearnLateDiagnosis() {
           </h2>
           <p className="text-foreground/70 mb-8">
             Whether you're seeking assessment, recently diagnosed, or looking for support 
-            in understanding what diagnosis means for your life — we're here to help.
+            in understanding what diagnosis means for your life, we're here to help.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button to="/contact" size="lg">

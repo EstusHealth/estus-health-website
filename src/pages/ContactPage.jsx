@@ -8,7 +8,7 @@ export default function ContactPage() {
   const faqs = [
     {
       q: "Do I need a GP referral?",
-      a: "No. Self-referrals are welcome for all of our services. You can refer yourself or a family member directly using the self-referral form — no GP letter needed.",
+      a: "No. Self-referrals are welcome for all of our services. You can refer yourself or a family member directly using the self-referral form; no GP letter needed.",
     },
     {
       q: "How quickly will someone get back to me?",
@@ -20,7 +20,7 @@ export default function ContactPage() {
     },
     {
       q: "What if I'm not sure which service I need?",
-      a: "That's completely fine — just get in touch and we'll help you work out the right fit. The contact form is the quickest way to start that conversation.",
+      a: "That's completely fine. Just get in touch and we'll help you work out the right fit. The contact form is the quickest way to start that conversation.",
     },
   ];
 

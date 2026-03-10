@@ -18,8 +18,8 @@ export default function AssessmentsReports() {
               Documentation that translates into action
             </p>
             <p className="text-foreground/70 leading-relaxed">
-              Whether you need a functional capacity assessment, NDIS report, or documentation 
-              for another purpose — we create clear, practical reports that capture the full 
+              Whether you need a functional capacity assessment, NDIS report, or documentation
+              for another purpose, we create clear, practical reports that capture the full
               picture and translate into meaningful recommendations.
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function AssessmentsReports() {
                   <p className="text-foreground/70 text-sm mb-4">
                     Comprehensive assessment of your ability to perform daily activities, manage 
                     self-care, participate in work or study, and engage in community life. We 
-                    assess what you can actually do — on good days, bad days, and everything 
+                    assess what you can actually do on good days, bad days, and everything
                     in between.
                   </p>
                   <p className="text-foreground/60 text-xs">
@@ -55,7 +55,7 @@ export default function AssessmentsReports() {
                 <div>
                   <h3 className="font-display text-xl mb-2">NDIS Reports</h3>
                   <p className="text-foreground/70 text-sm mb-4">
-                    Reports written specifically for NDIS purposes — using the language and 
+                    Reports written specifically for NDIS purposes, using the language and
                     evidence base that reviewers need to see. We understand what the NDIA 
                     looks for and how to present information effectively.
                   </p>
@@ -72,7 +72,7 @@ export default function AssessmentsReports() {
                 <div>
                   <h3 className="font-display text-xl mb-2">OT Progress Reports</h3>
                   <p className="text-foreground/70 text-sm mb-4">
-                    Documentation of ongoing therapy — goals, progress, barriers, and 
+                    Documentation of ongoing therapy: goals, progress, barriers, and
                     recommendations. Useful for NDIS reporting, sharing with other providers, 
                     or just having a clear record of the work.
                   </p>
@@ -86,7 +86,7 @@ export default function AssessmentsReports() {
                 <div>
                   <h3 className="font-display text-xl mb-2">Home & Environment Assessments</h3>
                   <p className="text-foreground/70 text-sm mb-4">
-                    Assessment of physical and sensory environments — identifying barriers, 
+                    Assessment of physical and sensory environments, identifying barriers,
                     modifications, and supports that could improve daily functioning. 
                     Particularly useful for sensory profiles and executive function challenges.
                   </p>
@@ -137,7 +137,7 @@ export default function AssessmentsReports() {
               <div>
                 <span className="text-foreground font-medium">Practical recommendations</span>
                 <p className="text-foreground/70 text-sm mt-1">
-                  Every report ends with clear, actionable recommendations — not generic 
+                  Every report ends with clear, actionable recommendations. Not generic
                   suggestions, but specific next steps tailored to your situation.
                 </p>
               </div>

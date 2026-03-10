@@ -18,7 +18,7 @@ export default function GamingInformedTherapy() {
               Therapy through a channel that actually works
             </p>
             <p className="text-foreground/70 leading-relaxed">
-              For many neurodivergent people, gaming isn't just a hobby — it's a space where 
+              For many neurodivergent people, gaming isn't just a hobby. It's a space where
               they feel competent, connected, and regulated. We meet people there, using games 
               as a genuine therapeutic tool rather than treating them as something to overcome.
             </p>
@@ -32,14 +32,14 @@ export default function GamingInformedTherapy() {
           <h2 className="text-2xl md:text-3xl font-display mb-6">What is Gaming-Informed Therapy?</h2>
           <p className="text-foreground/80 leading-relaxed mb-4">
             Gaming-informed therapy uses video games as a medium for therapeutic work. This isn't 
-            about using games as a reward or treating gaming as problematic — it's about 
+            about using games as a reward or treating gaming as problematic. It's about 
             recognising that games create genuine opportunities for skill development, emotional 
             processing, and connection.
           </p>
           <p className="text-foreground/80 leading-relaxed mb-4">
             Games provide a lower-stakes environment to practice skills that feel overwhelming 
             in real life. They offer immediate feedback, clear rules, and controllable challenge 
-            levels — all things that can be difficult to find in everyday situations.
+            levels, all things that can be difficult to find in everyday situations.
           </p>
           <Card className="p-4 border-l-2 border-primary bg-primary/5 mt-6">
             <p className="text-foreground/80 text-sm">
@@ -106,8 +106,8 @@ export default function GamingInformedTherapy() {
                   <h3 className="font-display text-lg mb-2">Practicing Problem-Solving</h3>
                   <p className="text-foreground/70 text-sm">
                     Games present problems to solve with immediate feedback. We can observe how 
-                    someone approaches challenges, where they get stuck, and what strategies help 
-                    — then translate this to real-world situations.
+                    someone approaches challenges, where they get stuck, and what strategies help,
+                    then translate this to real-world situations.
                   </p>
                 </div>
               </div>
@@ -134,7 +134,7 @@ export default function GamingInformedTherapy() {
                   <h3 className="font-display text-lg mb-2">Social Skills in Context</h3>
                   <p className="text-foreground/70 text-sm">
                     Multiplayer games provide natural opportunities to practice communication, 
-                    cooperation, and conflict resolution — skills that can feel artificial when 
+                    cooperation, and conflict resolution. These are skills that can feel artificial when 
                     taught through worksheets.
                   </p>
                 </div>

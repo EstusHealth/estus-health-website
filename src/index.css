@@ -124,3 +124,35 @@
     @apply bg-card border border-border rounded-lg p-6 shadow-sm transition-transform hover:-translate-y-1;
   }
 }
+
+/* Performance Lab bounce animation */
+@keyframes plBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+/* Quiz button glow pulse */
+@keyframes quizGlow {
+  0%, 100% {
+    box-shadow: 0 0 6px 2px hsla(25, 35%, 35%, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 18px 6px hsla(25, 35%, 35%, 0.5);
+  }
+}
+
+.btn-quiz-glow {
+  animation: quizGlow 2.5s ease-in-out infinite;
+}
+
+/* Capacity Tracker ticker scroll */
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-scroll {
+  animation: tickerScroll 30s linear infinite;
+  width: max-content;
+}

@@ -1,5 +1,5 @@
 /**
- * prerender.mjs — Static pre-rendering for Estus Health SPA
+ * prerender.mjs: Static pre-rendering for Estus Health SPA
  * 
  * Runs after `vite build`, uses react-dom/server to render each route
  * to static HTML. No headless browser needed.
@@ -29,6 +29,8 @@ const ROUTES = [
   '/learn/executive-function-complex-health',
   '/contact',
   '/for-referrers',
+  '/for-clinicians/performance-lab',
+  '/learn/rpg-character-quiz',
 ];
 
 // ── Per-page SEO meta (title + description) ───────────────────────────
@@ -43,7 +45,7 @@ const PAGE_META = {
   },
   '/services/gaming-informed-therapy': {
     title: 'Gaming-Informed Therapy Perth | Estus Health',
-    description: 'Gaming-informed occupational therapy for autistic youth and adults in Perth. Using gaming interests as therapeutic tools — not rewards. NDIS funded.',
+    description: 'Gaming-informed occupational therapy for autistic youth and adults in Perth. Using gaming interests as therapeutic tools, not rewards. NDIS funded.',
   },
   '/services/minecraft-program': {
     title: 'Minecraft Therapy Program Perth | Estus Health',
@@ -59,7 +61,7 @@ const PAGE_META = {
   },
   '/about/approach': {
     title: 'Our Approach | Neuro-Affirming OT | Estus Health',
-    description: 'Autonomy over compliance. We don\'t fix people — we fix the environment. Neuro-affirming, evidence-informed occupational therapy in Perth.',
+    description: 'Autonomy over compliance. We don\'t fix people. We fix the environment. Neuro-affirming, evidence-informed occupational therapy in Perth.',
   },
   '/about/team': {
     title: 'Our Team | Liam, Nam & Nik | Estus Health',
@@ -84,6 +86,10 @@ const PAGE_META = {
   '/for-referrers': {
     title: 'For Referrers & Support Coordinators | Estus Health',
     description: 'Referral information for GPs, support coordinators, and allied health professionals. Clear communication, practical recommendations, fast turnaround.',
+  },
+  '/for-clinicians/performance-lab': {
+    title: 'Performance Lab | Protocols for Allied Health Clinicians | Estus Health',
+    description: 'Podcast, newsletter, and community of practice for allied health clinicians. Protocols for health, performance, burnout, and longevity. Built by Estus Health.',
   },
 };
 
@@ -207,7 +213,7 @@ async function prerender() {
       rendered++;
       console.log(`  ✓ ${route}`);
     } catch (err) {
-      console.error(`  ✗ ${route} — ${err.message}`);
+      console.error(`  ✗ ${route}: ${err.message}`);
     }
   }
 
