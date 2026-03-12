@@ -22,20 +22,35 @@ const navigation = [
   },
   {
     name: 'Learn',
-    children: [
-      { name: '→ All Resources', href: '/learn' },
-      { name: 'Understanding PDA', href: '/learn/understanding-pda' },
-      { name: 'Late Autism Diagnosis', href: '/learn/late-autism-diagnosis' },
-      { name: 'Executive Function & Complex Health', href: '/learn/executive-function-complex-health' },
-      { name: 'EDS & Hypermobility', href: '/learn/eds-hsd' },
-      { name: 'Chronotype Quiz', href: '/learn/chronotype-quiz' },
-      { name: 'Energy & Executive Function Quiz', href: '/learn/energy-quiz' },
-      { name: 'PDA Profile Quiz', href: '/learn/pda-quiz' },
-      { name: 'Autistic Burnout Quiz', href: '/learn/burnout-quiz' },
-      { name: 'Gaming & Wellbeing Quiz', href: '/learn/gaming-quiz' },
-      { name: 'RPG Character Build Quiz', href: '/learn/rpg-character-quiz' },
-      { name: 'EDS/HSD Management Quiz', href: '/learn/eds-hsd-quiz' },
-      { name: 'CommCard', href: '/resources/commcard' },
+    href: '/learn',
+    sections: [
+      {
+        heading: 'Articles',
+        children: [
+          { name: 'Understanding PDA', href: '/learn/understanding-pda' },
+          { name: 'Late Autism Diagnosis', href: '/learn/late-autism-diagnosis' },
+          { name: 'Executive Function & Complex Health', href: '/learn/executive-function-complex-health' },
+          { name: 'EDS & Hypermobility', href: '/learn/eds-hsd' },
+        ],
+      },
+      {
+        heading: 'Quizzes',
+        children: [
+          { name: 'Chronotype Quiz', href: '/learn/chronotype-quiz' },
+          { name: 'Energy & Executive Function Quiz', href: '/learn/energy-quiz' },
+          { name: 'PDA Profile Quiz', href: '/learn/pda-quiz' },
+          { name: 'Autistic Burnout Quiz', href: '/learn/burnout-quiz' },
+          { name: 'Gaming & Wellbeing Quiz', href: '/learn/gaming-quiz' },
+          { name: 'RPG Character Build Quiz', href: '/learn/rpg-character-quiz' },
+          { name: 'EDS/HSD Management Quiz', href: '/learn/eds-hsd-quiz' },
+        ],
+      },
+      {
+        heading: 'Tools',
+        children: [
+          { name: 'CommCard', href: '/resources/commcard' },
+        ],
+      },
     ],
   },
   { name: 'For Referrers', href: '/for-referrers' },
@@ -47,11 +62,82 @@ const navigation = [
   },
 ];
 
-function NavDropdown({ item, mobile = false }) {
+function getAllHrefs(item) {
+  if (item.sections) {
+    const hrefs = item.sections.flatMap(s => s.children.map(c => c.href));
+    if (item.href) hrefs.push(item.href);
+    return hrefs;
+  }
+  return item.children?.map(c => c.href) || [];
+}
+
+function NavDropdown({ item, mobile = false, onNavigate }) {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  
-  const isActive = item.children?.some(child => location.pathname === child.href);
+
+  const isActive = getAllHrefs(item).some(href => location.pathname === href);
+
+  const linkClass = (href, mobile) =>
+    mobile
+      ? `block px-4 py-2 text-base transition-colors ${
+          location.pathname === href ? 'text-primary' : 'text-foreground/60 hover:text-foreground'
+        }`
+      : `block px-4 py-2 text-sm transition-colors ${
+          location.pathname === href
+            ? 'text-primary bg-secondary/50'
+            : 'text-foreground/80 hover:text-foreground hover:bg-secondary/30'
+        }`;
+
+  const renderLinks = (children, isMobile) =>
+    children.map((child) => (
+      <Link
+        key={child.href}
+        to={child.href}
+        onClick={isMobile ? onNavigate : undefined}
+        className={linkClass(child.href, isMobile)}
+      >
+        {child.name}
+      </Link>
+    ));
+
+  const renderContent = (isMobile) => (
+    <>
+      {item.href && (
+        <>
+          <Link
+            to={item.href}
+            onClick={isMobile ? onNavigate : undefined}
+            className={isMobile
+              ? `block px-4 py-2 text-base font-medium transition-colors ${
+                  location.pathname === item.href ? 'text-primary' : 'text-foreground/60 hover:text-foreground'
+                }`
+              : `block px-4 py-2 text-sm font-medium transition-colors ${
+                  location.pathname === item.href
+                    ? 'text-primary bg-secondary/50'
+                    : 'text-foreground/80 hover:text-foreground hover:bg-secondary/30'
+                }`
+            }
+          >
+            All Resources
+          </Link>
+          {!isMobile && <div className="my-1 border-t border-border/50" />}
+        </>
+      )}
+      {item.sections
+        ? item.sections.map((section, idx) => (
+            <div key={section.heading}>
+              {(idx > 0 || (isMobile && item.href)) && !isMobile && (
+                <div className="my-1 border-t border-border/50" />
+              )}
+              <div className={`px-4 pt-2 pb-1 text-xs font-display uppercase tracking-wider text-foreground/40 ${isMobile && idx === 0 && item.href ? 'pt-3' : ''}`}>
+                {section.heading}
+              </div>
+              {renderLinks(section.children, isMobile)}
+            </div>
+          ))
+        : renderLinks(item.children, isMobile)}
+    </>
+  );
 
   if (mobile) {
     return (
@@ -67,19 +153,7 @@ function NavDropdown({ item, mobile = false }) {
         </button>
         {open && (
           <div className="pl-4 space-y-1">
-            {item.children.map((child) => (
-              <Link
-                key={child.href}
-                to={child.href}
-                className={`block px-4 py-2 text-base transition-colors ${
-                  location.pathname === child.href
-                    ? 'text-primary'
-                    : 'text-foreground/60 hover:text-foreground'
-                }`}
-              >
-                {child.name}
-              </Link>
-            ))}
+            {renderContent(true)}
           </div>
         )}
       </div>
@@ -97,20 +171,8 @@ function NavDropdown({ item, mobile = false }) {
         <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
       </button>
       <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-        <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
-          {item.children.map((child) => (
-            <Link
-              key={child.href}
-              to={child.href}
-              className={`block px-4 py-2 text-sm transition-colors ${
-                location.pathname === child.href
-                  ? 'text-primary bg-secondary/50'
-                  : 'text-foreground/80 hover:text-foreground hover:bg-secondary/30'
-              }`}
-            >
-              {child.name}
-            </Link>
-          ))}
+        <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[240px]">
+          {renderContent(false)}
         </div>
       </div>
     </div>
@@ -136,7 +198,7 @@ function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navigation.map((item) =>
-              item.children ? (
+              item.children || item.sections ? (
                 <NavDropdown key={item.name} item={item} />
               ) : (
                 <Link
@@ -187,8 +249,8 @@ function Header() {
           <div className="lg:hidden py-4 border-t border-border">
             <div className="space-y-2">
               {navigation.map((item) =>
-                item.children ? (
-                  <NavDropdown key={item.name} item={item} mobile />
+                item.children || item.sections ? (
+                  <NavDropdown key={item.name} item={item} mobile onNavigate={() => setMobileMenuOpen(false)} />
                 ) : (
                   <Link
                     key={item.name}
@@ -259,6 +321,7 @@ function Footer() {
               <li><Link to="/services/gaming-informed-therapy" className="text-foreground/60 hover:text-primary text-sm transition-colors">Gaming-Informed Therapy</Link></li>
               <li><Link to="/services/minecraft-program" className="text-foreground/60 hover:text-primary text-sm transition-colors">Minecraft Program</Link></li>
               <li><Link to="/services/assessments-reports" className="text-foreground/60 hover:text-primary text-sm transition-colors">Assessments & Reports</Link></li>
+              <li><Link to="/services/sleep-program" className="text-foreground/60 hover:text-primary text-sm transition-colors">Sleep Program</Link></li>
             </ul>
           </div>
 
@@ -271,6 +334,10 @@ function Footer() {
               <li><Link to="/learn/late-autism-diagnosis" className="text-foreground/60 hover:text-primary text-sm transition-colors">Late Autism Diagnosis</Link></li>
               <li><Link to="/learn/executive-function-complex-health" className="text-foreground/60 hover:text-primary text-sm transition-colors">Executive Function & Complex Health</Link></li>
               <li><Link to="/learn/eds-hsd" className="text-foreground/60 hover:text-primary text-sm transition-colors">EDS & Hypermobility</Link></li>
+            </ul>
+
+            <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-6">Quizzes</h4>
+            <ul className="space-y-2">
               <li><Link to="/learn/chronotype-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Chronotype Quiz</Link></li>
               <li><Link to="/learn/energy-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">Energy & Executive Function Quiz</Link></li>
               <li><Link to="/learn/pda-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">PDA Profile Quiz</Link></li>
@@ -279,17 +346,19 @@ function Footer() {
               <li><Link to="/learn/rpg-character-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">RPG Character Build Quiz</Link></li>
               <li><Link to="/learn/eds-hsd-quiz" className="text-foreground/60 hover:text-primary text-sm transition-colors">EDS/HSD Management Quiz</Link></li>
             </ul>
-            <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-8">For Clinicians</h4>
+
+            <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-6">Tools</h4>
             <ul className="space-y-2">
-              <li><Link to="/for-clinicians/performance-lab" className="text-foreground/60 hover:text-primary text-sm transition-colors">Performance Lab</Link></li>
+              <li><Link to="/resources/commcard" className="text-foreground/60 hover:text-primary text-sm transition-colors">CommCard</Link></li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Quick Links & Contact */}
           <div>
-            <h4 className="font-display text-sm uppercase tracking-wide mb-4">Resources</h4>
+            <h4 className="font-display text-sm uppercase tracking-wide mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/resources/commcard" className="text-foreground/60 hover:text-primary text-sm transition-colors">CommCard</Link></li>
+              <li><Link to="/for-referrers" className="text-foreground/60 hover:text-primary text-sm transition-colors">For Referrers</Link></li>
+              <li><Link to="/for-clinicians/performance-lab" className="text-foreground/60 hover:text-primary text-sm transition-colors">Performance Lab</Link></li>
             </ul>
 
             <h4 className="font-display text-sm uppercase tracking-wide mb-4 mt-8">Contact</h4>
