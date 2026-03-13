@@ -14,10 +14,15 @@ import {
   BookOpen
 } from 'lucide-react';
 import { Section, Card, CardContent, Button, Badge, ProcessStep, CTABanner } from '../../components/ui';
+import { Helmet } from 'react-helmet-async';
 
 export default function SleepProgram() {
   return (
     <>
+      <Helmet>
+        <title>Sleep Performance Program Perth | Neurodivergent Sleep Support | Estus Health</title>
+        <meta name="description" content="Clinician-led sleep intervention for neurodivergent adults. Chronotype assessment, sleep architecture, circadian alignment, and personalised protocols. 4-session OT program in Perth." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from "react-router-dom";
 import { Zap, Battery, Target, Compass, Lightbulb, Brain, Clock, RefreshCw, Layers, Flame, Waves, Activity } from "lucide-react";
 import QuizResults from "../components/QuizResults";
@@ -400,6 +401,10 @@ export default function EnergyQuiz() {
 
   return (
     <>
+      <Helmet>
+        <title>Energy & Executive Function Quiz | Estus Health</title>
+        <meta name="description" content="Map your energy patterns and executive function profile. Understand when and why tasks feel impossible, and what actually helps. Free quiz from Estus Health." />
+      </Helmet>
       {screen !== "results" && (
         <>
           <style>{`

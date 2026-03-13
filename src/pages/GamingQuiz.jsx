@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from "react-router-dom";
 import { Gamepad2, Shield, Heart, Brain, Target, Compass, Eye, Zap, Clock, RefreshCw, Lightbulb, AlertTriangle, Activity, Battery } from "lucide-react";
 import QuizResults from "../components/QuizResults";
@@ -400,6 +401,10 @@ export default function GamingQuiz() {
 
   return (
     <>
+      <Helmet>
+        <title>Gaming & Wellbeing Quiz | Estus Health</title>
+        <meta name="description" content="Explore the relationship between your gaming habits and your mental health, focus, and emotional regulation. Free quiz from Estus Health." />
+      </Helmet>
       {screen !== "results" && (
         <>
           <style>{`

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from "react-router-dom";
 import { Flame, Eye, Shield, Zap, Brain, Heart, RefreshCw, Compass, Target, AlertTriangle, Lightbulb, Sprout } from "lucide-react";
 import QuizResults from "../components/QuizResults";
@@ -348,6 +349,10 @@ export default function BurnoutQuiz() {
 
   return (
     <>
+      <Helmet>
+        <title>Autistic Burnout Quiz | Where Are You on the Spectrum? | Estus Health</title>
+        <meta name="description" content="Assess where you are on the autistic burnout spectrum. Get a clearer picture of what your nervous system needs right now. Free quiz from Estus Health." />
+      </Helmet>
       {screen !== "results" && (
         <>
           <style>{`

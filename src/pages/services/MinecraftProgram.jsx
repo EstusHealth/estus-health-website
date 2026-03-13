@@ -1,9 +1,14 @@
 import { Section, Card, CardContent, Button, CTABanner } from '../../components/ui';
 import { Gamepad2, Users, Shield, Lock, CheckCircle, Brain, Target } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function MinecraftProgram() {
   return (
     <>
+      <Helmet>
+        <title>Minecraft Therapy Program Perth | Estus Health</title>
+        <meta name="description" content="Structured Minecraft program for skill-building, social participation, and leadership. Clinician-facilitated digital environment for neurodivergent clients." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

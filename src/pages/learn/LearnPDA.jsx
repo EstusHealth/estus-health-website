@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
+import { Helmet } from 'react-helmet-async';
+import {
+  ArrowRight,
   CheckCircle,
   XCircle,
   BookOpen
@@ -10,6 +11,10 @@ import { Section, Card, CardContent, Button, Badge } from '../../components/ui';
 export default function LearnPDA() {
   return (
     <>
+      <Helmet>
+        <title>Understanding PDA (Pathological Demand Avoidance) | Estus Health</title>
+        <meta name="description" content="What is PDA? Understanding demand avoidance in autism. Why traditional approaches fail and what actually helps. Perth-based OT perspective." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

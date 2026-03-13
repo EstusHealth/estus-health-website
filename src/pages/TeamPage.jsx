@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Section, Card, CardContent, Button, Badge } from '../components/ui';
 import { ArrowRight, Mail } from 'lucide-react';
 
@@ -31,6 +32,10 @@ const team = [
 export default function TeamPage() {
   return (
     <>
+      <Helmet>
+        <title>Our Team | Liam, Nam & Nik | Estus Health</title>
+        <meta name="description" content="Meet the Estus Health team. Occupational therapists specialising in gaming-informed, neuro-affirming practice for autistic adults and teens in Perth." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

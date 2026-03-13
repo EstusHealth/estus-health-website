@@ -1,9 +1,14 @@
 import { Section, Card, CardContent, Button, ProcessStep, CTABanner } from '../../components/ui';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function OccupationalTherapy() {
   return (
     <>
+      <Helmet>
+        <title>Occupational Therapy Perth | NDIS & Private | Estus Health</title>
+        <meta name="description" content="Evidence-based, neuro-affirming occupational therapy in Perth. Daily living skills, sensory regulation, executive function support. NDIS, private & telehealth." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

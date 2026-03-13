@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from 'react-helmet-async';
 
 // ─── STYLES (UPDATED TO MATCH PERFORMANCE LAB THEME) ─────────────────────────
 const S = {
@@ -302,10 +303,15 @@ export default function Referrers() {
   const [hoverCtaBtn, setHoverCtaBtn] = useState(false);
 
   return (
-    <div style={S.page}>
-      <style>{`
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-      `}</style>
+    <>
+      <Helmet>
+        <title>For Referrers & Support Coordinators | Estus Health</title>
+        <meta name="description" content="Referral information for GPs, support coordinators, and allied health professionals. Clear communication, practical recommendations, fast turnaround." />
+      </Helmet>
+      <div style={S.page}>
+        <style>{`
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+        `}</style>
 
       <div style={S.grain} />
 
@@ -468,5 +474,6 @@ export default function Referrers() {
         <div style={{ height: "5rem" }} />
       </div>
     </div>
+    </>
   );
 }

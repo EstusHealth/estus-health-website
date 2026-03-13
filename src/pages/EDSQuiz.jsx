@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from 'react-helmet-async';
 
 // ── Archetypes ──
 const archetypes = {
@@ -315,6 +316,11 @@ export default function EDSQuiz() {
   const result = screen === "results" ? getResult(scores) : null;
 
   return (
+    <>
+    <Helmet>
+      <title>EDS/HSD Management Style Quiz | Estus Health</title>
+      <meta name="description" content="Discover your EDS/HSD management style. Are you a Strategist, Surfer, Fortress, or Alchemist? Practical tips for neurodivergent people managing hypermobility." />
+    </Helmet>
     <div
       style={{
         fontFamily: "'DM Sans', -apple-system, sans-serif",
@@ -906,5 +912,6 @@ export default function EDSQuiz() {
         </div>
       )}
     </div>
+    </>
   );
 }

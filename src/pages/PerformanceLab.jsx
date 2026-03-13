@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 // ─── COLORS ──────────────────────────────────────────────────────────
 const C = {
@@ -274,11 +275,17 @@ function CtaBand() {
 // ━━━ PAGE EXPORT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export default function PerformanceLab() {
   return (
-    <div style={{ fontFamily: "'Inter', sans-serif", color: C.black, WebkitFontSmoothing: 'antialiased' }}>
-      <Hero />
-      <Letter />
-      <Offerings />
-      <CtaBand />
-    </div>
+    <>
+      <Helmet>
+        <title>Performance Lab | Protocols for Allied Health Clinicians | Estus Health</title>
+        <meta name="description" content="Podcast, newsletter, and community of practice for allied health clinicians. Protocols for health, performance, burnout, and longevity. Built by Estus Health." />
+      </Helmet>
+      <div style={{ fontFamily: "'Inter', sans-serif", color: C.black, WebkitFontSmoothing: 'antialiased' }}>
+        <Hero />
+        <Letter />
+        <Offerings />
+        <CtaBand />
+      </div>
+    </>
   );
 }

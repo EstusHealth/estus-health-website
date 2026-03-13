@@ -144,6 +144,8 @@ function NavDropdown({ item, mobile = false, onNavigate }) {
       <div className="space-y-2">
         <button
           onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-haspopup="true"
           className={`flex items-center justify-between w-full px-4 py-2 text-lg font-display uppercase tracking-wide transition-colors ${
             isActive ? 'text-primary' : 'text-foreground/80 hover:text-foreground'
           }`}
@@ -163,6 +165,8 @@ function NavDropdown({ item, mobile = false, onNavigate }) {
   return (
     <div className="relative group">
       <button
+        aria-expanded="false"
+        aria-haspopup="true"
         className={`flex items-center gap-1 px-3 py-2 text-sm font-display uppercase tracking-wide transition-colors ${
           isActive ? 'text-primary' : 'text-foreground/80 hover:text-foreground'
         }`}
@@ -204,6 +208,7 @@ function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
+                  aria-current={location.pathname === item.href ? 'page' : undefined}
                   className={`px-3 py-2 text-sm font-display uppercase tracking-wide transition-colors ${
                     location.pathname === item.href
                       ? 'text-primary'
@@ -214,7 +219,7 @@ function Header() {
                 </Link>
               )
             )}
-            
+
             {/* Client Portal Button (Desktop) */}
             <a
               href="https://questot.bookings.pracsuite.com/"
@@ -239,6 +244,7 @@ function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 text-foreground"
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -387,8 +393,11 @@ function Footer() {
 export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg">
+        Skip to main content
+      </a>
       <Header />
-      <main className="flex-1 pt-16 lg:pt-20">
+      <main id="main-content" className="flex-1 pt-16 lg:pt-20">
         <Outlet />
       </main>
       <Footer />

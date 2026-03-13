@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Brain, 
+import { Helmet } from 'react-helmet-async';
+import {
+  ArrowRight,
+  Brain,
   Heart,
   CheckCircle,
   AlertCircle,
@@ -13,6 +14,10 @@ import { Section, Card, CardContent, Button, Badge } from '../../components/ui';
 export default function LearnLateDiagnosis() {
   return (
     <>
+      <Helmet>
+        <title>Late Autism Diagnosis in Adults | Estus Health</title>
+        <meta name="description" content="Navigating a late autism diagnosis. Understanding masking, grief, identity, and finding community. Support from neuro-affirming OTs in Perth." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

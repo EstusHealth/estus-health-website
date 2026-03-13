@@ -1,9 +1,14 @@
 import { Section, Card, CardContent, Button, CTABanner } from '../../components/ui';
 import { ArrowRight, CheckCircle, Gamepad2 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function GamingInformedTherapy() {
   return (
     <>
+      <Helmet>
+        <title>Gaming-Informed Therapy Perth | Estus Health</title>
+        <meta name="description" content="Gaming-informed occupational therapy for autistic youth and adults in Perth. Using gaming interests as therapeutic tools, not rewards. NDIS funded." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

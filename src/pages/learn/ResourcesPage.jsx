@@ -150,7 +150,7 @@ export default function ResourcesPage() {
               Understanding your neurotype is the first step toward support that actually sticks.
             </p>
             <p className="text-lg text-noctua-brown/70 max-w-2xl leading-relaxed">
-              Explore our free quizzes and guides,written for people navigating these
+              Explore our free quizzes and guides, written for people navigating these
               experiences, not about them. No jargon, no clinical distance.
             </p>
           </div>

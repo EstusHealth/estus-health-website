@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Section, Card, Button } from '../components/ui';
 import { Mail, MapPin, Clock, ChevronDown, ArrowRight } from 'lucide-react';
 
@@ -26,6 +27,10 @@ export default function ContactPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact & Referrals | Estus Health Perth</title>
+        <meta name="description" content="Refer a client or enquire about occupational therapy at Estus Health. Accepting private, self-managed, and plan-managed NDIS clients in Perth." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">
@@ -82,6 +87,8 @@ export default function ContactPage() {
                   <div key={i} className="border-b border-border pb-4">
                     <button
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      aria-expanded={openFaq === i}
+                      aria-controls={`faq-answer-${i}`}
                       className="flex items-center justify-between w-full text-left font-medium text-foreground hover:text-primary transition-colors"
                     >
                       {faq.q}
@@ -90,7 +97,7 @@ export default function ContactPage() {
                       />
                     </button>
                     {openFaq === i && (
-                      <p className="mt-3 text-sm text-foreground/70 leading-relaxed animate-in fade-in slide-in-from-top-1">
+                      <p id={`faq-answer-${i}`} className="mt-3 text-sm text-foreground/70 leading-relaxed animate-in fade-in slide-in-from-top-1">
                         {faq.a}
                       </p>
                     )}

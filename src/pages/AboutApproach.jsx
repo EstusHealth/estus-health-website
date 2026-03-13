@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Section, Card, CardContent, Button, PullQuote } from '../components/ui';
 import { ArrowRight, Heart, Sparkles, Brain, Shield, Users } from 'lucide-react';
 
 export default function AboutApproach() {
   return (
     <>
+      <Helmet>
+        <title>Our Approach | Neuro-Affirming OT | Estus Health</title>
+        <meta name="description" content="Autonomy over compliance. We don't fix people. We fix the environment. Neuro-affirming, evidence-informed occupational therapy in Perth." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

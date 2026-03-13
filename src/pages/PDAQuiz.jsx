@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from "react-router-dom";
 import { Shield, Compass, Eye, Brain, Heart, Lightbulb, RefreshCw, Lock, HeartHandshake, Scale, Zap, Target } from "lucide-react";
 import QuizResults from "../components/QuizResults";
@@ -400,6 +401,10 @@ export default function PDAQuiz() {
 
   return (
     <>
+      <Helmet>
+        <title>PDA Profile Quiz | Discover Your Archetype | Estus Health</title>
+        <meta name="description" content="Discover your PDA archetype — Negotiator, Avoider, Masker, or Adapter — with personalised strategies for navigating demands. Free quiz from Estus Health." />
+      </Helmet>
       {screen !== "results" && (
         <>
           <style>{`

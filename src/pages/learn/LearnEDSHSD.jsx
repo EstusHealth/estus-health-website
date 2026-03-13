@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -69,6 +70,10 @@ export default function LearnEDSHSD() {
 
   return (
     <>
+      <Helmet>
+        <title>EDS & Hypermobility Spectrum Disorder | Neurodivergence Overlap | Estus Health</title>
+        <meta name="description" content="Ehlers-Danlos Syndromes and HSD explained for neurodivergent people. How hypermobility intersects with autism, ADHD, executive function, and daily life. OT support in Perth." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

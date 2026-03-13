@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from "react-router-dom";
 import { Shield, Sword, BookOpen, Music, Heart, Eye, Brain, Target, Compass, Lightbulb, Users, Zap, Scale, RefreshCw } from "lucide-react";
 import QuizResults from "../components/QuizResults";
@@ -400,6 +401,10 @@ export default function RPGCharacterQuiz() {
 
   return (
     <>
+      <Helmet>
+        <title>RPG Character Build Quiz | Estus Health</title>
+        <meta name="description" content="Build your neurodivergent character sheet. Find out your stat distribution, class archetype, and innate abilities. Free quiz from Estus Health." />
+      </Helmet>
       {screen !== "results" && (
         <>
           <style>{`

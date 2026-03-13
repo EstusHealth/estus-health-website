@@ -33,10 +33,10 @@ export default function HomePage() {
         <meta name="description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
         {/* Open Graph */}
         <meta property="og:type"        content="website" />
-        <meta property="og:url"         content="https://estushealth.com/" />
+        <meta property="og:url"         content="https://www.estushealth.com/" />
         <meta property="og:title"       content="Estus Health | Neuroaffirming Occupational Therapy Perth" />
         <meta property="og:description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
-        <meta property="og:image"       content="https://estushealth.com/og-image.png" />
+        <meta property="og:image"       content="https://www.estushealth.com/og-image.png" />
         <meta property="og:image:width"  content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt"   content="Estus Health — Neuro-Affirming &amp; Gaming-Informed OT" />
@@ -44,14 +44,14 @@ export default function HomePage() {
         <meta name="twitter:card"        content="summary_large_image" />
         <meta name="twitter:title"       content="Estus Health | Neuroaffirming Occupational Therapy Perth" />
         <meta name="twitter:description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
-        <meta name="twitter:image"       content="https://estushealth.com/og-image.png" />
+        <meta name="twitter:image"       content="https://www.estushealth.com/og-image.png" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "MedicalBusiness",
               "name": "Estus Health",
-              "image": "https://estushealth.com/team-photo.jpeg",
+              "image": "https://www.estushealth.com/team-photo.jpeg",
               "description": "Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles.",
               "address": {
                 "@type": "PostalAddress",
@@ -64,7 +64,7 @@ export default function HomePage() {
                 "latitude": "-31.95",
                 "longitude": "115.86"
               },
-              "url": "https://estushealth.com",
+              "url": "https://www.estushealth.com",
               "priceRange": "$$",
               "openingHoursSpecification": [
                 {
@@ -361,7 +361,7 @@ export default function HomePage() {
             to="/learn"
             className="inline-flex items-center gap-2 text-noctua-russet font-display text-sm uppercase tracking-wide font-semibold hover:gap-3 transition-all"
           >
-            See all 6 quizzes &amp; guides <ArrowRight className="w-4 h-4" />
+            See all 7 quizzes &amp; guides <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </Section>

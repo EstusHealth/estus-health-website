@@ -33,6 +33,13 @@ const ROUTES = [
   '/learn/rpg-character-quiz',
   '/learn/eds-hsd',
   '/learn/eds-hsd-quiz',
+  '/learn',
+  '/learn/chronotype-quiz',
+  '/learn/energy-quiz',
+  '/learn/pda-quiz',
+  '/learn/burnout-quiz',
+  '/learn/gaming-quiz',
+  '/resources/commcard',
 ];
 
 // ── Per-page SEO meta (title + description) ───────────────────────────
@@ -100,6 +107,34 @@ const PAGE_META = {
   '/learn/eds-hsd-quiz': {
     title: 'EDS/HSD Management Style Quiz | Estus Health',
     description: 'Discover your EDS/HSD management style. Are you a Strategist, Surfer, Fortress, or Alchemist? Practical tips for neurodivergent people managing hypermobility.',
+  },
+  '/learn': {
+    title: 'Resources & Quizzes | Estus Health',
+    description: 'Free interactive quizzes and in-depth guides on PDA, autism, sleep, executive function, burnout, and gaming. Know your brain. Build your life.',
+  },
+  '/learn/chronotype-quiz': {
+    title: 'Chronotype Quiz | Discover Your Sleep Type | Estus Health',
+    description: 'Are you a Lion, Bear, Wolf, or Dolphin? Find out your biological sleep type and learn how to align your schedule to your natural rhythm.',
+  },
+  '/learn/energy-quiz': {
+    title: 'Energy & Executive Function Quiz | Estus Health',
+    description: 'Map your energy patterns and executive function profile. Understand when and why tasks feel impossible, and what actually helps. Free quiz from Estus Health.',
+  },
+  '/learn/pda-quiz': {
+    title: 'PDA Profile Quiz | Discover Your Archetype | Estus Health',
+    description: 'Discover your PDA archetype — Negotiator, Avoider, Masker, or Adapter — with personalised strategies for navigating demands.',
+  },
+  '/learn/burnout-quiz': {
+    title: 'Autistic Burnout Quiz | Where Are You on the Spectrum? | Estus Health',
+    description: 'Assess where you are on the autistic burnout spectrum. Get a clearer picture of what your nervous system needs right now.',
+  },
+  '/learn/gaming-quiz': {
+    title: 'Gaming & Wellbeing Quiz | Estus Health',
+    description: 'Explore the relationship between your gaming habits and your mental health, focus, and emotional regulation. Free quiz from Estus Health.',
+  },
+  '/resources/commcard': {
+    title: 'CommCard | Free Communication Tool | Estus Health',
+    description: 'A free communication tool for moments when speaking is hard. Ready-made phrases and custom cards for neurodivergent adults experiencing speech difficulties.',
   },
 };
 

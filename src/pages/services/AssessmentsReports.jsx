@@ -1,9 +1,14 @@
 import { Section, Card, CardContent, Button, CTABanner } from '../../components/ui';
 import { ArrowRight, CheckCircle, FileText } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function AssessmentsReports() {
   return (
     <>
+      <Helmet>
+        <title>OT Assessments & Reports Perth | Functional Capacity | Estus Health</title>
+        <meta name="description" content="Functional capacity assessments, NDIS access request support, and therapy reports. Clear, actionable documentation that translates into real outcomes." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 lg:py-24 grain-overlay border-b border-border">
         <div className="container">

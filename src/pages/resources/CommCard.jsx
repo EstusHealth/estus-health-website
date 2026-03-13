@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import {
   Section,
   Card,
@@ -64,6 +65,10 @@ const userQuotes = [
 export default function CommCard() {
   return (
     <>
+      <Helmet>
+        <title>CommCard | Free Communication Tool | Estus Health</title>
+        <meta name="description" content="A free communication tool for moments when speaking is hard. Ready-made phrases and custom cards for neurodivergent adults experiencing speech difficulties." />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-24 lg:py-32 grain-overlay">
         <div className="container relative z-10">

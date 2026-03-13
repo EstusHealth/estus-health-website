@@ -26,6 +26,7 @@ import RPGCharacterQuiz from './pages/RPGCharacterQuiz';
 import EDSQuiz from './pages/EDSQuiz';
 import LearnEDSHSD from './pages/learn/LearnEDSHSD';
 import CommCard from './pages/resources/CommCard';
+import NotFoundPage from './pages/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
             <Route path="eds-hsd" element={<LearnEDSHSD />} />
             <Route path="eds-hsd-quiz" element={<EDSQuiz />} />
           </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
         <Route path="/home" element={<Navigate to="/" replace />} />
       </Routes>
