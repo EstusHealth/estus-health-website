@@ -8,9 +8,7 @@ import {
   Heart,
   Sparkles,
   ArrowRight,
-  CheckCircle,
   Moon,
-
   Flame,
 } from 'lucide-react';
 import {
@@ -19,9 +17,9 @@ import {
   Button,
   FeatureCard,
   ProcessStep,
-
   CTABanner
 } from '../components/ui';
+import HeroSection from '../components/HeroSection';
 import CapacityTracker from '../components/CapacityTracker';
 
 export default function HomePage() {
@@ -80,42 +78,7 @@ export default function HomePage() {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative py-24 lg:py-32 xl:py-40 grain-overlay overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl">
-            <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-              Neuroaffirming Occupational Therapy
-            </p>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold leading-none mb-6 text-noctua-brown uppercase">
-              Estus Health
-            </h1>
-            <p className="text-lg text-noctua-brown/70 max-w-2xl mb-8 leading-relaxed">
-              Evidence-informed occupational therapy across Perth and via telehealth Australia-wide.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-8">
-              <Button to="/contact" size="lg" className="bg-noctua-russet hover:bg-noctua-brown text-white border-none shadow-md">
-                Make a Referral
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button to="/about/approach" variant="outline" size="lg" className="border-noctua-russet text-noctua-russet hover:bg-noctua-russet/10">
-                Our Approach
-              </Button>
-            </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-noctua-brown/60">
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-noctua-russet" />
-                Private & Self-Managed
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-noctua-russet" />
-                Telehealth Available
-              </span>
-            </div>
-          </div>
-        </div>
-        {/* Decorative gradient */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-noctua-bone/50 to-transparent pointer-events-none" />
-      </section>
+      <HeroSection />
 
       {/* Capacity Tracker */}
       <CapacityTracker />
