@@ -62,6 +62,14 @@ module.exports = {
           'brown-dark': 'hsl(var(--noctua-brown-dark))',
           'cream-light': 'hsl(var(--noctua-cream-light))',
         },
+
+        // Sage Green Accent Colors
+        sage: {
+          DEFAULT: 'hsl(var(--sage))',
+          light: 'hsl(var(--sage-light))',
+          dark: 'hsl(var(--sage-dark))',
+          muted: 'hsl(var(--sage-muted))',
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

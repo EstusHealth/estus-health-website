@@ -46,6 +46,12 @@
     --noctua-black: 20 25% 15%;
     --noctua-tan: 35 25% 88%;
 
+    /* Sage Green Palette */
+    --sage: 140 15% 55%;
+    --sage-light: 140 15% 75%;
+    --sage-dark: 140 20% 35%;
+    --sage-muted: 140 10% 85%;
+
     /* Typography Variables */
     --font-display: 'Oswald', sans-serif;
     --font-serif: 'Libre Baskerville', serif;
