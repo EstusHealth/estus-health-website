@@ -8,9 +8,7 @@ import {
   Heart,
   Sparkles,
   ArrowRight,
-  CheckCircle,
   Moon,
-  Zap,
   Flame,
 } from 'lucide-react';
 import {
@@ -19,9 +17,9 @@ import {
   Button,
   FeatureCard,
   ProcessStep,
-  PullQuote,
   CTABanner
 } from '../components/ui';
+import HeroSection from '../components/HeroSection';
 import CapacityTracker from '../components/CapacityTracker';
 
 export default function HomePage() {
@@ -80,52 +78,7 @@ export default function HomePage() {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative py-24 lg:py-32 xl:py-40 grain-overlay overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl">
-            <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-              Neuroaffirming Occupational Therapy
-            </p>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold leading-none mb-6 text-noctua-brown">
-              Therapy that doesn't punish people
-              <br />
-              <span className="text-noctua-russet">for being who they are</span>
-            </h1>
-            <p className="font-serif text-xl md:text-2xl text-noctua-brown/80 italic mb-6">
-              Where being yourself isn't the problem. It's the starting point.
-            </p>
-            <p className="text-lg text-noctua-brown/70 max-w-2xl mb-8 leading-relaxed">
-              We don't fix people. We fix the environment. Evidence-informed occupational therapy 
-              across Perth and via telehealth Australia-wide.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-8">
-              <Button to="/contact" size="lg" className="bg-noctua-russet hover:bg-noctua-brown text-white border-none shadow-md">
-                Make a Referral
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button to="/about/approach" variant="outline" size="lg" className="border-noctua-russet text-noctua-russet hover:bg-noctua-russet/10">
-                Our Approach
-              </Button>
-              <Button to="/learn" variant="ghost" size="lg" className="btn-quiz-glow border border-noctua-russet text-noctua-brown/70 hover:text-noctua-brown hover:bg-noctua-russet/5">
-                <Brain className="mr-2 w-4 h-4" />
-                Free Resources
-              </Button>
-            </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-noctua-brown/60">
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-noctua-russet" />
-                Private & Self-Managed
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-noctua-russet" />
-                Telehealth Available
-              </span>
-            </div>
-          </div>
-        </div>
-        {/* Decorative gradient */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-noctua-bone/50 to-transparent pointer-events-none" />
-      </section>
+      <HeroSection />
 
       {/* Capacity Tracker */}
       <CapacityTracker />
@@ -401,96 +354,6 @@ export default function HomePage() {
               title="Implementation & Review"
               description="Therapy sessions, real-world strategies, and progress checkpoints. We adapt as you need. Capacity fluctuates, and that's okay."
             />
-          </div>
-        </div>
-      </Section>
-
-      {/* Quote */}
-      <Section className="bg-noctua-bone/30">
-        <div className="max-w-3xl mx-auto">
-          <PullQuote
-            quote="Estus Health is here for people who've masked, pushed, or performed just to access care, and for the therapists trying to stay whole while supporting them."
-            className="text-center border-l-0 border-t-2 border-b-2 border-noctua-russet/30 py-8 text-noctua-brown italic"
-          />
-        </div>
-      </Section>
-
-      {/* Featured Program: Sleep */}
-      <Section>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
-            <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-              Featured Program
-            </p>
-            <h2 className="text-2xl md:text-4xl font-display mb-6 text-noctua-brown">
-              Sleep Performance
-              <br />
-              <span className="text-noctua-russet">Program</span>
-            </h2>
-            <p className="text-noctua-brown/70 leading-relaxed mb-4">
-              Sleep is the single highest-leverage intervention for nearly every performance 
-              domain. Concentration, emotional regulation, energy, recovery: all downstream 
-              of sleep quality.
-            </p>
-            <p className="text-noctua-brown/70 leading-relaxed mb-8">
-              Our 4-session OT intervention assesses your sleep, builds structure around it, 
-              and gives you protocols that fit your actual life. Designed for neurodivergent 
-              adults who know sleep matters but haven't found an approach that sticks.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button to="/services/sleep-program" size="lg" className="bg-noctua-russet hover:bg-noctua-brown text-white border-none shadow-md">
-                Learn More
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button to="/contact" variant="outline" size="lg" className="border-noctua-russet text-noctua-russet hover:bg-noctua-russet/10">
-                Book a Session
-              </Button>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <Card className="p-5 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
-                  <Brain className="w-5 h-5 text-noctua-russet" />
-                </div>
-                <div>
-                  <h3 className="font-display text-base mb-1 text-noctua-brown">Chronotype Assessment</h3>
-                  <p className="text-noctua-brown/70 text-sm">
-                    We identify your biological rhythm and build your schedule around it, 
-                    not the other way around.
-                  </p>
-                </div>
-              </div>
-            </Card>
-            <Card className="p-5 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-noctua-russet" />
-                </div>
-                <div>
-                  <h3 className="font-display text-base mb-1 text-noctua-brown">Personalised Protocols</h3>
-                  <p className="text-noctua-brown/70 text-sm">
-                    Evening routines, environment design, and circadian alignment strategies 
-                    built for your neurology and lifestyle.
-                  </p>
-                </div>
-              </div>
-            </Card>
-            <Card className="p-5 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-noctua-russet" />
-                </div>
-                <div>
-                  <h3 className="font-display text-base mb-1 text-noctua-brown">Systems, Not Tips</h3>
-                  <p className="text-noctua-brown/70 text-sm">
-                    4 sessions. Assessment, architecture, routine building, and integration. 
-                    Designed to survive contact with real life.
-                  </p>
-                </div>
-              </div>
-            </Card>
           </div>
         </div>
       </Section>

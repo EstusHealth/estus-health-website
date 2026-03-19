@@ -57,35 +57,11 @@ function StatusBadge({ status, label }) {
   );
 }
 
-function TickerBanner() {
-  const text = 'Capacity Tracker';
-  // Repeat enough times to fill the screen and allow seamless looping
-  const items = Array.from({ length: 12 }, (_, i) => (
-    <span key={i} className="flex items-center gap-8 mx-4">
-      <span className="font-display text-3xl md:text-5xl font-bold uppercase tracking-wide text-white/20 whitespace-nowrap">
-        {text}
-      </span>
-      <span className="w-2 h-2 rounded-full bg-white/10 flex-shrink-0" />
-    </span>
-  ));
-
-  return (
-    <div className="overflow-hidden py-6 md:py-8">
-      <div className="ticker-scroll flex">
-        {items}
-      </div>
-    </div>
-  );
-}
-
 export default function CapacityTracker() {
   return (
     <section className="bg-noctua-brown-dark text-white relative overflow-hidden">
-      {/* Scrolling ticker */}
-      <TickerBanner />
-
       {/* Content */}
-      <div className="container pb-16 md:pb-20">
+      <div className="container py-16 md:py-20">
         <div className="text-center mb-12">
           <p className="font-display text-sm uppercase tracking-widest mb-3 text-white/50 font-semibold">
             Current Availability
