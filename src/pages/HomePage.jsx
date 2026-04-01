@@ -17,6 +17,7 @@ import {
 } from '../components/ui';
 import HeroSection from '../components/HeroSection';
 import CapacityTracker from '../components/CapacityTracker';
+import InstagramEmbed from '../components/InstagramEmbed';
 import { BOOKING } from '../components/BookingButtons';
 
 export default function HomePage() {
@@ -252,7 +253,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Section 4: Get Started */}
+      {/* Section 4: Instagram */}
+      <InstagramEmbed />
+
+      {/* Section 5: Get Started */}
       <Section className="bg-card border-y border-border">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-display mb-4">Ready to Get Started?</h2>
