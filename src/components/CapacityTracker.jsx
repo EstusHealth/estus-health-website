@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Clock } from 'lucide-react';
-import { BookingButtonPair } from './BookingButtons';
+import { ArrowRight, CheckCircle, Clock, User, Users, Calendar } from 'lucide-react';
+import { BOOKING } from './BookingButtons';
 
 const capacityItems = [
   {
@@ -77,15 +77,67 @@ export default function CapacityTracker() {
           </div>
         </div>
 
-        <div className="border-t border-noctua-brown/10 pt-8 text-center">
-          <p className="text-noctua-brown/70 mb-4">
-            Not sure where to start? Book a free 15-minute discovery call. No commitment, no pressure.
+        <div className="border-t border-noctua-brown/10 pt-10 text-center">
+          <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-3 font-semibold">
+            Free Discovery Calls
           </p>
-          <div className="flex justify-center">
-            <BookingButtonPair />
+          <h3 className="text-xl md:text-2xl font-display text-noctua-brown mb-2">
+            Not sure where to start?
+          </h3>
+          <p className="text-noctua-brown/60 mb-8 max-w-md mx-auto">
+            Book a free 15-minute call with one of our OTs. No commitment, no pressure — just a conversation.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+            {[
+              {
+                name: 'Nik',
+                role: 'Occupational Therapist',
+                focus: 'Adults & adolescents (16+)',
+                icon: User,
+                url: BOOKING.adult.url,
+              },
+              {
+                name: 'Nam',
+                role: 'Occupational Therapist',
+                focus: 'Youth & young adults (under 16)',
+                icon: Users,
+                url: BOOKING.youth.url,
+              },
+            ].map(({ name, role, focus, icon: Icon, url }) => (
+              <a
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-card border border-noctua-brown/10 rounded-xl p-6 text-left transition-all hover:shadow-lg hover:border-noctua-russet/30 hover:-translate-y-0.5"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-noctua-russet/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-noctua-russet" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-display text-lg font-semibold text-noctua-brown">
+                      {name}
+                    </p>
+                    <p className="text-noctua-brown/50 text-sm">
+                      {role}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-noctua-brown/70 text-sm mt-4 mb-5">
+                  {focus}
+                </p>
+                <span className="inline-flex items-center gap-2 bg-noctua-russet text-white font-display text-sm uppercase tracking-wide px-5 py-2.5 rounded-lg group-hover:bg-noctua-russet/90 transition-colors w-full justify-center">
+                  <Calendar className="w-4 h-4" />
+                  Book a Free Call
+                </span>
+              </a>
+            ))}
           </div>
-          <p className="text-noctua-brown/40 text-xs mt-4">
-            Appointments available Monday to Saturday, 8am to 7pm
+
+          <p className="text-noctua-brown/40 text-xs mt-6">
+            15 minutes · Monday to Saturday · 8am – 7pm
           </p>
         </div>
       </div>
