@@ -397,7 +397,7 @@ export default function HomePage() {
             No referral needed. No obligation. Just a conversation.
           </p>
           <p className="text-noctua-brown/50 text-sm">
-            NDIS, Medicare, and private clients welcome. Telehealth available Australia-wide.
+            NDIS and private clients welcome. Telehealth available Australia-wide.
           </p>
         </div>
 

@@ -3,13 +3,13 @@ import { User, Users, Calendar } from 'lucide-react';
 export const BOOKING = {
   adult: {
     name: 'Nik',
-    label: 'Adults (18+)',
-    url: 'https://calendar.google.com/calendar/appointments/REPLACE_NIK_LINK',
+    label: 'Over 16s',
+    url: 'https://calendar.app.google/iLxEVkhaRCFEhsSC8',
   },
   youth: {
     name: 'Nam',
-    label: 'Youth (under 18)',
-    url: 'https://calendar.google.com/calendar/appointments/REPLACE_NAM_LINK',
+    label: 'Under 16s',
+    url: 'https://calendar.app.google/vGXRQqSbPwSXsY8q9',
   },
 };
 
