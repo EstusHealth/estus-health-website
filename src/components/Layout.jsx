@@ -286,6 +286,7 @@ function Footer() {
             <ul className="space-y-2 text-sm text-foreground/60">
               <li>Perth, Western Australia</li>
               <li>Telehealth Australia-wide</li>
+              <li>Mon - Sat, 8am - 7pm</li>
               <li className="pt-2">
                 <Link to="/contact" className="text-primary hover:text-primary/80 transition-colors">
                   Make a referral →

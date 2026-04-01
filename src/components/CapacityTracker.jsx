@@ -106,6 +106,10 @@ export default function CapacityTracker() {
           ))}
         </div>
 
+        <p className="text-center text-white/40 text-sm mb-8">
+          Appointments available Monday to Saturday, 8am to 7pm
+        </p>
+
         {/* Referrer CTAs */}
         <div className="flex flex-wrap justify-center gap-4">
           <Link
