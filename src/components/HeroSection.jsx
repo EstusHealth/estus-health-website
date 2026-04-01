@@ -109,7 +109,7 @@ export default function HeroSection() {
                 href={BOOKING.adult.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary font-display text-sm uppercase tracking-wider hover:gap-3 transition-all duration-300"
+                className="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider px-6 py-3 rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Calendar className="w-4 h-4" />
                 Book a Free Discovery Call
