@@ -241,7 +241,7 @@ export default function HomePage() {
             to="/learn"
             className="inline-flex items-center gap-2 text-noctua-russet font-display text-sm uppercase tracking-wide font-semibold hover:gap-3 transition-all"
           >
-            See all 6 quizzes &amp; guides <ArrowRight className="w-4 h-4" />
+            See all guides &amp; quizzes <ArrowRight className="w-4 h-4" />
           </Link>
           <p className="text-noctua-brown/50 text-sm">
             Or explore our guides on{' '}
