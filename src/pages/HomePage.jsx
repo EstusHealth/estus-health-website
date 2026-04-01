@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Moon,
   Flame,
+  Calendar,
 } from 'lucide-react';
 import {
   Section,
@@ -17,10 +18,10 @@ import {
   Button,
   FeatureCard,
   ProcessStep,
-  CTABanner
 } from '../components/ui';
 import HeroSection from '../components/HeroSection';
 import CapacityTracker from '../components/CapacityTracker';
+import { BOOKING, BookingButtonPair } from '../components/BookingButtons';
 
 export default function HomePage() {
   return (
@@ -82,6 +83,16 @@ export default function HomePage() {
 
       {/* Capacity Tracker */}
       <CapacityTracker />
+
+      {/* Discovery Call Banner */}
+      <div className="bg-noctua-bone/50 border-b border-noctua-brown/10 py-6">
+        <div className="container text-center">
+          <p className="text-noctua-brown/80 mb-4">
+            Not sure where to start? Book a free 15-minute discovery call. No commitment, no pressure.
+          </p>
+          <BookingButtonPair />
+        </div>
+      </div>
 
       {/* Services - ADDED BG COLOR HERE */}
       <Section className="bg-noctua-bone/30">
@@ -333,16 +344,29 @@ export default function HomePage() {
               We've designed our intake process to be as low-demand as possible. 
               No lengthy phone calls unless you want them. No pressure.
             </p>
-            <Button to="/contact" className="bg-noctua-russet hover:bg-noctua-brown text-white">
-              Start Your Referral
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <Button to="/contact" className="bg-noctua-russet hover:bg-noctua-brown text-white">
+                Start Your Referral
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+              <span className="text-noctua-brown/50 text-sm">or</span>
+              <Button
+                href={BOOKING.adult.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                className="border-noctua-brown/20 hover:bg-noctua-brown hover:text-white"
+              >
+                <Calendar className="mr-2 w-4 h-4" />
+                Book a Free Discovery Call
+              </Button>
+            </div>
           </div>
           <div className="space-y-8">
             <ProcessStep
               number="1"
-              title="Enquire or Refer"
-              description="Send through a referral or enquiry with the key details. Online form, email, or via your support coordinator. Whatever works for you."
+              title="Enquire, Refer, or Book a Call"
+              description="Send through a referral or enquiry, or book a free 15-minute discovery call to chat with a clinician first. Online form, email, phone, or via your support coordinator. Whatever works for you."
             />
             <ProcessStep
               number="2"
@@ -355,6 +379,30 @@ export default function HomePage() {
               description="Therapy sessions, real-world strategies, and progress checkpoints. We adapt as you need. Capacity fluctuates, and that's okay."
             />
           </div>
+        </div>
+      </Section>
+
+      {/* Free Discovery Call */}
+      <Section className="bg-noctua-bone/30">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <Calendar className="w-8 h-8 text-noctua-russet mx-auto mb-4" />
+          <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
+            Free Discovery Call
+          </p>
+          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">
+            Talk to a clinician before you commit
+          </h2>
+          <p className="text-noctua-brown/70 leading-relaxed mb-4">
+            A 15-minute call to ask questions, check the fit, and figure out next steps.
+            No referral needed. No obligation. Just a conversation.
+          </p>
+          <p className="text-noctua-brown/50 text-sm">
+            NDIS, Medicare, and private clients welcome. Telehealth available Australia-wide.
+          </p>
+        </div>
+
+        <div className="max-w-lg mx-auto">
+          <BookingButtonPair variant="card" />
         </div>
       </Section>
 
@@ -430,13 +478,29 @@ export default function HomePage() {
       </Section>
 
       {/* CTA */}
-      <CTABanner
-        title="Ready to Get Started?"
-        description="Whether you're self-referring, a parent, or a support coordinator, we're here to help."
-        primaryCTA={{ label: "Make a Referral", href: "/contact", className: "bg-noctua-russet hover:bg-noctua-brown" }}
-        secondaryCTA={{ label: "For Support Coordinators", href: "/for-referrers", className: "text-noctua-russet border-noctua-russet" }}
-        className="bg-noctua-bone/50"
-      />
+      <Section className="bg-card border-y border-border">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-display mb-4">Ready to Get Started?</h2>
+          <p className="text-foreground/70 mb-8">
+            Whether you're self-referring, a parent, or a support coordinator, we're here to help.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button to="/contact" size="lg">
+              Make a Referral
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+            <Button to="/for-referrers" variant="outline" size="lg">
+              For Support Coordinators
+            </Button>
+          </div>
+          <div className="border-t border-noctua-brown/10 mt-8 pt-8">
+            <p className="text-noctua-brown/60 text-sm mb-4">
+              Prefer to talk first? Book a free 15-minute discovery call.
+            </p>
+            <BookingButtonPair />
+          </div>
+        </div>
+      </Section>
     </>
   );
 }
