@@ -1,56 +1,43 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Clock } from 'lucide-react';
+import { BookingButtonPair } from './BookingButtons';
 
-const capacityAreas = [
+const capacityItems = [
   {
-    category: 'Therapy',
-    items: [
-      {
-        title: 'Adults',
-        description: 'Neuroaffirming OT for autistic adults, late diagnosis, burnout recovery, executive function and sensory regulation.',
-        status: 'accepting',
-        statusLabel: 'Accepting New Clients',
-        cta: { label: 'Our Services', to: '/services/occupational-therapy' },
-      },
-      {
-        title: 'Youth & Teens',
-        description: 'PDA-informed and gaming-informed therapy that meets young people where they are, not where we think they should be.',
-        status: 'accepting',
-        statusLabel: 'Accepting New Clients',
-        cta: { label: 'Our Services', to: '/services/gaming-informed-therapy' },
-      },
-    ],
+    title: 'Adults',
+    status: 'accepting',
+    statusLabel: 'Accepting New Clients',
+    to: '/services/occupational-therapy',
   },
   {
-    category: 'NDIS Assessments & Reports',
-    items: [
-      {
-        title: 'NDIS Access Requests',
-        description: 'Applying for the NDIS for the first time? We write clear functional evidence that captures the full picture of your capacity.',
-        status: 'accepting',
-        statusLabel: 'Immediate Capacity',
-        cta: { label: 'Learn More', to: '/services/assessments-reports' },
-      },
-      {
-        title: 'Functional Capacity Assessments',
-        description: 'Already an NDIS participant? Comprehensive assessments for plan reviews that reflect your real capacity. Good days, bad days, and in between.',
-        status: 'accepting',
-        statusLabel: 'Immediate Capacity',
-        cta: { label: 'Learn More', to: '/services/assessments-reports' },
-      },
-    ],
+    title: 'Youth & Teens',
+    status: 'accepting',
+    statusLabel: 'Accepting New Clients',
+    to: '/services/gaming-informed-therapy',
+  },
+  {
+    title: 'NDIS Access Requests',
+    status: 'accepting',
+    statusLabel: 'Immediate Capacity',
+    to: '/services/assessments-reports',
+  },
+  {
+    title: 'Functional Capacity Assessments',
+    status: 'accepting',
+    statusLabel: 'Immediate Capacity',
+    to: '/services/assessments-reports',
   },
 ];
 
 function StatusBadge({ status, label }) {
   const styles = status === 'accepting'
-    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
-    : 'bg-amber-500/20 text-amber-300 border-amber-500/30';
+    ? 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20'
+    : 'bg-amber-500/10 text-amber-700 border-amber-500/20';
 
   const Icon = status === 'accepting' ? CheckCircle : Clock;
 
   return (
-    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border ${styles}`}>
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border ${styles}`}>
       <Icon className="w-3.5 h-3.5" />
       {label}
     </span>
@@ -59,72 +46,47 @@ function StatusBadge({ status, label }) {
 
 export default function CapacityTracker() {
   return (
-    <section className="bg-noctua-brown-dark text-white relative overflow-hidden">
-      {/* Content */}
-      <div className="container py-16 md:py-20">
-        <div className="text-center mb-12">
-          <p className="font-display text-sm uppercase tracking-widest mb-3 text-white/50 font-semibold">
+    <section className="bg-noctua-bone/30 border-b border-noctua-brown/10">
+      <div className="container py-12 md:py-16">
+        <div className="text-center mb-8">
+          <p className="font-display text-sm uppercase tracking-widest mb-3 text-noctua-russet font-semibold">
             Current Availability
           </p>
-          <h2 className="text-2xl md:text-4xl font-display font-bold text-white mb-4">
-            Where We Have Capacity
+          <h2 className="text-2xl md:text-3xl font-display text-noctua-brown">
+            We're accepting new clients
           </h2>
-          <p className="text-white/60 max-w-xl mx-auto">
-            No waitlist guesswork. Here's where we can help right now.
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          {capacityAreas.map((area) => (
-            <div key={area.category}>
-              <h3 className="font-display text-lg uppercase tracking-wide text-white/40 mb-4 font-semibold">
-                {area.category}
-              </h3>
-              <div className="space-y-4">
-                {area.items.map((item) => (
-                  <div
-                    key={item.title}
-                    className="bg-white/5 border border-white/10 rounded-lg p-5 hover:bg-white/[0.08] transition-colors"
-                  >
-                    <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
-                      <h4 className="font-display text-xl text-white">{item.title}</h4>
-                      <StatusBadge status={item.status} label={item.statusLabel} />
-                    </div>
-                    <p className="text-white/60 text-sm leading-relaxed mb-4">
-                      {item.description}
-                    </p>
-                    <Link
-                      to={item.cta.to}
-                      className="inline-flex items-center gap-1 text-white/80 text-sm font-display uppercase tracking-wide hover:text-white hover:gap-2 transition-all"
-                    >
-                      {item.cta.label} <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                ))}
+        <div className="max-w-xl mx-auto mb-10">
+          <div className="divide-y divide-noctua-brown/10">
+            {capacityItems.map((item) => (
+              <div
+                key={item.title}
+                className="flex items-center justify-between gap-4 py-3"
+              >
+                <Link
+                  to={item.to}
+                  className="text-noctua-brown font-medium text-sm hover:text-noctua-russet transition-colors inline-flex items-center gap-1"
+                >
+                  {item.title}
+                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -ml-1 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <StatusBadge status={item.status} label={item.statusLabel} />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        <p className="text-center text-white/40 text-sm mb-8">
-          Appointments available Monday to Saturday, 8am to 7pm
-        </p>
-
-        {/* Referrer CTAs */}
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center font-display uppercase tracking-wide text-sm h-12 px-8 rounded-lg bg-white text-noctua-brown-dark hover:bg-white/90 transition-colors shadow-md"
-          >
-            Make a Referral
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Link>
-          <Link
-            to="/for-referrers"
-            className="inline-flex items-center justify-center font-display uppercase tracking-wide text-sm h-12 px-8 rounded-lg border border-white/30 text-white hover:bg-white/10 transition-colors"
-          >
-            Information for Referrers
-          </Link>
+        <div className="border-t border-noctua-brown/10 pt-8 text-center">
+          <p className="text-noctua-brown/70 mb-4">
+            Not sure where to start? Book a free 15-minute discovery call. No commitment, no pressure.
+          </p>
+          <div className="flex justify-center">
+            <BookingButtonPair />
+          </div>
+          <p className="text-noctua-brown/40 text-xs mt-4">
+            Appointments available Monday to Saturday, 8am to 7pm
+          </p>
         </div>
       </div>
     </section>
