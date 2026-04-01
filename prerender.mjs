@@ -39,15 +39,15 @@ const ROUTES = [
 const PAGE_META = {
   '/': {
     title: 'Estus Health | Neuro-Affirming & Gaming-Informed OT in Perth',
-    description: 'Neuro-affirming occupational therapy in Perth for autistic adults, teens, and PDA profiles. Gaming-informed therapy, executive function support, NDIS & telehealth.',
+    description: 'Neuro-affirming occupational therapy in Perth for autistic adults, teens, and PDA profiles. Gaming-informed therapy, executive function support. Private paying, plan & self-managed NDIS.',
   },
   '/services/occupational-therapy': {
-    title: 'Occupational Therapy Perth | NDIS & Private | Estus Health',
-    description: 'Evidence-based, neuro-affirming occupational therapy in Perth. Daily living skills, sensory regulation, executive function support. NDIS, private & telehealth.',
+    title: 'Occupational Therapy Perth | Private & NDIS | Estus Health',
+    description: 'Evidence-based, neuro-affirming occupational therapy in Perth. Daily living skills, sensory regulation, executive function support. Private paying, plan & self-managed NDIS. Telehealth available.',
   },
   '/services/gaming-informed-therapy': {
     title: 'Gaming-Informed Therapy Perth | Estus Health',
-    description: 'Gaming-informed occupational therapy for autistic youth and adults in Perth. Using gaming interests as therapeutic tools, not rewards. NDIS funded.',
+    description: 'Gaming-informed occupational therapy for autistic youth and adults in Perth. Using gaming interests as therapeutic tools, not rewards. Private paying, plan & self-managed NDIS.',
   },
   '/services/minecraft-program': {
     title: 'Minecraft Therapy Program Perth | Estus Health',
@@ -83,7 +83,7 @@ const PAGE_META = {
   },
   '/contact': {
     title: 'Contact & Referrals | Estus Health Perth',
-    description: 'Refer a client or enquire about occupational therapy at Estus Health. Accepting private, self-managed, and plan-managed NDIS clients in Perth.',
+    description: 'Refer a client or enquire about occupational therapy at Estus Health. Accepting private paying, plan-managed NDIS, and self-managed NDIS clients in Perth.',
   },
   '/for-referrers': {
     title: 'For Referrers & Support Coordinators | Estus Health',

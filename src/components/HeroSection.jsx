@@ -53,7 +53,7 @@ const specialties = [
 
 const trustBadges = [
   'No referral needed',
-  'NDIS, private, self-managed',
+  'Private paying, plan & self-managed NDIS',
 ];
 
 export default function HeroSection() {

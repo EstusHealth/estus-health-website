@@ -54,7 +54,7 @@ const faqData = [
   { q: 'Why does an OT work with EDS and HSD, not just a physio?', a: 'Physiotherapy focuses on strengthening and stabilising joints, which is important. Occupational therapy focuses on how you actually do your daily activities, your routines, your energy, your environment, and the cognitive and emotional load of managing a complex body. We work on the whole picture: from how you set up your morning routine to how you manage fatigue across a work day to how you communicate your needs to the people around you.' },
   { q: 'I think I might have EDS or HSD. Can you diagnose me?', a: 'OTs don\'t diagnose EDS or HSD. Diagnosis typically comes from a rheumatologist, geneticist, or a GP with expertise in hypermobility. What we can do is help you understand how your body is affecting your daily function right now, regardless of where you are in the diagnostic process. You don\'t need a formal diagnosis to start working with us.' },
   { q: 'What does a neurodivergent person with EDS/HSD actually need from OT?', a: 'When you\'re managing both a neurodivergent brain and a hypermobile body, the load compounds. Executive function challenges make pacing harder. Interoception differences mean you might not notice pain or fatigue signals until you crash. Sensory sensitivities can make recommended supports (compression garments, exercises) intolerable. We build strategies that account for all of these layers, not just one at a time.' },
-  { q: 'Do I need a referral or an NDIS plan?', a: 'No referral is needed to see us. We work with NDIS participants (both plan-managed and self-managed) and private clients. Telehealth sessions are available Australia-wide.' },
+  { q: 'Do I need a referral or an NDIS plan?', a: 'No referral is needed to see us. We work with private paying, plan-managed NDIS, and self-managed NDIS clients. Telehealth sessions are available Australia-wide.' },
   { q: 'How is this different from what I\'d get at a standard OT clinic?', a: 'Most OT clinics approach EDS and HSD from a purely physical angle, or they don\'t have experience with hypermobility at all. We specialise in the intersection of neurodivergence and complex health. That means we understand masking, demand avoidance, shutdown, sensory overload, and how all of those interact with a body that subluxates, fatigues, and needs careful management. We don\'t treat your brain and your body as separate problems.' },
 ];
 
@@ -300,7 +300,7 @@ export default function LearnEDSHSD() {
       {/* CTA */}
       <CTABanner
         title="Your Body and Your Brain Deserve the Same Team"
-        description="No referral needed. NDIS and private clients welcome. Telehealth available across Australia."
+        description="No referral needed. Private paying, plan & self-managed NDIS welcome. Telehealth available across Australia."
         primaryCTA={{ label: 'Take the EDS/HSD Quiz', href: '/learn/eds-hsd-quiz' }}
         secondaryCTA={{ label: 'Refer a Client', href: '/for-referrers' }}
       />

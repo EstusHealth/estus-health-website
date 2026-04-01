@@ -418,7 +418,7 @@ export default function Referrers() {
             <div style={S.includeRow}>
               <div style={S.includeDot} />
               <div style={S.includeText}>
-                <strong style={{ color: "hsl(var(--foreground))" }}>Funding type</strong>: private, self-managed NDIS, or plan-managed NDIS.
+                <strong style={{ color: "hsl(var(--foreground))" }}>Funding type</strong>: private paying, plan-managed NDIS, or self-managed NDIS.
               </div>
             </div>
             <div style={S.includeRow}>
@@ -432,7 +432,7 @@ export default function Referrers() {
             <div style={S.fundingBadge}>
               <div style={S.fundingLabel}>Funding</div>
               <div style={S.fundingText}>
-                Accepting private, self-managed, and plan-managed NDIS clients.
+                Accepting private paying, plan-managed NDIS, and self-managed NDIS clients.
               </div>
             </div>
           </div>

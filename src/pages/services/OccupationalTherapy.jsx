@@ -135,7 +135,7 @@ export default function OccupationalTherapy() {
                 <span className="font-display text-primary">$193.99/hr</span>
               </div>
               <p className="text-foreground/70 text-sm">
-                This rate applies to NDIS participants (Capacity Building: Improved Daily Living), self-managed, and private pay clients.
+                This rate applies to private paying, plan-managed NDIS (Capacity Building: Improved Daily Living), and self-managed NDIS clients.
               </p>
               <p className="text-foreground/70 text-sm">
                 Sessions are typically 1 hour. We offer both in-person sessions (Perth metro) 

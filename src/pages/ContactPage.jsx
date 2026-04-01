@@ -17,7 +17,7 @@ export default function ContactPage() {
     },
     {
       q: "What funding types do you accept?",
-      a: "We accept private, self-managed NDIS, and plan-managed NDIS clients across all of our services.",
+      a: "We accept private paying, plan-managed NDIS, and self-managed NDIS clients across all of our services.",
     },
     {
       q: "What if I'm not sure which service I need?",
