@@ -238,8 +238,8 @@ function Header() {
         <nav className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-xl font-display font-bold text-primary-foreground">E</span>
+            <div className="w-10 h-10 rounded-lg overflow-hidden">
+              <img src="/flame-logo.png" alt="Estus Health" className="w-full h-full object-cover" />
             </div>
             <span className="font-display text-xl uppercase tracking-wide">Estus Health</span>
           </Link>
