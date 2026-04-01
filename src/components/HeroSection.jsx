@@ -127,38 +127,53 @@ export default function HeroSection() {
                   {badge}
                 </span>
               ))}
-              <Link
-                to="/resources/commcard"
-                className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <MessageSquare className="w-4 h-4 text-primary flex-shrink-0" />
-                Free CommCard Tool
-              </Link>
             </div>
           </div>
 
-          {/* Right column: specialty card */}
-          <div className="bg-card rounded-lg p-8 lg:p-9 shadow-md">
-            <h3 className="font-display text-sm uppercase tracking-[0.14em] text-primary mb-7">
-              We work with
-            </h3>
-            <ul className="flex flex-col gap-4">
-              {specialties.map(({ icon: Icon, title, sub }) => (
-                <li key={title} className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-lg bg-primary/[0.07] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="w-4 h-4 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-[0.9rem] font-semibold text-foreground leading-snug">
-                      {title}
-                    </p>
-                    <p className="text-[0.78rem] text-muted-foreground mt-0.5 leading-snug">
-                      {sub}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+          {/* Right column */}
+          <div className="flex flex-col gap-4">
+            {/* Specialty card */}
+            <div className="bg-card rounded-lg p-8 lg:p-9 shadow-md">
+              <h3 className="font-display text-sm uppercase tracking-[0.14em] text-primary mb-7">
+                We work with
+              </h3>
+              <ul className="flex flex-col gap-4">
+                {specialties.map(({ icon: Icon, title, sub }) => (
+                  <li key={title} className="flex items-start gap-3.5">
+                    <div className="w-8 h-8 rounded-lg bg-primary/[0.07] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-[0.9rem] font-semibold text-foreground leading-snug">
+                        {title}
+                      </p>
+                      <p className="text-[0.78rem] text-muted-foreground mt-0.5 leading-snug">
+                        {sub}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CommCard callout */}
+            <Link
+              to="/resources/commcard"
+              className="group bg-card rounded-lg p-5 shadow-md border border-border hover:border-primary/30 transition-all flex items-center gap-4"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <MessageSquare className="w-5 h-5 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-display text-sm font-semibold text-foreground leading-snug">
+                  Free CommCard Tool
+                </p>
+                <p className="text-[0.78rem] text-muted-foreground mt-0.5 leading-snug">
+                  A free communication card app for nonspeaking and selectively mute individuals.
+                </p>
+              </div>
+              <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
           </div>
 
         </div>
