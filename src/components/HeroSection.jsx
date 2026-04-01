@@ -10,6 +10,7 @@ import {
   Gamepad2,
   CheckCircle2,
   Calendar,
+  MessageSquare,
 } from 'lucide-react';
 import { BOOKING } from './BookingButtons';
 
@@ -126,6 +127,13 @@ export default function HeroSection() {
                   {badge}
                 </span>
               ))}
+              <Link
+                to="/resources/commcard"
+                className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <MessageSquare className="w-4 h-4 text-primary flex-shrink-0" />
+                Free CommCard Tool
+              </Link>
             </div>
           </div>
 
