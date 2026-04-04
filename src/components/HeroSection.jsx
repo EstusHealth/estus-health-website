@@ -1,54 +1,80 @@
-import { Link } from 'react-router-dom';
 import {
   ArrowRight,
-  Lightbulb,
-  Zap,
-  ListChecks,
-  Moon,
-  Sun,
-  Home,
-  Gamepad2,
-  CheckCircle2,
   Calendar,
+  CheckCircle2,
+  User,
+  Users,
+  Gamepad2,
+  Moon,
+  Brain,
+  Heart,
   MessageSquare,
+  Home,
 } from 'lucide-react';
 import { BOOKING } from './BookingButtons';
 
-const specialties = [
+const clinicianCards = [
   {
-    icon: Lightbulb,
-    title: 'Autism in youth, adolescents, and adults',
-    sub: 'Late diagnosis, identity, daily function',
+    name: 'Nik',
+    ageLabel: 'Adults 16+',
+    icon: User,
+    tagline:
+      "You've been told to 'just try harder' your whole life. We try differently.",
+    features: [
+      {
+        icon: Moon,
+        title: 'Free sleep assessment',
+        copy: "Can't switch off at night? Let's find out what your body clock actually needs.",
+      },
+      {
+        icon: MessageSquare,
+        title: 'Declarative language for parents',
+        copy: "Stop the demand cycle. Learn to communicate in ways that don't trigger shutdown.",
+      },
+      {
+        icon: Brain,
+        title: 'Executive function for ADHD',
+        copy: "Task initiation, planning, time blindness. Real tools, not just 'use a planner.'",
+      },
+      {
+        icon: Heart,
+        title: 'Hypermobility pain management',
+        copy: 'EDS, POTS, chronic fatigue. OT strategies that respect what your body is telling you.',
+      },
+    ],
+    ctaText: 'Book a Free Sleep Assessment',
+    bookingUrl: BOOKING.adult.url,
   },
   {
-    icon: Zap,
-    title: 'PDA profiles',
-    sub: 'Demand avoidance, autonomy-based strategies',
-  },
-  {
-    icon: ListChecks,
-    title: 'Executive function',
-    sub: 'Planning, task initiation, time management',
-  },
-  {
-    icon: Moon,
-    title: 'Sleep',
-    sub: 'Circadian rhythm, wind-down routines',
-  },
-  {
-    icon: Sun,
-    title: 'Co-occurring + chronic health',
-    sub: 'EDS, POTS, fatigue, pain management',
-  },
-  {
-    icon: Home,
-    title: 'Neurodivergent households',
-    sub: 'Routines, logistics, family systems',
-  },
-  {
-    icon: Gamepad2,
-    title: 'Gaming-informed therapy',
-    sub: 'Minecraft, Discord, interest-led engagement',
+    name: 'Nam',
+    ageLabel: 'Under 16s',
+    icon: Users,
+    tagline:
+      "An OT who understands gamers from the inside. Not one who just tells them to put the controller down.",
+    features: [
+      {
+        icon: Calendar,
+        title: 'Free 15-min assessment',
+        copy: "No commitment. Just clarity on what's going on.",
+      },
+      {
+        icon: Gamepad2,
+        title: 'Screen & gaming transitions',
+        copy: "End the meltdowns. Build transitions that don't feel like punishment.",
+      },
+      {
+        icon: Home,
+        title: 'Daily living independence',
+        copy: 'From getting dressed to making lunch. Skills that stick.',
+      },
+      {
+        icon: Gamepad2,
+        title: 'Minecraft Leadership Program',
+        copy: 'Leadership, teamwork & executive function, built inside the game they already love.',
+      },
+    ],
+    ctaText: 'Book a Free 15-Min Assessment',
+    bookingUrl: BOOKING.youth.url,
   },
 ];
 
@@ -59,124 +85,106 @@ const trustBadges = [
 
 export default function HeroSection() {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden grain-overlay">
+    <section className="relative py-16 lg:py-20 overflow-hidden grain-overlay">
       <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-14 items-center">
 
-          {/* Left column */}
-          <div>
-            <div className="w-12 h-[3px] bg-primary rounded-full mb-6" />
+        {/* Condensed branding header */}
+        <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-14">
+          <div className="w-12 h-[3px] bg-primary rounded-full mb-6 mx-auto" />
 
-            <p className="text-primary font-display text-sm uppercase tracking-widest mb-5">
-              Neuroaffirming Occupational Therapy · Perth + Telehealth
-            </p>
+          <p className="text-primary font-display text-sm uppercase tracking-widest mb-5">
+            Neuroaffirming Occupational Therapy · Perth + Telehealth
+          </p>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-none uppercase">
-              Finally, an OT
-              <br />
-              <span className="text-gradient-accent">who gets it.</span>
-            </h1>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-none uppercase">
+            Finally, an OT
+            <br />
+            <span className="text-gradient-accent">who gets it.</span>
+          </h1>
 
-            <p className="font-serif text-xl md:text-2xl text-foreground/80 italic mt-6 max-w-xl leading-relaxed">
-              You shouldn't have to explain what masking is, why eye contact is
-              hard, or that your PDA isn't laziness. We already know.
-            </p>
-
-            <p className="text-lg text-foreground/60 mt-5 max-w-lg leading-relaxed">
-              Specialist occupational therapy for autistic youth, adolescents,
-              and adults. Practical strategies built around your brain, not
-              against it.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mt-10">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-display text-sm uppercase tracking-wider px-8 py-4 rounded-lg hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(139,90,60,0.25)] transition-all duration-300"
-              >
-                Make a Referral
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/about/approach"
-                className="inline-flex items-center gap-2 bg-transparent text-foreground font-display text-sm uppercase tracking-wider px-8 py-4 rounded-lg border-[1.5px] border-border hover:border-primary hover:text-primary transition-all duration-300"
-              >
-                Our Approach
-              </Link>
-            </div>
-
-            <div className="flex items-center gap-4 mt-4">
-              <span className="text-sm text-muted-foreground">or</span>
-              <a
-                href={BOOKING.adult.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider px-6 py-3 rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                <Calendar className="w-4 h-4" />
-                Book a Free Discovery Call
-              </a>
-            </div>
-
-            <div className="flex flex-wrap gap-6 mt-7">
-              {trustBadges.map((badge) => (
-                <span
-                  key={badge}
-                  className="flex items-center gap-1.5 text-sm text-muted-foreground"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Right column */}
-          <div className="flex flex-col gap-4">
-            {/* Specialty card */}
-            <div className="bg-card rounded-lg p-8 lg:p-9 shadow-md">
-              <h3 className="font-display text-sm uppercase tracking-[0.14em] text-primary mb-7">
-                We work with
-              </h3>
-              <ul className="flex flex-col gap-4">
-                {specialties.map(({ icon: Icon, title, sub }) => (
-                  <li key={title} className="flex items-start gap-3.5">
-                    <div className="w-8 h-8 rounded-lg bg-primary/[0.07] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Icon className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-[0.9rem] font-semibold text-foreground leading-snug">
-                        {title}
-                      </p>
-                      <p className="text-[0.78rem] text-muted-foreground mt-0.5 leading-snug">
-                        {sub}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* CommCard callout */}
-            <Link
-              to="/resources/commcard"
-              className="group bg-card rounded-lg p-5 shadow-md border border-border hover:border-primary/30 transition-all flex items-center gap-4"
-            >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <MessageSquare className="w-5 h-5 text-primary" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-display text-sm font-semibold text-foreground leading-snug">
-                  Free CommCard Tool
-                </p>
-                <p className="text-[0.78rem] text-muted-foreground mt-0.5 leading-snug">
-                  A free communication card app for nonspeaking and selectively mute individuals.
-                </p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-
+          <p className="font-serif text-xl md:text-2xl text-foreground/80 italic mt-6 max-w-xl mx-auto leading-relaxed">
+            You shouldn't have to explain what masking is, why eye contact is
+            hard, or that your PDA isn't laziness. We already know.
+          </p>
         </div>
+
+        {/* Clinician CTA Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {clinicianCards.map((card) => {
+            const HeaderIcon = card.icon;
+            return (
+              <div
+                key={card.name}
+                className="bg-card rounded-lg shadow-md border border-border p-6 lg:p-8 flex flex-col hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+              >
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <HeaderIcon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl lg:text-2xl uppercase text-foreground leading-tight">
+                      {card.name}
+                    </h3>
+                    <span className="text-xs font-display uppercase tracking-wide text-primary">
+                      {card.ageLabel}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Tagline */}
+                <p className="font-serif italic text-foreground/80 text-base lg:text-lg mb-5 leading-relaxed">
+                  {card.tagline}
+                </p>
+
+                {/* Feature rows */}
+                <ul className="flex flex-col gap-3 mb-6 flex-1">
+                  {card.features.map(({ icon: FeatureIcon, title, copy }) => (
+                    <li key={title} className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-primary/[0.07] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <FeatureIcon className="w-4 h-4 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-[0.9rem] font-semibold text-foreground leading-snug">
+                          {title}
+                        </p>
+                        <p className="text-[0.78rem] text-muted-foreground mt-0.5 leading-snug">
+                          {copy}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Button */}
+                <a
+                  href={card.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-display text-sm uppercase tracking-wider px-8 py-4 rounded-lg hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(139,90,60,0.25)] transition-all duration-300 w-full"
+                >
+                  <Calendar className="w-4 h-4" />
+                  {card.ctaText}
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Trust badges */}
+        <div className="flex flex-wrap justify-center gap-6 mt-8">
+          {trustBadges.map((badge) => (
+            <span
+              key={badge}
+              className="flex items-center gap-1.5 text-sm text-muted-foreground"
+            >
+              <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+              {badge}
+            </span>
+          ))}
+        </div>
+
       </div>
     </section>
   );
