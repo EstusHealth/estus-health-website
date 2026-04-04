@@ -42,7 +42,7 @@ const clinicianCards = [
         copy: 'EDS, POTS, chronic fatigue. OT strategies that respect what your body is telling you.',
       },
     ],
-    ctaText: 'Book a Free Sleep Assessment',
+    ctaText: 'Book a Free Consult with Nik',
     bookingUrl: BOOKING.adult.url,
   },
   {
@@ -73,7 +73,7 @@ const clinicianCards = [
         copy: 'Leadership, teamwork & executive function, built inside the game they already love.',
       },
     ],
-    ctaText: 'Book a Free 15-Min Assessment',
+    ctaText: 'Book a Free Consult with Nam',
     bookingUrl: BOOKING.youth.url,
   },
 ];
