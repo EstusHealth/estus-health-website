@@ -287,7 +287,32 @@ export default function TeamPage() {
         subtitle="Every therapist here is an OT, an experienced gamer, and has lived experience of neurodivergence."
       />
 
-      <Section>
+      {/* Team Photo */}
+      <Section className="!pt-0 !pb-12 lg:!pb-16">
+        <div className="max-w-3xl mx-auto">
+          <div className="relative w-full rounded-xl overflow-hidden border border-border shadow-md group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+            <div className="relative aspect-[16/9] md:aspect-[21/9] lg:aspect-[3/1] bg-card">
+              <img
+                src="/team-photo.jpeg"
+                alt="The Estus Health Team"
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-6 md:p-8">
+                <h3 className="text-white font-display text-2xl md:text-3xl mb-1 drop-shadow-md">
+                  The Estus Health Team
+                </h3>
+                <p className="text-white/80 font-serif italic text-sm md:text-base drop-shadow-md">
+                  Liam, Nam & Nik
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section className="!pt-0">
         <div className="max-w-3xl mx-auto space-y-8">
           {CLINICIANS.map((clinician) => (
             <ClinicianCard
