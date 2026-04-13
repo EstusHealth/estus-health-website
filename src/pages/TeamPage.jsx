@@ -4,39 +4,6 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const CLINICIANS = [
   {
-    id: 'liam',
-    name: 'Liam Fagan',
-    initials: 'LF',
-    role: 'Founder & Occupational Therapist',
-    pronouns: 'he/him',
-    clinicalLead: 'Driving OT & Gaming-Informed Therapy',
-    livedExperience: 'Autistic, late-diagnosed',
-    availability: {
-      accepting: false,
-      note: 'Currently focused on driving OT certification and not accepting new therapy referrals. For ongoing therapy, book a discovery call with Nik or Nam.',
-    },
-    accentColor: '25 40% 45%',
-    bio: "I came to occupational therapy through an unusual path. I started in accounting and finance, worked in library sciences, and eventually realised that the thing I kept gravitating toward was helping people build systems that actually work for their brains. Being diagnosed autistic later in life reshaped everything I thought I understood about myself, and that experience is at the core of how I practise.",
-    approach: "I'm direct, practical, and genuinely interested in what makes you tick. My sessions are built around your real life, not textbook goals. If gaming is your thing, we'll use it. If spreadsheets are your thing, we'll use those too.",
-    personalStuff: [
-      "I hold a top-four world record speedrun on two maps in Tony Hawk's Pro Skater. 20+ years of competitive gaming.",
-      'I liked Dark Souls so much that I named this company after the healing item in it.',
-      'I find spreadsheets relaxing and do budgeting for fun.',
-      "Deeply interested in machine learning, AI, and how they'll reshape healthcare.",
-    ],
-    worksWith: [
-      { label: 'Autism', category: 'presentation' },
-      { label: 'PDA Profiles', category: 'presentation' },
-      { label: 'Executive Function', category: 'focus-area' },
-      { label: 'Gaming-Informed Therapy', category: 'modality' },
-      { label: 'Driving OT', category: 'modality' },
-      { label: 'Complex Health', category: 'focus-area' },
-      { label: 'Late Diagnosis', category: 'focus-area' },
-    ],
-    cta: null,
-    redirectNote: 'Liam is not currently accepting new therapy referrals. For therapy enquiries, please book a discovery call with Nik or Nam.',
-  },
-  {
     id: 'nik',
     name: 'Nik',
     initials: 'NK',
@@ -90,7 +57,7 @@ const CLINICIANS = [
       'Anime fan. I use storytelling from anime to explore real-life lessons and situations with clients.',
       'Keen sportsperson. Football, gym, and currently training for HPF.',
       'PC and Xbox gamer. Minecraft, Roblox, Sea of Thieves, Repo, and always open to co-op.',
-      'Currently building a new PC (with a wood grain CPU cooler, naturally).',
+      'Currently building a new PC (with a wood grain case, naturally).',
       'I believe recovery is part of the work, not separate from it.',
     ],
     worksWith: [
@@ -104,6 +71,39 @@ const CLINICIANS = [
     ],
     cta: { label: 'Book a Discovery Call with Nam', to: '/contact' },
     redirectNote: null,
+  },
+  {
+    id: 'liam',
+    name: 'Liam Fagan',
+    initials: 'LF',
+    role: 'Founder & Occupational Therapist',
+    pronouns: 'he/him',
+    clinicalLead: 'Driving OT & Gaming-Informed Therapy',
+    livedExperience: 'Autistic, late-diagnosed',
+    availability: {
+      accepting: false,
+      note: 'Currently focused on driving OT certification and not accepting new therapy referrals. For ongoing therapy, book a discovery call with Nik or Nam.',
+    },
+    accentColor: '25 40% 45%',
+    bio: "I came to occupational therapy through an unusual path. I started in accounting and finance, worked in library sciences, and eventually realised that the thing I kept gravitating toward was helping people build systems that actually work for their brains. Being diagnosed autistic later in life reshaped everything I thought I understood about myself, and that experience is at the core of how I practise.",
+    approach: "I'm direct, practical, and genuinely interested in what makes you tick. My sessions are built around your real life, not textbook goals. If gaming is your thing, we'll use it. If spreadsheets are your thing, we'll use those too.",
+    personalStuff: [
+      "I hold a top-four world record speedrun on two maps in Tony Hawk's Pro Skater. 20+ years of competitive gaming.",
+      'I liked Dark Souls so much that I named this company after the healing item in it.',
+      'I find spreadsheets relaxing and do budgeting for fun.',
+      "Deeply interested in machine learning, AI, and how they'll reshape healthcare.",
+    ],
+    worksWith: [
+      { label: 'Autism', category: 'presentation' },
+      { label: 'PDA Profiles', category: 'presentation' },
+      { label: 'Executive Function', category: 'focus-area' },
+      { label: 'Gaming-Informed Therapy', category: 'modality' },
+      { label: 'Driving OT', category: 'modality' },
+      { label: 'Complex Health', category: 'focus-area' },
+      { label: 'Late Diagnosis', category: 'focus-area' },
+    ],
+    cta: null,
+    redirectNote: 'Liam is not currently accepting new therapy referrals. For therapy enquiries, please book a discovery call with Nik or Nam.',
   },
 ];
 
