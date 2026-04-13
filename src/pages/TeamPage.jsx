@@ -55,7 +55,7 @@ const CLINICIANS = [
     approach: "I'm friendly, collaborative, and genuinely interested in the occupations that matter to you. I do thorough sensory profiling and then apply it to the real environments where you're struggling, whether that's a busy office, a classroom, or your own home. I also use anime and storytelling as therapeutic tools, because the best lessons often come from characters we connect with.",
     personalStuff: [
       'Anime fan. I use storytelling from anime to explore real-life lessons and situations with clients.',
-      'Keen sportsperson. Football, gym, and currently training for HPF.',
+      'Keen sportsperson. Futsal, gym, and currently training for a half marathon.',
       'PC and Xbox gamer. Minecraft, Roblox, Sea of Thieves, Repo, and always open to co-op.',
       'Currently building a new PC (with a wood grain case, naturally).',
       'I believe recovery is part of the work, not separate from it.',
