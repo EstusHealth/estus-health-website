@@ -159,18 +159,17 @@
 
 /* Hero rotating text */
 .rotating-text-wrapper {
-  display: inline-block;
+  display: block;
   overflow: hidden;
-  height: 1.3em;
+  min-height: 1.25em;
   line-height: 1.1;
   padding-bottom: 0.15em;
-  vertical-align: bottom;
   perspective: 1000px;
 }
 
 .rotating-phrase {
   display: inline-block;
-  white-space: nowrap;
+  max-width: 100%;
   transform-origin: center bottom;
   will-change: transform, opacity;
 }
