@@ -156,3 +156,56 @@
   animation: tickerScroll 30s linear infinite;
   width: max-content;
 }
+
+/* Hero rotating text */
+.rotating-text-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.15em;
+  line-height: 1.15em;
+  vertical-align: bottom;
+  perspective: 1000px;
+}
+
+.rotating-phrase {
+  display: inline-block;
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+}
+
+.rotating-phrase.enter {
+  animation: rotatingPhraseIn 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rotating-phrase.exit {
+  animation: rotatingPhraseOut 350ms cubic-bezier(0.55, 0, 0.68, 0.2) both;
+}
+
+@keyframes rotatingPhraseIn {
+  0% {
+    transform: translateY(100%) rotateX(-40deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotatingPhraseOut {
+  0% {
+    transform: translateY(0) rotateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80%) rotateX(30deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotating-phrase.enter,
+  .rotating-phrase.exit {
+    animation: none;
+  }
+}

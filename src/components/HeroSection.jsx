@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   ArrowRight,
   Calendar,
@@ -12,6 +13,63 @@ import {
   Home,
 } from 'lucide-react';
 import { BOOKING } from './BookingButtons';
+
+const rotatingPhrases = [
+  'fall asleep before 3am.',
+  'stop masking at work.',
+  'manage the overwhelm.',
+  'find structure, not rules.',
+  'stop burning out.',
+  'feel safe in your body.',
+  'game without guilt.',
+  'build a life that fits.',
+];
+
+const ENTER_MS = 500;
+const HOLD_MS = 2800;
+const EXIT_MS = 350;
+const START_DELAY_MS = 1200;
+
+function RotatingHeadline() {
+  const [index, setIndex] = useState(0);
+  const [phase, setPhase] = useState('idle'); // 'idle' | 'enter' | 'exit'
+
+  // Kick off the first phrase after the initial page-load delay.
+  useEffect(() => {
+    const startTimer = setTimeout(() => setPhase('enter'), START_DELAY_MS);
+    return () => clearTimeout(startTimer);
+  }, []);
+
+  // After a phrase finishes entering, hold it, then flip to exit.
+  useEffect(() => {
+    if (phase !== 'enter') return;
+    const holdTimer = setTimeout(() => setPhase('exit'), ENTER_MS + HOLD_MS);
+    return () => clearTimeout(holdTimer);
+  }, [phase, index]);
+
+  // After a phrase finishes exiting, advance to the next phrase and re-enter.
+  useEffect(() => {
+    if (phase !== 'exit') return;
+    const exitTimer = setTimeout(() => {
+      setIndex((i) => (i + 1) % rotatingPhrases.length);
+      setPhase('enter');
+    }, EXIT_MS);
+    return () => clearTimeout(exitTimer);
+  }, [phase]);
+
+  return (
+    <span className="rotating-text-wrapper" aria-live="polite">
+      {phase !== 'idle' && (
+        <span
+          key={`${index}-${phase}`}
+          className={`rotating-phrase text-gradient-accent ${phase}`}
+        >
+          {rotatingPhrases[index]}
+        </span>
+      )}
+    </span>
+  );
+}
 
 const clinicianCards = [
   {
@@ -96,10 +154,12 @@ export default function HeroSection() {
             Neuroaffirming Occupational Therapy · Perth + Telehealth
           </p>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-none uppercase">
-            Finally, an OT
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] uppercase">
+            OTs who get
             <br />
-            <span className="text-gradient-accent">who gets it.</span>
+            that you need to
+            <br />
+            <RotatingHeadline />
           </h1>
 
           <p className="font-serif text-xl md:text-2xl text-foreground/80 italic mt-6 max-w-xl mx-auto leading-relaxed">
