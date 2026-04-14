@@ -22,6 +22,7 @@ import {
   ProcessStep,
 } from '../components/ui';
 import HeroSection from '../components/HeroSection';
+import Free15Section from '../components/Free15Section';
 import CapacityTracker from '../components/CapacityTracker';
 import InstagramEmbed from '../components/InstagramEmbed';
 import { BOOKING } from '../components/BookingButtons';
@@ -83,6 +84,9 @@ export default function HomePage() {
 
       {/* Hero */}
       <HeroSection />
+
+      {/* Free 15-Minute Sessions */}
+      <Free15Section />
 
       {/* Specialties + CommCard */}
       <Section className="bg-card border-y border-border">
