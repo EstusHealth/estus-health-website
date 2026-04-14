@@ -37,7 +37,7 @@ const useCases = [
 
 export default function Free15Section() {
   return (
-    <Section>
+    <Section className="!pb-12 lg:!pb-16">
       <div className="max-w-5xl mx-auto">
         {/* Intro block */}
         <div className="max-w-3xl">

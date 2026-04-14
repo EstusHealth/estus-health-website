@@ -43,7 +43,7 @@ const clinicianCards = [
         copy: 'EDS, POTS, chronic fatigue. OT strategies that respect what your body is telling you.',
       },
     ],
-    ctaText: 'Book a Free Consult with Nik',
+    ctaText: 'Book your free 15 with Nik',
     bookingUrl: BOOKING.adult.url,
   },
   {
@@ -74,7 +74,7 @@ const clinicianCards = [
         copy: 'Leadership, teamwork & executive function, built inside the game they already love.',
       },
     ],
-    ctaText: 'Book a Free Consult with Nam',
+    ctaText: 'Book your free 15 with Nam',
     bookingUrl: BOOKING.youth.url,
   },
 ];
@@ -86,11 +86,22 @@ const trustBadges = [
 
 export default function ClinicianBookingSection() {
   return (
-    <Section>
+    <Section className="!pt-12 lg:!pt-16">
       <div className="max-w-5xl mx-auto">
-        <p className="text-primary font-display text-sm uppercase tracking-widest text-center mb-8">
-          Book directly with your clinician
-        </p>
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <p className="text-primary font-display text-sm uppercase tracking-widest mb-4">
+            Ready when you are
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-[1.05] mb-4">
+            Pick a clinician and
+            <br />
+            <span className="text-gradient-accent">book your free 15</span>
+          </h2>
+          <p className="text-foreground/70 leading-relaxed">
+            No referral, no forms, no commitment. Just a conversation with the
+            OT who fits your situation.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {clinicianCards.map((card) => {

@@ -82,7 +82,7 @@ export default function HomePage() {
       <Free15Section />
 
       {/* Areas we work with + CommCard */}
-      <Section className="bg-card border-y border-border">
+      <Section className="!py-12 lg:!py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-14 items-start max-w-5xl mx-auto">
           <div>
             <h3 className="font-display text-sm uppercase tracking-[0.14em] text-primary mb-7">
