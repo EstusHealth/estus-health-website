@@ -154,7 +154,7 @@ export default function HeroSection() {
             Neuroaffirming Occupational Therapy · Perth + Telehealth
           </p>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] uppercase">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05]">
             OTs who get
             <br />
             that you need to
