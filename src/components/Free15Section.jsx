@@ -1,17 +1,5 @@
-import {
-  Info,
-  ClipboardList,
-  Users,
-  MessageCircle,
-  Check,
-  ArrowRight,
-} from 'lucide-react';
-import { Section, Card, CardContent, Button } from './ui';
-import { BOOKING } from './BookingButtons';
-
-// Booking URLs sourced from the shared BOOKING config in ./BookingButtons.
-const NIK_BOOKING_URL = BOOKING.adult.url;
-const NAM_BOOKING_URL = BOOKING.youth.url;
+import { Info, ClipboardList, Users, MessageCircle } from 'lucide-react';
+import { Section, Card, CardContent } from './ui';
 
 const useCases = [
   {
@@ -45,34 +33,6 @@ const useCases = [
     copy:
       "Ready to start but want to talk to someone first? This is the call. No intake forms before you've decided we're a good fit. Just a conversation.",
   },
-];
-
-const clinicianCards = [
-  {
-    initials: 'NK',
-    name: 'Nik',
-    role: 'Occupational Therapist',
-    copy:
-      "Specialises in adolescents and adults. Autism, ADHD, executive function, and gaming-informed approaches. Direct, practical, and doesn't overcomplicate things.",
-    buttonLabel: 'Book a free call with Nik',
-    url: NIK_BOOKING_URL,
-  },
-  {
-    initials: 'NM',
-    name: 'Nam',
-    role: 'Occupational Therapist',
-    copy:
-      "An OT who gets it from the inside. Sees the whole person, not just the controller. Works with complexity, PDA profiles, and clients who've been let down by the system before.",
-    buttonLabel: 'Book a free call with Nam',
-    url: NAM_BOOKING_URL,
-  },
-];
-
-const frictionRemovers = [
-  'No referral needed',
-  'Telehealth Australia-wide',
-  'NDIS, Medicare and private welcome',
-  'No obligation to continue',
 ];
 
 export default function Free15Section() {
@@ -135,57 +95,6 @@ export default function Free15Section() {
                 )}
               </CardContent>
             </Card>
-          ))}
-        </div>
-
-        {/* Divider + sub-eyebrow */}
-        <hr className="border-t border-border my-16" />
-        <p className="text-primary font-display text-sm uppercase tracking-widest mb-6 text-center">
-          Book directly with your clinician
-        </p>
-
-        {/* Clinician booking cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {clinicianCards.map((c) => (
-            <Card key={c.name} hover>
-              <CardContent className="flex flex-col h-full">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="font-display font-bold text-lg text-primary">
-                      {c.initials}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl leading-tight">
-                      {c.name}
-                    </h3>
-                    <p className="text-xs font-display uppercase tracking-widest text-primary">
-                      {c.role}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-foreground/70 text-sm leading-relaxed mb-6 flex-1">
-                  {c.copy}
-                </p>
-                <Button href={c.url} className="w-full">
-                  {c.buttonLabel}
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Friction removers */}
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-10">
-          {frictionRemovers.map((item) => (
-            <span
-              key={item}
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground"
-            >
-              <Check className="w-4 h-4 text-primary flex-shrink-0" />
-              {item}
-            </span>
           ))}
         </div>
       </div>

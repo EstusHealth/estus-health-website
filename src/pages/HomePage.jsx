@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
-  Gamepad2,
   Brain,
-  FileText,
-  Heart,
   ArrowRight,
   Moon,
   Flame,
@@ -13,17 +10,13 @@ import {
   ListChecks,
   Sun,
   Home,
+  Gamepad2,
   MessageSquare,
 } from 'lucide-react';
-import {
-  Section,
-  Button,
-  FeatureCard,
-  ProcessStep,
-} from '../components/ui';
+import { Section, Button } from '../components/ui';
 import HeroSection from '../components/HeroSection';
 import Free15Section from '../components/Free15Section';
-import CapacityTracker from '../components/CapacityTracker';
+import ClinicianBookingSection from '../components/ClinicianBookingSection';
 import InstagramEmbed from '../components/InstagramEmbed';
 import { BOOKING } from '../components/BookingButtons';
 
@@ -88,7 +81,7 @@ export default function HomePage() {
       {/* Free 15-Minute Sessions */}
       <Free15Section />
 
-      {/* Specialties + CommCard */}
+      {/* Areas we work with + CommCard */}
       <Section className="bg-card border-y border-border">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-14 items-start max-w-5xl mx-auto">
           <div>
@@ -137,86 +130,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Section 1: Availability + Book a Call */}
-      <CapacityTracker />
+      {/* Clinician Booking Cards */}
+      <ClinicianBookingSection />
 
-      {/* Section 2: What We Do + Our Approach */}
-      <Section>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left: Philosophy + Process */}
-          <div>
-            <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-              Our Approach
-            </p>
-            <h2 className="text-2xl md:text-4xl font-display mb-6 text-noctua-brown">
-              This isn't about fixing people
-              <br />
-              <span className="text-noctua-russet">It's about fixing the environment</span>
-            </h2>
-            <p className="text-noctua-brown/70 leading-relaxed mb-8">
-              Our team brings both clinical expertise and lived experience. We understand
-              what it means to navigate a world not built for your brain, because many of
-              us have done it ourselves.
-            </p>
-            <Button to="/about/approach" variant="outline" className="border-noctua-brown/20 hover:bg-noctua-bone mb-10">
-              Learn About Our Approach
-            </Button>
-
-            <div className="space-y-6 pt-8 border-t border-noctua-brown/10">
-              <p className="text-noctua-russet font-display text-sm uppercase tracking-widest font-semibold">
-                How It Works
-              </p>
-              <ProcessStep
-                number="1"
-                title="Enquire, Refer, or Book a Call"
-                description="Send through a referral or enquiry, or book a free 15-minute discovery call to chat with a clinician first. Whatever works for you."
-              />
-              <ProcessStep
-                number="2"
-                title="Assessment & Planning"
-                description="We identify strengths, barriers, and practical next steps aligned with your goals. No assumptions. No one-size-fits-all."
-              />
-              <ProcessStep
-                number="3"
-                title="Implementation & Review"
-                description="Therapy sessions, real-world strategies, and progress checkpoints. We adapt as you need."
-              />
-            </div>
-          </div>
-
-          {/* Right: Services */}
-          <div>
-            <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-              What We Do
-            </p>
-            <div className="space-y-4">
-              <FeatureCard
-                icon={Heart}
-                title="Occupational Therapy"
-                description="Functional assessment, goal setting, and intervention that respects your autonomy and works with your nervous system, not against it."
-                href="/services/occupational-therapy"
-                className="bg-noctua-bone border-noctua-brown/10 shadow-sm"
-              />
-              <FeatureCard
-                icon={Gamepad2}
-                title="Gaming-Informed Therapy"
-                description="Therapy through a channel that actually works. We meet people in the games they love, from Minecraft to VR."
-                href="/services/gaming-informed-therapy"
-                className="bg-noctua-bone border-noctua-brown/10 shadow-sm"
-              />
-              <FeatureCard
-                icon={FileText}
-                title="Assessments & Reports"
-                description="Functional capacity assessments, NDIS reports, and documentation that translates into meaningful action."
-                href="/services/assessments-reports"
-                className="bg-noctua-bone border-noctua-brown/10 shadow-sm"
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Section 3: Quizzes + Resources */}
+      {/* Free Interactive Resources */}
       <Section className="bg-noctua-bone/30">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
