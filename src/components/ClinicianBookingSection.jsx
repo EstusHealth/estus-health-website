@@ -17,7 +17,6 @@ import { BOOKING } from './BookingButtons';
 const clinicianCards = [
   {
     name: 'Nik',
-    ageLabel: 'Adults 16+',
     icon: User,
     tagline:
       "You've been told to 'just try harder' your whole life. We try differently.",
@@ -48,7 +47,6 @@ const clinicianCards = [
   },
   {
     name: 'Nam',
-    ageLabel: 'Under 16s',
     icon: Users,
     tagline:
       'An OT who understands gamers from the inside. Not one who just tells them to put the controller down.',
@@ -116,14 +114,9 @@ export default function ClinicianBookingSection() {
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <HeaderIcon className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-display text-xl lg:text-2xl uppercase text-foreground leading-tight">
-                      {card.name}
-                    </h3>
-                    <span className="text-xs font-display uppercase tracking-wide text-primary">
-                      {card.ageLabel}
-                    </span>
-                  </div>
+                  <h3 className="font-display text-xl lg:text-2xl uppercase text-foreground leading-tight">
+                    {card.name}
+                  </h3>
                 </div>
 
                 {/* Tagline */}
