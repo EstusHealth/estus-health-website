@@ -16,7 +16,25 @@ const HOLD_MS = 2800;
 const EXIT_MS = 350;
 const START_DELAY_MS = 1200;
 
+function usePrefersReducedMotion() {
+  const [prefers, setPrefers] = useState(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  });
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const onChange = (e) => setPrefers(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  return prefers;
+}
+
 function RotatingHeadline() {
+  const reducedMotion = usePrefersReducedMotion();
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState('idle'); // 'idle' | 'enter' | 'exit'
 
@@ -27,11 +45,12 @@ function RotatingHeadline() {
   }, []);
 
   // After a phrase finishes entering, hold it, then flip to exit.
+  // When the user prefers reduced motion, we hold the first phrase indefinitely.
   useEffect(() => {
-    if (phase !== 'enter') return;
+    if (phase !== 'enter' || reducedMotion) return;
     const holdTimer = setTimeout(() => setPhase('exit'), ENTER_MS + HOLD_MS);
     return () => clearTimeout(holdTimer);
-  }, [phase, index]);
+  }, [phase, index, reducedMotion]);
 
   // After a phrase finishes exiting, advance to the next phrase and re-enter.
   useEffect(() => {

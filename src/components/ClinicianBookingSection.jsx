@@ -1,7 +1,7 @@
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Calendar,
-  CheckCircle2,
   User,
   Users,
   Gamepad2,
@@ -77,28 +77,55 @@ const clinicianCards = [
   },
 ];
 
-const trustBadges = [
-  'No referral needed',
-  'Private paying, plan & self-managed NDIS',
-];
-
 export default function ClinicianBookingSection() {
   return (
     <Section className="!pt-12 lg:!pt-16">
       <div className="max-w-5xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <p className="text-primary font-display text-sm uppercase tracking-widest mb-4">
-            Ready when you are
+            Meet your OT
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-[1.05] mb-4">
-            Pick a clinician and
+            Different specialities.
             <br />
-            <span className="text-gradient-accent">book your free 15</span>
+            <span className="text-gradient-accent">Same approach.</span>
           </h2>
           <p className="text-foreground/70 leading-relaxed">
-            No referral, no forms, no commitment. Just a conversation with the
-            OT who fits your situation.
+            Pick the OT whose focus matches what you're navigating.
           </p>
+        </div>
+
+        {/* Team photo */}
+        <div className="mb-10">
+          <Link
+            to="/about/team"
+            className="block group relative w-full rounded-xl overflow-hidden border border-border shadow-md"
+            aria-label="Read more about the Estus Health team"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+            <div className="relative aspect-[21/9] md:aspect-[3/1] bg-card">
+              <img
+                src="/team-photo.jpeg"
+                alt="The Estus Health team — Liam, Nam and Nik"
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="text-white font-display text-xl md:text-2xl drop-shadow-md">
+                    Liam, Nam &amp; Nik
+                  </p>
+                  <p className="text-white/80 font-serif italic text-sm md:text-base drop-shadow-md">
+                    OTs, gamers, neurodivergent ourselves.
+                  </p>
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-white/90 font-display text-xs md:text-sm uppercase tracking-wider drop-shadow-md group-hover:gap-2.5 transition-all">
+                  Read our stories <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </div>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -157,19 +184,6 @@ export default function ClinicianBookingSection() {
               </div>
             );
           })}
-        </div>
-
-        {/* Trust badges */}
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
-          {trustBadges.map((badge) => (
-            <span
-              key={badge}
-              className="flex items-center gap-1.5 text-sm text-muted-foreground"
-            >
-              <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-              {badge}
-            </span>
-          ))}
         </div>
       </div>
     </Section>
