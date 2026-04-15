@@ -161,7 +161,7 @@
 .rotating-text-wrapper {
   display: block;
   overflow: hidden;
-  min-height: 1.25em;
+  min-height: 2.2em;
   line-height: 1.1;
   padding-bottom: 0.15em;
   perspective: 1000px;
