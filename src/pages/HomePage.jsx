@@ -5,13 +5,6 @@ import {
   ArrowRight,
   Moon,
   Flame,
-  Lightbulb,
-  Zap,
-  ListChecks,
-  Sun,
-  Home,
-  Gamepad2,
-  MessageSquare,
 } from 'lucide-react';
 import { Section, Button } from '../components/ui';
 import HeroSection from '../components/HeroSection';
@@ -80,55 +73,6 @@ export default function HomePage() {
 
       {/* Free 15-Minute Sessions */}
       <Free15Section />
-
-      {/* Areas we work with + CommCard */}
-      <Section className="!py-12 lg:!py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-14 items-start max-w-5xl mx-auto">
-          <div>
-            <h3 className="font-display text-sm uppercase tracking-[0.14em] text-primary mb-7">
-              We work with
-            </h3>
-            <ul className="grid sm:grid-cols-2 gap-4">
-              {[
-                { icon: Lightbulb, title: 'Autism in youth, adolescents, and adults', sub: 'Late diagnosis, identity, daily function' },
-                { icon: Zap, title: 'PDA profiles', sub: 'Demand avoidance, autonomy-based strategies' },
-                { icon: ListChecks, title: 'Executive function', sub: 'Planning, task initiation, time management' },
-                { icon: Moon, title: 'Sleep', sub: 'Circadian rhythm, wind-down routines' },
-                { icon: Sun, title: 'Co-occurring + chronic health', sub: 'EDS, POTS, fatigue, pain management' },
-                { icon: Home, title: 'Neurodivergent households', sub: 'Routines, logistics, family systems' },
-                { icon: Gamepad2, title: 'Gaming-informed therapy', sub: 'Minecraft, Discord, interest-led engagement' },
-              ].map(({ icon: Icon, title, sub }) => (
-                <li key={title} className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-lg bg-primary/[0.07] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="w-4 h-4 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-[0.9rem] font-semibold text-foreground leading-snug">{title}</p>
-                    <p className="text-[0.78rem] text-muted-foreground mt-0.5 leading-snug">{sub}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <Link
-            to="/resources/commcard"
-            className="group bg-background rounded-lg p-5 shadow-md border border-border hover:border-primary/30 transition-all flex items-center gap-4 lg:max-w-xs"
-          >
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <MessageSquare className="w-5 h-5 text-primary" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="font-display text-sm font-semibold text-foreground leading-snug">
-                Free CommCard Tool
-              </p>
-              <p className="text-[0.78rem] text-muted-foreground mt-0.5 leading-snug">
-                A free communication card app for nonspeaking and selectively mute individuals.
-              </p>
-            </div>
-            <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-        </div>
-      </Section>
 
       {/* Clinician Booking Cards */}
       <ClinicianBookingSection />

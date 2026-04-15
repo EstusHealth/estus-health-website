@@ -1,6 +1,59 @@
 import { Link } from 'react-router-dom';
 import { Section, Card, CardContent, Button, PullQuote } from '../components/ui';
-import { ArrowRight, Heart, Sparkles, Brain, Shield, Users } from 'lucide-react';
+import {
+  ArrowRight,
+  Heart,
+  Sparkles,
+  Brain,
+  Shield,
+  Users,
+  Lightbulb,
+  Zap,
+  ListChecks,
+  Moon,
+  Sun,
+  Home,
+  Gamepad2,
+  MessageSquare,
+} from 'lucide-react';
+
+const areasWeWorkWith = [
+  {
+    icon: Lightbulb,
+    title: 'Autism in youth, adolescents, and adults',
+    sub: 'Late diagnosis, identity, daily function',
+  },
+  {
+    icon: Zap,
+    title: 'PDA profiles',
+    sub: 'Demand avoidance, autonomy-based strategies',
+  },
+  {
+    icon: ListChecks,
+    title: 'Executive function',
+    sub: 'Planning, task initiation, time management',
+  },
+  {
+    icon: Moon,
+    title: 'Sleep',
+    sub: 'Circadian rhythm, wind-down routines',
+  },
+  {
+    icon: Sun,
+    title: 'Co-occurring + chronic health',
+    sub: 'EDS, POTS, fatigue, pain management',
+  },
+  {
+    icon: Home,
+    title: 'Neurodivergent households',
+    sub: 'Routines, logistics, family systems',
+  },
+  {
+    icon: Gamepad2,
+    title: 'Gaming-informed therapy',
+    sub: 'Minecraft, Discord, interest-led engagement',
+  },
+];
 
 export default function AboutApproach() {
   return (
@@ -122,8 +175,67 @@ export default function AboutApproach() {
         </div>
       </Section>
 
-      {/* What We Don't Do */}
+      {/* Areas we work with */}
       <Section>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-primary font-display text-sm uppercase tracking-widest mb-4">
+              Where this shows up
+            </p>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold leading-tight mb-4">
+              The areas we <span className="text-gradient-accent">work with</span>
+            </h2>
+            <p className="text-foreground/70 leading-relaxed">
+              Every person we see is different, but these are the situations our
+              approach fits best. If you see yourself here, we probably already
+              get it.
+            </p>
+          </div>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+            {areasWeWorkWith.map(({ icon: Icon, title, sub }) => (
+              <li
+                key={title}
+                className="group bg-card rounded-lg border border-border p-5 flex items-start gap-4 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-[0_6px_24px_rgba(139,90,60,0.12)] transition-all duration-300"
+              >
+                <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="font-display text-base font-semibold text-foreground leading-snug mb-1">
+                    {title}
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-snug">
+                    {sub}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <Link
+            to="/resources/commcard"
+            className="group bg-background rounded-lg p-5 shadow-md border border-border hover:border-primary/40 hover:shadow-[0_6px_24px_rgba(139,90,60,0.12)] transition-all flex items-center gap-4 max-w-2xl mx-auto"
+          >
+            <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+              <MessageSquare className="w-5 h-5 text-primary" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-display text-base font-semibold text-foreground leading-snug">
+                Free CommCard Tool
+              </p>
+              <p className="text-sm text-muted-foreground mt-0.5 leading-snug">
+                A free communication card app for nonspeaking and selectively
+                mute individuals.
+              </p>
+            </div>
+            <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </div>
+      </Section>
+
+      {/* What We Don't Do */}
+      <Section className="bg-card/50">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display mb-6">What We Don't Do</h2>
           <p className="text-foreground/80 leading-relaxed mb-6">
