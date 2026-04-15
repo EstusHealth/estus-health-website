@@ -16,7 +16,7 @@ const CLINICIANS = [
       note: 'Accepting new clients (children, adolescents & adults)',
     },
     accentColor: '30 30% 50%',
-    bio: "I moved to Australia from India six years ago and have called it home since. I speak Hindi, Gujarati, English, and Sinti. I turned down a place in medical school because I realised I didn't just want to treat illness. I wanted to improve the quality of life people actually live. We're here for a short time, so it should mean something.",
+    bio: "I moved to Australia from India six years ago and have called it home since. I speak Hindi, Gujarati, English, and Sindhi. I turned down a place in medical school because I realised I didn't just want to treat illness. I wanted to improve the quality of life people actually live. We're here for a short time, so it should mean something.",
     approach: "I bring a gaming-informed, identity-respecting lens to my work, particularly with high-masking, high-functioning people who've spent years being told they're fine. I don't just accommodate neurodivergence. I work from within it. If you've been dismissed before and need someone who leads with curiosity instead of labels, that's where I come in.",
     personalStuff: [
       'Currently deep into The Finals, and always up for learning a new game with clients.',
