@@ -27,6 +27,7 @@ import EDSQuiz from './pages/EDSQuiz';
 import LearnEDSHSD from './pages/learn/LearnEDSHSD';
 import CommCard from './pages/resources/CommCard';
 import IGLanding from './pages/IGLanding';
+import IGLandingGaming from './pages/IGLandingGaming';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
 
       <Routes>
         <Route path="/ig" element={<IGLanding />} />
+        <Route path="/ig/gaming" element={<IGLandingGaming />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="about">
