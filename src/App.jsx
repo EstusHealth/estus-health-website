@@ -26,6 +26,7 @@ import RPGCharacterQuiz from './pages/RPGCharacterQuiz';
 import EDSQuiz from './pages/EDSQuiz';
 import LearnEDSHSD from './pages/learn/LearnEDSHSD';
 import CommCard from './pages/resources/CommCard';
+import IGLanding from './pages/IGLanding';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <ScrollToTop />
 
       <Routes>
+        <Route path="/ig" element={<IGLanding />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="about">
