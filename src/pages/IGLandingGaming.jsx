@@ -49,6 +49,24 @@ function useOutOfView(threshold = 0.1) {
   return [ref, inView];
 }
 
+function useClarity(projectId) {
+  useEffect(() => {
+    if (typeof window === 'undefined' || !projectId) return;
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', projectId);
+  }, [projectId]);
+}
+
 const PARENT_LINES = [
   'Your kid will talk for hours about Minecraft, but shuts down in therapy.',
   'The last therapist asked them to reduce screen time. They refused to go back.',
@@ -107,6 +125,7 @@ export default function IGLandingGaming() {
   const bookingUrl = useBookingLink();
   const [heroCtaRef, heroInView] = useOutOfView(0.1);
   const showSticky = !heroInView;
+  useClarity('wcw44jkeio');
 
   return (
     <div className="bg-background text-foreground min-h-screen">

@@ -51,6 +51,24 @@ function useOutOfView(threshold = 0.1) {
   return [ref, inView];
 }
 
+function useClarity(projectId) {
+  useEffect(() => {
+    if (typeof window === 'undefined' || !projectId) return;
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', projectId);
+  }, [projectId]);
+}
+
 const IDENTITY_LINES = [
   'You got the diagnosis late, if at all.',
   "You mask so well people don't believe you struggle.",
@@ -107,6 +125,7 @@ export default function IGLanding() {
   const { nik, nam } = useBookingLinks();
   const [heroCtaRef, heroInView] = useOutOfView(0.1);
   const showSticky = !heroInView;
+  useClarity('wcw3irohyv');
 
   return (
     <div className="bg-background text-foreground min-h-screen">
