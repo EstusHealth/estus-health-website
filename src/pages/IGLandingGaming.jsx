@@ -267,7 +267,7 @@ export default function IGLandingGaming() {
             data-clinician="nam"
             className="block w-full text-center bg-primary text-primary-foreground font-display uppercase tracking-wider text-base px-6 py-5 rounded-lg hover:bg-primary/90 active:scale-[0.99] transition"
           >
-            Book your parent chat with Nam →
+            Book your parent chat with our Clinical Lead for gaming →
           </a>
 
           <p className="text-[13px] text-muted-foreground text-center mt-6">
@@ -346,7 +346,7 @@ export default function IGLandingGaming() {
             data-clinician="nam"
             className="block w-full text-center bg-primary text-primary-foreground font-display uppercase tracking-wider text-lg px-6 py-5 rounded-lg hover:bg-primary/90 active:scale-[0.99] transition"
           >
-            Book your parent chat with Nam →
+            Book your parent chat with our Clinical Lead for gaming →
           </a>
           <p className="text-[13px] text-muted-foreground text-center mt-5 leading-relaxed">
             No referral · No obligation · NDIS, Medicare & private welcome
@@ -379,7 +379,7 @@ export default function IGLandingGaming() {
           tabIndex={showSticky ? 0 : -1}
           className="flex items-center justify-between h-14 px-5 font-display uppercase tracking-wider"
         >
-          <span className="text-sm">Free parent chat with Nam</span>
+          <span className="text-sm">Free chat with our Clinical Lead for gaming</span>
           <span className="text-sm flex items-center gap-1">
             Book <ArrowRight className="w-4 h-4" />
           </span>

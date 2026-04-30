@@ -72,7 +72,7 @@ const clinicianCards = [
         copy: 'Leadership, teamwork & executive function, built inside the game they already love.',
       },
     ],
-    ctaText: 'Book your free 15 with Nam',
+    ctaText: 'Book your free 15 with our Clinical Lead for gaming',
     bookingUrl: BOOKING.youth.url,
   },
 ];

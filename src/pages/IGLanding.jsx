@@ -276,7 +276,7 @@ export default function IGLanding() {
             data-clinician="nam"
             className="block w-full text-center bg-transparent border-2 border-primary text-primary font-display uppercase tracking-wider text-base px-6 py-[18px] rounded-lg hover:bg-primary hover:text-primary-foreground active:scale-[0.99] transition"
           >
-            Book with Nam (Youth & gaming) →
+            Book with our Clinical Lead for gaming →
           </a>
 
           <p className="text-[13px] text-muted-foreground text-center mt-6">
