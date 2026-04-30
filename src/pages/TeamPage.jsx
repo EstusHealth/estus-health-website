@@ -9,7 +9,7 @@ const CLINICIANS = [
     initials: 'NK',
     role: 'Occupational Therapist',
     pronouns: 'he/him',
-    clinicalLead: 'Executive Function & Goal Achievement',
+    clinicalLead: 'Executive Function',
     livedExperience: 'ADHD, diagnosed',
     availability: {
       accepting: true,
@@ -44,7 +44,7 @@ const CLINICIANS = [
     initials: 'NL',
     role: 'Occupational Therapist',
     pronouns: 'he/him',
-    clinicalLead: 'Sensory Profiles & Late-Diagnosed Adults',
+    clinicalLead: 'Gaming',
     livedExperience: 'ADHD, late-diagnosed',
     availability: {
       accepting: true,
@@ -78,7 +78,7 @@ const CLINICIANS = [
     initials: 'LF',
     role: 'Founder & Occupational Therapist',
     pronouns: 'he/him',
-    clinicalLead: 'Driving OT & Gaming-Informed Therapy',
+    clinicalLead: 'Operations',
     livedExperience: 'Autistic, late-diagnosed',
     availability: {
       accepting: false,
