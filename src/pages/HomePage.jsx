@@ -27,25 +27,11 @@ const STATS = [
 
 const TEAM = [
   {
-    name: 'Liam Fagan',
-    role: 'Founder. Occupational therapist. Driving assessor. Top-four world speedrun ranking.',
-    imageSrc: '/team-liam.jpg',
-    initials: 'LF',
-    photoPosition: 'left',
-    personalParagraph:
-      "Liam came to OT through accounting, finance, and library sciences before realising the thing he kept gravitating toward was helping people build systems that work for their brains. Being diagnosed autistic later in life reshaped everything. His sessions are direct, practical, and built around your real life, not textbook goals. If gaming is your thing, he'll use it. If spreadsheets are your thing, he'll use those too.",
-    accentPills: ['PDA profiles', 'Gaming-informed therapy', 'Driving OT'],
-    neutralPills: ['Executive function', 'Late diagnosis', 'Complex health'],
-    actionLink: {
-      text: 'Currently focused on driving OT certification. For therapy, book with Nik or Nam below.',
-    },
-  },
-  {
     name: 'Nam',
     role: 'Occupational therapist. Clinical lead, gaming and anime-informed therapy. Multilingual.',
     imageSrc: '/team-nam.jpg',
     initials: 'N',
-    photoPosition: 'right',
+    photoPosition: 'left',
     personalParagraph:
       "Nam specialises in working with autistic youth and young adults through the things they already care about. Anime, gaming, and storytelling aren't rewards or bribes in his sessions. They're the medium. He understands that interests aren't just hobbies. They're windows into how someone thinks, what they value, and where they feel most themselves.",
     accentPills: ['Anime-informed therapy', 'Gaming-informed therapy', 'Youth and young adults'],
@@ -60,7 +46,7 @@ const TEAM = [
     role: 'Occupational therapist. Clinical lead, executive function. Speaks Hindi, Gujarati, English, and Sinti.',
     imageSrc: '/team-nik.jpg',
     initials: 'NK',
-    photoPosition: 'left',
+    photoPosition: 'right',
     personalParagraph:
       "Nik turned down a place in medical school because he realised he didn't just want to treat illness. He wanted to improve the quality of life people actually live. He brings a gaming-informed, identity-respecting lens to his work, particularly with high-masking people who've spent years being told they're fine. If you've been dismissed before and need someone who leads with curiosity instead of labels, that's where he comes in.",
     accentPills: ['Executive function', 'ADHD', 'Adolescents and adults'],
@@ -68,6 +54,20 @@ const TEAM = [
     actionLink: {
       text: 'Book a free 15 with Nik',
       href: 'https://calendar.app.google/iLxEVkhaRCFEhsSC8',
+    },
+  },
+  {
+    name: 'Liam Fagan',
+    role: 'Founder. Occupational therapist. Driving assessor. Top-four world speedrun ranking.',
+    imageSrc: '/team-liam.jpg',
+    initials: 'LF',
+    photoPosition: 'left',
+    personalParagraph:
+      "Liam came to OT through accounting, finance, and library sciences before realising the thing he kept gravitating toward was helping people build systems that work for their brains. Being diagnosed autistic later in life reshaped everything. His sessions are direct, practical, and built around your real life, not textbook goals. If gaming is your thing, he'll use it. If spreadsheets are your thing, he'll use those too.",
+    accentPills: ['PDA profiles', 'Gaming-informed therapy', 'Driving OT'],
+    neutralPills: ['Executive function', 'Late diagnosis', 'Complex health'],
+    actionLink: {
+      text: 'Currently focused on driving OT certification. For therapy, book with Nik or Nam above.',
     },
   },
 ];
