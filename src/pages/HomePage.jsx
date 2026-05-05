@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
@@ -8,7 +9,6 @@ import {
   Car,
   Gamepad2,
   ArrowRight,
-  Play,
   ExternalLink,
   Monitor,
   Users,
@@ -145,19 +145,10 @@ const FRICTION_PILLS = [
   "New to therapy? That's fine.",
 ];
 
-const INSTAGRAM_PLACEHOLDERS = [
-  {
-    tag: 'Gaming-informed',
-    caption: 'Why the controller belongs in the clinic room. A thread on gaming as a therapeutic medium.',
-  },
-  {
-    tag: 'PDA explainer',
-    caption: 'What is PDA and why does it matter for occupational therapy? Our clinicians explain.',
-  },
-  {
-    tag: 'Behind the scenes',
-    caption: 'A look at how we build sessions around what actually matters to each person.',
-  },
+const INSTAGRAM_POSTS = [
+  'https://www.instagram.com/reel/DWrFZzgDcl5/?utm_source=ig_embed&utm_campaign=loading',
+  'https://www.instagram.com/reel/DXbXpM5jRut/?utm_source=ig_embed&utm_campaign=loading',
+  'https://www.instagram.com/reel/DXbXpM5jRut/?utm_source=ig_embed&utm_campaign=loading',
 ];
 
 // ─── Page ──────────────────────────────────────────────────────────────────────
@@ -167,6 +158,20 @@ export default function HomePage() {
     e.preventDefault();
     document.getElementById('team-spotlights')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    if (window.instgrm) {
+      window.instgrm.Embeds.process();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://www.instagram.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      if (document.body.contains(script)) document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <>
@@ -371,21 +376,15 @@ export default function HomePage() {
           </p>
           <h2 className="text-2xl md:text-4xl font-display">See how we work.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {INSTAGRAM_PLACEHOLDERS.map((post) => (
-            <div key={post.tag} className="rounded-lg overflow-hidden border border-border">
-              <div className="aspect-square bg-secondary flex items-center justify-center">
-                <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md">
-                  <Play className="w-6 h-6 text-primary ml-0.5" />
-                </div>
-              </div>
-              <div className="p-4 bg-secondary">
-                <span className="text-xs font-display uppercase tracking-wide px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 inline-block mb-2">
-                  {post.tag}
-                </span>
-                <p className="text-sm text-foreground/60 leading-snug">{post.caption}</p>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
+          {INSTAGRAM_POSTS.map((url, i) => (
+            <div
+              key={i}
+              className="rounded-lg overflow-hidden border border-border bg-white"
+              dangerouslySetInnerHTML={{
+                __html: `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="${url}" data-instgrm-version="14" style="margin:0;min-width:0;max-width:100%;width:100%;border:0;border-radius:0;box-shadow:none;"></blockquote>`,
+              }}
+            />
           ))}
         </div>
         <div className="text-center">
