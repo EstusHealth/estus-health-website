@@ -318,7 +318,13 @@ export default function HomePage() {
               For yourself, your child, or your client. No GP referral required.
             </p>
             <div className="space-y-4">
-              <Button to="/contact" size="lg" className="w-full md:w-auto">
+              <Button
+                href="https://questot.forms.pracsuite.com/t/9rrusgskOVlmiQQtMYzCuYn7"
+                target="_blank"
+                rel="noopener noreferrer"
+                size="lg"
+                className="w-full md:w-auto"
+              >
                 Open referral form
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
