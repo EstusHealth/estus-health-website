@@ -304,7 +304,7 @@ const CHRONOTYPE_MAP = Object.fromEntries(
   Object.entries(chronotypes).map(([k, v]) => [k, { name: v.name, emoji: v.emoji }])
 );
 
-const REFERRAL_URL = "https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1";
+const REFERRAL_URL = "https://questot.forms.pracsuite.com/t/9rrusgskOVlmiQQtMYzCuYn7";
 const QUIZ_NAME = "Chronotype Quiz";
 const QUIZ_SLUG = "chronotype-quiz";
 

@@ -339,7 +339,7 @@ export default function Referrers() {
               You don't need a GP or another professional to get started. If you'd like to refer yourself or a family member, use the self-referral form. No referral letter required.
             </p>
             <a
-              href="https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1"
+              href="https://questot.forms.pracsuite.com/t/9rrusgskOVlmiQQtMYzCuYn7"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -447,7 +447,7 @@ export default function Referrers() {
             Whether you're referring yourself or a client, the self-referral form is the quickest way in.
           </p>
           <a
-            href="https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1"
+            href="https://questot.forms.pracsuite.com/t/9rrusgskOVlmiQQtMYzCuYn7"
             target="_blank"
             rel="noopener noreferrer"
             style={{

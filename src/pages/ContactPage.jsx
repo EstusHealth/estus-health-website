@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Section, Card, Button } from '../components/ui';
-import { Mail, MapPin, Clock, ChevronDown, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Clock, ChevronDown, ArrowRight, Calendar } from 'lucide-react';
+import { BookingButtonPair } from '../components/BookingButtons';
 
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -12,7 +13,7 @@ export default function ContactPage() {
     },
     {
       q: "How quickly will someone get back to me?",
-      a: "We aim to respond to all enquiries within 24 hours. If you submit outside of business hours, you'll hear from us on the next business day.",
+      a: "We aim to respond to all enquiries within 24 hours. Our therapists are available Monday to Saturday, 8am to 7pm.",
     },
     {
       q: "What funding types do you accept?",
@@ -46,6 +47,22 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Discovery Call */}
+      <Section className="bg-noctua-bone/30">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <Calendar className="w-8 h-8 text-noctua-russet mx-auto mb-4" />
+          <h2 className="text-2xl md:text-3xl font-display mb-4 text-noctua-brown">
+            Not ready for a full referral? Start with a conversation.
+          </h2>
+          <p className="text-noctua-brown/70 leading-relaxed">
+            Book a free 15-minute discovery call to ask questions, check the fit, and figure out next steps. No obligation.
+          </p>
+        </div>
+        <div className="max-w-lg mx-auto">
+          <BookingButtonPair variant="card" />
+        </div>
+      </Section>
+
       {/* Main Content */}
       <Section>
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
@@ -61,7 +78,7 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  href="https://questot.forms.pracsuite.com/t/FOI8g8zzGUrDKFfbJkTKEke1" 
+                  href="https://questot.forms.pracsuite.com/t/9rrusgskOVlmiQQtMYzCuYn7"
                   target="_blank"
                   rel="noopener noreferrer"
                   size="lg"
@@ -137,6 +154,16 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs uppercase tracking-wide text-foreground/50 mb-1">Response Time</p>
                     <p className="text-foreground/80 text-sm">Within 24 hours</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0 border border-border">
+                    <Calendar className="w-5 h-5 text-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wide text-foreground/50 mb-1">Therapist Availability</p>
+                    <p className="text-foreground/80 text-sm">Monday - Saturday<br/>8am - 7pm</p>
                   </div>
                 </div>
               </div>

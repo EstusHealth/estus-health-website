@@ -9,7 +9,9 @@ import {
   Home,
   Gamepad2,
   CheckCircle2,
+  Calendar,
 } from 'lucide-react';
+import { BOOKING } from './BookingButtons';
 
 const specialties = [
   {
@@ -99,6 +101,19 @@ export default function HeroSection() {
               >
                 Our Approach
               </Link>
+            </div>
+
+            <div className="flex items-center gap-4 mt-4">
+              <span className="text-sm text-muted-foreground">or</span>
+              <a
+                href={BOOKING.adult.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider px-6 py-3 rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Calendar className="w-4 h-4" />
+                Book a Free Discovery Call
+              </a>
             </div>
 
             <div className="flex flex-wrap gap-6 mt-7">

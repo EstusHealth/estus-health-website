@@ -1,48 +1,157 @@
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import {
-  Gamepad2,
-  Brain,
-  FileText,
-  Users,
-  Heart,
-  Sparkles,
-  ArrowRight,
-  Moon,
-  Flame,
-} from 'lucide-react';
-import {
-  Section,
-  Card,
-  Button,
-  FeatureCard,
-  ProcessStep,
-  CTABanner
-} from '../components/ui';
-import HeroSection from '../components/HeroSection';
-import CapacityTracker from '../components/CapacityTracker';
+import { ArrowRight, Clock, MapPin, FileText } from 'lucide-react';
+import { Button } from '../components/ui';
+import TeamSpotlight from '../components/TeamSpotlight';
+
+const team = [
+  {
+    name: 'Liam Fagan',
+    firstName: 'Liam',
+    photoSrc: '/team-liam.jpg',
+    photoPosition: 'left',
+    profileHref: '/about/team#liam',
+    roleLine:
+      'Founder. Occupational therapist. Driving assessor. Top-four world speedrun ranking.',
+    paragraph:
+      'Liam came to OT through accounting, finance, and university librarianship before realising the thing he kept gravitating toward was helping people build systems that work for their brains. Being diagnosed autistic later in life reshaped everything he thought he understood about himself. His sessions are direct, practical, and built around your real life, not textbook goals.',
+    personalStuff: [
+      "Holds a top-four world record speedrun in Tony Hawk's Pro Skater. 20+ years of competitive gaming.",
+      'Named this company after the healing item in Dark Souls.',
+      'Finds spreadsheets relaxing and does budgeting for fun.',
+      "Deeply interested in machine learning, AI, and how they'll reshape healthcare.",
+      'Background in accounting, finance, computer science, and machine learning alongside OT.',
+    ],
+    accentPills: ['PDA profiles', 'Gaming-informed therapy', 'Driving OT'],
+    neutralPills: ['Executive function', 'Late diagnosis', 'Complex health', 'Autism'],
+  },
+  {
+    name: 'Dai Nam Lang',
+    firstName: 'Nam',
+    photoSrc: '/team-nam.jpg',
+    photoPosition: 'right',
+    profileHref: '/about/team#nam',
+    roleLine:
+      'Occupational therapist. Clinical lead, gaming and anime-informed therapy. Accepting new clients.',
+    paragraph:
+      "Nam specialises in working with autistic youth and young adults through the things they already care about. Anime, gaming, and storytelling aren't rewards or bribes in his sessions. They're the medium. He understands that interests aren't just hobbies. They're windows into how someone thinks, what they value, and where they feel most themselves.",
+    personalStuff: [
+      'Uses anime storylines as therapeutic tools. The best lessons come from characters you already connect with.',
+      'Keen sportsperson. Football, gym, and always training for something.',
+      'PC and Xbox gamer. Minecraft, Roblox, Sea of Thieves, Repo, and always open to co-op.',
+      'Currently building a new PC with a wood grain CPU cooler.',
+      'Speaks multiple languages and brings a multicultural lens to his clinical work.',
+    ],
+    accentPills: ['Anime-informed therapy', 'Gaming-informed therapy', 'Youth and young adults'],
+    neutralPills: ['Screen and gaming transitions', 'Daily living independence', 'Minecraft program', 'Paediatrics'],
+  },
+  {
+    name: 'Nik Peshwani',
+    firstName: 'Nik',
+    photoSrc: '/team-nik.jpg',
+    photoPosition: 'left',
+    profileHref: '/about/team#nik',
+    roleLine:
+      'Occupational therapist. Clinical lead, executive function. Speaks Hindi, Gujarati, English, and Sindhi.',
+    paragraph:
+      "Nik turned down a place in medical school because he realised he didn't just want to treat illness. He wanted to improve the quality of life people actually live. He brings a gaming-informed, identity-respecting lens to his work, particularly with high-masking people who've spent years being told they're fine. If you've been dismissed before and need someone who leads with curiosity instead of labels, that's where Nik comes in.",
+    personalStuff: [
+      'Currently deep into The Finals. Always up for learning a new game with clients.',
+      'Plays Minecraft, Dead by Daylight, and Rocket League (badly, but his clients love teaching him).',
+      'Catan is his all-time favourite board game. Loves tabletop games in general.',
+      'Big into fitness, macros, nutrition, and supplements. Loves the science of how bodies work.',
+      'Lifelong learner. Experiments on himself first before recommending anything to clients.',
+    ],
+    accentPills: ['Executive function', 'ADHD', 'Adolescents and adults'],
+    neutralPills: ['Sleep', 'Sensory profiles', 'Hypermobility and pain', 'Late diagnosis'],
+  },
+];
+
+const presentations = [
+  'Autistic adults and adolescents',
+  'PDA profiles (pathological demand avoidance)',
+  'ADHD',
+  'Late-diagnosed neurodivergent adults',
+  'Executive function challenges',
+  'Chronic health and fatigue (EDS, POTS, fibromyalgia)',
+  'Sensory processing differences',
+  'Hypermobility and chronic pain',
+  'Children navigating school and daily routines',
+];
+
+const funding = [
+  {
+    label: 'NDIS plan-managed',
+    description: 'Your plan manager pays us directly. No gap fees.',
+  },
+  {
+    label: 'NDIS self-managed',
+    description: 'You manage your own funding and claim our invoices against your plan.',
+  },
+  {
+    label: 'Private',
+    description: 'Pay per session. No referral needed. No funding body required.',
+  },
+];
+
+const logistics = [
+  {
+    icon: Clock,
+    label: 'Hours',
+    detail: 'Monday to Saturday',
+    sub: '8am to 7pm AWST',
+  },
+  {
+    icon: MapPin,
+    label: 'Location',
+    detail: 'Perth, Western Australia',
+    sub: 'Telehealth Australia-wide',
+  },
+  {
+    icon: FileText,
+    label: 'Referrals',
+    detail: 'No referral needed',
+    sub: 'Self-refer, parent-refer, or clinician-refer',
+  },
+];
+
+function scrollToReferral(e) {
+  e.preventDefault();
+  const el = document.getElementById('referral');
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
 
 export default function HomePage() {
   return (
     <>
-      {/* SEO & Structured Data */}
       <Helmet>
         <title>Estus Health | Neuroaffirming Occupational Therapy Perth</title>
-        <meta name="description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
-        {/* Open Graph */}
-        <meta property="og:type"        content="website" />
-        <meta property="og:url"         content="https://estushealth.com/" />
-        <meta property="og:title"       content="Estus Health | Neuroaffirming Occupational Therapy Perth" />
-        <meta property="og:description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
-        <meta property="og:image"       content="https://estushealth.com/og-image.png" />
-        <meta property="og:image:width"  content="1200" />
+        <meta
+          name="description"
+          content="A small team of neurodivergent occupational therapists in Perth, with telehealth Australia-wide. Working with autistic adults, PDA profiles, ADHD, and complex health."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://estushealth.com/" />
+        <meta property="og:title" content="Estus Health | Neuroaffirming Occupational Therapy Perth" />
+        <meta
+          property="og:description"
+          content="A small team of neurodivergent occupational therapists in Perth, with telehealth Australia-wide."
+        />
+        <meta property="og:image" content="https://estushealth.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt"   content="Estus Health — Neuro-Affirming &amp; Gaming-Informed OT" />
-        {/* Twitter / X */}
-        <meta name="twitter:card"        content="summary_large_image" />
-        <meta name="twitter:title"       content="Estus Health | Neuroaffirming Occupational Therapy Perth" />
-        <meta name="twitter:description" content="Neuroaffirming occupational therapy for autistic adults, teens, and people with PDA profiles. Perth and telehealth Australia-wide." />
-        <meta name="twitter:image"       content="https://estushealth.com/og-image.png" />
+        <meta
+          property="og:image:alt"
+          content="Estus Health, neuroaffirming and gaming-informed occupational therapy"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Estus Health | Neuroaffirming Occupational Therapy Perth" />
+        <meta
+          name="twitter:description"
+          content="A small team of neurodivergent occupational therapists in Perth, with telehealth Australia-wide."
+        />
+        <meta name="twitter:image" content="https://estushealth.com/og-image.png" />
         <script type="application/ld+json">
           {`
             {
@@ -67,9 +176,9 @@ export default function HomePage() {
               "openingHoursSpecification": [
                 {
                   "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "09:00",
-                  "closes": "17:00"
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  "opens": "08:00",
+                  "closes": "19:00"
                 }
               ]
             }
@@ -77,366 +186,158 @@ export default function HomePage() {
         </script>
       </Helmet>
 
-      {/* Hero */}
-      <HeroSection />
-
-      {/* Capacity Tracker */}
-      <CapacityTracker />
-
-      {/* Services - ADDED BG COLOR HERE */}
-      <Section className="bg-noctua-bone/30">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">What We Do</h2>
-          <p className="text-noctua-brown/70">
-            Specialised support for autistic adults and teens, people with PDA profiles, 
-            and anyone navigating executive function challenges or chronic health conditions.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <FeatureCard
-            icon={Heart}
-            title="Occupational Therapy"
-            description="Functional assessment, goal setting, and intervention that respects your autonomy and works with your nervous system, not against it."
-            href="/services/occupational-therapy"
-            className="bg-noctua-bone border-noctua-brown/10 shadow-sm"
-          />
-          <FeatureCard
-            icon={Gamepad2}
-            title="Gaming-Informed Therapy"
-            description="Therapy through a channel that actually works. We meet people in the games they love, from Minecraft to VR."
-            href="/services/gaming-informed-therapy"
-            className="bg-noctua-bone border-noctua-brown/10 shadow-sm"
-          />
-          <FeatureCard
-            icon={FileText}
-            title="Assessments & Reports"
-            description="Functional capacity assessments, NDIS reports, and documentation that translates into meaningful action."
-            href="/services/assessments-reports"
-            className="bg-noctua-bone border-noctua-brown/10 shadow-sm"
-          />
-        </div>
-      </Section>
-
-      {/* Philosophy */}
-      <Section>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
-            <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-              Our Philosophy
+      {/* Section 01: Hero */}
+      <section className="relative grain-overlay py-12 md:py-16">
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="font-display text-xs uppercase tracking-[0.2em] text-primary">
+              Neuroaffirming Occupational Therapy · Perth + Telehealth
             </p>
-            <h2 className="text-2xl md:text-4xl font-display mb-6 text-noctua-brown">
-              This isn't about fixing people
+            <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mt-4">
+              Finally, OTs who
               <br />
-              <span className="text-noctua-russet">It's about fixing the environment</span>
+              <span className="text-gradient-accent">actually get it.</span>
+            </h1>
+            <p className="font-serif italic text-lg md:text-xl text-foreground/70 max-w-xl mx-auto mt-4">
+              A small team of neurodivergent clinicians who build sessions around how your brain actually works.
+            </p>
+            <div className="mt-6">
+              <Button href="#referral" size="lg" onClick={scrollToReferral}>
+                Make a referral
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 02: Team Spotlights */}
+      <section className="py-12 md:py-20">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="font-display text-xs uppercase tracking-[0.2em] text-primary">
+              Your clinicians
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl mt-4">
+              Meet the people, not the service menu.
             </h2>
-            <p className="text-noctua-brown/70 leading-relaxed mb-6">
-              Traditional approaches often ask neurodivergent people to change who they are. 
-              We take a different view: when the environment is right, people thrive.
+            <p className="font-serif italic text-foreground/70 mt-4">
+              Every clinician here chose this work because it matters to them. Most of us have been on the other side of that conversation.
             </p>
-            <p className="text-noctua-brown/70 leading-relaxed mb-8">
-              Our team brings both clinical expertise and lived experience. We understand 
-              what it means to navigate a world not built for your brain, because many of
-              us have done it ourselves.
-            </p>
-            <Button to="/about/approach" variant="outline" className="border-noctua-brown/20 hover:bg-noctua-bone">
-              Learn About Our Approach
-            </Button>
           </div>
-          
-          {/* UPDATED CARDS TO HAVE BACKGROUND COLOR */}
-          <div className="space-y-6">
-            <Card className="p-6 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-noctua-russet" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg mb-2 text-noctua-brown">Resistance-Breaking, Not Compliance-Building</h3>
-                  <p className="text-noctua-brown/70 text-sm">
-                    We don't force change. We walk alongside until the next step feels possible.
-                  </p>
-                </div>
-              </div>
-            </Card>
-            <Card className="p-6 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-noctua-russet" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg mb-2 text-noctua-brown">Pressure-Reducing Support</h3>
-                  <p className="text-noctua-brown/70 text-sm">
-                    Sessions feel like a deep exhale, not a performance review.
-                  </p>
-                </div>
-              </div>
-            </Card>
-            <Card className="p-6 bg-noctua-bone border border-noctua-brown/10 shadow-sm">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-noctua-russet/10 flex items-center justify-center">
-                  <Brain className="w-5 h-5 text-noctua-russet" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg mb-2 text-noctua-brown">Structure That Bends</h3>
-                  <p className="text-noctua-brown/70 text-sm">
-                    We adapt to the person, not the other way around.
-                  </p>
-                </div>
-              </div>
-            </Card>
+
+          <div className="space-y-8 md:space-y-12">
+            {team.map((member) => (
+              <TeamSpotlight key={member.name} {...member} />
+            ))}
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* Who We Help */}
-      <Section className="bg-noctua-bone/30">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">Who We Help</h2>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full bg-noctua-russet/10 flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-noctua-russet" />
-            </div>
-            <h3 className="font-display text-xl mb-3 text-noctua-brown">Autistic Adults & Youth</h3>
-            <p className="text-noctua-brown/70 text-sm leading-relaxed">
-              Whether late-diagnosed or lifelong, we support executive function, unmasking,
-              sensory regulation, and building a life that works for your brain.
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full bg-noctua-russet/10 flex items-center justify-center mx-auto mb-4">
-              <Brain className="w-8 h-8 text-noctua-russet" />
-            </div>
-            <h3 className="font-display text-xl mb-3 text-noctua-brown">PDA Profiles</h3>
-            <p className="text-noctua-brown/70 text-sm leading-relaxed">
-              Traditional therapy often backfires with PDA. We understand why, and
-              we've built our entire approach around what actually helps.
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full bg-noctua-russet/10 flex items-center justify-center mx-auto mb-4">
-              <FileText className="w-8 h-8 text-noctua-russet" />
-            </div>
-            <h3 className="font-display text-xl mb-3 text-noctua-brown">Support Coordinators & Referrers</h3>
-            <p className="text-noctua-brown/70 text-sm leading-relaxed">
-              Clear communication, practical recommendations, and reports that 
-              translate into action. We make your job easier.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      {/* Quiz Spotlight */}
-      <Section>
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-            Free Interactive Quizzes
-          </p>
-          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">
-            Start with self-understanding
-          </h2>
-          <p className="text-noctua-brown/70">
-            Our quizzes aren't just fun — they give you a real map of how your brain works,
-            with personalised insights you can actually use.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          {/* PDA Quiz */}
-          <div className="relative bg-noctua-bone border border-noctua-brown/10 rounded-lg shadow-sm p-6 flex flex-col hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-lg bg-noctua-russet/10 flex items-center justify-center mb-4">
-              <Brain className="w-6 h-6 text-noctua-russet" />
-            </div>
-            <span className="inline-block bg-noctua-russet/10 text-noctua-russet text-xs font-medium font-display uppercase tracking-wide px-2 py-0.5 rounded-full mb-3 w-fit">
-              PDA &amp; Autism
-            </span>
-            <h3 className="font-display text-xl mb-2 text-noctua-brown">PDA Profile Quiz</h3>
-            <p className="text-noctua-brown/70 text-sm leading-relaxed flex-1 mb-5">
-              Discover your PDA archetype — Negotiator, Avoider, Masker, or Adapter —
-              with personalised strategies for navigating demands.
-            </p>
-            <Link
-              to="/learn/pda-quiz"
-              className="inline-flex items-center gap-1 text-noctua-russet text-sm font-medium font-display uppercase tracking-wide hover:gap-2 transition-all"
-            >
-              Take the quiz <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* Chronotype Quiz */}
-          <div className="relative bg-noctua-bone border border-noctua-brown/10 rounded-lg shadow-sm p-6 flex flex-col hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-lg bg-noctua-russet/10 flex items-center justify-center mb-4">
-              <Moon className="w-6 h-6 text-noctua-russet" />
-            </div>
-            <span className="inline-block bg-noctua-russet/10 text-noctua-russet text-xs font-medium font-display uppercase tracking-wide px-2 py-0.5 rounded-full mb-3 w-fit">
-              Sleep
-            </span>
-            <h3 className="font-display text-xl mb-2 text-noctua-brown">Chronotype Quiz</h3>
-            <p className="text-noctua-brown/70 text-sm leading-relaxed flex-1 mb-5">
-              Are you a Lion, Bear, Wolf, or Dolphin? Find out your biological sleep type
-              and how to stop fighting your own rhythm.
-            </p>
-            <Link
-              to="/learn/chronotype-quiz"
-              className="inline-flex items-center gap-1 text-noctua-russet text-sm font-medium font-display uppercase tracking-wide hover:gap-2 transition-all"
-            >
-              Take the quiz <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* Burnout Quiz */}
-          <div className="relative bg-noctua-bone border border-noctua-brown/10 rounded-lg shadow-sm p-6 flex flex-col hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-lg bg-noctua-russet/10 flex items-center justify-center mb-4">
-              <Flame className="w-6 h-6 text-noctua-russet" />
-            </div>
-            <span className="inline-block bg-noctua-russet/10 text-noctua-russet text-xs font-medium font-display uppercase tracking-wide px-2 py-0.5 rounded-full mb-3 w-fit">
-              Burnout
-            </span>
-            <h3 className="font-display text-xl mb-2 text-noctua-brown">Autistic Burnout Quiz</h3>
-            <p className="text-noctua-brown/70 text-sm leading-relaxed flex-1 mb-5">
-              Assess where you are on the burnout spectrum and get a clearer picture
-              of what your nervous system actually needs right now.
-            </p>
-            <Link
-              to="/learn/burnout-quiz"
-              className="inline-flex items-center gap-1 text-noctua-russet text-sm font-medium font-display uppercase tracking-wide hover:gap-2 transition-all"
-            >
-              Take the quiz <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <Link
-            to="/learn"
-            className="inline-flex items-center gap-2 text-noctua-russet font-display text-sm uppercase tracking-wide font-semibold hover:gap-3 transition-all"
-          >
-            See all 6 quizzes &amp; guides <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </Section>
-
-      {/* Process */}
-      <Section>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          <div>
-            <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-              How It Works
-            </p>
-            <h2 className="text-2xl md:text-4xl font-display mb-6 text-noctua-brown">
-              Getting started is straightforward
+      {/* Section 03: Who We Work With */}
+      <section className="bg-card border-y border-border py-12 md:py-16">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-2xl md:text-3xl text-center mb-8">
+              Who we work with.
             </h2>
-            <p className="text-noctua-brown/70 leading-relaxed mb-8">
-              We've designed our intake process to be as low-demand as possible. 
-              No lengthy phone calls unless you want them. No pressure.
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* People */}
+              <div>
+                <p className="font-display text-lg mb-4">Presentations</p>
+                <ul className="space-y-2">
+                  {presentations.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2 flex-shrink-0" />
+                      <span className="text-sm text-foreground/70 leading-relaxed">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Funding */}
+              <div>
+                <p className="font-display text-lg mb-4">How to pay</p>
+                <div className="space-y-4">
+                  {funding.map((item) => (
+                    <div
+                      key={item.label}
+                      className="bg-secondary/50 rounded-lg p-4 border border-border"
+                    >
+                      <p className="font-display text-sm uppercase tracking-wide">
+                        {item.label}
+                      </p>
+                      <p className="text-sm text-foreground/60 mt-1">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 04: Hours and Logistics */}
+      <section className="py-10 md:py-14">
+        <div className="container">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-display text-xl md:text-2xl text-center mb-6">
+              The practical stuff.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              {logistics.map(({ icon: Icon, label, detail, sub }) => (
+                <div key={label}>
+                  <Icon className="w-5 h-5 text-primary mx-auto mb-3" />
+                  <p className="font-display text-sm uppercase tracking-wide">
+                    {label}
+                  </p>
+                  <p className="text-sm text-foreground/70 mt-1">{detail}</p>
+                  <p className="text-xs text-foreground/50 mt-1">{sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 05: Referral Form CTA */}
+      <section
+        id="referral"
+        className="bg-card border-y border-border py-12 md:py-16 scroll-mt-20"
+      >
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="font-display text-2xl md:text-3xl">
+              Send us a referral.
+            </h2>
+            <p className="font-serif italic text-foreground/60 mt-2 mb-8">
+              For yourself, your child, or your client. No GP referral required.
             </p>
-            <Button to="/contact" className="bg-noctua-russet hover:bg-noctua-brown text-white">
-              Start Your Referral
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </div>
-          <div className="space-y-8">
-            <ProcessStep
-              number="1"
-              title="Enquire or Refer"
-              description="Send through a referral or enquiry with the key details. Online form, email, or via your support coordinator. Whatever works for you."
-            />
-            <ProcessStep
-              number="2"
-              title="Assessment & Planning"
-              description="We identify strengths, barriers, and practical next steps aligned with your goals. No assumptions. No one-size-fits-all."
-            />
-            <ProcessStep
-              number="3"
-              title="Implementation & Review"
-              description="Therapy sessions, real-world strategies, and progress checkpoints. We adapt as you need. Capacity fluctuates, and that's okay."
-            />
+            <div className="space-y-4">
+              <Button to="/contact" size="lg" className="w-full md:w-auto">
+                Open referral form
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+              <p className="text-sm text-foreground/50">
+                Takes about 2 minutes. We'll be in touch within one business day.
+              </p>
+            </div>
+            <p className="text-center text-sm text-foreground/40 mt-6">
+              Or email us directly at{' '}
+              <a
+                href="mailto:hello@estushealth.com"
+                className="underline hover:text-primary"
+              >
+                hello@estushealth.com
+              </a>
+            </p>
           </div>
         </div>
-      </Section>
-
-      {/* Learn Section */}
-      <Section className="bg-noctua-bone/30">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-noctua-russet font-display text-sm uppercase tracking-widest mb-4 font-semibold">
-            Guides & Articles
-          </p>
-          <h2 className="text-2xl md:text-4xl font-display mb-4 text-noctua-brown">Go deeper</h2>
-          <p className="text-noctua-brown/70">
-            These guides are written for people navigating these experiences, not about them.
-            No jargon, no clinical distance.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          <Card hover className="bg-noctua-bone border-noctua-brown/10 shadow-sm group">
-            <div className="p-6">
-              <h3 className="font-display text-xl mb-3 text-noctua-brown">Understanding PDA</h3>
-              <p className="text-noctua-brown/70 text-sm leading-relaxed mb-4">
-                Pathological Demand Avoidance explained: what it is, how it shows up,
-                and why traditional approaches often backfire.
-              </p>
-              <Link
-                to="/learn/understanding-pda"
-                className="inline-flex items-center text-noctua-russet text-sm font-medium hover:gap-2 transition-all"
-              >
-                Read guide <ArrowRight className="ml-1 w-4 h-4" />
-              </Link>
-            </div>
-          </Card>
-          <Card hover className="bg-noctua-bone border-noctua-brown/10 shadow-sm group">
-            <div className="p-6">
-              <h3 className="font-display text-xl mb-3 text-noctua-brown">Late Autism Diagnosis</h3>
-              <p className="text-noctua-brown/70 text-sm leading-relaxed mb-4">
-                Why autism gets missed, what late diagnosis feels like, and how to
-                move forward with self-understanding.
-              </p>
-              <Link
-                to="/learn/late-autism-diagnosis"
-                className="inline-flex items-center text-noctua-russet text-sm font-medium hover:gap-2 transition-all"
-              >
-                Read guide <ArrowRight className="ml-1 w-4 h-4" />
-              </Link>
-            </div>
-          </Card>
-          <Card hover className="bg-noctua-bone border-noctua-brown/10 shadow-sm group">
-            <div className="p-6">
-              <h3 className="font-display text-xl mb-3 text-noctua-brown">Executive Function & Complex Health</h3>
-              <p className="text-noctua-brown/70 text-sm leading-relaxed mb-4">
-                Managing POTS, hEDS, MCAS, Chronic Pain or ME/CFS alongside neurodivergence?
-                Here's why executive function takes the hit.
-              </p>
-              <Link
-                to="/learn/executive-function-complex-health"
-                className="inline-flex items-center text-noctua-russet text-sm font-medium hover:gap-2 transition-all"
-              >
-                Read guide <ArrowRight className="ml-1 w-4 h-4" />
-              </Link>
-            </div>
-          </Card>
-        </div>
-
-        <div className="text-center">
-          <Link
-            to="/learn"
-            className="inline-flex items-center gap-2 text-noctua-russet font-display text-sm uppercase tracking-wide font-semibold hover:gap-3 transition-all"
-          >
-            Browse all resources <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </Section>
-
-      {/* CTA */}
-      <CTABanner
-        title="Ready to Get Started?"
-        description="Whether you're self-referring, a parent, or a support coordinator, we're here to help."
-        primaryCTA={{ label: "Make a Referral", href: "/contact", className: "bg-noctua-russet hover:bg-noctua-brown" }}
-        secondaryCTA={{ label: "For Support Coordinators", href: "/for-referrers", className: "text-noctua-russet border-noctua-russet" }}
-        className="bg-noctua-bone/50"
-      />
+      </section>
     </>
   );
 }
