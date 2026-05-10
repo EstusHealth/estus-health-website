@@ -6,6 +6,7 @@ const team = [
     name: "Nik Peshwani",
     role: "Occupational Therapist",
     status: "Accepting referrals",
+    photoSrc: "/team-nik.jpg",
     bio: "Nik brings deep expertise in gaming-informed therapy and understands how to meet clients in the spaces they already feel comfortable. His approach prioritises building genuine connection before any therapeutic 'work' happens, because trust comes first.",
     background: "Background in gaming culture and neurodivergent-affirming practice.",
     specialties: ["Gaming-Informed Therapy", "Adolescents & Young Adults", "Executive Function", "Assessment"],
@@ -14,6 +15,7 @@ const team = [
     name: "Dai Nam Lang",
     role: "Occupational Therapist",
     status: "Accepting referrals",
+    photoSrc: "/team-nam.jpg",
     bio: "Nam specialises in working with autistic youth and adults, with particular expertise in anime and gaming-informed approaches. He understands that interests aren't just hobbies. They're windows into how someone thinks, what they value, and where they feel most themselves.",
     background: "Passionate about anime, gaming, and neuroaffirming practice.",
     specialties: ["Anime-Informed Therapy", "Gaming Informed Therapy", "Youth & Young Adults"],
@@ -22,6 +24,7 @@ const team = [
     name: "Liam Fagan",
     role: "Founder & Occupational Therapist",
     status: "Not Accepting Referrals",
+    photoSrc: "/team-liam.jpg",
     bio: "Late-diagnosed autistic clinician with a PDA profile. Liam founded Estus Health to create the kind of support he wished existed: therapy that works with neurodivergent brains, not against them. His focus areas include PDA, gaming-informed therapy, executive function, and supporting adults through the unmasking process.",
     background: "Degrees in Occupational Therapy, Finance, Computer Science, and Machine Learning.",
     specialties: ["PDA Profiles", "Gaming-Informed Therapy", "Executive Function", "Unmasking Support"],
@@ -83,10 +86,18 @@ export default function TeamPage() {
             <Card key={index} className="overflow-hidden">
               <CardContent className="p-6 lg:p-8">
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-                  {/* Photo placeholder */}
+                  {/* Photo */}
                   <div className="flex-shrink-0">
-                    <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-lg bg-secondary flex items-center justify-center border border-border">
-                      <span className="text-4xl font-display text-primary">{member.name[0]}</span>
+                    <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-lg bg-secondary flex items-center justify-center border border-border overflow-hidden">
+                      {member.photoSrc ? (
+                        <img
+                          src={member.photoSrc}
+                          alt={`Portrait of ${member.name}`}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-4xl font-display text-primary">{member.name[0]}</span>
+                      )}
                     </div>
                   </div>
                   
