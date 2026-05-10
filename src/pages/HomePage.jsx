@@ -114,14 +114,6 @@ const logistics = [
   },
 ];
 
-function scrollToReferral(e) {
-  e.preventDefault();
-  const el = document.getElementById('referral');
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
-
 export default function HomePage() {
   return (
     <>
@@ -189,23 +181,38 @@ export default function HomePage() {
       {/* Section 01: Hero */}
       <section className="relative grain-overlay py-12 md:py-16">
         <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
             <p className="font-display text-xs uppercase tracking-[0.2em] text-primary">
               Neuroaffirming Occupational Therapy · Perth + Telehealth
             </p>
-            <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mt-4">
-              Finally, OTs who
-              <br />
-              <span className="text-gradient-accent">actually get it.</span>
+            <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mt-4">
+              <span className="text-gradient-accent">Estus Health</span>
             </h1>
             <p className="font-serif italic text-lg md:text-xl text-foreground/70 max-w-xl mx-auto mt-4">
               A small team of neurodivergent clinicians who build sessions around how your brain actually works.
             </p>
-            <div className="mt-6">
-              <Button href="#referral" size="lg" onClick={scrollToReferral}>
-                Make a referral
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+          </div>
+
+          {/* Team Banner */}
+          <div className="relative w-full max-w-5xl mx-auto rounded-xl overflow-hidden border border-border shadow-heavy group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+
+            <div className="relative aspect-[16/9] md:aspect-[21/9] lg:aspect-[3/1] bg-card">
+              <img
+                src="/team-photo.jpeg"
+                alt="The Estus Health team — Liam, Dai Nam, and Nik"
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+
+              <div className="absolute bottom-0 left-0 p-6 md:p-8">
+                <h2 className="text-white font-display text-2xl md:text-3xl mb-1 drop-shadow-md">
+                  The Estus Health Team
+                </h2>
+                <p className="text-white/80 font-serif italic text-sm md:text-base drop-shadow-md">
+                  Liam, Dai Nam, and Nik
+                </p>
+              </div>
             </div>
           </div>
         </div>
