@@ -1,9 +1,9 @@
 import { Section, Card, CardContent, Button, Badge } from '../components/ui';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const team = [
    {
-    name: "Nik",
+    name: "Nik Peshwani",
     role: "Occupational Therapist",
     status: "Accepting referrals",
     bio: "Nik brings deep expertise in gaming-informed therapy and understands how to meet clients in the spaces they already feel comfortable. His approach prioritises building genuine connection before any therapeutic 'work' happens, because trust comes first.",
@@ -11,7 +11,7 @@ const team = [
     specialties: ["Gaming-Informed Therapy", "Adolescents & Young Adults", "Executive Function", "Assessment"],
   },
   {
-    name: "Nam",
+    name: "Dai Nam Lang",
     role: "Occupational Therapist",
     status: "Accepting referrals",
     bio: "Nam specialises in working with autistic youth and adults, with particular expertise in anime and gaming-informed approaches. He understands that interests aren't just hobbies. They're windows into how someone thinks, what they value, and where they feel most themselves.",
@@ -19,7 +19,7 @@ const team = [
     specialties: ["Anime-Informed Therapy", "Gaming Informed Therapy", "Youth & Young Adults"],
   },
    {
-    name: "Liam",
+    name: "Liam Fagan",
     role: "Founder & Occupational Therapist",
     status: "Not Accepting Referrals",
     bio: "Late-diagnosed autistic clinician with a PDA profile. Liam founded Estus Health to create the kind of support he wished existed: therapy that works with neurodivergent brains, not against them. His focus areas include PDA, gaming-informed therapy, executive function, and supporting adults through the unmasking process.",
@@ -68,7 +68,7 @@ export default function TeamPage() {
                   The Estus Health Team
                 </h3>
                 <p className="text-white/80 font-serif italic text-sm md:text-base drop-shadow-md">
-                  Liam, Nam & Nik
+                  Liam, Dai Nam, and Nik
                 </p>
               </div>
             </div>
@@ -124,23 +124,6 @@ export default function TeamPage() {
               </CardContent>
             </Card>
           ))}
-        </div>
-      </Section>
-
-      {/* Join the Team */}
-      <Section className="bg-card/50 border-y border-border">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-display mb-4">
-            Interested in Joining the Team?
-          </h2>
-          <p className="text-foreground/70 mb-6">
-            We're always interested in hearing from clinicians who share our values,
-            particularly those with lived experience of neurodivergence.
-          </p>
-          <Button href="mailto:hello@estushealth.com" variant="outline">
-            <Mail className="w-4 h-4 mr-2" />
-            Get in Touch
-          </Button>
         </div>
       </Section>
 

@@ -25,7 +25,7 @@ const team = [
     neutralPills: ['Executive function', 'Late diagnosis', 'Complex health', 'Autism'],
   },
   {
-    name: 'Nam',
+    name: 'Dai Nam Lang',
     firstName: 'Nam',
     photoSrc: '/team-nam.jpg',
     photoPosition: 'right',
@@ -45,13 +45,13 @@ const team = [
     neutralPills: ['Screen and gaming transitions', 'Daily living independence', 'Minecraft program', 'Paediatrics'],
   },
   {
-    name: 'Nik',
+    name: 'Nik Peshwani',
     firstName: 'Nik',
     photoSrc: '/team-nik.jpg',
     photoPosition: 'left',
     profileHref: '/about/team#nik',
     roleLine:
-      'Occupational therapist. Clinical lead, executive function. Speaks Hindi, Gujarati, English, and Sinti.',
+      'Occupational therapist. Clinical lead, executive function. Speaks Hindi, Gujarati, English, and Sindhi.',
     paragraph:
       "Nik turned down a place in medical school because he realised he didn't just want to treat illness. He wanted to improve the quality of life people actually live. He brings a gaming-informed, identity-respecting lens to his work, particularly with high-masking people who've spent years being told they're fine. If you've been dismissed before and need someone who leads with curiosity instead of labels, that's where Nik comes in.",
     personalStuff: [
